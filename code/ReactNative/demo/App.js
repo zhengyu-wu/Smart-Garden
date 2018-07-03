@@ -1,23 +1,33 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{Component} from 'react';
+import {
+    View,
+    Text,
+} from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
+import {StackNavigator} from 'react-navigation';
+//接下来应该从pages中引入各个page
+import LoginPage from './app/pages/LoginPage'
+import MainPage from './app/pages/MainPage'
+import configureStore from "./app/store/ConfigureStore";
+import {Provider} from "react-redux";
+
+
+const store = configureStore();
+
+const AppMain=StackNavigator({
+   Login: {screen:LoginPage},
+    Main: {screen:MainPage},
+});
+
+class App extends Component{
+    render(){
+        return(
+            <Provider store={store}>
+                <AppMain/>
+            </Provider>
+        )
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
