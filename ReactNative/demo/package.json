@@ -19,8 +19,13 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "antd-mobile-rn": "^2.2.0",
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-navigation": "^2.5.5",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   }
 }
