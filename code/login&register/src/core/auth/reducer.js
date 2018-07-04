@@ -25,18 +25,22 @@ export function authReducer(state = new AuthState(), {payload, type}) {
       return state.merge({
         loading: true
       });
+      //return Object.assign({loading:true}, state);
     case SIGN_IN_ERROR:
       return state.merge({
         loading: false
       });
+      //return Object.assign({loading:false}, state);
     case START_SIGN_UP:
       return state.merge({
         loading: true
       });
+      //return Object.assign({loading:true}, state);
     case SIGN_UP_ERROR:
       return state.merge({
         loading: false
       });  
+     // return Object.assign({loading:false}, state);
     case INIT_AUTH:
     case SIGN_IN_SUCCESS:
       return state.merge({
@@ -44,6 +48,9 @@ export function authReducer(state = new AuthState(), {payload, type}) {
         authenticated: !!payload,
         id: payload ? payload.uid : null
       });
+	  /*return Object.assign({loading:false,
+		authenticated:!!payload,
+		id: payload ? payload.uid : null}, state);*/
     case SIGN_OUT_SUCCESS:
       return new AuthState();
 
