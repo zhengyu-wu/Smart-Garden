@@ -49,6 +49,10 @@ public class UserController {
     }
 
     @ResponseBody
+    @PostMapping("/activeUserWithUserId")
+    public boolean activeUserWithUserId(int userId){return userService.active(userId);}
+
+    @ResponseBody
     @GetMapping("/getAllUser")
     public List<User> getAllUser()
     {
