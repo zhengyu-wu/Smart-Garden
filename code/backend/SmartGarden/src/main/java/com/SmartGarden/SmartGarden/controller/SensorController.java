@@ -33,9 +33,19 @@ public class SensorController {
     }
 
     @ResponseBody
+    @GetMapping("/getSensorByGardenId")
+    public List<Sensor> getSensorByGardenId(int gardenId){return sensorService.getByGardenId(gardenId);}
+
+    @ResponseBody
     @PostMapping("/addSensor")
     public boolean addSensor(Sensor sensor){
         return sensorService.addSensor(sensor);
+    }
+
+    @ResponseBody
+    @PostMapping("/addSensorWithGardenId")
+    public boolean addSensorWithGardenId(Sensor sensor,int gardenId){
+        return sensorService.addSensorWithGardenId(sensor,gardenId);
     }
 
     @ResponseBody
@@ -49,4 +59,5 @@ public class SensorController {
     public boolean deleteSensorBySensorId(int sensorId){
         return sensorService.deleteSensor(sensorId);
     }
+
 }

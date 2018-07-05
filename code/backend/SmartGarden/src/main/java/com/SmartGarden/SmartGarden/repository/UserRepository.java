@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User,Integer> {
 
     //自定义repository。手写sql
-    //todo check 这里为什么是4？
     @Query(value = "update users set username=?1 where id=?2",nativeQuery = true)   //占位符传值形式
     @Modifying
     int updateById(String name,int id);
