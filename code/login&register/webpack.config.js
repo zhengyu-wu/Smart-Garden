@@ -1,30 +1,183 @@
-//webpack.config.js
-module.exports = {
-    devtool: 'eval-source-map',//生成Source Maps,这里选择eval-source-map
-    entry: ['webpack/hot/dev-server', __dirname + '/app/main.js'],//唯一入口文件,__dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录
-    output: {//输出目录
-        path: __dirname + '/build',//打包后的js文件存放的地方
-        filename: 'bundle.js'//打包后输出的js的文件名
-    },
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const WebpackMd5Hash = require('webpack-md5-hash');
 
-    module: {
-        //loaders加载器
-        loaders: [
-            {
-                test: /\.(js|jsx)$/,//一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
-                exclude: /node_modules/,//屏蔽不需要处理的文件（文件夹）（可选）
-                loader: 'babel'//loader的名称（必须）
-            }
-        ]
-    },
 
-    //webpack-dev-server配置
-    devServer: {
-        contentBase: './build',//默认webpack-dev-server会为根文件夹提供本地服务器，如果想为另外一个目录下的文件提供本地服务器，应该在这里设置其所在目录（本例设置到"build"目录）
-        colors: true,//在cmd终端中输出彩色日志
-        historyApiFallback: true,//在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
-        inline: true,//设置为true，当源文件改变时会自动刷新页面
-        port: 8080,//设置默认监听端口，如果省略，默认为"8080"
-        process: true,//显示合并代码进度
-    }
+//=========================================================
+//  ENVIRONMENT VARS
+//---------------------------------------------------------
+const NODE_ENV = process.env.NODE_ENV;
+
+const ENV_DEVELOPMENT = NODE_ENV === 'development';
+const ENV_PRODUCTION = NODE_ENV === 'production';
+const ENV_TEST = NODE_ENV === 'test';
+
+const HOST = '0.0.0.0';
+const PORT = 3000;
+
+
+//=========================================================
+//  LOADERS
+//---------------------------------------------------------
+const loaders = {
+  js: {test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
+  scss: {test: /\.scss$/, loader: 'style!css!postcss!sass'}
 };
+
+
+//=========================================================
+//  CONFIG
+//---------------------------------------------------------
+const config = {};
+module.exports = config;
+
+
+config.resolve = {
+  extensions: ['', '.js'],
+  modulesDirectories: ['node_modules'],
+  root: path.resolve('.')
+};
+
+config.plugins = [
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+  })
+];
+
+config.postcss = [
+  autoprefixer({ browsers: ['last 3 versions'] })
+];
+
+config.sassLoader = {
+  outputStyle: 'compressed',
+  precision: 10,
+  sourceComments: false
+};
+
+
+//=====================================
+//  DEVELOPMENT or PRODUCTION
+//-------------------------------------
+if (ENV_DEVELOPMENT || ENV_PRODUCTION) {
+  config.entry = {
+    main: ['./src/main.js']
+  };
+
+  config.output = {
+    filename: '[name].js',
+    path: path.resolve('./target'),
+    publicPath: '/'
+  };
+
+  config.plugins.push(
+    new HtmlWebpackPlugin({
+      chunkSortMode: 'dependency',
+      filename: 'index.html',
+      hash: false,
+      inject: 'body',
+      template: './src/index.html'
+    })
+  );
+}
+
+
+//=====================================
+//  DEVELOPMENT
+//-------------------------------------
+if (ENV_DEVELOPMENT) {
+  config.devtool = 'cheap-module-source-map';
+
+  config.entry.main.unshift(
+    `webpack-dev-server/client?http://${HOST}:${PORT}`,
+    'webpack/hot/only-dev-server',
+    'react-hot-loader/patch',
+    'babel-polyfill'
+  );
+
+  config.module = {
+    loaders: [
+      loaders.js,
+      loaders.scss
+    ]
+  };
+
+  config.plugins.push(
+    new webpack.HotModuleReplacementPlugin()
+  );
+
+  config.devServer = {
+    contentBase: './src',
+    historyApiFallback: true,
+    host: HOST,
+    hot: true,
+    port: PORT,
+    publicPath: config.output.publicPath,
+    stats: {
+      cached: true,
+      cachedAssets: true,
+      chunks: true,
+      chunkModules: false,
+      colors: true,
+      hash: false,
+      reasons: true,
+      timings: true,
+      version: false
+    }
+  };
+}
+
+
+//=====================================
+//  PRODUCTION
+//-------------------------------------
+if (ENV_PRODUCTION) {
+  config.devtool = 'source-map';
+
+  config.entry.vendor = './src/vendor.js';
+
+  config.output.filename = '[name].[chunkhash].js';
+
+  config.module = {
+    loaders: [
+      loaders.js,
+      {test: /\.scss$/, loader: ExtractTextPlugin.extract('css?-autoprefixer!postcss!sass')}
+    ]
+  };
+
+  config.plugins.push(
+    new WebpackMd5Hash(),
+    new ExtractTextPlugin('styles.[contenthash].css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        dead_code: true, // eslint-disable-line camelcase
+        screw_ie8: true, // eslint-disable-line camelcase
+        unused: true,
+        warnings: false
+      }
+    })
+  );
+}
+
+
+//=====================================
+//  TEST
+//-------------------------------------
+if (ENV_TEST) {
+  config.devtool = 'inline-source-map';
+
+  config.module = {
+    loaders: [
+      loaders.js,
+      loaders.scss
+    ]
+  };
+}
