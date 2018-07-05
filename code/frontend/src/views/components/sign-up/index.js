@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {Layout, Input, Button, Form, Icon, Row, Col, Breadcrumb} from 'antd';
 import 'antd/dist/antd.css';
 import FormItem from 'antd/lib/form/FormItem';
+import axios from "axios/index";
 
 const { Header,Content,Footer,Sider } = Layout;
 
@@ -58,18 +59,27 @@ class SignUpForm extends Component {
             console.log('Received values of form: ', values);
 
             var params= new URLSearchParams();
-            params.append('userName',values.userName);
+            params.append('username',values.userName);
             params.append('password',values.password);
             params.append('phone',values.phone);
             params.append('email',values.email);
-
-            axios.post('http://localhost:8080/user/addUser',params).then((res)=>{
+            params.append('userType',0);
+            if((values.userName!=null)&&(values.password!=null)&&(values.phone!=null)&&(values.email!=null))
+            {
+              axios.post('http://localhost:8080/users/addUser',params).then((res)=>{
                 console.log(res.data);
-                alert('register successfully, your id is'+res.data+' . Please remember your id.');
-                this.props.handleLoginSuccess(res.data,'USER');
-            }).catch(err=>{
+                alert('register successfully');
+                //更新redux信息
+              }).catch(err=>{
                 alert("unexpected error in register ");
-            });
+              });
+            }
+            else
+            {
+              alert('register failed');
+            }
+
+            
         }
       });
     }
@@ -119,48 +129,65 @@ class SignUpForm extends Component {
           </Header>
           <div style={{padding:50}}></div>
           <Content style={{minHeight:900}}>
-            <Form className="login-form" onSubmit={this.onSubmit}>
+            <Form className="login-form" onSubmit={this.handleSubmit}>
               <FormItem
                 {...formItemLayout} 
                 label="Username"
               >
-                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                autoFocus
-                maxLength="25"
-                onChange={this.handleChange.bind(this, 'username')}
-                placeholder="Username"
-                type="username"
-                value={this.state.newUser.username}
-                required
-                />
+                {getFieldDecorator('userName', {
+                        rules: [{ required: true, message: 'Please input your username!', whitespace: true }],
+                    })(
+                      <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                      autoFocus
+                      maxLength="25"
+                      onChange={this.handleChange.bind(this, 'username')}
+                      placeholder="Username"
+                      type="username"
+                      value={this.state.newUser.username}
+                      required
+                      />
+                )}
               </FormItem>
               <FormItem
                 {...formItemLayout} 
                 label="Phone"
               >
-                <Input prefix={<Icon type="mobile" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                autoFocus
-                maxLength="25"
-                onChange={this.handleChange.bind(this, 'phone')}
-                placeholder="Phone"
-                type="phone"
-                value={this.state.newUser.phone}
-                required
-                />
+                {getFieldDecorator('phone', {
+                        rules: [{ required: true, message: 'Please input your phone number!' }],
+                    })(
+                      <Input prefix={<Icon type="mobile" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                      autoFocus
+                      maxLength="25"
+                      onChange={this.handleChange.bind(this, 'phone')}
+                      placeholder="Phone"
+                      type="phone"
+                      value={this.state.newUser.phone}
+                      required
+                      />
+                )}
               </FormItem>
               <FormItem
                 {...formItemLayout} 
                 label="E-mail"
               >
-                <Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                autoFocus
-                maxLength="25"
-                onChange={this.handleChange.bind(this, 'email')}
-                placeholder="Email"
-                type="email"
-                value={this.state.newUser.email}
-                required
-                />
+                {getFieldDecorator('email', {
+                        rules: [{
+                            type: 'email', message: 'The input is not valid E-mail!',
+                        }, {
+                            required: true, message: 'Please input your E-mail!',
+                        }],
+                    })(
+                      <Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                      autoFocus
+                      maxLength="25"
+                      onChange={this.handleChange.bind(this, 'email')}
+                      placeholder="Email"
+                      type="email"
+                      value={this.state.newUser.email}
+                      required
+                      />
+                    )}
+                
               </FormItem>
               <FormItem
                 {...formItemLayout} 
