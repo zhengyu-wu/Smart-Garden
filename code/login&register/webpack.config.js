@@ -24,7 +24,12 @@ const PORT = 3000;
 //---------------------------------------------------------
 const loaders = {
   js: {test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
-  scss: {test: /\.scss$/, loader: 'style!css!postcss!sass'}
+  scss: {test: /\.scss$/, loader: 'style!css!postcss!sass'},
+  css:{
+    test: /\.css$/,
+    loader: 'style-loader!css-loader'
+  }
+
 };
 
 
@@ -100,7 +105,8 @@ if (ENV_DEVELOPMENT) {
   config.module = {
     loaders: [
       loaders.js,
-      loaders.scss
+      loaders.scss,
+      loaders.css
     ]
   };
 
@@ -143,6 +149,10 @@ if (ENV_PRODUCTION) {
   config.module = {
     loaders: [
       loaders.js,
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+     },
       {test: /\.scss$/, loader: ExtractTextPlugin.extract('css?-autoprefixer!postcss!sass')}
     ]
   };
@@ -177,6 +187,7 @@ if (ENV_TEST) {
   config.module = {
     loaders: [
       loaders.js,
+      loaders.css,
       loaders.scss
     ]
   };
