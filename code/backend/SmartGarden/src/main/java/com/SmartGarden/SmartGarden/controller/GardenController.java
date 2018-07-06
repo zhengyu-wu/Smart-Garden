@@ -43,5 +43,7 @@ public class GardenController {
 
     @ResponseBody
     @PostMapping("/deleteByUserId")
-    public boolean deleteByUserId(int userId) {return gardenService.deleteByGardenId(userId);}
+    public boolean deleteByUserId(int userId) {return gardenService.deleteByUserId(userId);}
+
+
 }
