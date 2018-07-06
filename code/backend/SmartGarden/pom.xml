@@ -44,12 +44,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--阿里巴巴数据库连接池，专为监控而生 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>1.0.26</version>
-		</dependency>
 		<!-- 阿里巴巴fastjson，解析json视图 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -61,6 +55,7 @@
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
         </dependency>
+        <!--阿里巴巴数据库连接池，专为监控而生 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>

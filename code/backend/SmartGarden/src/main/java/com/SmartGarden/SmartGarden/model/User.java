@@ -31,6 +31,18 @@ public class User {
     @Column(nullable = false)
     private Integer userType=0;
 
+    //默认0表示未激活
+    @Column(nullable = false)
+    private Integer userState=0;
+
+    public Integer getUserState() {
+        return userState;
+    }
+
+    public void setUserState(Integer userState) {
+        this.userState = userState;
+    }
+
     public Integer getUserId() {
         return userId;
     }
