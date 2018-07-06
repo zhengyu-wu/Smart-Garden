@@ -1,1 +1,0 @@
-export const DISMISS_ALERT = 'DISMISS_ALERT';
