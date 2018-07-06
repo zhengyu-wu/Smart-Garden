@@ -5,6 +5,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/*
+* sensor的坐标是相对于花园而言
+* 以花园的左下角为原点
+* */
+
 @Data
 @Entity
 @Table(name="sensors")
@@ -28,6 +33,18 @@ public class Sensor {
 
     @Column(nullable = false)
     private int sensorState;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "Garden")
+    private Garden garden;
+
+    public Garden getGarden() {
+        return garden;
+    }
+
+    public void setGarden(Garden garden) {
+        this.garden = garden;
+    }
 
     public Integer getSensorId() {
         return sensorId;

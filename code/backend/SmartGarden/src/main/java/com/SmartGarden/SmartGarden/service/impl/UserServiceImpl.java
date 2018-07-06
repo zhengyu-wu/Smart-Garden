@@ -63,6 +63,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean active(int userId) {
+        try {
+            User tmpUser=userRepository.findByUserId(userId);
+            if(tmpUser.getUserState()!=0)
+                return false;
+            else {
+                tmpUser.setUserState(1);
+                userRepository.save(tmpUser);
+                return true;
+            }
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
     public User selectById(int id) {
         return userRepository.findByUserId(id);
     }
@@ -78,8 +95,10 @@ public class UserServiceImpl implements UserService {
         tmpUser=userRepository.findByUserId(userId);
         if(tmpUser==null)
             return null;
-        if(tmpUser.getPassword().equals(password))
+        if(tmpUser.getPassword().equals(password)) {
+            tmpUser.setPassword("");
             return tmpUser;
+        }
         else return null;
     }
 
