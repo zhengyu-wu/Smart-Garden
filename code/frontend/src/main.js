@@ -9,7 +9,6 @@ import configureStore from './core/store';
 import Root from './views/root';
 import 'antd/dist/antd.css';
 
-
 const store = configureStore();
 const syncedHistory = syncHistoryWithStore(browserHistory, store);
 const rootElement = document.getElementById('root');
