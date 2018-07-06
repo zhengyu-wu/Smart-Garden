@@ -34,9 +34,9 @@ public class HumiDataController {
     }
 
     @ResponseBody
-    @PostMapping("/addHumiData")
-    public boolean addHumiData(HumiData humiData){
-        return humiService.addHumiData(humiData);
+    @PostMapping("/addHumiDataWithSensorId")
+    public boolean addHumiData(HumiData humiData,int sensorId){
+        return humiService.addHumiData(humiData,sensorId);
     }
 
     @ResponseBody

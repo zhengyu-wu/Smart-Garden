@@ -1,7 +1,6 @@
 package com.SmartGarden.SmartGarden.service.impl;
 
 
-import com.SmartGarden.SmartGarden.model.Garden;
 import com.SmartGarden.SmartGarden.model.Sensor;
 import com.SmartGarden.SmartGarden.model.TempData;
 import com.SmartGarden.SmartGarden.repository.TempRepository;
@@ -11,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -23,8 +23,13 @@ public class TempServiceImpl implements TempService {
     private SensorService sensorService;
 
     @Override
-    public boolean addTempData(TempData tempData) {
+    public boolean addTempData(TempData tempData,int sensorId) {
         try {
+            Sensor tmpSensor=sensorService.getSensorBySensorId(sensorId);
+            if(tmpSensor==null)
+                return false;
+            tempData.setSensor(tmpSensor);
+            tempData.setSendTime(new Date());
             tempRepository.save(tempData);
             return true;
         }catch (Exception e){

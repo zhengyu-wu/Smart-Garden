@@ -2,6 +2,8 @@ package com.SmartGarden.SmartGarden.model;
 
 
 import lombok.Data;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 
@@ -36,6 +38,7 @@ public class Sensor {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "Garden")
+    @NotFound(action = NotFoundAction.IGNORE)
     private Garden garden;
 
     public Garden getGarden() {

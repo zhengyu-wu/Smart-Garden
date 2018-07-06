@@ -3,7 +3,6 @@ package com.SmartGarden.SmartGarden.service.impl;
 
 import com.SmartGarden.SmartGarden.model.HumiData;
 import com.SmartGarden.SmartGarden.model.Sensor;
-import com.SmartGarden.SmartGarden.model.TempData;
 import com.SmartGarden.SmartGarden.repository.HumiRepository;
 import com.SmartGarden.SmartGarden.service.HumiService;
 import com.SmartGarden.SmartGarden.service.SensorService;
@@ -11,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -24,8 +24,14 @@ public class HumiServiceImpl implements HumiService {
 
 
     @Override
-    public boolean addHumiData(HumiData humiData) {
+    public boolean addHumiData(HumiData humiData,int sensorId) {
         try{
+            Sensor tmpSensor=null;
+            tmpSensor=sensorService.getSensorBySensorId(sensorId);
+            if(tmpSensor==null)
+                return false;
+            humiData.setSendTime(new Date());
+            humiData.setSensor(tmpSensor);
             humiRepository.save(humiData);
             return true;
         }catch (Exception e){
