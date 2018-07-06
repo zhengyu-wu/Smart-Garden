@@ -19,11 +19,6 @@ public class GardenController {
     @Autowired
     private GardenService gardenService;
 
-    @ResponseBody
-    @PostMapping("/addGarden")
-    public boolean addGarden(Garden garden){
-        return gardenService.addGarden(garden);
-    }
 
     @ResponseBody
     @PostMapping("/addGardenWithUserId")

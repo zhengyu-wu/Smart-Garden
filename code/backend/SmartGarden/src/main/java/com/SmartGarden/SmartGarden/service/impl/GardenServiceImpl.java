@@ -25,16 +25,6 @@ public class GardenServiceImpl implements GardenService {
         return gardenRepository.findByUser_UserId(userId);
     }
 
-    @Override
-    public boolean addGarden(Garden garden) {
-        try {
-            gardenRepository.save(garden);
-            return true;
-        }
-        catch (Exception e){
-            return false;
-        }
-    }
 
     @Override
     public boolean deleteByGardenId(int gardenId) {
