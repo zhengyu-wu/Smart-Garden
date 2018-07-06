@@ -9,7 +9,7 @@ import java.util.List;
 *
 * */
 public interface HumiService {
-    boolean addHumiData(HumiData humiData);
+    boolean addHumiData(HumiData humiData,int sensorId);
     boolean deleteByHumiDataId(Integer humiDataId);
     List<HumiData> getLast20DataBySensorId(int sensorId);
     List<HumiData> getLastHumiDataByGardenId(int gardenId);

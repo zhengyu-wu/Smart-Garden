@@ -28,15 +28,15 @@ public class TempDataController {
     }
 
     @ResponseBody
-    @GetMapping("/getLastTempDateByGardenId")
+    @GetMapping("/getLastTempDataByGardenId")
     public List<TempData> getLastTempDataByGardenId(int gardenId){
         return tempService.getLastTempDataByGardenId(gardenId);
     }
 
     @ResponseBody
-    @PostMapping("/addTempData")
-    public boolean addTempData(TempData tempData){
-        return tempService.addTempData(tempData);
+    @PostMapping("/addTempDataWithSensorId")
+    public boolean addTempData(TempData tempData,int sensorId){
+        return tempService.addTempData(tempData,sensorId);
     }
 
     @ResponseBody

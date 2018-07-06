@@ -37,6 +37,10 @@ public class GardenController {
     public List<Garden> getWithUserId(int userId) {return gardenService.getGardenByUserId(userId);}
 
     @ResponseBody
+    @GetMapping("/getByGardenId")
+    public Garden getWithGardenId(int gardenId){return gardenService.getGardenByGardenId(gardenId);}
+
+    @ResponseBody
     @PostMapping("/deleteByUserId")
     public boolean deleteByUserId(int userId) {return gardenService.deleteByUserId(userId);}
 
