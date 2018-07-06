@@ -12,7 +12,7 @@ import java.util.List;
 * */
 
 public interface TempService {
-    boolean addTempData(TempData tempData);
+    boolean addTempData(TempData tempData,int sensorId);
     boolean deleteByTempDataId(Integer tempDataId);
     List<TempData> getLast20DataBySensorId(int sensorId);
     List<TempData> getLastTempDataByGardenId(int gardenId);
