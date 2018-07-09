@@ -20,6 +20,8 @@
 })("h337", this, function () {
 
 // Heatmap Config stores default values and will be merged with instance config
+
+
 var HeatmapConfig = {
   defaultRadius: 40,
   defaultRenderer: 'canvas2d',
@@ -722,3 +724,4 @@ return heatmapFactory;
 
 
 });
+

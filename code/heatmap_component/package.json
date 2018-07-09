@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bizcharts": "^3.1.10",
     "d3": "^5.5.0",
     "d3-hexbin": "^0.2.2",
     "d3-hierarchy": "^1.1.6",
