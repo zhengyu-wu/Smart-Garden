@@ -1,4 +1,5 @@
 import { LOAD_USER_FULFILLED, LOAD_USER_PENDING, LOAD_USER_REJECTED } from '../constants';
+import {Toast} from 'antd-mobile-rn';
 
 const initialState={
     isFetching: false,
@@ -9,20 +10,21 @@ const initialState={
 const user = (state = initialState, action={}) => {
     switch (action.type) {
         case LOAD_USER_FULFILLED:
-            console.log("here!in fulfilled"+JSON.stringify(action.payload.data));
+            Toast.success("login successfully",1);
             return {
                 isFetching:false,
                 error:null,
                 user:action.payload.data
             };
         case LOAD_USER_PENDING:
+            Toast.info("processing",1);
             return {
                 isFetching: true,
                 error: null,
                 user: {}
             };
         case LOAD_USER_REJECTED:
-            console.log("here! in rejected"+action.payload.data);
+            Toast.fail("Login fails",1);
             return {
                 isFetching: false,
                 error: action.payload.response.data,

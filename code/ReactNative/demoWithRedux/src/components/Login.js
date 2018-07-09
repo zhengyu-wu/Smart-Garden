@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View ,Button,TextInput} from 'react-native';
+import { Text, View ,TextInput} from 'react-native';
 import { connect } from 'react-redux';
 import {get_user} from '../actions';
+import {Button,List,InputItem,Toast} from 'antd-mobile-rn';
 
 class Login extends React.Component{
     constructor(){
@@ -18,20 +19,36 @@ class Login extends React.Component{
         return(
             <View >
                 <Text h4>Student Login</Text>
-                <TextInput
-                    style={{height:40}}
-                    placeholder={"Type the email"}
-                    onChangeText={(text)=>this.setState({"email":text})}/>
-                <TextInput
-                    style={{height:40}}
-                    placeholder={"Type the password"}
-                    onChangeText={(text)=>this.setState({"password":text})}/>
+                <List>
+                    <InputItem
+                        clear
+                        value={this.state.email}
+                        onChange={(value)=>{
+                        this.setState({email:value})
+                        }
+                        }
+                        placeholder={"Email"}
+                    >
+                    邮箱
+                    </InputItem>
+                    <InputItem
+                        clear
+                        type={"password"}
+                        value={this.state.password}
+                        onChange={
+                            (value)=>{
+                                this.setState({password:value})
+                        }
+                        }
+                        placeholder={"password"}>
+                        密码
+                    </InputItem>
+                </List>
                 <Button
-                    onPress={() => get_user(this.state.email,this.state.password)}
-                    buttonStyle={[{ marginBottom: 5, marginTop: 5 }]}
-                    title="Login"
-                />
-                <Text h4>{this.props.user.user.email}</Text>
+                    type={'primary'}
+                    onClick={() => get_user(this.state.email,this.state.password)}>
+                    Login
+                </Button>
             </View>
         )
     }
