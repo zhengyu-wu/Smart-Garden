@@ -8,6 +8,7 @@ import { Field, reduxForm } from 'redux-form'
 
 import axios from "axios/index";
 
+import  jwt from 'jsonwebtoken'
 import { Link } from 'react-router-dom'
 
 const { Header,Content,Footer,Sider } = Layout;
@@ -28,6 +29,11 @@ class LoginPage extends Component {
                 }).then((response) => {
                     console.log(values.email,values.password);
                     if(typeof(response.data.userId)!='undefined'){
+                        const token = jwt.sign({
+                            id: response.data.userId,
+                            username: values.email
+                        }, config.jwtSecret);
+                        res.json({ token })
                         console.log(response.data.userId);
                         //redux保存用户信息
                         
