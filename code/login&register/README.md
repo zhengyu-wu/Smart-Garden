@@ -1,4 +1,14 @@
-## How to run
-npm install && npm run start
+# Login Page
 
-localhost:3000/sign-in
+react + redux
+
+
+## Installation
+
+```sh
+npm install
+npm start
+```
+
+
+
