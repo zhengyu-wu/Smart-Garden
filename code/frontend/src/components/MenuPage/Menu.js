@@ -6,8 +6,8 @@ import createHashHistory from 'history/createBrowserHistory'
 
 import WrappedLoginPage from '../LoginPage/LoginPage'
 import WrappedRegisterPage from '../RegisterPage/RegisterPage'
-import WrappedUserInfoPage from '../UserInfoPage/UserInfoPage'
 import WrappedAdminUserPage from '../AdminPage/AdminPage'
+import UserPage from '../UserPage/UserPage'
 
 import { Layout, Menu,Icon } from 'antd';
 const { Header,Content,Footer,Sider } = Layout;
@@ -49,7 +49,7 @@ class RouterEntrance extends Component{
             <Router history={hashHistory}>
                 <div>
                     <Layout>
-                    <Sider>
+                    <Sider style={{minHeight:1000}}>
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1">
                         <Icon type="user" />
@@ -59,13 +59,13 @@ class RouterEntrance extends Component{
                         <Icon type="user" />
                         <span className="nav-text"><Link to={'/register'}>RegisterPage</Link></span>
                     </Menu.Item>
-                    <Menu.Item key="3">
-                        <Icon type="user" />
-                        <span className="nav-text"><Link to={'/userInfo'}>UserInfoPage</Link></span>
-                    </Menu.Item>
                     <Menu.Item key="4">
                         <Icon type="user" />
                         <span className="nav-text"><Link to={'/admin'}>AdminUserPage</Link></span>
+                    </Menu.Item>
+                    <Menu.Item key="5">
+                        <Icon type="user" />
+                        <span className="nav-text"><Link to={'/user'}>UserPage</Link></span>
                     </Menu.Item>
                     </Menu>
                     </Sider>
@@ -73,8 +73,8 @@ class RouterEntrance extends Component{
                         <Switch>
                         <Route path='/login' render={()=><WrappedLoginPage/>}/>
                         <Route path='/register' render={()=><WrappedRegisterPage/>}/>
-                        <Route path='/userInfo' render={()=><WrappedUserInfoPage/>}/>
                         <Route path='/admin' render={()=><WrappedAdminUserPage/>}/>
+                        <Route path='/user' render={()=><UserPage/>}/>
                         <WrappedLoginPage/>
                         </Switch>
                         
