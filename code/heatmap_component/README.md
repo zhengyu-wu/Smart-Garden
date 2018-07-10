@@ -19,4 +19,4 @@ import { Chart, Geom, Tooltip, Legend,Guide } from 'bizcharts';
 <br></br>
 ##Result
 
-![](/Users/wuzhengyu/Desktop/Smart-Garden/code/heatmap_component/pic.png)
+![](https://github.com/GEORGE5961/Smart-Garden/blob/master/code/heatmap_component/pic.png?raw=true)
