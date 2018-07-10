@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View ,TextInput} from 'react-native';
 import { connect } from 'react-redux';
 import {get_user} from '../actions';
-import {Button,List,InputItem,Toast} from 'antd-mobile-rn';
+import {Button,List,InputItem} from 'antd-mobile-rn';
 
 class Login extends React.Component{
     constructor(){
@@ -12,10 +12,8 @@ class Login extends React.Component{
             password:""
         };
     }
-
     render(){
         const {get_user} = this.props;
-        console.log("in login"+JSON.stringify(this.props));
         return(
             <View >
                 <Text h4>Student Login</Text>
@@ -24,8 +22,7 @@ class Login extends React.Component{
                         clear
                         value={this.state.email}
                         onChange={(value)=>{
-                        this.setState({email:value})
-                        }
+                        this.setState({email:value})}
                         }
                         placeholder={"Email"}
                     >
@@ -37,8 +34,7 @@ class Login extends React.Component{
                         value={this.state.password}
                         onChange={
                             (value)=>{
-                                this.setState({password:value})
-                        }
+                                this.setState({password:value})}
                         }
                         placeholder={"password"}>
                         密码
@@ -60,4 +56,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, { get_user })(Login);
+export default connect(mapStateToProps, {get_user})(Login);
