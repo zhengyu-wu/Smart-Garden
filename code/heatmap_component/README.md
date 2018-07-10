@@ -16,8 +16,6 @@ In App.js file:
 import { Chart, Geom, Tooltip, Legend,Guide } from 'bizcharts';
 
 ```
-
-<br></br>
 ## Result
 ![](https://github.com/GEORGE5961/Smart-Garden/blob/master/code/heatmap_component/pic.png?raw=true)
 
