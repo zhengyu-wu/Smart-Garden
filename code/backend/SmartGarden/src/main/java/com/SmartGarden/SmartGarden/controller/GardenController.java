@@ -19,11 +19,6 @@ public class GardenController {
     @Autowired
     private GardenService gardenService;
 
-    @ResponseBody
-    @PostMapping("/addGarden")
-    public boolean addGarden(Garden garden){
-        return gardenService.addGarden(garden);
-    }
 
     @ResponseBody
     @PostMapping("/addGardenWithUserId")
@@ -42,6 +37,12 @@ public class GardenController {
     public List<Garden> getWithUserId(int userId) {return gardenService.getGardenByUserId(userId);}
 
     @ResponseBody
+    @GetMapping("/getByGardenId")
+    public Garden getWithGardenId(int gardenId){return gardenService.getGardenByGardenId(gardenId);}
+
+    @ResponseBody
     @PostMapping("/deleteByUserId")
-    public boolean deleteByUserId(int userId) {return gardenService.deleteByGardenId(userId);}
+    public boolean deleteByUserId(int userId) {return gardenService.deleteByUserId(userId);}
+
+
 }

@@ -13,7 +13,6 @@ import java.util.List;
 * */
 public interface GardenService {
     List<Garden> getGardenByUserId(int userId);
-    boolean addGarden(Garden garden);
     boolean deleteByGardenId(int gardenId);
     boolean deleteByUserId(int userId);
     boolean addGardenWithUser(Garden garden,int userId);

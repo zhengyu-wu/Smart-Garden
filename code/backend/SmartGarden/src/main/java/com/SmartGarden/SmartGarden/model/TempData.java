@@ -2,6 +2,8 @@ package com.SmartGarden.SmartGarden.model;
 
 
 import lombok.Data;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,6 +26,7 @@ public class TempData {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "Sensor")
+    @NotFound(action = NotFoundAction.IGNORE)
     private Sensor sensor;
 
     @Column(nullable = false)
@@ -78,11 +81,11 @@ public class TempData {
         this.temperature = temperature;
     }
 
-    public Date getTime() {
+    public Date getSendTime() {
         return sendTime;
     }
 
-    public void setTime(Date sendTime) {
+    public void setSendTime(Date sendTime) {
         this.sendTime = sendTime;
     }
 }

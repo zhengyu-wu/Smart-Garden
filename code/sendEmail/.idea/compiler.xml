@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sendEmail" />
         <module name="sg" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="sendEmail" target="1.5" />
       <module name="sg" target="1.5" />
     </bytecodeTargetLevel>
   </component>

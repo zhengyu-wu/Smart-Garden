@@ -36,11 +36,6 @@ public class SensorController {
     @GetMapping("/getSensorByGardenId")
     public List<Sensor> getSensorByGardenId(int gardenId){return sensorService.getByGardenId(gardenId);}
 
-    @ResponseBody
-    @PostMapping("/addSensor")
-    public boolean addSensor(Sensor sensor){
-        return sensorService.addSensor(sensor);
-    }
 
     @ResponseBody
     @PostMapping("/addSensorWithGardenId")
