@@ -50,7 +50,6 @@ const columns = [{
   }
   
   const expandedRowRender = record => <p>{record.description}</p>;
-  const title = () => 'User Table';
   const showHeader = true;
   const footer = () => 'User Table';
   const scroll = { y: 240 };
@@ -82,10 +81,6 @@ class AdminUserPage extends Component{
 
   handleExpandChange = (enable) => {
     this.setState({ expandedRowRender: enable ? expandedRowRender : undefined });
-  }
-
-  handleTitleChange = (enable) => {
-    this.setState({ title: enable ? title : undefined });
   }
 
   handleHeaderChange = (enable) => {
@@ -122,9 +117,6 @@ class AdminUserPage extends Component{
             </FormItem>
             <FormItem label="loading">
               <Switch checked={state.loading} onChange={this.handleToggle('loading')} />
-            </FormItem>
-            <FormItem label="Title">
-              <Switch checked={!!state.title} onChange={this.handleTitleChange} />
             </FormItem>
             <FormItem label="Column Header">
               <Switch checked={!!state.showHeader} onChange={this.handleHeaderChange} />
