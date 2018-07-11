@@ -8,7 +8,7 @@ import { Field, reduxForm } from 'redux-form'
 //axios
 import axios from "axios/index";
 //router
-import { Link, Route } from 'react-router-dom'
+import { Link, Route, withRouter } from 'react-router-dom'
 import {save_user} from '../../actions'
 import { connect } from 'react-redux';
 
@@ -50,6 +50,9 @@ class LoginPage extends Component {
                                         phone: response.data.phone
                                     });
                         save_user(response.data.userId,response.data.email,response.data.phone);
+                        localStorage.setItem('the state', this.state);
+                        const a = localStorage.getItem('the state');
+                        console.log('a:', a);
                         console.log('state:', this.state);
 
                         /*
@@ -63,6 +66,7 @@ class LoginPage extends Component {
                         }
                         */
                         alert('successfully log in');
+                        this.props.history.push('/user');
                     }
                     else{
                         alert('log in failed');
@@ -154,4 +158,4 @@ const mapStatetoProps = (state) => {
 };
 
 const WrappedLoginPage = Form.create()(LoginPage);
-export default connect(mapStatetoProps, {save_user})(WrappedLoginPage);
+export default withRouter(connect(mapStatetoProps, {save_user})(WrappedLoginPage));

@@ -8,6 +8,12 @@ const intialState = {
     email : ''
 };
 
+const cacheHits = localStorage.getItem('the state');
+if (cacheHits)
+{
+    this.state = cacheHits;
+}
+
 const user = (state = intialState, action = {}) => {
     switch (action.type) {
         case SAVE_USER:
