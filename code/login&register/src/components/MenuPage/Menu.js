@@ -6,9 +6,10 @@ import createHashHistory from 'history/createBrowserHistory'
 
 import WrappedLoginPage from '../LoginPage/LoginPage'
 import WrappedRegisterPage from '../RegisterPage/RegisterPage'
-import WrappedUserInfoPage from '../UserInfoPage/UserInfoPage'
-import { Layout, Menu,Icon } from 'antd';
+import WrappedAdminUserPage from '../AdminPage/AdminPage'
+import UserPage from '../UserPage/UserPage'
 
+import { Layout, Menu,Icon } from 'antd';
 const { Header,Content,Footer,Sider } = Layout;
 
 class RouterEntrance extends Component{
@@ -32,23 +33,11 @@ class RouterEntrance extends Component{
         var hashHistory = createHashHistory();
 
         return(
-            {/*
-            <Router history={hashHistory}>
-                <div>
-                <li><Link to={'/login'}>LoginPage</Link></li>
-                <li><Link to={'/register'}>RegisterPage</Link></li>
-                <Switch>
-                    <Route path='/login' render={()=><WrappedLoginPage/>}/>
-                    <Route path='/register' render={()=><WrappedRegisterPage/>}/>
-                </Switch>
-                </div>
-            </Router>
-            */},
             
             <Router history={hashHistory}>
                 <div>
                     <Layout>
-                    <Sider>
+                    <Sider style={{minHeight:1000}}>
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1">
                         <Icon type="user" />
@@ -58,18 +47,22 @@ class RouterEntrance extends Component{
                         <Icon type="user" />
                         <span className="nav-text"><Link to={'/register'}>RegisterPage</Link></span>
                     </Menu.Item>
-                    <Menu.Item key="3">
+                    <Menu.Item key="4">
                         <Icon type="user" />
-                        <span className="nav-text"><Link to={'/userInfo'}>UserInfoPage</Link></span>
+                        <span className="nav-text"><Link to={'/admin'}>AdminUserPage</Link></span>
+                    </Menu.Item>
+                    <Menu.Item key="5">
+                        <Icon type="user" />
+                        <span className="nav-text"><Link to={'/user'}>UserPage</Link></span>
                     </Menu.Item>
                     </Menu>
                     </Sider>
                     <Content>
-                        
                         <Switch>
                         <Route path='/login' render={()=><WrappedLoginPage/>}/>
                         <Route path='/register' render={()=><WrappedRegisterPage/>}/>
-                        <Route path='/userInfo' render={()=><WrappedUserInfoPage/>}/>
+                        <Route path='/admin' render={()=><WrappedAdminUserPage/>}/>
+                        <Route path='/user' render={()=><UserPage/>}/>
                         <WrappedLoginPage/>
                         </Switch>
                         
