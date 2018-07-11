@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View ,Button,TextInput} from 'react-native';
+import { Text, View ,TextInput,Image} from 'react-native';
 import { connect } from 'react-redux';
 import {get_user} from '../actions';
+import {Button,List,InputItem} from 'antd-mobile-rn';
 
 class Login extends React.Component{
     constructor(){
@@ -11,27 +12,42 @@ class Login extends React.Component{
             password:""
         };
     }
-
     render(){
         const {get_user} = this.props;
-        console.log("in login"+JSON.stringify(this.props));
         return(
             <View >
-                <Text h4>Student Login</Text>
-                <TextInput
-                    style={{height:40}}
-                    placeholder={"Type the email"}
-                    onChangeText={(text)=>this.setState({"email":text})}/>
-                <TextInput
-                    style={{height:40}}
-                    placeholder={"Type the password"}
-                    onChangeText={(text)=>this.setState({"password":text})}/>
-                <Button
-                    onPress={() => get_user(this.state.email,this.state.password)}
-                    buttonStyle={[{ marginBottom: 5, marginTop: 5 }]}
-                    title="Login"
+                <Image 
+                    source={require('../assets/logo.png')}
+                    style={{left:70,bottom:40,width: 220, height: 220, alignItems:'center',justifyContent: 'center'}}
                 />
-                <Text h4>{this.props.user.user.email}</Text>
+                <List>
+                    <InputItem
+                        clear
+                        value={this.state.email}
+                        onChange={(value)=>{
+                        this.setState({email:value})}
+                        }
+                        placeholder={"Email"}
+                    >
+                    邮箱
+                    </InputItem>
+                    <InputItem
+                        clear
+                        type={"password"}
+                        value={this.state.password}
+                        onChange={
+                            (value)=>{
+                                this.setState({password:value})}
+                        }
+                        placeholder={"password"}>
+                        密码
+                    </InputItem>
+                </List>
+                <Button 
+                    type={'primary'}
+                    onClick={() => get_user(this.state.email,this.state.password)}>
+                    Login
+                </Button>
             </View>
         )
     }
@@ -43,4 +59,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, { get_user })(Login);
+export default connect(mapStateToProps, {get_user})(Login);

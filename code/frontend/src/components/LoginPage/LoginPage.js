@@ -8,6 +8,7 @@ import { Field, reduxForm } from 'redux-form'
 
 import axios from "axios/index";
 
+import { Link } from 'react-router-dom'
 
 const { Header,Content,Footer,Sider } = Layout;
 const ButtonGroup = Button.Group;
@@ -59,6 +60,7 @@ class LoginPage extends Component {
         return (
         <div id="login">
         <Layout>
+            {/*
             <Header style={{ background: '#000', padding: 0 }}>
             <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>
                 <Icon
@@ -68,6 +70,7 @@ class LoginPage extends Component {
                 </span>
                 <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>Login</span>
             </Header>
+            */}
             <div style={{padding:80}}></div>
             <Content style={{minHeight:900}}>
             <center>
@@ -121,17 +124,10 @@ class LoginPage extends Component {
             <center>
             <Breadcrumb style={{ margin: '12px 0' }}>
                 <Breadcrumb.Item href=" ">Forgot password</Breadcrumb.Item>
-                <Breadcrumb.Item href=" ">Sign up now</Breadcrumb.Item>
+                <Link to="/register">Register</Link>
             </Breadcrumb>
             </center>
             </Content>
-            <Footer>
-            <center>
-            <div className="sign-in__actions clearfix">
-                <Icon type="github" />  <Icon type="google" />  <Icon type="twitter" />  <Icon type="facebook" />
-            </div>
-            </center>
-        </Footer>
         </Layout>
         
         </div>
