@@ -11,12 +11,13 @@ class Login extends React.Component{
             email:"",
             password:""
         };
+        //todo 下面的图片采用flex布局
     }
     render(){
         const {get_user} = this.props;
         return(
             <View >
-                <Image 
+                <Image
                     source={require('../assets/logo.png')}
                     style={{left:70,bottom:40,width: 220, height: 220, alignItems:'center',justifyContent: 'center'}}
                 />
@@ -25,11 +26,11 @@ class Login extends React.Component{
                         clear
                         value={this.state.email}
                         onChange={(value)=>{
-                        this.setState({email:value})}
+                            this.setState({email:value})}
                         }
                         placeholder={"Email"}
                     >
-                    邮箱
+                        邮箱
                     </InputItem>
                     <InputItem
                         clear
@@ -43,7 +44,7 @@ class Login extends React.Component{
                         密码
                     </InputItem>
                 </List>
-                <Button 
+                <Button
                     type={'primary'}
                     onClick={() => get_user(this.state.email,this.state.password)}>
                     Login

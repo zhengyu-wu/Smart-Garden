@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text,View} from 'react-native';
 import {TabBar,SearchBar} from 'antd-mobile-rn';
+import UserCard from './User';
+
 
 class TabBars extends React.Component<any, any> {
     constructor(props: any) {
@@ -31,6 +33,7 @@ class TabBars extends React.Component<any, any> {
                 unselectedTintColor="#949494"
                 tintColor="#33A3F4"
                 barTintColor="#ccc"
+                tabBarPosition={'bottom'}
             >
                 <TabBar.Item
                     title="Life"
@@ -67,7 +70,7 @@ class TabBars extends React.Component<any, any> {
                     selected={this.state.selectedTab === 'yellowTab'}
                     onPress={() => this.onChangeTab('yellowTab')}
                 >
-                    {this.renderContent('My Tab')}
+                   <UserCard/>
                 </TabBar.Item>
             </TabBar>
         );
