@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View ,TextInput} from 'react-native';
+import { Text, View ,TextInput,Image} from 'react-native';
 import { connect } from 'react-redux';
 import {get_user} from '../actions';
 import {Button,List,InputItem} from 'antd-mobile-rn';
@@ -16,7 +16,10 @@ class Login extends React.Component{
         const {get_user} = this.props;
         return(
             <View >
-                <Text h4>Student Login</Text>
+                <Image 
+                    source={require('../assets/logo.png')}
+                    style={{left:70,bottom:40,width: 220, height: 220, alignItems:'center',justifyContent: 'center'}}
+                />
                 <List>
                     <InputItem
                         clear
@@ -40,7 +43,7 @@ class Login extends React.Component{
                         密码
                     </InputItem>
                 </List>
-                <Button
+                <Button 
                     type={'primary'}
                     onClick={() => get_user(this.state.email,this.state.password)}>
                     Login
