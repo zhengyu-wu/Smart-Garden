@@ -6,9 +6,9 @@ import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
-import SegmentedControl from './src/components/Chart';
+import Segment from './src/components/Chart';
 
-//const store=createStore(rootReducer, {}, applyMiddleware(thunk, promise()));
+const store=createStore(rootReducer, {}, applyMiddleware(thunk, promise()));
 
 export default class App extends React.Component {
   render() {
