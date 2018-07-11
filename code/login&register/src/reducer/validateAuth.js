@@ -1,9 +1,8 @@
 import * as types from '../constants/ActionTypes'
 
-import {SET_CURRENT_USER} from "../constants/ActionTypes";
+
 
 const initialState = {
-    isAuthenticated:false,
     result:false,
     loading:false,
     validate:false,

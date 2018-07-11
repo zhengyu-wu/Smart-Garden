@@ -11,4 +11,12 @@ export function auth(values) {
       }
 }
 
+export const save_user = (userId, email, phone) => {
+  return {
+    type: types.SAVE_USER,
+    userId,
+    email,
+    phone
+  }
+};
 

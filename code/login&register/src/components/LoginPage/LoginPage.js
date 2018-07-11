@@ -1,22 +1,34 @@
 import React, { Component,PropTypes } from 'react';
-
+//antd
 import {Layout, Input, Button, Form, Icon, Row, Col, Breadcrumb} from 'antd';
 import 'antd/dist/antd.css';
 import FormItem from 'antd/lib/form/FormItem';
-
+//redux
 import { Field, reduxForm } from 'redux-form'
-
+//axios
 import axios from "axios/index";
+//router
+import { Link, Route } from 'react-router-dom'
+import {save_user} from '../../actions'
+import { connect } from 'react-redux';
 
-import  jwt from 'jsonwebtoken'
-import { Link } from 'react-router-dom'
 
 const { Header,Content,Footer,Sider } = Layout;
 const ButtonGroup = Button.Group;
 
 class LoginPage extends Component {
 
+    constructor(){
+        super();
+        this.state={
+            userId: -1,
+            email: "",
+            phone: ''
+        };
+    }
+
     handleSubmit = (e) => {
+        const {save_user} = this.props;
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
@@ -27,16 +39,19 @@ class LoginPage extends Component {
                         password:values.password
                     }
                 }).then((response) => {
-                    console.log(values.email,values.password);
+                    console.log('login information:',values.email,values.password);
+                    //console.log('response:',response);
                     if(typeof(response.data.userId)!='undefined'){
-                        const token = jwt.sign({
-                            id: response.data.userId,
-                            username: values.email
-                        }, config.jwtSecret);
-                        res.json({ token })
-                        console.log(response.data.userId);
                         //redux保存用户信息
-                        
+                        console.log('login userId:',response.data.userId);
+                        console.log('email:', response.data.email);
+                        this.setState({userId: response.data.userId,
+                                        email: response.data.email,
+                                        phone: response.data.phone
+                                    });
+                        save_user(response.data.userId,response.data.email,response.data.phone);
+                        console.log('state:', this.state);
+
                         /*
                         if(response.data.getUserType()==1){
                             //用redux保存登录状态和信息
@@ -66,20 +81,10 @@ class LoginPage extends Component {
         return (
         <div id="login">
         <Layout>
-            {/*
-            <Header style={{ background: '#000', padding: 0 }}>
-            <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>
-                <Icon
-                className="trigger"
-                style={{cursor: 'pointer'}}
-                />
-                </span>
-                <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>Login</span>
-            </Header>
-            */}
             <div style={{padding:80}}></div>
-            <Content style={{minHeight:900}}>
+            <Content height={window.innerHeight}>
             <center>
+            <h1>Login</h1>
             <Form className="login-form" onSubmit={this.handleSubmit}>
                 <FormItem>
                 <Row>
@@ -142,6 +147,11 @@ class LoginPage extends Component {
     }
 }
 
-const WrappedLoginPage = Form.create()(LoginPage);
-export default WrappedLoginPage
+const mapStatetoProps = (state) => {
+    return {
+        user: state.user
+    };
+};
 
+const WrappedLoginPage = Form.create()(LoginPage);
+export default connect(mapStatetoProps, {save_user})(WrappedLoginPage);
