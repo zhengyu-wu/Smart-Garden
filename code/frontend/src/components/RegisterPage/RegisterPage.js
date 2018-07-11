@@ -63,19 +63,9 @@ class RegisterPage extends Component{
         return(
         <div id="login">
             <Layout>
-            {/*
-            <Header style={{ background: '#000', padding: 0 }}>
-                <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>
-                <Icon
-                    className="trigger"
-                    style={{cursor: 'pointer'}}
-                />
-                </span>
-                <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>Register</span>
-            </Header>
-            */}
             <div style={{padding:80}}></div>
-            <Content style={{minHeight:900}}>
+            <Content>
+                <center><h1>Register</h1></center>
                 <Form className="login-form" onSubmit={this.handleSubmit}>
                 <FormItem
                     {...formItemLayout} 

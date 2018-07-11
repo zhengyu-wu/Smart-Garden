@@ -1,14 +1,18 @@
 import React, { Component,PropTypes } from 'react';
-
+//antd
 import {Layout, Input, Button, Form, Icon, Row, Col, Breadcrumb} from 'antd';
 import 'antd/dist/antd.css';
 import FormItem from 'antd/lib/form/FormItem';
-
+//redux
 import { Field, reduxForm } from 'redux-form'
-
+import config from '../config'
+import jwt from 'jsonwebtoken'
+//axios
 import axios from "axios/index";
+//router
+import { Link, Route } from 'react-router-dom'
 
-import { Link } from 'react-router-dom'
+
 
 const { Header,Content,Footer,Sider } = Layout;
 const ButtonGroup = Button.Group;
@@ -26,11 +30,25 @@ class LoginPage extends Component {
                         password:values.password
                     }
                 }).then((response) => {
-                    console.log(values.email,values.password);
+                    console.log('login information:',values.email,values.password);
+                    console.log('response:',response);
                     if(typeof(response.data.userId)!='undefined'){
-                        console.log(response.data.userId);
-                        //redux保存用户信息
+                        console.log('login userId:',response.data.userId);
                         
+                        //redux保存用户信息
+                        /*
+                        const token = jwt.sign({
+                            id : response.data.get("userId"),
+                            email : response.data.get("email"),
+                            password : response.data.get("password"),
+                            phone : response.data.get("phone"),
+                            userstate : response.data.get("userState"),
+                            usertype : response.data.get("userType"),
+                            username : response.data.get("username")
+                            }, config.jwtSecret);
+                            response.data.json({ token });
+                        */
+
                         /*
                         if(response.data.getUserType()==1){
                             //用redux保存登录状态和信息
@@ -60,20 +78,10 @@ class LoginPage extends Component {
         return (
         <div id="login">
         <Layout>
-            {/*
-            <Header style={{ background: '#000', padding: 0 }}>
-            <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>
-                <Icon
-                className="trigger"
-                style={{cursor: 'pointer'}}
-                />
-                </span>
-                <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>Login</span>
-            </Header>
-            */}
             <div style={{padding:80}}></div>
-            <Content style={{minHeight:900}}>
+            <Content height={window.innerHeight}>
             <center>
+            <h1>Login</h1>
             <Form className="login-form" onSubmit={this.handleSubmit}>
                 <FormItem>
                 <Row>
