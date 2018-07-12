@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import RootStack from './src/components/RootStack';
 
+
 const store=createStore(rootReducer, {}, applyMiddleware(thunk, promise()));
 
 export default class App extends React.Component {

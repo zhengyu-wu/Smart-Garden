@@ -29,6 +29,10 @@ module.exports = {
                 test: /\.css$/, 
                 loader: 'style!css'
             },
+            {
+                test : /\.json$/,
+                loader : 'json'
+            },
             
 
 
@@ -49,6 +53,7 @@ module.exports = {
         ]
     },
     devServer: {
-        port: 3000
+        port: 3000,
+        historyApiFallback: true,
     }
 }
