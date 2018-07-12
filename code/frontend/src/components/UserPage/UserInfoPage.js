@@ -62,7 +62,7 @@ class UserInfoPage extends Component{
             <div id="userInfo">
                 <Layout>
                 <div style={{padding:80}}></div>
-                <Content style={{minHeight:900}}>
+                <Content height={window.innerHeight}>
                     <Form className="userInfo-form" onSubmit={this.handleSubmit}>
                         <FormItem
                         {...formItemLayout} 

@@ -111,7 +111,7 @@ class AdminUserPage extends Component{
     return (
       <div>
         <div className="components-table-demo-control-bar">
-          <Form layout="inline">
+          <Form layout="inline" height={window.innerHeight}>
             <FormItem label="Bordered">
               <Switch checked={state.bordered} onChange={this.handleToggle('bordered')} />
             </FormItem>

@@ -10,7 +10,7 @@ const cols = {
 class LinechartPage extends Component {
 render() {
 return (
-        <Chart height={400} data={data} scale={cols} forceFit>
+        <Chart height={window.innerHeight} padding={[ 60, 60, 100, 60 ]} data={data} scale={cols} forceFit>
         <Axis name="year" />
         <Axis name="value" />
         <Tooltip crosshairs={{type : "y"}}/>

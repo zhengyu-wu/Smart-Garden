@@ -33,18 +33,6 @@ class RouterEntrance extends Component{
         var hashHistory = createHashHistory();
 
         return(
-            {/*
-            <Router history={hashHistory}>
-                <div>
-                <li><Link to={'/login'}>LoginPage</Link></li>
-                <li><Link to={'/register'}>RegisterPage</Link></li>
-                <Switch>
-                    <Route path='/login' render={()=><WrappedLoginPage/>}/>
-                    <Route path='/register' render={()=><WrappedRegisterPage/>}/>
-                </Switch>
-                </div>
-            </Router>
-            */},
             
             <Router history={hashHistory}>
                 <div>

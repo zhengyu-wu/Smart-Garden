@@ -17,8 +17,8 @@ class UserHeatmapPage extends Component{
         return(
             
             <Layout>
-                
-                <Sider width={200} style={{ background: '#fff' , minHeight:900}}>
+                <Layout>
+                <Sider width={200} style={{ background: '#fff'}} height={window.innerHeight}>
                     <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} style={{textAlign:'left', minHeight: 500}}>
                         <Menu.Item key="1">
                             <Icon type="shop" />
@@ -37,9 +37,9 @@ class UserHeatmapPage extends Component{
                 <Content style={{ background: '#fff', padding: 0  }}>
                     {/*此处放热力图*/}
                     <HeatmapPage/>
-                
-                <Footer style={{ textAlign: 'center' }}>热力图</Footer>
                 </Content>
+                </Layout>
+                <Footer style={{ textAlign: 'center' }}>热力图</Footer>
             </Layout>
         );
     }
@@ -51,8 +51,8 @@ class UserLinechartPage extends Component{
         return(
             
             <Layout>
-                
-                <Sider width={200} style={{ background: '#fff' , minHeight:900}}>
+                <Layout>
+                <Sider width={200} style={{ background: '#fff'}} height={window.innerHeight}>
                     <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} style={{textAlign:'left', minHeight: 500}}>
                         <Menu.Item key="1">
                             <Icon type="shop" />
@@ -68,12 +68,12 @@ class UserLinechartPage extends Component{
                         </Menu.Item>
                     </Menu>
                 </Sider>
-                <Content style={{ background: '#fff', padding: 0  }}>
+                <Content style={{ background: '#fff', padding: 0  }} >
                     {/*此处放折线图*/}
                     <LinechartPage/>
-                
-                <Footer style={{ textAlign: 'center' }}>折线图</Footer>
                 </Content>
+                </Layout>
+                <Footer style={{ textAlign: 'center' }}>折线图</Footer>
             </Layout>
         );
     }
