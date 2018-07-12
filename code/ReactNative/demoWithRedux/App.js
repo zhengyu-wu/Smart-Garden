@@ -6,7 +6,8 @@ import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
-import Segment from './src/components/Chart';
+import RootStack from './src/components/RootStack';
+
 
 const store=createStore(rootReducer, {}, applyMiddleware(thunk, promise()));
 
@@ -14,7 +15,7 @@ export default class App extends React.Component {
   render() {
     return (
         <Provider store={store}>
-          <Root />
+          <RootStack/>
         </Provider>
     );
   }
