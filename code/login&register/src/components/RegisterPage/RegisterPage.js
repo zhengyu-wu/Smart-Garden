@@ -8,7 +8,7 @@ import axios from "axios/index";
 
 import { Field, reduxForm } from 'redux-form'
 
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 const { Header,Content,Footer,Sider } = Layout;
 
@@ -31,6 +31,7 @@ class RegisterPage extends Component{
                   axios.post('http://localhost:8080/users/addUser',params).then((res)=>{
                     console.log(res.data);
                     alert('register successfully');
+                    this.props.history.push('/login');
                     //更新redux信息
                   }).catch(err=>{
                     alert("unexpected error in register ");
@@ -175,4 +176,4 @@ class RegisterPage extends Component{
 }
 
 const WrappedRegisterPage = Form.create()(RegisterPage);
-export default WrappedRegisterPage;
+export default withRouter(WrappedRegisterPage);

@@ -13,6 +13,7 @@ import {save_user} from '../../actions'
 import { connect } from 'react-redux';
 
 
+
 const { Header,Content,Footer,Sider } = Layout;
 const ButtonGroup = Button.Group;
 
@@ -20,11 +21,12 @@ class LoginPage extends Component {
 
     constructor(){
         super();
-        this.state={
+        this.state = {
             userId: -1,
             email: "",
-            phone: ''
-        };
+            phone: '',
+            hasLogin:false,
+        }
     }
 
     handleSubmit = (e) => {
@@ -45,28 +47,32 @@ class LoginPage extends Component {
                         //redux保存用户信息
                         console.log('login userId:',response.data.userId);
                         console.log('email:', response.data.email);
+                        console.log('data:', response.data)
                         this.setState({userId: response.data.userId,
                                         email: response.data.email,
                                         phone: response.data.phone
                                     });
                         save_user(response.data.userId,response.data.email,response.data.phone);
-                        localStorage.setItem('the state', this.state);
-                        const a = localStorage.getItem('the state');
+                        localStorage.setItem('userID', this.state.userId);
+                        localStorage.setItem('userState', this.state.hasLogin);
+                        
+                        const a = localStorage.getItem('userID');
                         console.log('a:', a);
                         console.log('state:', this.state);
 
-                        /*
-                        if(response.data.getUserType()==1){
+                        
+                        if(response.data.userType==1){
                             //用redux保存登录状态和信息
+                            this.props.history.push('/admin');
                             //this.props.handleLoginSuccess(values.userName,'ADMIN');
                         }
                         else{
                             //用redux保存登录状态和信息
+                            this.props.history.push('/user');
                             //this.props.handleLoginSuccess(values.userName,'USER');
                         }
-                        */
-                        alert('successfully log in');
-                        this.props.history.push('/user');
+                        
+                        alert('successfully log in');                   
                     }
                     else{
                         alert('log in failed');
@@ -86,7 +92,7 @@ class LoginPage extends Component {
         <div id="login">
         <Layout>
             <div style={{padding:80}}></div>
-            <Content height={window.innerHeight}>
+            <Content style={{minHeight:window.innerHeight}}>
             <center>
             <h1>Login</h1>
             <Form className="login-form" onSubmit={this.handleSubmit}>

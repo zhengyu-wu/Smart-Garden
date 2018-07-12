@@ -8,11 +8,11 @@ const intialState = {
     email : ''
 };
 
-const cacheHits = localStorage.getItem('the state');
-if (cacheHits)
-{
-    this.state = cacheHits;
-}
+// const cacheHits = localStorage.getItem('the state');
+// if (cacheHits)
+// {
+//     state = cacheHits;
+// }
 
 const user = (state = intialState, action = {}) => {
     switch (action.type) {

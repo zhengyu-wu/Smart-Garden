@@ -20,7 +20,7 @@ class App extends Component {
         this.state={
             userIdLogin:-1,
             userTypeLogin:'USER',
-            hasLogin:true
+            hasLogin:false
         };
         this.handleLoginSuccess=this.handleLoginSuccess.bind(this);
         this.handleLogout=this.handleLogout.bind(this);
@@ -55,46 +55,24 @@ class App extends Component {
 
     render() {
 
-        if(this.state.hasLogin===false)
-        {
-            return(
-                <div>
-                <Layout>
-                <Header style={{ background: '#000', padding: 0 }}>
-                    <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>
-                        <Icon
-                        className="trigger"
-                        style={{cursor: 'pointer'}}
-                        />
-                        </span>
-                        <span style={{color:'#fff', paddingLeft:'1%', fontSize:'1.4em'}}>Smart Garden</span>
-                </Header>
-                <Content style={{minHeight:window.innerHeight}}>
-                    <WrappedLoginPage/>
-                </Content>
-                </Layout>
-                </div>
-            );
-        }
-        else
-        {
-            return (
-                <div>
-                    <Header style={{ background: '#000', padding: 0 }}>
-                    <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>
-                        <Icon
-                        className="trigger"
-                        style={{cursor: 'pointer'}}
-                        />
-                        </span>
-                        <span style={{color:'#fff', paddingLeft:'1%', fontSize:'1.4em'}}>Smart Garden</span>
-                    </Header>
-                    <Layout>
-                        <RouterEntrance/>         
-                    </Layout>
-                </div>
-            );
-        }
+        return(
+            <div>
+            <Layout>
+            <Header style={{ background: '#000', padding: 0 }}>
+                <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.4em'}}>
+                    <Icon
+                    className="trigger"
+                    style={{cursor: 'pointer'}}
+                    />
+                    </span>
+                    <span style={{color:'#fff', paddingLeft:'1%', fontSize:'1.4em'}}>Smart Garden</span>
+            </Header>
+            <Content style={{minHeight:window.innerHeight}}>
+                <RouterEntrance/>
+            </Content>
+            </Layout>
+            </div>
+        );
         
     }
 }

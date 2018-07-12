@@ -1,95 +1,38 @@
 import React, { Component,PropTypes } from 'react';
-
+//antd
 import { Table, Icon, Switch, Radio, Form, Menu, Button, Tabs, Layout } from 'antd';
 import 'antd/dist/antd.css';
-
+//user页面子页面组件
+import WrappedUserGardenPage from './UserGardenPage';
 import WrappedUserInfoPage from './UserInfoPage';
-import HeatmapPage from '../SensorImg/HeatmapPage'
-import LinechartPage from '../SensorImg/LinechartPage'
+import UserLinechartPage from './UserLinechartPage'
+import UserHeatmapPage from './UserHeatmapPage'
+
 
 
 const TabPane = Tabs.TabPane;
 const { Header,Content,Footer,Sider } = Layout;
-
-class UserHeatmapPage extends Component{
-
-    render() {
-        return(
-            
-            <Layout>
-                <Layout>
-                <Sider width={200} style={{ background: '#fff'}} height={window.innerHeight}>
-                    <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} style={{textAlign:'left', minHeight: 500}}>
-                        <Menu.Item key="1">
-                            <Icon type="shop" />
-                            <span className="nav-text">garden 1</span>
-                        </Menu.Item>
-                        <Menu.Item key="2">
-                            <Icon type="shop" />
-                            <span className="nav-text">garden 2</span>
-                        </Menu.Item>
-                        <Menu.Item key="3">
-                            <Icon type="shop" />
-                            <span className="nav-text">garden 3</span>
-                        </Menu.Item>
-                    </Menu>
-                </Sider>
-                <Content style={{ background: '#fff', padding: 0  }}>
-                    {/*此处放热力图*/}
-                    <HeatmapPage/>
-                </Content>
-                </Layout>
-                <Footer style={{ textAlign: 'center' }}>热力图</Footer>
-            </Layout>
-        );
-    }
-}
-
-class UserLinechartPage extends Component{
-
-    render() {
-        return(
-            
-            <Layout>
-                <Layout>
-                <Sider width={200} style={{ background: '#fff'}} height={window.innerHeight}>
-                    <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} style={{textAlign:'left', minHeight: 500}}>
-                        <Menu.Item key="1">
-                            <Icon type="shop" />
-                            <span className="nav-text">garden 1</span>
-                        </Menu.Item>
-                        <Menu.Item key="2">
-                            <Icon type="shop" />
-                            <span className="nav-text">garden 2</span>
-                        </Menu.Item>
-                        <Menu.Item key="3">
-                            <Icon type="shop" />
-                            <span className="nav-text">garden 3</span>
-                        </Menu.Item>
-                    </Menu>
-                </Sider>
-                <Content style={{ background: '#fff', padding: 0  }} >
-                    {/*此处放折线图*/}
-                    <LinechartPage/>
-                </Content>
-                </Layout>
-                <Footer style={{ textAlign: 'center' }}>折线图</Footer>
-            </Layout>
-        );
-    }
-}
+const loginState = localStorage.getItem('userState');
 
 class UserPage extends Component{
     render(){
-        return(
-            <div>
-                <Tabs type={'card'}>
-                    <TabPane tab={'Thermodynamic Chart'} key={'1'}>{<UserHeatmapPage/>}</TabPane>
-                    <TabPane tab={'Line Chart'} key={'2'}>{<UserLinechartPage/>}</TabPane>
-                    <TabPane tab={'User Information'} key={'3'}>{<WrappedUserInfoPage/>}</TabPane>
-                </Tabs>
-            </div>
-        )
+        if(loginState){
+            return(
+                <div>
+                    <Tabs type={'card'}>
+                        <TabPane tab={'Manage Garden'} key={'1'}>{<WrappedUserGardenPage/>}</TabPane>
+                        <TabPane tab={'Thermodynamic Chart'} key={'2'}>{<UserHeatmapPage/>}</TabPane>
+                        <TabPane tab={'Line Chart'} key={'3'}>{<UserLinechartPage/>}</TabPane>
+                        <TabPane tab={'User Information'} key={'4'}>{<WrappedUserInfoPage/>}</TabPane>
+                    </Tabs>
+                </div>
+            )
+        }
+        else{
+            /*
+            hahahaa 是你的了 哈哈哈哈
+            */
+        }
     }
 }
 
