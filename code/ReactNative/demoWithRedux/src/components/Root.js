@@ -1,7 +1,6 @@
 import React from 'react';
 import Login from './Login';
-import { View , StyleSheet} from 'react-native';
-
+import { View,StyleSheet,Text} from 'react-native';
 import {connect} from 'react-redux';
 import UserPage from "./UserPage";
 
@@ -15,15 +14,20 @@ const styles = StyleSheet.create({
 
 class Root extends React.Component {
     render() {
+        const { navigate } = this.props.navigation;
         if(this.props.user.hasLogin===true){
             return(
-                <UserPage/>
+                <UserPage navigation={this.props.navigation}/>
             );
         }
         else{
             return (
                 <View style={styles.container}>
-                    <Login />
+                    <Login navigation={this.props.navigation} />
+                    <Text onPress={()=>
+                        navigate('Register',{
+                            navigation: this.props.navigation
+                    })}>Register</Text>
                 </View>
             );
         }
