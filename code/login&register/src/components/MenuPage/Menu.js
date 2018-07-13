@@ -37,7 +37,8 @@ class RouterEntrance extends Component{
             <Router history={hashHistory}>
                 <div>
                     <Layout>
-                    <Sider style={{minHeight:1000}}>
+                    {/* 调试用菜单栏 */}
+                    {/* <Sider style={{minHeight:1000}}>
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1">
                         <Icon type="user" />
@@ -56,7 +57,7 @@ class RouterEntrance extends Component{
                         <span className="nav-text"><Link to={'/user'}>UserPage</Link></span>
                     </Menu.Item>
                     </Menu>
-                    </Sider>
+                    </Sider> */}
                     <Content>
                         <Switch>
                         <Route path='/login' render={()=><WrappedLoginPage/>}/>

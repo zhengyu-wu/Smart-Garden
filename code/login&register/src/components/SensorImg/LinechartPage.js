@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
 import data from '../SensorData/linechart.json';
 
+
 const cols = {
     'value': { min: 0 },
     'year': {range: [ 0 , 1] }
