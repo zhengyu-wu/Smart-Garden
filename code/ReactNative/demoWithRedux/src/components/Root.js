@@ -1,13 +1,13 @@
 import React from 'react';
 import Login from './Login';
-import { Text, View , TextInput, ScrollView, StyleSheet} from 'react-native';
+import { View , StyleSheet} from 'react-native';
 
 import {connect} from 'react-redux';
 import UserPage from "./UserPage";
 
-const styles = StyleSheet.create({  
-    container: {    
-        flex: 1,    
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
         top:100
     }
 });
@@ -15,10 +15,8 @@ const styles = StyleSheet.create({
 
 class Root extends React.Component {
     render() {
-        console.log("in Root "+JSON.stringify(this.props));
         if(this.props.user.hasLogin===true){
             return(
-
                 <UserPage/>
             );
         }
@@ -27,7 +25,6 @@ class Root extends React.Component {
                 <View style={styles.container}>
                     <Login />
                 </View>
-                
             );
         }
     }
