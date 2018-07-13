@@ -1,6 +1,7 @@
 import React from 'react';
 import { SegmentedControl, WingBlank, View } from 'antd-mobile-rn';
 import { connect } from 'react-redux';
+import Heatmap from './Heatmap';
 
 
 class Segment extends React.Component {
@@ -23,6 +24,7 @@ class Segment extends React.Component {
           />
 
         </WingBlank>
+        <Heatmap />
       </View>
     );
   }
