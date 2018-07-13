@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {get_user} from '../actions';
 import {Button,List,InputItem} from 'antd-mobile-rn';
 
-
 class Login extends React.Component{
     constructor(){
         super();
