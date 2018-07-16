@@ -26,14 +26,27 @@ class UserCard extends React.Component<any, any> {
                                 <Item extra={this.props.user.user.userId} arrow={'empty'}>
                                     user id
                                 </Item>
-                                <Item extra={this.props.user.user.username} arrow={'horizontal'} onClick={()=>{}}>
+                                <Item extra={this.props.user.user.username} arrow={'horizontal'}
+                                      onClick={()=>{
+                                        this.props.navigation.navigate('ModifyUserName',{navigation: this.props.navigation})
+                                      }
+                                      }>
                                     name
                                 </Item>
-                                <Item extra={this.props.user.user.email} arrow={'horizontal'} onClick={()=>{}}>
+                                <Item extra={this.props.user.user.email} arrow={'horizontal'} onClick={()=>{
+                                    this.props.navigation.navigate('ModifyUserEmail',{navigation: this.props.navigation})
+                                }}>
                                     email
                                 </Item>
-                                <Item extra={this.props.user.user.phone} arrow={'horizontal'} onClick={()=>{}}>
+                                <Item extra={this.props.user.user.phone} arrow={'horizontal'} onClick={()=>{
+                                    this.props.navigation.navigate('ModifyUserPhone',{navigation: this.props.navigation})
+                                }}>
                                     phone
+                                </Item>
+                                <Item arrow={'horizontal'} onClick={()=>{
+                                    this.props.navigation.navigate('ModifyUserPassword',{navigation: this.props.navigation})
+                                }}>
+                                    change password
                                 </Item>
                                 <Item arrow={"horizontal"} onClick={()=>{}}>
                                     statistics
@@ -49,13 +62,6 @@ class UserCard extends React.Component<any, any> {
                 </WingBlank>
                 <WhiteSpace size={'lg'}/>
                 <View>
-                    <Button type={'primary'}  onClick={()=>{
-                        this.props.navigation.navigate('ModifyUser',{
-                            navigation: this.props.navigation
-                        })
-                    }}>
-                        Modify Info
-                    </Button>
                     <Button type={'primary'}  onClick={()=>{log_out()}}>
                        Log out
                     </Button>

@@ -25,7 +25,6 @@ class Sensor extends React.Component{
     componentWillMount(){
         axios.get("http://192.168.56.1:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
-                console.log("in res"+res.data);
                 let tmpData=[];
                 for(let i=0;i<res.data.length;i++){
                     tmpData.push({

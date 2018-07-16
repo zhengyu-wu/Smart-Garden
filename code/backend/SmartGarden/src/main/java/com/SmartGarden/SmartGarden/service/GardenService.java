@@ -18,5 +18,5 @@ public interface GardenService {
     boolean addGardenWithUser(Garden garden,int userId);
     boolean update(Garden garden);
     Garden getGardenByGardenId(int gardenId);
-
+    int getGardenNumberByUserId(int userId);
 }

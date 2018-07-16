@@ -3,6 +3,7 @@ import { Text, View,ListView } from 'react-native';
 import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast} from 'antd-mobile-rn';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import qs from 'qs';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -15,23 +16,34 @@ class SensorItem extends React.Component{
         this.state={
             checked:false,
         };
-        console.log(this.props);
     }
 
     componentDidMount(){
-        let tmp=false;
         if(this.props.data.sensorState===1)
             this.setState({checked:true});
     }
 
-    onSwitchChanged=(sensorId,SensorState) =>{
-        //todo 在这里dispatch一个action来修改sensor state的状态,同时修改本地的state状态
-        //action应该找到sensor list中对应的sensor并修改其状态
-        this.setState({checked:!this.state.checked})
+    onSwitchChanged=(sensorId) => {
+        let tmpState = 0;
+        if (this.state.checked === false) {
+            tmpState = 1;
+        }
+        this.setState({checked: !this.state.checked});
+
+        const params = {
+            sensorId: this.props.data.sensorId,
+            sensorState: tmpState
+        };
+        axios.post('http://192.168.56.1:8080/sensors/modifySensorState', qs.stringify(params))
+            .catch((error)=>
+            {
+                Toast.fail("unable to change the state");
+            })
     };
+
     componentWillReceiveProps(newProps)
     {
-        console.log(newProps)
+
     }
 
     render(){
@@ -48,6 +60,9 @@ class SensorItem extends React.Component{
                             </Item>
                             <Item extra={'('+this.props.data.positionX+','+this.props.data.positionY+')'} arrow={'horizontal'} onClick={()=>{}}>
                                 position
+                            </Item>
+                            <Item arrow={'horizontal'} onClick={()=>{}}>
+                                view data
                             </Item>
                             <Item extra={
                                 <Switch

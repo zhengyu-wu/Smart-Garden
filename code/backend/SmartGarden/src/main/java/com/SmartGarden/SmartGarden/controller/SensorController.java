@@ -43,7 +43,7 @@ public class SensorController {
         return sensorService.addSensorWithGardenId(sensor,gardenId);
     }
 
-    //todo 2018.7.16 待测试这个接口
+
     @ResponseBody
     @PostMapping("/modifySensorState")
     public boolean modifySensorState(int sensorId,int sensorState){
@@ -60,6 +60,12 @@ public class SensorController {
     @PostMapping("/deleteSensorBySensorId")
     public boolean deleteSensorBySensorId(int sensorId){
         return sensorService.deleteSensor(sensorId);
+    }
+
+    @ResponseBody
+    @GetMapping("/getSensorNumberByGardenId")
+    public int getSensorNumberByGardenId(int gardenId){
+        return sensorService.getSensorNumberByGardenId(gardenId);
     }
 
 }

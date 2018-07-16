@@ -146,7 +146,7 @@ class Register extends React.Component{
                             onClick={
                                 ()=>{
                                     register(this.state.username,
-                                    this.state.phone,
+                                    this.state.phone.replace(/\s/g,''),
                                     this.state.email,
                                     this.state.password);
                                     navigate("Home");

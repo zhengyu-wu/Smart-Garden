@@ -106,4 +106,9 @@ public class SensorServiceImpl implements SensorService {
     public List<Sensor> getByGardenId(int gardenId) {
         return sensorRepository.getByGarden_GardenId(gardenId);
     }
+
+    @Override
+    public int getSensorNumberByGardenId(int gardenId) {
+        return sensorRepository.countByGarden_GardenId(gardenId);
+    }
 }

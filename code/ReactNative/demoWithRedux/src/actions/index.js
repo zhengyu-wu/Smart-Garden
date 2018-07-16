@@ -6,8 +6,8 @@ import {
     USER_LOG_OUT,
     CLEAR_REGISTER,
     MODIFY_USER,
-    GET_SENSORS_WITH_GARDENID,
-    UPDATE_SENSOR} from '../constants';
+    } from '../constants';
+
 import qs from 'qs';
 
 export const get_user = (email,password) => {
@@ -72,18 +72,3 @@ export const modifyUser = (userId,userType,username,phone,email,password) =>{
     }
 
 };
-
-export const clear_register =()=>{
-    return{
-        type:CLEAR_REGISTER,
-    }
-};
-
-export const get_sensors_with_gardenId=(gardenId)=>{
-    return{
-        type: GET_SENSORS_WITH_GARDENID,
-        payload:{
-            promise: axios.get("http://192.168.56.1:8080/sensors/getSensorByGardenId",{params:{gardenId:gardenId}})
-        }
-    }
-}
