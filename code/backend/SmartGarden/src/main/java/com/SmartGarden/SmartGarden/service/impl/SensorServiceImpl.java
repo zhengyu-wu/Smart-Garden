@@ -76,8 +76,20 @@ public class SensorServiceImpl implements SensorService {
 
     @Override
     public boolean changeSensorState(int sensorId, int sensorState) {
-        //todo 2018.7.15 完成这个函数
-        return false;
+        //todo 2018.7.16 测试这个函数
+        try{
+            Sensor tmpSensor=getSensorBySensorId(sensorId);
+            if(tmpSensor==null)
+                return false;
+            else {
+                tmpSensor.setSensorState(sensorState);
+                sensorRepository.save(tmpSensor);
+                return true;
+            }
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 
     @Override
