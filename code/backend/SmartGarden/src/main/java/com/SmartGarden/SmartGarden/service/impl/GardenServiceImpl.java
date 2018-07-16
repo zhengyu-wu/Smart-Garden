@@ -83,4 +83,9 @@ public class GardenServiceImpl implements GardenService {
     public Garden getGardenByGardenId(int gardenId) {
         return gardenRepository.findByGardenId(gardenId);
     }
+
+    @Override
+    public int getGardenNumberByUserId(int userId) {
+        return gardenRepository.countByUser_UserId(userId);
+    }
 }

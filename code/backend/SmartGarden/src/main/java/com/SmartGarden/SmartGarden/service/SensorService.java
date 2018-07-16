@@ -13,4 +13,5 @@ public interface SensorService {
     Sensor getSensorBySensorId(int sensorId);
     List<Sensor> getAllSensor();
     List<Sensor> getByGardenId(int gardenId);
+    int getSensorNumberByGardenId(int gardenId);
 }

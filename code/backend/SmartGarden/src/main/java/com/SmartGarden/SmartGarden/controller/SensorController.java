@@ -62,4 +62,10 @@ public class SensorController {
         return sensorService.deleteSensor(sensorId);
     }
 
+    @ResponseBody
+    @GetMapping("/getSensorNumberByGardenId")
+    public int getSensorNumberByGardenId(int gardenId){
+        return sensorService.getSensorNumberByGardenId(gardenId);
+    }
+
 }
