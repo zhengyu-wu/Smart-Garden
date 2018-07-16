@@ -3,6 +3,7 @@ import {Text,View} from 'react-native';
 import {TabBar,SearchBar} from 'antd-mobile-rn';
 import UserCard from './User';
 import Sensor from './Sensor';
+import SensorPage from './Garden';
 
 
 class TabBars extends React.Component<any, any> {
@@ -53,7 +54,7 @@ class TabBars extends React.Component<any, any> {
                     selected={this.state.selectedTab === 'redTab'}
                     onPress={() => this.onChangeTab('redTab')}
                 >
-                    {this.renderContent('Koubei Tab')}
+
                 </TabBar.Item>
                 <TabBar.Item
                     icon={require('../assets/friend.png')}

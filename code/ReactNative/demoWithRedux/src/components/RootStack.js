@@ -5,6 +5,10 @@ import Login from './Login';
 import Help from './Help';
 import ContactUs from './ContactUs';
 import ModifyUser from "./ModifyUser";
+import ModifyUserName from './ModifyInfo/ModifyUserName';
+import ModifyUserEmail from './ModifyInfo/ModifyUserEmail';
+import ModifyUserPassword from './ModifyInfo/ModifyUserPassword';
+import ModifyUserPhone from './ModifyInfo/ModifyUserPhone';
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -12,7 +16,11 @@ const RootStack = createStackNavigator({
     Login:Login,
     Help:Help,
     ContactUs:ContactUs,
-    ModifyUser:ModifyUser
+    ModifyUser:ModifyUser,
+    ModifyUserName:ModifyUserName,
+    ModifyUserEmail:ModifyUserEmail,
+    ModifyUserPassword:ModifyUserPassword,
+    ModifyUserPhone:ModifyUserPhone
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);
