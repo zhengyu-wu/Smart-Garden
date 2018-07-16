@@ -24,6 +24,9 @@ public class Garden {
     private Integer gardenId;
 
     @Column(nullable = false)
+    private String gardenName;
+
+    @Column(nullable = false)
     private Double positionX;
 
     @Column(nullable = false)
@@ -86,5 +89,13 @@ public class Garden {
 
     public void setLength(Integer length) {
         this.length = length;
+    }
+
+    public String getGardenName() {
+        return gardenName;
+    }
+
+    public void setGardenName(String gardenName) {
+        this.gardenName = gardenName;
     }
 }

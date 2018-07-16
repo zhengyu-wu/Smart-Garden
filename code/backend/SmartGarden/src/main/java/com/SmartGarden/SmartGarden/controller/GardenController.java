@@ -44,5 +44,12 @@ public class GardenController {
     @PostMapping("/deleteByUserId")
     public boolean deleteByUserId(int userId) {return gardenService.deleteByUserId(userId);}
 
+    @ResponseBody
+    @PostMapping("/updateGarden")
+    public boolean updateGarden(Garden garden)
+    {
+        return gardenService.update(garden);
+    }
+
 
 }
