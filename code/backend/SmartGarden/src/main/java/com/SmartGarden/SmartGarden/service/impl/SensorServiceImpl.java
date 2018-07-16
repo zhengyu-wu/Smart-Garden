@@ -75,6 +75,12 @@ public class SensorServiceImpl implements SensorService {
     }
 
     @Override
+    public boolean changeSensorState(int sensorId, int sensorState) {
+        //todo 2018.7.15 完成这个函数
+        return false;
+    }
+
+    @Override
     public Sensor getSensorBySensorId(int sensorId) {
         return sensorRepository.findBySensorId(sensorId);
     }
