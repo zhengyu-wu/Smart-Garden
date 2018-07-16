@@ -148,9 +148,8 @@ class Register extends React.Component{
                                     register(this.state.username,
                                     this.state.phone,
                                     this.state.email,
-                                    this.state.password,
-                                    this.props.navigation);
-                                    navigate("Login");
+                                    this.state.password);
+                                    navigate("Home");
                                 }
                             }
                     >
