@@ -43,7 +43,7 @@ public class SensorController {
         return sensorService.addSensorWithGardenId(sensor,gardenId);
     }
 
-    //todo 2018.7.16 待测试这个接口
+
     @ResponseBody
     @PostMapping("/modifySensorState")
     public boolean modifySensorState(int sensorId,int sensorState){
