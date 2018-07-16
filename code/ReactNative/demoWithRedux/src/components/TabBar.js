@@ -2,6 +2,7 @@ import React from 'react';
 import {Text,View} from 'react-native';
 import {TabBar,SearchBar} from 'antd-mobile-rn';
 import UserCard from './User';
+import Sensor from './Sensor';
 
 
 class TabBars extends React.Component<any, any> {
@@ -61,7 +62,7 @@ class TabBars extends React.Component<any, any> {
                     selected={this.state.selectedTab === 'greenTab'}
                     onPress={() => this.onChangeTab('greenTab')}
                 >
-                    {this.renderContent('Friend Tab')}
+                    <Sensor navigation={this.props.navigation}/>
                 </TabBar.Item>
                 <TabBar.Item
                     icon={require('../assets/busi.png')}
@@ -70,7 +71,7 @@ class TabBars extends React.Component<any, any> {
                     selected={this.state.selectedTab === 'yellowTab'}
                     onPress={() => this.onChangeTab('yellowTab')}
                 >
-                   <UserCard/>
+                   <UserCard navigation={this.props.navigation}/>
                 </TabBar.Item>
             </TabBar>
         );
