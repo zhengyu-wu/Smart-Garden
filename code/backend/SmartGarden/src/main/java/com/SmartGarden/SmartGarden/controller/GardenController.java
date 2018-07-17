@@ -57,5 +57,4 @@ public class GardenController {
         return gardenService.getGardenNumberByUserId(userId);
     }
 
-
 }
