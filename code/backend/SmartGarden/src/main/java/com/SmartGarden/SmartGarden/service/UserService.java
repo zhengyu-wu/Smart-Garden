@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService {
     boolean delete(int userId);
-    boolean insert(User user);
+    User insert(User user);
     boolean update(User user);
     boolean active(int userId);
     User selectById(int id);

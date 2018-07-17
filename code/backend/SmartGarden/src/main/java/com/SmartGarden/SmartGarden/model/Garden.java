@@ -16,7 +16,6 @@ import javax.persistence.*;
 @Table(name = "garden")
 public class Garden {
     public Garden(){
-
     }
 
     @Id
