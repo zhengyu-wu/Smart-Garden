@@ -93,6 +93,23 @@ public class SensorServiceImpl implements SensorService {
     }
 
     @Override
+    public boolean changeSensorPosition(int sensorId, Double positionX, Double positionY) {
+        try {
+            Sensor tmpSensor = getSensorBySensorId(sensorId);
+            if (tmpSensor == null)
+                return false;
+            else {
+                tmpSensor.setPositionX(positionX);
+                tmpSensor.setPositionY(positionY);
+                sensorRepository.save(tmpSensor);
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
     public Sensor getSensorBySensorId(int sensorId) {
         return sensorRepository.findBySensorId(sensorId);
     }

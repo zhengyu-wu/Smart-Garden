@@ -68,4 +68,11 @@ public class SensorController {
         return sensorService.getSensorNumberByGardenId(gardenId);
     }
 
+    //todo 待测试
+    @ResponseBody
+    @PostMapping("/modifySensorPosition")
+    public boolean modifySensorPosition(int sensorId,Double positionX,Double positionY){
+        return sensorService.changeSensorPosition(sensorId,positionX,positionY);
+    }
+
 }

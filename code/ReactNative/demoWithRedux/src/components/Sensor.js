@@ -4,6 +4,7 @@ import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast} from 'antd-mobile
 import {connect} from 'react-redux';
 import axios from 'axios';
 import SensorItem from './SensorItem';
+import qs from "qs";
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -15,9 +16,10 @@ class Sensor extends React.Component{
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state={
             gardenId:1,//todo gardenId应该是从上层组件传递的，此处为了便于测试与编写采用了固定值
-            data:{},//data应该是从后端拿到的数据
+            data:[],//data应该是从后端拿到的数据
             ds:ds,
-            isLoading:true
+            isLoading:true,
+            dataLength:0
         }
     }
 
@@ -36,9 +38,10 @@ class Sensor extends React.Component{
                     });
                 }
                 this.setState({
-                    data:res.data,
+                    data:tmpData,
                     ds:this.state.ds.cloneWithRows(tmpData),
-                    isLoading:false
+                    isLoading:false,
+                    dataLength:res.data.length
                 });
             })
             .catch(err=>{
@@ -49,11 +52,34 @@ class Sensor extends React.Component{
             })
     }
 
+    onDeleteSensor=(sensorId)=>{
+        let tmpState=this.state.data;
+        console.log('original');
+        console.log(tmpState);
+        let tmpDatas=[];
+        for(let i=0;i<tmpState.length;i++){
+            if(tmpState[i].sensorId!==sensorId){
+                tmpDatas.push(tmpState[i]);
+            }
+        }
+        const params={
+            sensorId:sensorId
+        };
+        axios.post('http://192.168.56.1:8080/sensors/deleteSensorBySensorId',qs.stringify(params))
+            .then(()=>{
+                Toast.info('successfully delete');
+                this.setState({
+                    data:tmpDatas,
+                    ds:this.state.ds.cloneWithRows(tmpDatas),
+                    dataLength:tmpDatas.length
+                })
+            })
+    }
+
     ListViewItemSeparator = () => {
         return (
             <View
                 style={{
-
                     height: .5,
                     width: "100%",
                     backgroundColor: "#000",
@@ -64,14 +90,44 @@ class Sensor extends React.Component{
     }
 
     render(){
+        let currentData=0;
         return(
             <View>
+                <WhiteSpace/>
+                <Button type={'primary'} onClick={()=>{
+                    //todo 此处应该跳转到添加传感器的位置
+                }}>
+                    Add a sensor
+                </Button>
+                <WhiteSpace/>
                 <ListView
                     dataSource={this.state.ds}
                     renderRow={(rowData)=>{
-                        return <SensorItem data={rowData}/>;
+                        let record=currentData+1;
+                        console.log(currentData);
+                        console.log('data length');
+                        console.log(this.state.dataLength);
+                        if(record===this.state.dataLength){
+                            currentData=0;
+                            return <SensorItem
+                                data={rowData}
+                                navigation={this.props.navigation}
+                                onDeleteSensor={this.onDeleteSensor.bind(this)}
+                                isLast={true}
+                            />;
+                        }
+                        else{
+                            currentData=record;
+                            return <SensorItem
+                                data={rowData}
+                                navigation={this.props.navigation}
+                                onDeleteSensor={this.onDeleteSensor.bind(this)}
+                                isLast={false}
+                            />;
+                        }
                     }}
                 />
+
             </View>
         )
     }
