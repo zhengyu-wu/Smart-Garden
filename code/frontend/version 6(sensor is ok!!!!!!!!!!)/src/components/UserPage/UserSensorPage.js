@@ -35,6 +35,7 @@ class UserSensorPage extends Component{
         this.state = {
           gardens: [],//存放garden
           sensors:[],//存放sensor
+          currentState:[],
         //   currentHumidity: [],
         //   currentTemperature: [],
         //   currentMonitor: [],
@@ -204,12 +205,12 @@ class UserSensorPage extends Component{
     handleUpdateSensorState = (sensorId) => {
         axios.get(`http://localhost:8080/sensors/getSensorBySensorId`,{params:{'sensorId':sensorId}})
                     .then((response)=>{
-                        
+                        var updateGardenId=response.data.garden.gardenId;
 
                         var params= new URLSearchParams();
                         params.append('sensorId',response.data.sensorId);
                         if(response.data.sensorState==0)
-                        {
+                        {                       
                             params.append('sensorState',1); 
                         }
                         else
@@ -219,8 +220,17 @@ class UserSensorPage extends Component{
                         
                         
                         axios.post('http://localhost:8080/sensors/modifySensorState',params).then((res)=>{
+
                             console.log("update state successfully");
+                            axios.get(`http://localhost:8080/sensors/getSensorByGardenId`,{params:{'gardenId':updateGardenId}})
+                            .then(res => {
+                                this.setState({
+                                    sensors: res.data,
+                                });
+                            })
                         });
+
+                        
                     });
     }
 
@@ -336,12 +346,13 @@ class UserSensorPage extends Component{
                     {/* <Content style={{minHeight:window.innerHeight}}>
                         
                     </Content> */}
-                    <Content style={{ background: '#fff', padding: 0, height: window.innerHeight  }} >
+                    <Content style={{maxHeight:window.innerHeight, maxWidth:window.innerWidth}} >
                         {/*散点图*/}
                         <ScatterChartPage currentGardenLength = {this.state.currentGardenLength}
                             gardenid = {this.state.currentGardenID}
-                         currentGardenWidth = {this.state.currentGardenWidth}
-                         currentSensor = {this.state.sensors} />
+                            currentGardenWidth = {this.state.currentGardenWidth}
+                            currentSensor = {this.state.sensors} 
+                        />
                     </Content>
                     <Sider width={300} style={{ background: '#fff'}} height={window.innerHeight}>
                         <div className="sensors-list">
