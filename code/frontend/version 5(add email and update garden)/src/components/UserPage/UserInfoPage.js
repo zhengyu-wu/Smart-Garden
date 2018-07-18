@@ -10,15 +10,47 @@ import { Field, reduxForm } from 'redux-form'
 
 const { Header,Content,Footer,Sider } = Layout;
 
+const LoginUserId = localStorage.getItem('userID');
+var LoginUsername = localStorage.getItem('username');
+var LoginPassword = localStorage.getItem('password');
+var LoginPhone = localStorage.getItem('phone');
+var LoginEmail = localStorage.getItem('email');
+
 class UserInfoPage extends Component{
+    constructor(){
+        super();
+        this.state = {
+          orginUsername:"",
+          orginPassword:"",
+          orginPhone:"",
+          orginEmail:"",
+        }
+    }
+
+    //取出该登陆用户的原本信息进行初始化
+    componentWillMount(){
+        this.setState({
+            orginUsername:LoginUsername,
+            orginPassword:LoginPassword,
+            orginPhone:LoginPhone,
+            orginEmail:LoginEmail,
+            
+        });
+        console.log("LoginUsername:",LoginUsername);
+        console.log("LoginPassword:",LoginPassword);
+        console.log("LoginPhone:",LoginPhone);
+        console.log("LoginEmail:",LoginEmail);
+    } 
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 
                 console.log('Received values of form: ', values);
-    
+                console.log("state1:",this.state);
                 var params= new URLSearchParams();
+                params.append('userId',LoginUserId);
                 params.append('username',values.userName);
                 params.append('password',values.password);
                 params.append('phone',values.phone);
@@ -27,8 +59,29 @@ class UserInfoPage extends Component{
                 if((values.userName!=null)&&(values.password!=null)&&(values.phone!=null)&&(values.email!=null))
                 {
                   axios.post('http://localhost:8080/users/updateUser',params).then((res)=>{
+                    //重新更改用户的原本信息
+                    this.setState({
+                        orginUsername:values.userName,
+                        orginPassword:values.password,
+                        orginPhone:values.phone,
+                        orginEmail:values.email,
+                    });
+                    console.log("state2:",this.state);
+                    //修改登陆用户在localStorage中的信息
+                    localStorage.setItem('username', values.userName);
+                    localStorage.setItem('password', values.password);
+                    localStorage.setItem('phone', values.phone);
+                    localStorage.setItem('email', values.email);
+
+                    LoginUsername = localStorage.getItem('username');
+                    LoginPassword = localStorage.getItem('password');
+                    LoginPhone = localStorage.getItem('phone');
+                    LoginEmail = localStorage.getItem('email');
+                    
+                    
                     console.log(res.data);
                     alert('update user information successfully');
+                    
                     //更新redux信息
                   }).catch(err=>{
                     alert("unexpected error in update ");
@@ -37,9 +90,7 @@ class UserInfoPage extends Component{
                 else
                 {
                   alert('update failed');
-                }
-    
-                
+                }      
             }
         });
     }
@@ -69,9 +120,11 @@ class UserInfoPage extends Component{
                         label="Username"
                         >
                         {getFieldDecorator('userName', {
+                                initialValue:this.state.orginUsername,
                                 rules: [{ required: true, message: 'Please input your username!', whitespace: true }],
                             })(
                             <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            
                             placeholder="Username"
                             type="username"
                             required
@@ -83,6 +136,7 @@ class UserInfoPage extends Component{
                         label="Phone"
                         >
                         {getFieldDecorator('phone', {
+                                initialValue:this.state.orginPhone,
                                 rules: [{ required: true, message: 'Please input your phone number!' }],
                             })(
                             <Input prefix={<Icon type="mobile" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -97,6 +151,7 @@ class UserInfoPage extends Component{
                         label="E-mail"
                         >
                         {getFieldDecorator('email', {
+                                initialValue:this.state.orginEmail,
                                 rules: [{
                                     type: 'email', message: 'The input is not valid E-mail!',
                                 }, {
@@ -115,37 +170,38 @@ class UserInfoPage extends Component{
                         label="Password"
                         >
                         {getFieldDecorator('password', {
-                        rules: [{
-                        required: true, message: 'Please input your password!',
-                        }, {
-                        validator: this.validateToNextPassword,
-                        }],
-                        })(
-                        <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                        placeholder="Password"
-                        type="password"
-                        required
-                        />
-                        )}
+                                initialValue:this.state.orginPassword,
+                                rules: [{
+                                required: true, message: 'Please input your password!',
+                                }, {
+                                validator: this.validateToNextPassword,
+                                }],
+                            })(
+                            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            placeholder="Password"
+                            type="password"
+                            required
+                            />
+                            )}
                         </FormItem>
                         <FormItem 
                         {...formItemLayout} 
                         label="Confirm Password"
                         >
                         {getFieldDecorator('confirm', {
-                        rules: [{
-                        required: true, message: 'Please confirm your password!',
-                        }, {
-                        validator: this.compareToFirstPassword,
-                        }],
-                        })
-                        (
-                        <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} onBlur={this.handleConfirmBlur}
-                        placeholder="Confirm your Password"
-                        type="password"
-                        required
-                        />
-                        )}
+                                initialValue:this.state.orginPassword,
+                                rules: [{
+                                required: true, message: 'Please confirm your password!',
+                                }, {
+                                validator: this.compareToFirstPassword,
+                                }],
+                            })(
+                            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} onBlur={this.handleConfirmBlur}
+                            placeholder="Confirm your Password"
+                            type="password"
+                            required
+                            />
+                            )}
                         </FormItem>
                         <FormItem>
                             <Row>

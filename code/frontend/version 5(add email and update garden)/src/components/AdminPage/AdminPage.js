@@ -16,6 +16,8 @@ import axios from "axios/index";
   const footer = () => 'User Table';
   const scroll = { y: 240 };
   const pagination = { position: 'bottom' };
+  const loginState = localStorage.getItem('userState');
+
 
 class AdminUserPage extends Component{
   constructor(){
@@ -50,7 +52,7 @@ class AdminUserPage extends Component{
             console.log("users:",this.state.users);
         })
   } 
-  //更新users数据库的变化情况
+
   componentDidMount(){
     axios.get(`http://localhost:8080/users/getAllUser`)
         .then(res => {
@@ -359,54 +361,61 @@ class AdminUserPage extends Component{
       ),
     }];
 
-    return (
-      <div>
-        <div className="components-table-demo-control-bar">
-          <Form layout="inline" height={window.innerHeight}>
-            <FormItem label="Bordered">
-              <Switch checked={state.bordered} onChange={this.handleToggle('bordered')} />
-            </FormItem>
-            <FormItem label="loading">
-              <Switch checked={state.loading} onChange={this.handleToggle('loading')} />
-            </FormItem>
-            <FormItem label="Column Header">
-              <Switch checked={!!state.showHeader} onChange={this.handleHeaderChange} />
-            </FormItem>
-            <FormItem label="Footer">
-              <Switch checked={!!state.footer} onChange={this.handleFooterChange} />
-            </FormItem>
-            <FormItem label="Expandable">
-              <Switch checked={!!state.expandedRowRender} onChange={this.handleExpandChange} />
-            </FormItem>
-            <FormItem label="Checkbox">
-              <Switch checked={!!state.rowSelection} onChange={this.handleRowSelectionChange} />
-            </FormItem>
-            <FormItem label="Fixed Header">
-              <Switch checked={!!state.scroll} onChange={this.handleScollChange} />
-            </FormItem>
-            <FormItem label="Size">
-              <Radio.Group size="default" value={state.size} onChange={this.handleSizeChange}>
-                <Radio.Button value="default">Default</Radio.Button>
-                <Radio.Button value="middle">Middle</Radio.Button>
-                <Radio.Button value="small">Small</Radio.Button>
-              </Radio.Group>
-            </FormItem>
-            <FormItem label="Pagination">
-              <Radio.Group
-                value={state.pagination ? state.pagination.position : 'none'}
-                onChange={this.handlePaginationChange}
-              >
-                <Radio.Button value="top">Top</Radio.Button>
-                <Radio.Button value="bottom">Bottom</Radio.Button>
-                <Radio.Button value="both">Both</Radio.Button>
-                <Radio.Button value="none">None</Radio.Button>
-              </Radio.Group>
-            </FormItem>
-          </Form>
+    if (loginState){
+      return (
+        <div>
+          <div className="components-table-demo-control-bar">
+            <Form layout="inline" height={window.innerHeight}>
+              <FormItem label="Bordered">
+                <Switch checked={state.bordered} onChange={this.handleToggle('bordered')} />
+              </FormItem>
+              <FormItem label="loading">
+                <Switch checked={state.loading} onChange={this.handleToggle('loading')} />
+              </FormItem>
+              <FormItem label="Column Header">
+                <Switch checked={!!state.showHeader} onChange={this.handleHeaderChange} />
+              </FormItem>
+              <FormItem label="Footer">
+                <Switch checked={!!state.footer} onChange={this.handleFooterChange} />
+              </FormItem>
+              <FormItem label="Expandable">
+                <Switch checked={!!state.expandedRowRender} onChange={this.handleExpandChange} />
+              </FormItem>
+              <FormItem label="Checkbox">
+                <Switch checked={!!state.rowSelection} onChange={this.handleRowSelectionChange} />
+              </FormItem>
+              <FormItem label="Fixed Header">
+                <Switch checked={!!state.scroll} onChange={this.handleScollChange} />
+              </FormItem>
+              <FormItem label="Size">
+                <Radio.Group size="default" value={state.size} onChange={this.handleSizeChange}>
+                  <Radio.Button value="default">Default</Radio.Button>
+                  <Radio.Button value="middle">Middle</Radio.Button>
+                  <Radio.Button value="small">Small</Radio.Button>
+                </Radio.Group>
+              </FormItem>
+              <FormItem label="Pagination">
+                <Radio.Group
+                  value={state.pagination ? state.pagination.position : 'none'}
+                  onChange={this.handlePaginationChange}
+                >
+                  <Radio.Button value="top">Top</Radio.Button>
+                  <Radio.Button value="bottom">Bottom</Radio.Button>
+                  <Radio.Button value="both">Both</Radio.Button>
+                  <Radio.Button value="none">None</Radio.Button>
+                </Radio.Group>
+              </FormItem>
+            </Form>
+          </div>
+          <Table {...this.state} columns={columns} dataSource={this.state.users} />
         </div>
-        <Table {...this.state} columns={columns} dataSource={this.state.users} />
-      </div>
-    );
+      );
+    }
+    else{
+      /*
+      xixixixixx 到你表演的时候了
+      */
+    }
   }
 }
 

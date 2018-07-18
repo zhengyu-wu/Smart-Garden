@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-//antd
+
 import {Layout, Input, Button, Form, Icon, Row, Col, Breadcrumb} from 'antd';
 import 'antd/dist/antd.css';
 import FormItem from 'antd/lib/form/FormItem';
-//axios
+
 import axios from "axios/index";
 
 import { Field, reduxForm } from 'redux-form'
-//router
-import { Link } from 'react-router-dom'
+
+import { Link, withRouter } from 'react-router-dom'
 
 const { Header,Content,Footer,Sider } = Layout;
 
@@ -30,11 +30,25 @@ class RegisterPage extends Component{
                 {
                   axios.post('http://localhost:8080/users/addUser',params).then((res)=>{
                     console.log(res.data);
-                    alert('register successfully');
+                    //后端接口返回user
+                    localStorage.setItem("activationId", res.data.userId);
+                    console.log("activationId:", res.data.userId);
+                    //发送邮件
+                    axios.get(`http://localhost:8080/email/sendEmail`,{params:{'recv':values.email}})
+                    .then(res => {
+                        localStorage.setItem("activationCode", res.data);
+                        
+                        alert('register successfully,please activate your account!');
+                    });
+
+                    this.props.history.push('/activation');
                     //更新redux信息
                   }).catch(err=>{
                     alert("unexpected error in register ");
                   });
+
+                  
+
                 }
                 else
                 {
@@ -175,4 +189,4 @@ class RegisterPage extends Component{
 }
 
 const WrappedRegisterPage = Form.create()(RegisterPage);
-export default WrappedRegisterPage;
+export default withRouter(WrappedRegisterPage);
