@@ -12,4 +12,5 @@ public interface SensorRepository extends JpaRepository<Sensor,Integer> {
 
     Sensor findBySensorId(int sensorId);
     List<Sensor> getByGarden_GardenId(int gardenId);
+    int countByGarden_GardenId(int gardenId);
 }

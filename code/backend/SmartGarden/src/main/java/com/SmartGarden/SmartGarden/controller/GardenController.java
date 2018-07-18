@@ -51,5 +51,10 @@ public class GardenController {
         return gardenService.update(garden);
     }
 
+    @ResponseBody
+    @GetMapping("/getGardenNumberByUserId")
+    public int getGardenNumberByUserId(int userId){
+        return gardenService.getGardenNumberByUserId(userId);
+    }
 
 }

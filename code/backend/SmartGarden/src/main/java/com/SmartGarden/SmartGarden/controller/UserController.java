@@ -30,7 +30,7 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("/addUser")
-    public boolean addUser(User user)
+    public User addUser(User user)
     {
         return userService.insert(user);
     }

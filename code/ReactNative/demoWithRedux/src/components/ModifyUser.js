@@ -4,6 +4,8 @@ import { Button, InputItem, List,WhiteSpace,Toast} from 'antd-mobile-rn';
 import {modifyUser} from "../actions";
 import { connect } from 'react-redux';
 
+
+//todo 其实这个组件已经不会再被使用了
 class ModifyUser extends React.Component{
     constructor(props: any) {
         super(props);
