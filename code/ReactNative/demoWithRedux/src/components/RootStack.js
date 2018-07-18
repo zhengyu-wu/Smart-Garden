@@ -10,6 +10,7 @@ import ModifyUserEmail from './ModifyInfo/ModifyUserEmail';
 import ModifyUserPassword from './ModifyInfo/ModifyUserPassword';
 import ModifyUserPhone from './ModifyInfo/ModifyUserPhone';
 import ModifySensorPosition from './ModifyInfo/ModifySensorPosition';
+import AddGarden from "./ModifyInfo/AddGarden";
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -22,7 +23,8 @@ const RootStack = createStackNavigator({
     ModifyUserEmail:ModifyUserEmail,
     ModifyUserPassword:ModifyUserPassword,
     ModifyUserPhone:ModifyUserPhone,
-    ModifySensorPosition:ModifySensorPosition
+    ModifySensorPosition:ModifySensorPosition,
+    AddGarden:AddGarden
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);

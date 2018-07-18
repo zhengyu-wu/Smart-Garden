@@ -18,6 +18,7 @@ class ModifyUserName extends React.Component{
         return(
             <View>
                 <WhiteSpace size={'lg'}/>
+                <List>
                 <InputItem
                     clear
                     value={this.state.username}
@@ -28,6 +29,7 @@ class ModifyUserName extends React.Component{
                     }
                     placeholder={'username'}
                 />
+                </List>
                 <WhiteSpace size={'lg'}/>
                 <Button type={'primary'} onClick={()=>{
                     modifyUser(

@@ -1,21 +1,21 @@
 
 import React from 'react';
 import { ScrollView, Text ,View} from 'react-native';
-import { Button, InputItem, List,WhiteSpace,Toast} from 'antd-mobile-rn';
+import { Button, InputItem, List,WhiteSpace,Toast,Picker,Switch} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from "qs";
 import {connect} from "react-redux";
 
 
-class AddGarden extends React.Component{
+class AddSensor extends React.Component{
     constructor(props:any){
         super(props);
         this.state={
-            gardenName:'',
-            width:0,
-            length:0,
+            sensorType:'',
+            sensorState:false,
             positionX:-1,
-            positionY:-1
+            positionY:-1,
+            pickerValue:[]
         }
     }
 
@@ -27,21 +27,47 @@ class AddGarden extends React.Component{
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
             >
-                <List renderHeader={() => 'Add a garden'}>
+                <List renderHeader={() => 'Add a sensor'}>
                     <InputItem
                         clear
                         error
                         onErrorPress={() =>{}}
-                        value={this.state.gardenName}
+                        value={this.state.sensorType}
                         onChange={(value: any) => {
                             this.setState({
-                                gardenName:value
+                                sensorType:value
                             });
                         }}
                         placeholder=""
                     >
-                        Garden Name
+                        Sensor type
                     </InputItem>
+                    <List.Item>
+                        <Picker
+                            title="选择地区"
+                            data={['temperature','humidity','video']}
+                            cols={1}
+                            value={this.state.pickerValue}
+                            onChange={(v: any) => {
+                                this.setState({ pickerValue: v });
+                                console.log(this.state.pickerValue);
+                            }}
+                            onOk={(v: any) => this.setState({ pickerValue: v })}
+                        >
+                            <List.Item arrow="horizontal" last onClick={this.onClick}>
+                                省市选择(异步加载)
+                            </List.Item>
+                        </Picker>
+                    </List.Item>
+                    <List.Item extra={
+                        <Switch
+                            checked ={this.state.checked}
+                            onChange={this.onSwitchChanged}
+                        />
+                    }
+                    >
+                        On/Off
+                    </List.Item>
                     <InputItem
                         clear
                         value={this.state.positionX}
@@ -62,39 +88,18 @@ class AddGarden extends React.Component{
                         }}
                         placeholder=""
                     >position Y</InputItem>
-                    <InputItem
-                        clear
-                        value={this.state.width}
-                        onChange={(value: any) => {
-                            this.setState({
-                                width: value,
-                            });
-                        }}
-                        placeholder=""
-                    >width</InputItem>
-                    <InputItem
-                        clear
-                        value={this.state.length}
-                        onChange={(value: any) => {
-                            this.setState({
-                                length: value,
-                            });
-                        }}
-                        placeholder=""
-                    >length</InputItem>
                     <List.Item>
                         <Button
                             onClick={() => {
                                 //提交数据
                                 const params={
-                                    gardenName:this.state.gardenName,
+                                    sensorState:this.state.sensorState,
                                     positionX:this.state.positionX,
                                     positionY:this.state.positionY,
-                                    width:this.state.width,
-                                    length:this.state.length,
-                                    userId:this.props.user.user.userId
+                                    sensorType:this.state.sensorType,
+                                    gardenId:this.props.gardenId
                                 }
-                                axios.post('http://192.168.56.1:8080/garden/addGardenWithUserId',qs.stringify(params))
+                                axios.post('http://192.168.56.1:8080/sensors/',qs.stringify(params))
                                     .then(()=>{
                                         //todo  此处应当调用父组件的接口 修改父组件的state
                                     })
@@ -118,7 +123,7 @@ class AddGarden extends React.Component{
                             cancel
                         </Button>
                     </List.Item>
-                </List>
+                </List.Item>
             </ScrollView>
         );
     }
