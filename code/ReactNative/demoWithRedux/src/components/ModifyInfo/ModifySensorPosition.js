@@ -24,6 +24,7 @@ class ModifySensorPosition extends React.Component{
         return(
             <View>
                 <WhiteSpace size={'lg'}/>
+                <List>
                 <InputItem
                     clear
                     type="number"
@@ -49,6 +50,7 @@ class ModifySensorPosition extends React.Component{
                     }}
                     placeholder={'PositionX'}
                 >Y</InputItem>
+                </List>
                 <WhiteSpace size={'lg'}/>
                 <Button type={'primary'} onClick={()=>{
                     //send axios post

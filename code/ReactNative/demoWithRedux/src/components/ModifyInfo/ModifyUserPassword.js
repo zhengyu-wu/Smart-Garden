@@ -31,6 +31,7 @@ class ModifyUserPassword extends React.Component{
         return(
             <View>
                 <WhiteSpace size={'lg'}/>
+                <List>
                 <InputItem
                     clear
                     type="password"
@@ -49,7 +50,6 @@ class ModifyUserPassword extends React.Component{
                     }
                     placeholder={'input your old password'}
                 />
-                <WhiteSpace size={'s'}/>
                 <InputItem
                     clear
                     type="password"
@@ -61,7 +61,6 @@ class ModifyUserPassword extends React.Component{
                     }
                     placeholder={'input your new password'}
                 />
-                <WhiteSpace size={'s'}/>
                 <InputItem
                     clear
                     type="password"
@@ -81,6 +80,7 @@ class ModifyUserPassword extends React.Component{
                     }
                     placeholder={'confirm your new password'}
                 />
+                </List>
                 <WhiteSpace size={'s'}/>
                 <Button type={'primary'} onClick={()=>{
                     modifyUser(
