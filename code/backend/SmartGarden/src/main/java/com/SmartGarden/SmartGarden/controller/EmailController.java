@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Random;
+
 @Controller
 @RequestMapping("/email")
 public class EmailController {
@@ -17,7 +19,8 @@ public class EmailController {
     @ResponseBody
     @GetMapping("/sendEmail")
     public int sendEmail(String recv){
-        int code=(int)(Math.random()*(999999-100000))+100000;
+        int code=new Random().nextInt(999999-100000)+100000;
+        System.out.println("generate code"+code);
         if(emailService.sendEmail(recv,code)){
             return code;
         }
