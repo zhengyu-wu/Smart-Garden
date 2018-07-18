@@ -53,19 +53,19 @@ class GardenItem extends React.Component{
                 <Card>
                     <Card.Body>
                         <List>
-                            <Item /*extra={this.props.data.gardenId} */arrow={'empty'}>
+                            <Item extra={this.props.data.gardenId} arrow={'empty'}>
                                 Garden Id
                             </Item>
-                            <Item /*extra={this.props.data.sensorId}*/ arrow={'empty'}>
+                            <Item extra={this.props.data.gardenName} arrow={'empty'}>
                                 Garden Name
                             </Item>
-                            <Item /*extra={'('+this.props.data.positionX+','+this.props.data.positionY+')'}*/ arrow={'horizontal'} onClick={()=>{}}>
+                            <Item extra={'('+this.props.data.positionX+','+this.props.data.positionY+')'} arrow={'empty'}>
                                 Position
                             </Item>
-                            <Item /*extra={'('+this.props.data.positionX+','+this.props.data.positionY+')'}*/ arrow={'horizontal'} onClick={()=>{}}>
+                            <Item extra={this.props.data.length} arrow={'empty'} >
                                 Length
                             </Item>
-                            <Item /*extra={'('+this.props.data.positionX+','+this.props.data.positionY+')'}*/ arrow={'horizontal'} onClick={()=>{}}>
+                            <Item  extra={this.props.data.width} arrow={'empty'} >
                                 Width
                             </Item>
                         </List>

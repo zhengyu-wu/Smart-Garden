@@ -17,38 +17,36 @@ class Garden extends React.Component<any, any> {
       userId: 1,
       gardenId: 1,//todo gardenId应该是从上层组件传递的，此处为了便于测试与编写采用了固定值
       data:{},//data应该是从后端拿到的数据
-      overlay: []
+      overlay: [],
+      gardenData:[]
     };
   }
 
   componentWillMount(){
         axios.get("http://192.168.1.152:8080/garden/getByUserId",{params:{userId:this.state.userId}})
             .then((res)=>{
-                /*let tmpData=[];
-                alert(JSON.stringify(res.data));
+                let gardenData=[];
+                let tmp_overlay = [];
                 for(let i=0;i<res.data.length;i++){
-                    tmpData.push({
+
+                    tmp_overlay.push(res.data[i].gardenId);
+
+                    gardenData.push({
                         gardenId:res.data[i].gardenId,
                         length: res.data[i].length,
                         positionX:res.data[i].positionX,
                         positionY:res.data[i].positionY,
                         width: res.data[i].width,
-                        user:res.data[i].user,
                         gardenName:res.data[i].gardenName
                     });
-                }*/
-                let tmp_overlay = [];
-                for(let i=0;i<res.data.length;i++){
-
-                    tmp_overlay.push(res.data[i].gardenId);   
-
                 }
-                //alert(JSON.stringify(tmp_overlay));
-
+                //alert(JSON.stringify(gardenData));
+                
 
                 this.setState({
                     data:res.data,
-                    overlay: tmp_overlay
+                    overlay: tmp_overlay,
+                    gardenData: gardenData
                 });
             })
             .catch(err=>{
@@ -65,20 +63,31 @@ class Garden extends React.Component<any, any> {
   }
   
   render() {
-    overlay = this.state.overlay;
-    alert(JSON.stringify(this.state.overlay));
 
-    overlay.map((i, index) => (
+    overlay = this.state.overlay.map((i, index) => (
       <Item key={index} value={i}>
-        <Text>option {i}</Text>
+        <Text>Garden {i}</Text>
       </Item>
     ));
+
+    let rowData = [];
+
+    for(let i=0;i<this.state.gardenData.length;i++){
+
+        if (this.state.gardenData[i].gardenId == this.state.selected)
+        {
+            rowData = this.state.gardenData[i];
+
+        }
+                    
+    }
+    /*
     overlay = overlay.concat([
       
       <Item key="6" value="button ct" style={{ backgroundColor: '#efeff4' }}>
         <Text>关闭</Text>
       </Item>,
-    ]);
+    ]);*/
 
     return (
       <View>
@@ -100,10 +109,7 @@ class Garden extends React.Component<any, any> {
           </Popover>
         </View>
         <View>
-          <Text>
-            选择了：{this.state.selected}
-          </Text>
-          <GardenItem />
+          <GardenItem data={rowData}/>
         </View>
       </View>
     );
