@@ -57,7 +57,8 @@ public class EmailServiceImpl implements EmailService {
             message.setSubject("Your code to activate account");
 
             // 设置消息体
-            message.setText("This is your code: "+code);
+            message.setText("This is your code: "+String.valueOf(code));
+            System.out.println("code"+code);
 
             // 发送消息
             Transport.send(message);
