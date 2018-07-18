@@ -3,5 +3,11 @@ export const initialState={
     isFetching: false,
     hasLogin:false,
     error:null,
-    user:{}
+    hasRegister:false,//这个是用来做注册成功后的自动跳转的
+    user:{},
+    //手机端一次只能对一组sensors进行操作
+    sensorWithGardenId:{
+        gardenId:-1,
+        sensors:{}
+    }
 };

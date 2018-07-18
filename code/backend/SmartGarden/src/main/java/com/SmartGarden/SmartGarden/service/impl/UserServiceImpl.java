@@ -28,18 +28,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean insert(User user) {
+    public User insert(User user) {
         try {
             //插入前先看看这个email在数据库中是否存在
             //存在则不在插入
             User tmpUser=userRepository.findByEmail(user.getEmail());
             if(tmpUser!=null)
-                return false;
-            userRepository.save(user);
-            return true;
+                return null;
+            return userRepository.saveAndFlush(user);
         }
         catch (Exception e){
-            return false;
+            return null;
         }
     }
 

@@ -16,12 +16,14 @@ import javax.persistence.*;
 @Table(name = "garden")
 public class Garden {
     public Garden(){
-
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer gardenId;
+
+    @Column(nullable = false)
+    private String gardenName;
 
     @Column(nullable = false)
     private Double positionX;
@@ -86,5 +88,13 @@ public class Garden {
 
     public void setLength(Integer length) {
         this.length = length;
+    }
+
+    public String getGardenName() {
+        return gardenName;
+    }
+
+    public void setGardenName(String gardenName) {
+        this.gardenName = gardenName;
     }
 }

@@ -12,4 +12,5 @@ public interface GardenRepository extends JpaRepository<Garden,Integer> {
     List<Garden> findByUser_UserId(int userId);
     void deleteByUser_UserId(int userId);
     Garden findByGardenId(int gardenId);
+    int countByUser_UserId(int userId);
 }

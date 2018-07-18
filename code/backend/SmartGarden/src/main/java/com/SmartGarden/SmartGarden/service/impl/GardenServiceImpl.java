@@ -62,8 +62,30 @@ public class GardenServiceImpl implements GardenService {
         }
     }
 
+    //todo 未经测试 2018/7/16
+    @Override
+    public boolean update(Garden garden) {
+        try {
+            if(garden.getGardenId()==null)
+                return false;
+            Garden tmpGarden=gardenRepository.findByGardenId(garden.getGardenId());
+            if(tmpGarden==null)
+                return false;
+            gardenRepository.save(garden);
+            return true;
+        }
+        catch (Exception e){
+            return true;
+        }
+    }
+
     @Override
     public Garden getGardenByGardenId(int gardenId) {
         return gardenRepository.findByGardenId(gardenId);
+    }
+
+    @Override
+    public int getGardenNumberByUserId(int userId) {
+        return gardenRepository.countByUser_UserId(userId);
     }
 }

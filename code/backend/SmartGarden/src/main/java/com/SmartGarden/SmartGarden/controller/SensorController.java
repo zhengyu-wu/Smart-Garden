@@ -43,6 +43,13 @@ public class SensorController {
         return sensorService.addSensorWithGardenId(sensor,gardenId);
     }
 
+
+    @ResponseBody
+    @PostMapping("/modifySensorState")
+    public boolean modifySensorState(int sensorId,int sensorState){
+        return sensorService.changeSensorState(sensorId,sensorState);
+    }
+
     @ResponseBody
     @PostMapping("/updateSensorBySensorId")
     public boolean updateSensorBySensorId(Sensor sensor){
@@ -53,6 +60,19 @@ public class SensorController {
     @PostMapping("/deleteSensorBySensorId")
     public boolean deleteSensorBySensorId(int sensorId){
         return sensorService.deleteSensor(sensorId);
+    }
+
+    @ResponseBody
+    @GetMapping("/getSensorNumberByGardenId")
+    public int getSensorNumberByGardenId(int gardenId){
+        return sensorService.getSensorNumberByGardenId(gardenId);
+    }
+
+    //todo 待测试
+    @ResponseBody
+    @PostMapping("/modifySensorPosition")
+    public boolean modifySensorPosition(int sensorId,Double positionX,Double positionY){
+        return sensorService.changeSensorPosition(sensorId,positionX,positionY);
     }
 
 }
