@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text, View,ListView } from 'react-native';
-import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast} from 'antd-mobile-rn';
+import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast, Modal} from 'antd-mobile-rn';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import qs from 'qs';
+import Sensor from './Sensor';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -17,35 +18,18 @@ class GardenItem extends React.Component{
             checked:false,
         };
     }
-  /*
-    componentDidMount(){
-        if(this.props.data.sensorState===1)
-            this.setState({checked:true});
-    }
-
-    
-    onSwitchChanged=(sensorId) => {
-        let tmpState = 0;
-        if (this.state.checked === false) {
-            tmpState = 1;
-        }
-        this.setState({checked: !this.state.checked});
-
-        const params = {
-            sensorId: this.props.data.sensorId,
-            sensorState: tmpState
-        };
-        axios.post('http://192.168.1.152:8080/sensors/modifySensorState', qs.stringify(params))
-            .catch((error)=>
-            {
-                Toast.fail("unable to change the state");
-            })
-    };*/
-
+  
     componentWillReceiveProps(newProps)
     {
 
     }
+
+    onButtonClick = () => {
+        Modal.alert('Delete this garden?', 'the operation cannot be recovered', [
+            { text: 'Cancel', onPress: () => console.log('cancel'), style: 'cancel' },
+            { text: 'OK', onPress: () => this.props.onDeleteGarden(this.props.data.gardenId) },
+        ]);
+    };
 
     render(){
         return(
@@ -68,7 +52,23 @@ class GardenItem extends React.Component{
                             <Item  extra={this.props.data.width} arrow={'empty'} >
                                 Width
                             </Item>
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('Sensor',
+                                              {
+                                                  navigation: this.props.navigation,
+                                                  gardenId:this.props.data.gardenId
+                                              })
+                            }}>
+                                Sensors
+                            </Item>
                         </List>
+                        <Button type={'warning'} onClick={()=>
+                        {
+                            this.setState({ visible: true });
+                            this.onButtonClick();
+                        }
+                        }>Delete this garden</Button>
                     </Card.Body>
                 </Card>
             </WingBlank>
