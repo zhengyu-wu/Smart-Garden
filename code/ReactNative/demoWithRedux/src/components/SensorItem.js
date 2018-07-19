@@ -67,7 +67,7 @@ class SensorItem extends React.Component{
 
     render(){
         if(this.props.isLast===true){
-            console.log("hit!");
+            console.log('hit');
             return(
                 <WingBlank size="lg">
                     <Card>

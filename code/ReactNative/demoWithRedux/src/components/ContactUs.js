@@ -9,7 +9,6 @@ class ContactUs extends React.Component{
                 <Text> this is contact us page todo</Text>
             </View>)
     }
-
 }
 
 export default ContactUs;
