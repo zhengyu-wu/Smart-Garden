@@ -11,11 +11,11 @@ const Brief = Item.Brief;
 
 
 class Sensor extends React.Component{
-    constructor(){
-        super();
+    constructor(props:any){
+        super(props);
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state={
-            gardenId:1,//todo gardenId应该是从上层组件传递的，此处为了便于测试与编写采用了固定值
+            gardenId:this.props.navigation.state.params.gardenId,//todo gardenId应该是从上层组件传递的，此处为了便于测试与编写采用了固定值
             data:[],//data应该是从后端拿到的数据
             ds:ds,
             isLoading:true,
@@ -54,8 +54,6 @@ class Sensor extends React.Component{
 
     onDeleteSensor=(sensorId)=>{
         let tmpState=this.state.data;
-        console.log('original');
-        console.log(tmpState);
         let tmpDatas=[];
         for(let i=0;i<tmpState.length;i++){
             if(tmpState[i].sensorId!==sensorId){
@@ -75,6 +73,9 @@ class Sensor extends React.Component{
                 })
             })
     }
+    onAddSensor=()=>{
+        this.componentWillMount();
+    };
 
     ListViewItemSeparator = () => {
         return (
@@ -95,18 +96,20 @@ class Sensor extends React.Component{
             <View>
                 <WhiteSpace/>
                 <Button type={'primary'} onClick={()=>{
+                    this.props.navigation.navigate('AddSensor',{
+                        navigation: this.props.navigation,
+                        gardenId:this.state.gardenId,
+                        onAddSensor:this.onAddSensor.bind(this)
+                    })
                     //todo 此处应该跳转到添加传感器的位置
                 }}>
                     Add a sensor
-                </Button>
+            </Button>
                 <WhiteSpace/>
                 <ListView
                     dataSource={this.state.ds}
                     renderRow={(rowData)=>{
                         let record=currentData+1;
-                        console.log(currentData);
-                        console.log('data length');
-                        console.log(this.state.dataLength);
                         if(record===this.state.dataLength){
                             currentData=0;
                             return <SensorItem

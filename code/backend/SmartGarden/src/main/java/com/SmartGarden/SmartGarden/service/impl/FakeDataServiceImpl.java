@@ -22,7 +22,8 @@ import java.util.List;
 * 对于每个湿度传感器，湿度产生3%以内的湿度差（上限不超过90%，下限不低于10%）
 * */
 
-//todo 待测试
+//todo 编译报错。。。
+/*
 
 @Service
 @Component
@@ -104,3 +105,5 @@ public class FakeDataServiceImpl implements FakeDataService {
 
     }
 }
+
+*/

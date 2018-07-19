@@ -23,7 +23,7 @@ class Garden extends React.Component<any, any> {
   }
 
   componentWillMount(){
-        axios.get("http://192.168.1.152:8080/garden/getByUserId",{params:{userId:this.state.userId}})
+        axios.get("http://192.168.56.1:8080/garden/getByUserId",{params:{userId:this.state.userId}})
             .then((res)=>{
                 let gardenData=[];
                 let tmp_overlay = [];
@@ -73,7 +73,7 @@ class Garden extends React.Component<any, any> {
         const params={
             gardenId:gardenId
         };
-        axios.post('http://192.168.1.152:8080/garden/deleteByGardenId',qs.stringify(params))
+        axios.post('http://192.168.56.1:8080/garden/deleteByGardenId',qs.stringify(params))
             .then(()=>{
                 Toast.info('successfully delete');
                 this.setState({

@@ -39,7 +39,7 @@ class ModifyUserName extends React.Component{
                         this.props.user.user.phone,
                         this.props.user.user.email,
                         this.props.user.user.password);
-                    this.props.navigation.goBack();
+                        this.props.navigation.goBack();
                 }}
                 disabled={this.state.username===''? true:false}>
                     Submit
