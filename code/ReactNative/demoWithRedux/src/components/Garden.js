@@ -1,100 +1,148 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, Drawer, List, WhiteSpace } from 'antd-mobile-rn';
+import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Drawer, List, WhiteSpace, Popover, Toast } from 'antd-mobile-rn';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import GardenItem from './GardenItem';
+import qs from "qs";
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-});
+const Item = Popover.Item;
 
-class Garden extends React.Component{
-    drawer: any;
-    data:[];
+class Garden extends React.Component<any, any> {
 
-    onOpenChange = (isOpen: any) => {
-        console.log('是否打开了 Drawer', isOpen.toString());
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      // visible: false,
+      selected: '',
+      userId: 1,
+      data:{},   
+      overlay: [],
+      gardenData:[]
     };
-    componentWillMount(){
-        axios.get('http://192.168.56.1:8080/garden/getByUserId',{params:{userId:this.props.user.user.userId}})
+  }
+
+  componentWillMount(){
+        axios.get("http://192.168.1.152:8080/garden/getByUserId",{params:{userId:this.state.userId}})
             .then((res)=>{
-                this.data=res.data;
-                console.log('in sensor page res data');
-                console.log(res.data);
+                let gardenData=[];
+                let tmp_overlay = [];
+                //alert(JSON.stringify(res.data));
+                for(let i=0;i<res.data.length;i++){
+
+                    tmp_overlay.push(res.data[i].gardenId);
+
+                    gardenData.push({
+                        gardenId:res.data[i].gardenId,
+                        length: res.data[i].length,
+                        positionX:res.data[i].positionX,
+                        positionY:res.data[i].positionY,
+                        width: res.data[i].width,
+                        gardenName:res.data[i].gardenName
+                    });
+                }                                
+                this.setState({
+                    data:res.data,
+                    overlay: tmp_overlay,
+                    gardenData: gardenData
+                });
+            })
+            .catch(err=>{
+                Toast.info('Something wrong!');
+                console.log('error');
+                console.log(err);
             })
     }
+  
+  onSelect = (value: any) => {
+    this.setState({
+      selected: value,
+    });
+  }
 
-    render() {
-        let array=[];
-        if(typeof(this.data)!=='undefined' )
-        {
-            for(let index=0;index<this.data.length;index++){
-                if (index === 0) {
-                    array.push (
-                        <List.Item
-                            key={index}
-                            thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-                            multipleLine
-                        >
-                            <View
-                                style={{
-                                    flexDirection: 'row',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                }}
-                            >
-                                <Text>Categories - {index}</Text>
-                                <Button
-                                    type="primary"
-                                    size="small"
-                                    onClick={() => this.drawer.closeDrawer()}
-                                >
-                                    close drawer
-                                </Button>
-                            </View>
-                        </List.Item>
-                    );
-                }
-                else array.push (
-                    <List.Item
-                        key={index}
-                        thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-                    >
-                        <Text>Categories - {index}</Text>
-                    </List.Item>
-                );
+  onDeleteGarden=(gardenId)=>{
+        let tmpState=this.state.gardenData;
+        let tmpData=[];
+        let tmpOverlay=[];
+        for(let i=0;i<tmpState.length;i++){
+            if(tmpState[i].gardenId!==gardenId){
+                tmpData.push(tmpState[i]);
+                tmpOverlay.push(tmpState[i].gardenId);
             }
         }
+        const params={
+            gardenId:gardenId
+        };
+        axios.post('http://192.168.1.152:8080/garden/deleteByGardenId',qs.stringify(params))
+            .then(()=>{
+                Toast.info('successfully delete');
+                this.setState({
+                    gardenData:tmpData,
+                    overlay:tmpOverlay
 
-
-        // Todo: https://github.com/DefinitelyTyped/DefinitelyTyped
-        const sidebar = (
-            <ScrollView style={[styles.container]}>
-                <List>{array}</List>
-            </ScrollView>
-        );
-
-        return (
-            <Drawer
-                sidebar={sidebar}
-                position="left"
-                open={false}
-                drawerRef={(el: any) => (this.drawer = el)}
-                onOpenChange={this.onOpenChange}
-                drawerBackgroundColor="#ccc"
-            >
-                <View style={{ flex: 1, marginTop: 114, padding: 8 }}>
-                    <Button onClick={() => this.drawer && this.drawer.openDrawer()}>
-                        Open drawer
-                    </Button>
-                    <WhiteSpace />
-                </View>
-            </Drawer>
-        );
+                })
+            })
     }
+  
+  render() {
+
+    overlay = this.state.overlay.map((i, index) => (
+      <Item key={index} value={i}>
+        <Text>Garden {i}</Text>
+      </Item>
+    ));
+
+    let rowData = [];
+
+    for(let i=0;i<this.state.gardenData.length;i++){
+
+        if (this.state.gardenData[i].gardenId == this.state.selected)
+        {
+            rowData = this.state.gardenData[i];
+
+        }
+                    
+    }
+
+    return (
+      <View>
+        
+        <View style={styles.menuContainer}>
+          <Popover
+            name="m"
+            style={{ backgroundColor: '#FFFFFF' }}
+            overlay={overlay}
+            contextStyle={styles.contextStyle}
+            onSelect={this.onSelect}
+          >
+            <Text >选择花园</Text>
+          </Popover>
+        </View>
+        <View>
+          <GardenItem 
+            navigation={this.props.navigation} 
+            data={rowData}
+            onDeleteGarden={this.onDeleteGarden.bind(this)}
+          />
+        </View>
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  contextStyle: {  // “选择花园”的位置
+    margin: 50,
+    flex: 1,
+  },
+  menuContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    height: 200,
+    paddingHorizontal: 5,
+    paddingVertical: 10,
+  } ,
+});
 
 const mapStateToProps = (state) => {
     return {
