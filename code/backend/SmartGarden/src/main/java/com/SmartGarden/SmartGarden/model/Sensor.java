@@ -10,6 +10,7 @@ import javax.persistence.*;
 /*
 * sensor的坐标是相对于花园而言
 * 以花园的左下角为原点
+* sensorType 1为湿度传感器 2为温度传感器 3为监控器
 * */
 
 @Data
