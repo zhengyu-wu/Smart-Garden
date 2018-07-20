@@ -15,14 +15,14 @@ import {LineChart, ScatterChart, Scatter, Line,
 
             const nozzles = this.props.nozzles;
             var data11 = [];
-            // for (var i = 0; i<nozzles.length;i++){
-            //   console.log('nozzles[i]', nozzles[i]);
-            //   if (nozzles[i].nozzleState === 1){
-            //     data11.push(nozzles[i]);
-            //   }
-            // }
-            data11 = nozzles;
-            console.log('current 11:', nozzles)
+            for (var i = 0; i<nozzles.length;i++){
+              console.log('nozzles[i]', nozzles[i]);
+              if (nozzles[i].nozzleState === 1){
+                data11.push(nozzles[i]);
+              }
+            }
+            
+            console.log('current 11:', data11)
             // console.log('current garden', this.state.currentGardenID);
             // console.log('current garden length', this.state.currentGardenLength);
             // console.log('current garden width', this.state.currentGardenWidth);
@@ -37,7 +37,7 @@ import {LineChart, ScatterChart, Scatter, Line,
             <ZAxis dataKey="radius" name="Radius" unit="" range={[90,10000]}/>
             <Tooltip cursor={{ stroke: '#6699FF', strokeWidth: 1 }} />
             <Legend />
-            <Scatter name="Nozzle" data={nozzles} fillOpacity={0.3} fill="#33CC99" />
+            <Scatter name="Nozzle" data={data11} fillOpacity={0.3} fill="#33CC99" />
           </ScatterChart>
         );
       }
