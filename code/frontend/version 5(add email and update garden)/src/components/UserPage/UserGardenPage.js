@@ -12,13 +12,15 @@ const showHeader = true;
 const footer = () => 'User Table';
 const scroll = { y: 240 };
 const pagination = { position: 'bottom' };
+//redux中取出持久化数据
+const theData = localStorage.getItem('userID');
 
 class UserGardenPage extends Component{
     constructor(){
         super();
         this.state = {
           gardens: [],
-          bordered: false,
+          bordered: true,
           pagination,
           size: 'default',
           expandedRowRender,
@@ -27,35 +29,9 @@ class UserGardenPage extends Component{
           footer,
           rowSelection: {},
           scroll: undefined,
-          modalVisible: false,
+          addmodalVisible: false,
+          updatemodalVisible: false,
         }
-    }
-    //state中users从后端数据库取数据初始化
-    componentWillMount(){
-        var params= new URLSearchParams();
-        params.append('userId',1);
-        axios.get(`http://localhost:8080/garden/getByUserId`,params)
-            .then(res => {
-                this.setState({
-                    gardens: res.data,
-                });
-                // console.log("res.data:",res.data);
-                // console.log("gardens:",this.state.users);
-            })
-    } 
-    //更新users数据库的变化情况
-    componentDidMount(){
-        var params= new URLSearchParams();
-        params.append('userId',1);
-        axios.get(`http://localhost:8080/garden/getByUserId`,params)
-            .then(res => {
-                //console.log(bookAll);
-                //console.log(bookAll.length);
-                //if(bookAll.length===0) bookAll = res.data;
-                this.setState({
-                    gardens: res.data,
-                });
-            })
     }
 
     //添加花园函数
@@ -65,17 +41,26 @@ class UserGardenPage extends Component{
             if (!err) {
                 
                 console.log('Received values of form: ', values);
-    
+                
                 var params= new URLSearchParams();
+                params.append('gardenName',values.gardenName);
                 params.append('positionX',values.positionX);
                 params.append('positionY',values.positionY);
                 params.append('width',values.width);
                 params.append('length',values.length);
-                params.append('userId',1);
+                params.append('userId',theData);
                 if((values.positionX!=null)&&(values.positionY!=null)&&(values.width!=null)&&(values.length!=null))
                 {
                   axios.post('http://localhost:8080/garden/addGardenWithUserId',params).then((res)=>{
                     console.log(res.data);
+                    axios.get(`http://localhost:8080/garden/getByUserId`,{params:{'userId':theData}})
+                    .then(res => {
+                        this.setState({
+                            gardens: res.data,
+                        });
+                        // console.log("res.data:",res.data);
+                        // console.log("gardens:",this.state.users);
+                    })
                     alert('add garden successfully');
                     //更新redux信息
                   }).catch(err=>{
@@ -91,23 +76,124 @@ class UserGardenPage extends Component{
             }
         });
     }
+    //花园删除提交
+    deleteGardenSubmit = (gardenId) => {
+        console.log('delete function');
+        //e.preventDefault();
+
+        var params= new URLSearchParams();
+        params.append('gardenId',gardenId);
+
+        axios.post('http://localhost:8080/garden/deleteByGardenId',params).then((res)=>{
+        console.log(res.data);
+        axios.get(`http://localhost:8080/garden/getByUserId`,{params:{'userId':theData}})
+            .then(res => {
+                this.setState({
+                    gardens: res.data,
+                });
+            })
+        alert('delete successfully');
+        //更新redux信息
+        });
+    }
+    //花园修改提交
+    handleUpdateGarden = (gardenId) => {
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                
+                console.log('Received values of form: ', values);
+                
+                var params= new URLSearchParams();
+                params.append('gardenId',gardenId);
+                params.append('gardenName',values.gardenName);
+                params.append('positionX',values.positionX);
+                params.append('positionY',values.positionY);
+                params.append('width',values.width);
+                params.append('length',values.length);
+                params.append('user',parseInt(theData));
+
+                if((values.positionX!=null)&&(values.positionY!=null)&&(values.width!=null)&&(values.length!=null))
+                {
+                  axios.post('http://localhost:8080/garden/updateGarden',params).then((res)=>{
+                    console.log(res.data);
+                    axios.get(`http://localhost:8080/garden/getByUserId`,{params:{'userId':theData}})
+                    .then(res => {
+                        this.setState({
+                            gardens: res.data,
+                        });
+                    })
+                    alert('update garden successfully');
+                    //更新redux信息
+                  }).catch(err=>{
+                    alert("unexpected error in update garden ");
+                  });
+                }
+                else
+                {
+                  alert('update garden failed');
+                }
+    
+                
+            }
+        });
+    }
+
+    //根据登录的userId从后端取出对应的gardens进行初始化
+    componentWillMount(){
+        var params= new URLSearchParams();
+        console.log("LoginUserId:",theData);
+        axios.get(`http://localhost:8080/garden/getByUserId`,{params:{'userId':theData}})
+            .then(res => {
+                this.setState({
+                    gardens: res.data,
+                });
+            })
+    } 
+    //根据登录的userId从后端取出对应的gardens进行gengxin
+    componentDidMount(){
+        var params= new URLSearchParams();
+        axios.get(`http://localhost:8080/garden/getByUserId`,{params:{'userId':theData}})
+            .then(res => {
+                this.setState({
+                    gardens: res.data,
+                });
+            })
+    }
       
-    //修改信息对话框控制函数
-    showModal = () => {
+    //添加花园对话框控制函数
+    showAddModal = () => {
         this.setState({
-        modalVisible: true,
+        addmodalVisible: true,
         });
     }
-    handleOk = (e) => {
+    handleAddOk = (e) => {
         console.log(e);
         this.setState({
-        modalVisible: false,
+        addmodalVisible: false,
         });
     }
-    handleCancel = (e) => {
+    handleAddCancel = (e) => {
         console.log(e);
         this.setState({
-        modalVisible: false,
+        addmodalVisible: false,
+        });
+    }
+    //修改花园对话框控制函数
+    showUpdateModal = () => {
+        this.setState({
+        updatemodalVisible: true,
+        });
+    }
+    handleUpdateOk = (e) => {
+        console.log(e);
+        this.setState({
+        updatemodalVisible: false,
+        });
+    }
+    handleUpdateCancel = (e) => {
+        console.log(e);
+        this.setState({
+        updatemodalVisible: false,
         });
     }
     
@@ -170,6 +256,11 @@ class UserGardenPage extends Component{
         key: 'gardenId',
         width: 100,
         },{
+        title: 'GardenName',
+        dataIndex: 'gardenName',
+        key: 'gardenName',
+        width: 100,
+        },{
         title: 'PositionX',
         dataIndex: 'positionX',
         key: 'positionX',
@@ -196,9 +287,23 @@ class UserGardenPage extends Component{
         render: (text, record) => (
             <span>
             {/*通过对话窗表单提交修改数据*/}
-            <a onClick={this.showModal} href="javascript:;">Modify</a>
-            <Modal title="Update Garden" visible={this.state.modalVisible} onOk={this.handleOk} onCancel={this.handleCancel}>
-                <Form className="update-form" onSubmit={this.handleAddGarden}>
+            <a onClick={this.showUpdateModal} href="javascript:;">Modify</a>
+            <Modal title="Update Garden" visible={this.state.updatemodalVisible} onOk={this.handleUpdateOk} onCancel={this.handleUpdateCancel}>
+                <Form className="update-form" onSubmit={()=>this.handleUpdateGarden(record.gardenId)}>
+                    <FormItem
+                        {...formItemLayout} 
+                        label="GardenName"
+                    >
+                        {getFieldDecorator('gardenName', {
+                                rules: [{ required: true, message: 'Please input gardenName!', whitespace: true }],
+                            })(
+                            <Input prefix={<Icon type="shop" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            placeholder="GardenName"
+                            type="gardenName"
+                            required
+                            />
+                        )}
+                    </FormItem>
                     <FormItem
                         {...formItemLayout} 
                         label="PositionX"
@@ -267,7 +372,7 @@ class UserGardenPage extends Component{
                 </Form>
             </Modal>
             <Divider type="vertical" />
-            <Popconfirm title="Sure to delete?" onConfirm={() => this.deleteUserSubmit(record.gardenId)}>
+            <Popconfirm title="Sure to delete?" onConfirm={() => this.deleteGardenSubmit(record.gardenId)}>
                 <a href="javascript:;">Delete</a>
             </Popconfirm>
             <Divider type="vertical" />
@@ -282,11 +387,25 @@ class UserGardenPage extends Component{
                 <div className="components-table-demo-control-bar">
                 <Form layout="inline" height={window.innerHeight}>
                     <FormItem>
-                        <Button type="primary" icon="plus-square-o" onClick={this.showModal} className="Add Garden" value="Add Garden">
+                        <Button type="primary" icon="plus-square-o" onClick={this.showAddModal} className="Add Garden" value="Add Garden">
                             Add Garden
                         </Button>
-                        <Modal title="New Garden" visible={this.state.modalVisible} onOk={this.handleOk} onCancel={this.handleCancel}>
-                            <Form className="update-form" onSubmit={this.handleAddGarden}>
+                        <Modal title="New Garden" visible={this.state.addmodalVisible} onOk={this.handleAddOk} onCancel={this.handleAddCancel}>
+                            <Form className="add-form" onSubmit={this.handleAddGarden}>
+                                <FormItem
+                                    {...formItemLayout} 
+                                    label="GardenName"
+                                >
+                                    {getFieldDecorator('gardenName', {
+                                            rules: [{ required: true, message: 'Please input gardenName!', whitespace: true }],
+                                        })(
+                                        <Input prefix={<Icon type="shop" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                        placeholder="GardenName"
+                                        type="gardenName"
+                                        required
+                                        />
+                                    )}
+                                </FormItem>
                                 <FormItem
                                     {...formItemLayout} 
                                     label="PositionX"

@@ -24,6 +24,7 @@ class ModifyUserEmail extends React.Component{
         return(
             <View>
                 <WhiteSpace size={'lg'}/>
+                <List>
                 <InputItem
                     clear
                     value={this.state.email}
@@ -45,6 +46,7 @@ class ModifyUserEmail extends React.Component{
                     }}
                     placeholder={'Email'}
                 />
+                </List>
                 <WhiteSpace size={'lg'}/>
                 <Button type={'primary'} onClick={()=>{
                     modifyUser(

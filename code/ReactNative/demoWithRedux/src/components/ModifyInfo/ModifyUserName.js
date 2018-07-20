@@ -18,6 +18,7 @@ class ModifyUserName extends React.Component{
         return(
             <View>
                 <WhiteSpace size={'lg'}/>
+                <List>
                 <InputItem
                     clear
                     value={this.state.username}
@@ -28,6 +29,7 @@ class ModifyUserName extends React.Component{
                     }
                     placeholder={'username'}
                 />
+                </List>
                 <WhiteSpace size={'lg'}/>
                 <Button type={'primary'} onClick={()=>{
                     modifyUser(
@@ -37,7 +39,7 @@ class ModifyUserName extends React.Component{
                         this.props.user.user.phone,
                         this.props.user.user.email,
                         this.props.user.user.password);
-                    this.props.navigation.goBack();
+                        this.props.navigation.goBack();
                 }}
                 disabled={this.state.username===''? true:false}>
                     Submit

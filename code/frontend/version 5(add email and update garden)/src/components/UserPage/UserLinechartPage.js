@@ -15,7 +15,7 @@ class UserLinechartPage extends Component{
             <Layout>
                 <Layout>
                 <Sider width={200} style={{ background: '#fff'}} height={window.innerHeight}>
-                    <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} style={{textAlign:'left', minHeight: 500}}>
+                    <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} style={{textAlign:'left'}}>
                         <Menu.Item key="1">
                             <Icon type="shop" />
                             <span className="nav-text">garden 1</span>
