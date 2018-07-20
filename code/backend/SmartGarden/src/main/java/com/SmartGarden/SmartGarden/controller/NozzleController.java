@@ -32,7 +32,7 @@ public class NozzleController {
     }
 
     @ResponseBody
-    @PostMapping("/addNozzleWithGardenId")
+    @PostMapping("/addNozzleByGardenId")
     public Nozzle addNozzleWithGardenId(Nozzle nozzle,int gardenId){
         return nozzleService.addNozzleWithGardenId(nozzle,gardenId);
     }
