@@ -28,7 +28,7 @@ class HeaderPage extends Component{
                         style={{cursor: 'pointer'}}
                         />
                     </span>
-                    <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.8em'}}>Smart Garden</span>
+                    <span style={{color:'#fff', paddingLeft:'2%', fontSize:'1.8em'}}>斯玛特 嘠登</span>
                     <span style={{color:'#fff', paddingLeft:'80%',paddingBottom:'80%'}}>
                         <Button type="primary" onClick={this.handleLogOut} className="Log out" value="Log out">
                             Log out
