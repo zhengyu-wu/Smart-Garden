@@ -6,6 +6,7 @@ import FormItem from 'antd/lib/form/FormItem';
 const { Header,Content,Footer,Sider } = Layout;
 //axios
 import axios from "axios/index";
+import Item from '../../../node_modules/_antd@3.7.0@antd/lib/list/Item';
 
 //const FormItem = Form.Item;
 
@@ -23,7 +24,7 @@ class AdminUserPage extends Component{
     super();
     this.state = {
       users: [],
-      bordered: false,
+      bordered: true,
       loading: false,
       pagination,
       size: 'default',
@@ -34,6 +35,7 @@ class AdminUserPage extends Component{
       rowSelection: {},
       scroll: undefined,
       modalVisible: false,
+      chosenUser:-1,//被选中的userId
     }
   }
 
@@ -65,8 +67,9 @@ class AdminUserPage extends Component{
 }
 
   //修改信息对话框控制函数
-  showModal = () => {
+  showModal = (userId) => {
     this.setState({
+      chosenUser:userId,
       modalVisible: true,
     });
   }
@@ -84,15 +87,14 @@ class AdminUserPage extends Component{
   }
 
   //用户信息修改提交
-  updateUserSubmit = (e) => {
-    e.preventDefault();
+  updateUserSubmit = (userId) => {
     this.props.form.validateFieldsAndScroll((err, values) => {
         if (!err) {
             
             console.log('Received values of form: ', values);
 
             var params= new URLSearchParams();
-            params.append('userId',2);
+            params.append('userId',userId);
             params.append('username',values.userName);
             params.append('password',values.password);
             params.append('phone',values.phone);
@@ -241,9 +243,9 @@ class AdminUserPage extends Component{
       render: (text, record) => (
         <span>
           {/*通过对话窗表单提交修改数据*/}
-          <a onClick={this.showModal} href="javascript:;">Modify</a>
+          <a onClick={()=>this.showModal(record.userId)} href="javascript:;">Modify</a>
           <Modal title="Update User" visible={this.state.modalVisible} onOk={this.handleOk} onCancel={this.handleCancel}>
-              <Form className="login-form" onSubmit={this.updateUserSubmit}>
+              <Form className="login-form" onSubmit={()=>this.updateUserSubmit(this.state.chosenUser)}>
                 <FormItem
                     {...formItemLayout} 
                     label="Username"

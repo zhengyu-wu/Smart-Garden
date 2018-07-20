@@ -13,61 +13,6 @@ const footer = () => 'User Table';
 const scroll = { y: 240 };
 const pagination = { position: 'bottom' };
 
-//可编辑表格单元
-const FormItem = Form.Item;
-const EditableContext = React.createContext();
-const EditableRow = ({ form, index, ...props }) => (
-  <EditableContext.Provider value={form}>
-    <tr {...props} />
-  </EditableContext.Provider>
-);
-
-const EditableFormRow = Form.create()(EditableRow);
-
-class EditableCell extends React.Component {
-    getInput = () => {
-      if (this.props.inputType === 'number') {
-        return <InputNumber />;
-      }
-      return <Input />;
-    };
-  
-    render() {
-      const {
-        editing,
-        dataIndex,
-        title,
-        inputType,
-        record,
-        index,
-        ...restProps
-      } = this.props;
-      return (
-        <EditableContext.Consumer>
-          {(form) => {
-            const { getFieldDecorator } = form;
-            return (
-              <td {...restProps}>
-                {editing ? (
-                  <FormItem style={{ margin: 0 }}>
-                    {getFieldDecorator(dataIndex, {
-                      rules: [{
-                        required: true,
-                        message: `Please Input ${title}!`,
-                      }],
-                      initialValue: record[dataIndex],
-                    })(this.getInput())}
-                  </FormItem>
-                ) : restProps.children}
-              </td>
-            );
-          }}
-        </EditableContext.Consumer>
-      );
-    }
-  }
-
-
 
 class UserGardenPage extends Component{
     constructor(){
@@ -86,6 +31,7 @@ class UserGardenPage extends Component{
             scroll: undefined,
             addmodalVisible: false,
             updatemodalVisible: false,
+            chosenGardenId:-1,
         }
     }
     //可编辑表格用函数
@@ -268,8 +214,9 @@ class UserGardenPage extends Component{
         });
     }
     //修改花园对话框控制函数
-    showUpdateModal = () => {
+    showUpdateModal = (gardenId) => {
         this.setState({
+        chosenGardenId:gardenId,
         updatemodalVisible: true,
         });
     }
@@ -377,9 +324,10 @@ class UserGardenPage extends Component{
         render: (text, record) => (
             <span>
             {/*通过对话窗表单提交修改数据*/}
-            <a onClick={this.showUpdateModal} href="javascript:;">Modify</a>
+            <a onClick={()=>this.showUpdateModal(record.gardenId)} href="javascript:;">Modify</a>
             <Modal title="Update Garden" visible={this.state.updatemodalVisible} onOk={this.handleUpdateOk} onCancel={this.handleUpdateCancel}>
-                <Form className="update-form" onSubmit={()=>this.handleUpdateGarden(record.gardenId)}>
+                <Form className="update-form" onSubmit={()=>this.handleUpdateGarden(this.state.chosenGardenId)}>
+                {console.log("Modify GardenId:",this.state.chosenGardenId)}
                     <FormItem
                         {...formItemLayout} 
                         label="GardenName"
