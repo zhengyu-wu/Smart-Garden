@@ -5,17 +5,18 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import SensorItem from './SensorItem';
 import qs from "qs";
+import _ from 'lodash';
 
 const Item = List.Item;
 const Brief = Item.Brief;
 
 
 class Sensor extends React.Component{
-    constructor(){
-        super();
+    constructor(props:any){
+        super(props);
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state={
-            gardenId:1,//todo gardenId应该是从上层组件传递的，此处为了便于测试与编写采用了固定值
+            gardenId:this.props.navigation.state.params.gardenId,
             data:[],//data应该是从后端拿到的数据
             ds:ds,
             isLoading:true,
@@ -37,9 +38,12 @@ class Sensor extends React.Component{
                         sensorType:res.data[i].sensorType
                     });
                 }
+                console.log('in cwm');
+                let newData=_.cloneDeep(tmpData);
+                console.log(newData);
                 this.setState({
-                    data:tmpData,
-                    ds:this.state.ds.cloneWithRows(tmpData),
+                    data:newData,
+                    ds:this.state.ds.cloneWithRows(newData),
                     isLoading:false,
                     dataLength:res.data.length
                 });
@@ -52,14 +56,16 @@ class Sensor extends React.Component{
             })
     }
 
-    onDeleteSensor=(sensorId)=>{
+    onDeleteSensor=()=>{
+        /*
         let tmpState=this.state.data;
-        console.log('original');
-        console.log(tmpState);
         let tmpDatas=[];
+        console.log('in sensor');
+        console.log(sensorId);
         for(let i=0;i<tmpState.length;i++){
             if(tmpState[i].sensorId!==sensorId){
                 tmpDatas.push(tmpState[i]);
+                console.log(tmpState[i]);
             }
         }
         const params={
@@ -73,8 +79,12 @@ class Sensor extends React.Component{
                     ds:this.state.ds.cloneWithRows(tmpDatas),
                     dataLength:tmpDatas.length
                 })
-            })
-    }
+            })*/
+        this.componentWillMount();
+    };
+    onAddSensor=()=>{
+        this.componentWillMount();
+    };
 
     ListViewItemSeparator = () => {
         return (
@@ -95,18 +105,21 @@ class Sensor extends React.Component{
             <View>
                 <WhiteSpace/>
                 <Button type={'primary'} onClick={()=>{
-                    //todo 此处应该跳转到添加传感器的位置
+                    this.props.navigation.navigate('AddSensor',{
+                        navigation: this.props.navigation,
+                        gardenId:this.state.gardenId,
+                        onAddSensor:this.onAddSensor.bind(this)
+                    })
                 }}>
                     Add a sensor
-                </Button>
+            </Button>
                 <WhiteSpace/>
                 <ListView
                     dataSource={this.state.ds}
                     renderRow={(rowData)=>{
+                        console.log('in render');
+                        console.log(rowData);
                         let record=currentData+1;
-                        console.log(currentData);
-                        console.log('data length');
-                        console.log(this.state.dataLength);
                         if(record===this.state.dataLength){
                             currentData=0;
                             return <SensorItem

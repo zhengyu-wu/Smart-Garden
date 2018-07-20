@@ -16,6 +16,7 @@ class SensorItem extends React.Component{
             checked:false,
             positionX:this.props.data.positionX,
             positionY:this.props.data.positionY,
+            sensorId:this.props.data.sensorId,
             visible:false
         };
     }
@@ -29,6 +30,19 @@ class SensorItem extends React.Component{
     componentDidMount(){
         if(this.props.data.sensorState===1)
             this.setState({checked:true});
+        this.setState({positionX:this.props.data.positionX,
+            positionY:this.props.data.positionY,
+            sensorId:this.props.data.sensorId,});
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            checked:nextProps.data.sensorState===1,
+            positionX:nextProps.data.positionX,
+            positionY:nextProps.data.positionY,
+            sensorId:nextProps.data.sensorId,
+            visible:false
+        })
     }
 
     onSwitchChanged=() => {
@@ -39,7 +53,7 @@ class SensorItem extends React.Component{
         this.setState({checked: !this.state.checked});
 
         const params = {
-            sensorId: this.props.data.sensorId,
+            sensorId: this.state.sensorId,
             sensorState: tmpState
         };
         axios.post('http://192.168.56.1:8080/sensors/modifySensorState', qs.stringify(params))
@@ -53,21 +67,29 @@ class SensorItem extends React.Component{
         this.setState({positionX:positionX,positionY:positionY})
     };
 
-    componentWillReceiveProps(newProps)
-    {
-
-    }
-
     onButtonClick = () => {
         Modal.alert('Delete this sensor?', 'the operation cannot be recovered', [
             { text: 'Cancel', onPress: () => console.log('cancel'), style: 'cancel' },
-            { text: 'OK', onPress: () => this.props.onDeleteSensor(this.props.data.sensorId) },
+            {
+                text: 'OK', onPress: () => {
+                    console.log(this.state.sensorId);
+                    const params = {
+                        sensorId: this.state.sensorId
+                    };
+                    axios.post('http://192.168.56.1:8080/sensors/deleteSensorBySensorId', qs.stringify(params))
+                        .then(() => {
+                            Toast.info('successfully delete');
+                            this.props.onDeleteSensor();
+                        });
+                }
+            }
+
         ]);
     };
 
     render(){
         if(this.props.isLast===true){
-            console.log("hit!");
+            console.log('hit');
             return(
                 <WingBlank size="lg">
                     <Card>
@@ -85,9 +107,9 @@ class SensorItem extends React.Component{
                                           this.props.navigation.navigate('ModifySensorPosition',
                                               {
                                                   navigation: this.props.navigation,
-                                                  positionX:this.state.positionX,
-                                                  positionY:this.state.positionY,
-                                                  sensorId:this.props.data.sensorId,
+                                                  positionX:this.props.data.positionX,
+                                                  positionY:this.props.data.positionY,
+                                                  sensorId:this.state.sensorId,
                                                   onModifyPosition:this.onModifyPosition.bind(this)
                                               })
                                       }}>
@@ -146,7 +168,7 @@ class SensorItem extends React.Component{
                                               navigation: this.props.navigation,
                                               positionX:this.state.positionX,
                                               positionY:this.state.positionY,
-                                              sensorId:this.props.data.sensorId,
+                                              sensorId:this.state.sensorId,
                                               onModifyPosition:this.onModifyPosition.bind(this)
                                           })
                             }}>

@@ -7,23 +7,17 @@ import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 
-/*
-* sensor的坐标是相对于花园而言
-* 以花园的左下角为原点
-* sensorType 1为湿度传感器 2为温度传感器 3为监控器
-* */
-
 @Data
 @Entity
-@Table(name="sensors")
-public class Sensor {
-    public Sensor(){
+@Table(name="nozzles")
+public class Nozzle {
+    public Nozzle(){
 
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer sensorId;
+    private Integer nozzleId;
 
     @Column(nullable = false)
     private Double positionX;
@@ -32,30 +26,22 @@ public class Sensor {
     private Double positionY;
 
     @Column(nullable = false)
-    private int sensorType;
+    private int nozzleState=0;
 
     @Column(nullable = false)
-    private int sensorState;
+    private Double radius;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "Garden")
     @NotFound(action = NotFoundAction.IGNORE)
     private Garden garden;
 
-    public Garden getGarden() {
-        return garden;
+    public Integer getNozzleId() {
+        return nozzleId;
     }
 
-    public void setGarden(Garden garden) {
-        this.garden = garden;
-    }
-
-    public Integer getSensorId() {
-        return sensorId;
-    }
-
-    public void setSensorId(Integer sensorId) {
-        this.sensorId = sensorId;
+    public void setNozzleId(Integer nozzleId) {
+        this.nozzleId = nozzleId;
     }
 
     public Double getPositionX() {
@@ -74,19 +60,27 @@ public class Sensor {
         this.positionY = positionY;
     }
 
-    public int getSensorType() {
-        return sensorType;
+    public int getNozzleState() {
+        return nozzleState;
     }
 
-    public void setSensorType(int sensorType) {
-        this.sensorType = sensorType;
+    public void setNozzleState(int nozzleState) {
+        this.nozzleState = nozzleState;
     }
 
-    public int getSensorState() {
-        return sensorState;
+    public Double getRadius() {
+        return radius;
     }
 
-    public void setSensorState(int sensorState) {
-        this.sensorState = sensorState;
+    public void setRadius(Double radius) {
+        this.radius = radius;
+    }
+
+    public Garden getGarden() {
+        return garden;
+    }
+
+    public void setGarden(Garden garden) {
+        this.garden = garden;
     }
 }

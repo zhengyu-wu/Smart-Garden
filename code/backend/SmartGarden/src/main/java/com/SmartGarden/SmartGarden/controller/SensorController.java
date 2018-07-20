@@ -36,6 +36,18 @@ public class SensorController {
     @GetMapping("/getSensorByGardenId")
     public List<Sensor> getSensorByGardenId(int gardenId){return sensorService.getByGardenId(gardenId);}
 
+    @ResponseBody
+    @GetMapping("/getHumiSensorByGardenId")
+    public List<Sensor> getHumiSensorByGardenId(int gardenId){
+        return sensorService.getHumiSensorByGardenId(gardenId);
+    }
+
+    @ResponseBody
+    @GetMapping("/getTempSensorByGardenId")
+    public List<Sensor> getTempSensorByGardenId(int gardenId){
+        return sensorService.getTempSensorByGardenId(gardenId);
+    }
+
 
     @ResponseBody
     @PostMapping("/addSensorWithGardenId")

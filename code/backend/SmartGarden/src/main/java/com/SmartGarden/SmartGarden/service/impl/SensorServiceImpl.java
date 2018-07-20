@@ -8,6 +8,7 @@ import com.SmartGarden.SmartGarden.service.SensorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -122,6 +123,30 @@ public class SensorServiceImpl implements SensorService {
     @Override
     public List<Sensor> getByGardenId(int gardenId) {
         return sensorRepository.getByGarden_GardenId(gardenId);
+    }
+
+    @Override
+    public List<Sensor> getHumiSensorByGardenId(int gardenId) {
+        List<Sensor> resList=new ArrayList<>();
+        List<Sensor> tmpList=sensorRepository.getByGarden_GardenId(gardenId);
+        for (Sensor aTmpList : tmpList) {
+            if (aTmpList.getSensorType() == 1) {
+                resList.add(aTmpList);
+            }
+        }
+        return resList;
+    }
+
+    @Override
+    public List<Sensor> getTempSensorByGardenId(int gardenId) {
+        List<Sensor> resList=new ArrayList<>();
+        List<Sensor> tmpList=sensorRepository.getByGarden_GardenId(gardenId);
+        for (Sensor aTmpList : tmpList) {
+            if (aTmpList.getSensorType() == 2) {
+                resList.add(aTmpList);
+            }
+        }
+        return resList;
     }
 
     @Override
