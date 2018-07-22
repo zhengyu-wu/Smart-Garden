@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ScrollView, Text ,View} from 'react-native';
 import { Button, InputItem, List,WhiteSpace,Toast} from 'antd-mobile-rn';
