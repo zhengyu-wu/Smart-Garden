@@ -12,6 +12,7 @@ import humiditySensorIcon from '../img/humiditySensor.png';
 import temperatureSensorIcon from '../img/temperatureSensor.png';
 import monitorSensorIcon from '../img/monitorSensor.png';
 import ScatterChartPage from '../SensorImg/ScatterChartPage';
+import NozzlesChartPage from '../SensorImg/NozzlesChartPage';
 
 const ButtonGroup = Button.Group;
 const Option = Select.Option;
@@ -322,9 +323,6 @@ class UserSensorPage extends Component{
                             </List>
                         </div>
                     </Sider>
-                    {/* <Content style={{minHeight:window.innerHeight}}>
-                        
-                    </Content> */}
                     <Content style={{ background: '#fff', padding: 0, height: window.innerHeight  }} >
                         {/*散点图*/}
                         <ScatterChartPage currentGardenLength = {this.state.currentGardenLength}
