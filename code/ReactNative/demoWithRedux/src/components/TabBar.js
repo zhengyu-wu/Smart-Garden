@@ -5,6 +5,7 @@ import UserCard from './User';
 import Sensor from './Sensor';
 import Garden from './Garden';
 import SensorPage from './Garden';
+import AdminUserControl from './Admin/AdminUserControl';
 
 
 class TabBars extends React.Component<any, any> {
@@ -64,9 +65,7 @@ class TabBars extends React.Component<any, any> {
                     selected={this.state.selectedTab === 'greenTab'}
                     onPress={() => this.onChangeTab('greenTab')}
                 >
-                    <View>
-
-                    </View>
+                    <AdminUserControl/>
                 </TabBar.Item>
                 <TabBar.Item
                     icon={require('../assets/busi.png')}

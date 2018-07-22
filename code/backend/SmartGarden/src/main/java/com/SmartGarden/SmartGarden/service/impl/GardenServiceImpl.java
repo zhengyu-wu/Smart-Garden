@@ -62,6 +62,19 @@ public class GardenServiceImpl implements GardenService {
         }
     }
 
+    @Override
+    public Garden addGardenWithUserId(Garden garden, int userId) {
+        User tmpUser= userService.selectById(userId);
+        if(tmpUser==null)
+            return null;
+        garden.setUser(tmpUser);
+        try {
+            return gardenRepository.save(garden);
+        }catch (Exception e){
+            return null;
+        }
+    }
+
     //todo 未经测试 2018/7/16
     @Override
     public boolean update(Garden garden) {
