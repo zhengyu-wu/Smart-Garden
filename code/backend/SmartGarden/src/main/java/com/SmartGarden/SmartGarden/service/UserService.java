@@ -13,5 +13,10 @@ public interface UserService {
     List<User> selectAll();
     User login(int userId, String password);
     User loginWithEmail(String email,String password);
-
+    User modifyUsername(int userId,String username);
+    User modifyPhone(int userId,String phone);
+    User modifyState(int userId,int newState);
+    User modifyPassword(int userId,String password);
+    User modifyEmail(int userId,String email);
+    User modifyUserType(int userId,int newType);
 }

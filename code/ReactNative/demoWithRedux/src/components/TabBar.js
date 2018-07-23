@@ -65,7 +65,7 @@ class TabBars extends React.Component<any, any> {
                     selected={this.state.selectedTab === 'greenTab'}
                     onPress={() => this.onChangeTab('greenTab')}
                 >
-                    <AdminUserControl/>
+                    <AdminUserControl navigation={this.props.navigation}/>
                 </TabBar.Item>
                 <TabBar.Item
                     icon={require('../assets/busi.png')}

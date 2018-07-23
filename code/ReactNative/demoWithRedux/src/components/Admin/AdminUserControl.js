@@ -1,21 +1,26 @@
 import React,{Component} from 'react';
 import {Text,View,FlatList} from 'react-native';
-import {Card,List,Accordion,Switch} from 'antd-mobile-rn';
+import {Card,List,Accordion,Switch,Button,Toast} from 'antd-mobile-rn';
 import axios from 'axios';
+import qs from "qs";
+import {Modal} from "antd-mobile-rn/lib/index.native";
 
 class AdminUserControl extends Component{
     constructor(props){
         super(props);
         this.state={
-            users:[]
-        }
+            users:[],
+            refreshing:false
+        };
+        this.onModifyInfo=this.onModifyInfo.bind(this);
+        this.onButtonClick=this.onButtonClick.bind(this);
     }
     componentDidMount(){
         axios.get("http://192.168.56.1:8080/users/getAllUser")
             .then((res)=>{
                 let tmpData=[];
                 for(let i=0;i<res.data.length;i++){
-                    tmpData.push({key:i,user:res.data[i]});
+                    tmpData.push({key:i.toString(),user:res.data[i]});
                 }
                 this.setState({users:tmpData});
             })
@@ -23,11 +28,75 @@ class AdminUserControl extends Component{
 
     onChange = (key: string) => {
         console.log(key);
+    };
+
+    onModifyInfo=(userId,userType,username,phone,email,password,userState)=>{
+        let newData=[];
+        for(let i =0;i<this.state.users.length;i++){
+            if(userId!==this.state.users[i].user.userId){
+                newData.push(this.state.users[i]);
+            }
+            else {
+                newData.push({key:this.state.users[i].key,user:{
+                        userId:userId,
+                        userType:userType,
+                        username:username,
+                        phone:phone,
+                        email:email,
+                        password:password,
+                        userState:userState
+                    }})
+            }
+        }
+        const params={
+            userId:userId,
+            userType:userType,
+            phone:phone,
+            email:email,
+            password:password,
+            username:username,
+            userState:userState
+        };
+        axios.post("http://192.168.56.1:8080/users/updateUser",qs.stringify(params))
+            .then(()=>{
+                this.setState({users:newData});
+                console.log("in update User params: ");
+                console.log(params);
+            })
     }
 
+    onButtonClick=(userId)=>{
+        Modal.alert('Delete this user?', 'this operation cannot be recovered!', [
+            { text: 'Cancel', onPress: () => console.log('cancel'), style: 'cancel' },
+            {
+                text: 'OK', onPress: () => {
+                    let newData=[];
+                    for(let i =0;i<this.state.users.length;i++){
+                        if(userId!==this.state.users[i].user.userId){
+                            newData.push(this.state.users[i]);
+                        }
+                    }
+                    console.log('in delete');
+                    console.log(userId);
+                    const params = {
+                        userId: userId
+                    };
+                    this.setState({users:newData});
+                    axios.post('http://192.168.56.1:8080/users/deleteByUserId', qs.stringify(params))
+                        .then(() => {
+                            Toast.info('successfully delete');
+                            console.log("state after update");
+                            console.log(this.state.users);
+                        });
+                }
+            }
+
+        ]);
+    }
+
+
+
     _renderItem=(item)=>{
-        console.log("item");
-        console.log(item);
         return <Card>
             <Card.Body>
                 <List>
@@ -40,7 +109,13 @@ class AdminUserControl extends Component{
                     <List.Item
                         extra={item.item.user.username}
                         arrow={'horizontal'}
-                        onClick={()=>{}}
+                        onClick={()=>{
+                            this.props.navigation.navigate('ModifyUserNameAdmin',
+                                {
+                                    item:item.item,
+                                    onModifyInfo:this.onModifyInfo.bind(this)
+                                })
+                        }}
                     >
                         username
                     </List.Item>
@@ -50,35 +125,45 @@ class AdminUserControl extends Component{
                                 <List.Item
                                     extra={item.item.user.email}
                                     arrow={'horizontal'}
-                                    onClick={()=>{}}
+                                    onClick={()=>{
+                                        this.props.navigation.navigate('ModifyEmailAdmin',
+                                            {
+                                                item:item.item,
+                                                onModifyInfo:this.onModifyInfo.bind(this)
+                                            })
+                                    }}
                                 >
                                     email
                                 </List.Item>
                                 <List.Item
                                     extra={item.item.user.phone}
                                     arrow={'horizontal'}
-                                    onClick={()=>{}}
+                                    onClick={()=>{
+                                        this.props.navigation.navigate('ModifyUserPhoneAdmin',
+                                            {
+                                                item:item.item,
+                                                onModifyInfo:this.onModifyInfo.bind(this)
+                                            })
+                                    }}
                                 >
                                     phone
                                 </List.Item>
                                 <List.Item
-                                    extra={item.item.user.userType}
-                                    arrow={'horizontal'}
-                                    onClick={()=>{}}
+                                    extra={item.item.user.userType===1?'Admin':'Normal'}
                                 >
                                     userType
                                 </List.Item>
                                 <List.Item extra={
-                                    <Switch
-                                        checked ={item.item.user.userState===1}
-                                        onChange={()=>{
-                                            //todo 这里应该是修改用户激活状态的函数
-                                             } }
-                                    />
+                                    item.item.user.userState===1?'Activated':'Not verified'
                                 }
                                 >
                                     activation
                                 </List.Item>
+                                <Button type={'warning'} onClick={()=>
+                                {
+                                    this.onButtonClick(item.item.user.userId);
+                                }
+                                }>Delete this user</Button>
                             </List>
                         </Accordion.Panel>
                     </Accordion>
@@ -87,8 +172,22 @@ class AdminUserControl extends Component{
         </Card>;
     }
 
+    onAddUser=()=>{
+        this.componentDidMount();
+    }
+
     _header = () => {
-        return <Text>这是头部</Text>;
+        return <Button type={'primary'}
+                       onClick={()=>
+                        {//todo
+                            this.props.navigation.navigate('Register',{
+                                navigation: this.props.navigation,
+                                onAddUser:this.onAddUser.bind(this)
+                            })
+                        }
+                       }>
+            Add user
+        </Button>;
     }
 
     _footer = () => {
@@ -96,7 +195,7 @@ class AdminUserControl extends Component{
     }
 
     _separator = () => {
-        return <View style={{height:2,backgroundColor:'yellow'}}/>;
+        return <View style={{height:2}}/>;
     }
 
     render(){
@@ -111,6 +210,19 @@ class AdminUserControl extends Component{
                     onEndReachedThreshold={0}
                     numColumns={1}
                     data={this.state.users}
+                    extraData={this.state.users}
+                    refreshing={this.state.refreshing}
+                    onRefresh={()=>{
+                        this.setState({refreshing:true});
+                        axios.get("http://192.168.56.1:8080/users/getAllUser")
+                            .then((res)=>{
+                                let tmpData=[];
+                                for(let i=0;i<res.data.length;i++){
+                                    tmpData.push({key:i.toString(),user:res.data[i]});
+                                }
+                                this.setState({users:tmpData,refreshing:false});
+                            })
+                    }}
                     />
             </View>)
     }

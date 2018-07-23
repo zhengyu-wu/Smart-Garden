@@ -111,4 +111,96 @@ public class UserServiceImpl implements UserService {
             return tmpUser;
         else return null;
     }
+
+    @Override
+    public User modifyUsername(int userId, String username) {
+        User tmpUser=userRepository.findByUserId(userId);
+        if(tmpUser==null)
+            return null;
+        try {
+            tmpUser.setUsername(username);
+            userRepository.save(tmpUser);
+            return tmpUser;
+        }
+        catch (Exception e){
+            return null;
+        }
+
+
+    }
+
+    @Override
+    public User modifyPhone(int userId, String phone) {
+        User tmpUser=userRepository.findByUserId(userId);
+        if(tmpUser==null)
+            return null;
+        try {
+            tmpUser.setPhone(phone);
+            userRepository.save(tmpUser);
+            return tmpUser;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    public User modifyState(int userId, int newState) {
+        User tmpUser=userRepository.findByUserId(userId);
+        if(tmpUser==null)
+            return null;
+        try {
+            tmpUser.setUserState(newState);
+            userRepository.save(tmpUser);
+            return tmpUser;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    public User modifyPassword(int userId, String password) {
+        User tmpUser=userRepository.findByUserId(userId);
+        if(tmpUser==null)
+            return null;
+        try {
+            tmpUser.setPassword(password);
+            userRepository.save(tmpUser);
+            return tmpUser;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    public User modifyEmail(int userId, String email) {
+        User tmpUser=userRepository.findByUserId(userId);
+        if(tmpUser==null)
+            return null;
+        try {
+            tmpUser.setEmail(email);
+            userRepository.save(tmpUser);
+            return tmpUser;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    public User modifyUserType(int userId, int newType) {
+        User tmpUser=userRepository.findByUserId(userId);
+        if(tmpUser==null)
+            return null;
+        try {
+            tmpUser.setUserType(newType);
+            userRepository.save(tmpUser);
+            return tmpUser;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
 }
