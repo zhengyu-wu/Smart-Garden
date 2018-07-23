@@ -37,7 +37,7 @@ public class Garden {
     @Column(nullable = false)
     private Integer length;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne()
     @JoinColumn(name = "User")
     @NotFound(action = NotFoundAction.IGNORE)
     private User user;

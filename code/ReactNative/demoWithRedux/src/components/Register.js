@@ -16,7 +16,7 @@ class Register extends React.Component{
             confirmPassword:"",
             phoneError:false,
             passwordError:false,
-            emailError:false
+            emailError:false,
         };
         this.onPhoneErrorClick=this.onPhoneErrorClick.bind(this);
         this.onPasswordErrorClick=this.onPasswordErrorClick.bind(this);
@@ -149,7 +149,10 @@ class Register extends React.Component{
                                     this.state.phone.replace(/\s/g,''),
                                     this.state.email,
                                     this.state.password);
-                                    navigate("Home");
+                                    if(typeof (this.props.navigation.state.params.onAddUser)!=='undefined'){
+                                        this.props.navigation.state.params.onAddUser();
+                                    }
+                                    this.props.navigation.goBack();
                                 }
                             }
                     >

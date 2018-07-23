@@ -22,8 +22,8 @@ public class GardenController {
 
     @ResponseBody
     @PostMapping("/addGardenWithUserId")
-    public boolean addGardenWithUserId(Garden garden,int userId){
-        return gardenService.addGardenWithUser(garden,userId);
+    public Garden addGardenWithUserId(Garden garden,int userId){
+        return gardenService.addGardenWithUserId(garden,userId);
     }
 
     @ResponseBody
