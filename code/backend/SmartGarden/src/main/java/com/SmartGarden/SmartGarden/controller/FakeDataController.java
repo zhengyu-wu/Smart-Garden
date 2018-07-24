@@ -18,12 +18,23 @@ public class FakeDataController {
     @ResponseBody
     @GetMapping("/generateData")
     public void generateData(){
-        fakeDataService.generateData();
+        try{
+            fakeDataService.generateData();
+        }
+        catch (Exception e){
+            return;
+        }
     }
 
     @ResponseBody
     @GetMapping("/generateDataWithSensorId")
     public void generateDataWithSensorId(int sensorId){
-        fakeDataService.generateDataWithSensorId(sensorId);
+        try {
+            fakeDataService.generateDataWithSensorId(sensorId);
+        }
+        catch (Exception e){
+            return;
+        }
+
     }
 }

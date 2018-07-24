@@ -1,6 +1,6 @@
 package com.SmartGarden.SmartGarden.service;
 
 public interface FakeDataService {
-    void generateData();
-    void generateDataWithSensorId(int sensorId);
+    void generateData() throws InterruptedException;
+    void generateDataWithSensorId(int sensorId) throws InterruptedException;
 }
