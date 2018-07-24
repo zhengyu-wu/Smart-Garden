@@ -12,14 +12,12 @@ import ModifyUserPhone from './ModifyInfo/ModifyUserPhone';
 import ModifySensorPosition from './ModifyInfo/ModifySensorPosition';
 import AddGarden from "./ModifyInfo/AddGarden";
 import AddSensor from "./ModifyInfo/AddSensor";
-import Sensor from './Sensor'
+import Sensor from './Sensor';
 import ModifyEmailAdmin from "./ModifyInfo/ModifyEmailAdmin";
 import ModifyUserNameAdmin from "./ModifyInfo/ModifyUserNameAdmin";
 import ModifyUserPhoneAdmin from "./ModifyInfo/ModifyUserPhoneAdmin";
-import Nozzle from "./Nozzle";
-import AddNozzle from "./ModifyInfo/AddNozzle";
-import ModifyNozzlePosition from "./ModifyInfo/ModifyNozzlePosition";
-import ModifyNozzleRadius from "./ModifyInfo/ModifyNozzleRadius";
+import Heatmap from './Heatmap';
+import Linechart from './Linechart';
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -33,16 +31,14 @@ const RootStack = createStackNavigator({
     ModifyUserPassword:ModifyUserPassword,
     ModifyUserPhone:ModifyUserPhone,
     ModifySensorPosition:ModifySensorPosition,
-    ModifyNozzlePosition:ModifyNozzlePosition,
-    ModifyNozzleRadius:ModifyNozzleRadius,
     AddGarden:AddGarden,
     AddSensor:AddSensor,
-    AddNozzle:AddNozzle,
     Sensor:Sensor,
-    Nozzle:Nozzle,
     ModifyEmailAdmin:ModifyEmailAdmin,
     ModifyUserNameAdmin:ModifyUserNameAdmin,
-    ModifyUserPhoneAdmin:ModifyUserPhoneAdmin
+    ModifyUserPhoneAdmin:ModifyUserPhoneAdmin,
+    Heatmap: Heatmap,
+    Linechart:Linechart
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);

@@ -111,10 +111,15 @@ class SensorItem extends React.Component{
                             }}>
                                 position
                             </Item>
-                            <Item arrow={'horizontal'} onClick={()=>{
-                                //todo 此处应该是跳转到每个传感器的实时数据界面
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('Linechart',
+                                              {
+                                                  navigation: this.props.navigation
+                                                  //gardenId:this.props.data.gardenId
+                                              })
                             }}>
-                                view data
+                                实时折线图
                             </Item>
                             <Item extra={
                                 <Switch
