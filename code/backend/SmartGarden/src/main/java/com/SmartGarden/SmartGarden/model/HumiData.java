@@ -24,7 +24,7 @@ public class HumiData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer humiDataId;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne()
     @JoinColumn(name="Sensor")
     @NotFound(action = NotFoundAction.IGNORE)
     private Sensor sensor;

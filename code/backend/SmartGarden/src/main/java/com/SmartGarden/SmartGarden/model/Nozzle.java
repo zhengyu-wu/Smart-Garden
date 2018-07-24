@@ -31,7 +31,7 @@ public class Nozzle {
     @Column(nullable = false)
     private Double radius;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne()
     @JoinColumn(name = "Garden")
     @NotFound(action = NotFoundAction.IGNORE)
     private Garden garden;

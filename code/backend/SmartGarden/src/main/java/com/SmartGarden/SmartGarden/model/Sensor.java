@@ -37,7 +37,7 @@ public class Sensor {
     @Column(nullable = false)
     private int sensorState;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne()
     @JoinColumn(name = "Garden")
     @NotFound(action = NotFoundAction.IGNORE)
     private Garden garden;
