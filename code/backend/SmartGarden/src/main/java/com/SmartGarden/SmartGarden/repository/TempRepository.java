@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface TempRepository extends JpaRepository<TempData,Integer> {
     List<TempData> findTop20BySensor_SensorIdOrderBySendTimeDesc(int sensorId);
+    List<TempData> findTop15BySensor_SensorIdOrderBySendTimeDesc(int sensorId);
     TempData findTopBySensor_SensorIdOrderBySendTimeDesc(int sensorId);
 }

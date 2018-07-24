@@ -55,6 +55,11 @@ public class HumiServiceImpl implements HumiService {
     }
 
     @Override
+    public List<HumiData> getLast15DataBySensorId(int sensorId) {
+        return humiRepository.findTop15BySensor_SensorIdOrderBySendTimeDesc(sensorId);
+    }
+
+    @Override
     public List<HumiData> getLastHumiDataByGardenId(int gardenId) {
         List<Sensor> tmpSensorList=sensorService.getByGardenId(gardenId);
         List<HumiData> tmpList=new ArrayList<>();
