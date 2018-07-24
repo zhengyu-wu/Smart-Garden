@@ -51,8 +51,10 @@ class UserCard extends React.Component<any, any> {
                                 <Item arrow={"horizontal"} onClick={()=>{}}>
                                     statistics
                                 </Item>
-
                             </List>
+                            <Button type={'primary'}  onClick={()=>{log_out()}}>
+                                Log out
+                            </Button>
                         </Card.Body>
                         <Card.Footer
                             content={this.props.user.user.email}
@@ -60,12 +62,6 @@ class UserCard extends React.Component<any, any> {
                         />
                     </Card>
                 </WingBlank>
-                <WhiteSpace size={'lg'}/>
-                <View>
-                    <Button type={'primary'}  onClick={()=>{log_out()}}>
-                       Log out
-                    </Button>
-                </View>
             </View>
         );
     }

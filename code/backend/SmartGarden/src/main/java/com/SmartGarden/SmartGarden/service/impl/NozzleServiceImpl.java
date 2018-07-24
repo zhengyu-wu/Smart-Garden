@@ -81,6 +81,22 @@ public class NozzleServiceImpl implements NozzleService {
     }
 
     @Override
+    public boolean modifyPosition(int nozzleId, Double positionX,Double positionY) {
+        try {
+            Nozzle tmpNozzle=nozzleRepository.findByNozzleId(nozzleId);
+            if(tmpNozzle==null)
+                return false;
+            tmpNozzle.setPositionX(positionX);
+            tmpNozzle.setPositionY(positionY);
+            nozzleRepository.save(tmpNozzle);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
     public Nozzle getByNozzleId(int nozzleId) {
         return nozzleRepository.findByNozzleId(nozzleId);
     }

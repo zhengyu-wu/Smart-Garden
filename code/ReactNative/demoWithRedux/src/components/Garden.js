@@ -92,7 +92,7 @@ class Garden extends React.Component<any, any> {
       </Item>
     ));
 
-    let rowData = [];
+    let rowData = [this.state.gardenData[0]];
 
     for(let i=0;i<this.state.gardenData.length;i++){
 
