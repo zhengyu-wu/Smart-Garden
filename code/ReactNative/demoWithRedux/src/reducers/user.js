@@ -25,7 +25,7 @@ const user = (state = initialState, action={}) => {
                 };
             }
 
-            Toast.success("login successfully",1);
+            Toast.success("login successfully",0.5);
             return {
                 isFetching:false,
                 hasLogin:true,
@@ -33,7 +33,7 @@ const user = (state = initialState, action={}) => {
                 user:action.payload.data
             };
         case LOAD_USER_PENDING:
-            Toast.info("processing",1);
+            Toast.info("processing",0.5);
             return {
                 isFetching: true,
                 error: null,

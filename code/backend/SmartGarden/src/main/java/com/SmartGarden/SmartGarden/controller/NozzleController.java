@@ -55,4 +55,10 @@ public class NozzleController {
         return nozzleService.modifyState(nozzleId,state);
     }
 
+    @ResponseBody
+    @PostMapping("/modifyPositionByNozzleId")
+    public boolean modifyPosition(int nozzleId,Double positionX,Double positionY){
+        return nozzleService.modifyPosition(nozzleId,positionX,positionY);
+    }
+
 }

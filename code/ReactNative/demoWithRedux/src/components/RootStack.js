@@ -16,6 +16,10 @@ import Sensor from './Sensor'
 import ModifyEmailAdmin from "./ModifyInfo/ModifyEmailAdmin";
 import ModifyUserNameAdmin from "./ModifyInfo/ModifyUserNameAdmin";
 import ModifyUserPhoneAdmin from "./ModifyInfo/ModifyUserPhoneAdmin";
+import Nozzle from "./Nozzle";
+import AddNozzle from "./ModifyInfo/AddNozzle";
+import ModifyNozzlePosition from "./ModifyInfo/ModifyNozzlePosition";
+import ModifyNozzleRadius from "./ModifyInfo/ModifyNozzleRadius";
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -29,9 +33,13 @@ const RootStack = createStackNavigator({
     ModifyUserPassword:ModifyUserPassword,
     ModifyUserPhone:ModifyUserPhone,
     ModifySensorPosition:ModifySensorPosition,
+    ModifyNozzlePosition:ModifyNozzlePosition,
+    ModifyNozzleRadius:ModifyNozzleRadius,
     AddGarden:AddGarden,
     AddSensor:AddSensor,
+    AddNozzle:AddNozzle,
     Sensor:Sensor,
+    Nozzle:Nozzle,
     ModifyEmailAdmin:ModifyEmailAdmin,
     ModifyUserNameAdmin:ModifyUserNameAdmin,
     ModifyUserPhoneAdmin:ModifyUserPhoneAdmin
