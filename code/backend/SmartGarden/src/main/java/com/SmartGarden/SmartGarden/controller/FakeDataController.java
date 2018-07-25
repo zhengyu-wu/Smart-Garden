@@ -35,6 +35,10 @@ public class FakeDataController {
         catch (Exception e){
             return;
         }
-
+    }
+    @ResponseBody
+    @GetMapping("/generateDataWithGardenId")
+    public void generateDataWithGardenId(int gardenId){
+        fakeDataService.generateDataWithGardenId(gardenId);
     }
 }
