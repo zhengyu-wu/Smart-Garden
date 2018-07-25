@@ -1,0 +1,11 @@
+[t28]
+FileName1=t28_1f56f6c8fa78472aad88a9581335d130.jpg
+URL1=http://static.cnmooc.org/repositry/coursepic/i/1607/19/1f56f6c8fa78472aad88a9581335d130.jpg
+Total=1
+ContentType=image/jpeg
+SnapshotXmlFile=snapshot_28.xml
+RequestHeaderFile=t28_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t28_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

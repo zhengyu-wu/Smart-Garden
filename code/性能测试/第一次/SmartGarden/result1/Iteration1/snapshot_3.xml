@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HTTPSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="3">
+  <HTTPTask id="3" url="http://download.mozilla.org/?product=firefox-56.0b3-complete&amp;os=win64&amp;lang=zh-CN" origin="Primary" startDateTime="2018-07-25T10:27:14.647+08:00" startTime="2793">
+    <HTTPRequest method="GET" />
+  </HTTPTask>
+</HTTPSnapshot>

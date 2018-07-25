@@ -1,0 +1,11 @@
+[t7]
+FileName1=t7_nav-new.gif
+URL1=http://static.cnmooc.org/images/nav-new.gif
+Total=1
+ContentType=image/gif
+SnapshotXmlFile=snapshot_7.xml
+RequestHeaderFile=t7_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t7_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

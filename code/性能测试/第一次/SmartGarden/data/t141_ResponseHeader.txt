@@ -1,0 +1,14 @@
+HTTP/1.1 206 Partial Content
+Content-Type: application/octet-stream
+x-amz-replication-status: COMPLETED
+Last-Modified: Tue, 15 Aug 2017 22:35:46 GMT
+ETag: "64cfb4e302df33863289d76b9cbd8e59"
+x-amz-version-id: Zrgb3qyRufGREvfR5K4_GC9rG5.fxvai
+Accept-Ranges: bytes
+Server: AmazonS3
+X-Amz-Cf-Id: _i72hi6GHmA29nWMzWg8m4Jk0SXyVi1Fo5erSwl7mHjTv_LNGWWtig==
+Date: Wed, 25 Jul 2018 02:11:04 GMT
+Content-Range: bytes 1500000-1799999/51456071
+Content-Length: 300000
+Connection: keep-alive
+

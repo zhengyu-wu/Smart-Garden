@@ -1,0 +1,11 @@
+[t25]
+FileName1=t25_index.html
+URL1=http://www.cnmooc.org/js/app/home/index.js?dcd1e635ed
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_25.xml
+RequestHeaderFile=t25_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t25_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

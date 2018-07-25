@@ -1,0 +1,6 @@
+[hosts]
+localhost=
+www.cnmooc.org=
+static.cnmooc.org=
+download.mozilla.org=
+download.cdn.mozilla.net=

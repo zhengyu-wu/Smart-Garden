@@ -1,0 +1,5 @@
+[Diagnostics]
+Status=-1
+[Collate Recovery]
+Scenario=D:\LRtest\SmartGarden\controller.lrs
+Completed=0
