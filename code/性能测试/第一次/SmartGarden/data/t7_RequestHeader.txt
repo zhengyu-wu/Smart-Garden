@@ -1,0 +1,8 @@
+GET http://static.cnmooc.org/images/nav-new.gif HTTP/1.1
+Accept: image/png, image/svg+xml, image/jxr, image/*;q=0.8, */*;q=0.5
+Referer: http://www.cnmooc.org/home/index.mooc
+Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393
+Accept-Encoding: gzip, deflate
+Host: static.cnmooc.org
+

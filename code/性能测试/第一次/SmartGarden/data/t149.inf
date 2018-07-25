@@ -1,0 +1,9 @@
+[t149]
+FileName1=t149.html
+URL1=http://localhost:3000/user
+Total=1
+RequestHeaderFile=t149_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t149_ResponseHeader.txt
+ContentType=
+SnapshotXmlFile=snapshot_149.xml

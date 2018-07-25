@@ -1,0 +1,11 @@
+[t83]
+FileName1=t83_getSensorBySensorId.html
+URL1=http://localhost:8080/sensors/getSensorBySensorId?sensorId=22
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_83.xml
+RequestHeaderFile=t83_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t83_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

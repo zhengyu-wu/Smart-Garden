@@ -1,0 +1,11 @@
+[t3]
+FileName1=t3_import.min.css
+URL1=http://static.cnmooc.org/theme/import.min.css?dcd1e635ed
+Total=1
+ContentType=text/css
+SnapshotXmlFile=snapshot_3.xml
+RequestHeaderFile=t3_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t3_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

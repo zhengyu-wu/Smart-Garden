@@ -1,0 +1,11 @@
+[t35]
+FileName1=t35_plugins.min.html
+URL1=http://www.cnmooc.org/js/plugins.min.js?dcd1e635ed
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_35.xml
+RequestHeaderFile=t35_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t35_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
