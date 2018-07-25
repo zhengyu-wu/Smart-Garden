@@ -66,8 +66,8 @@ class GardenItem extends React.Component{
                                 onClick={()=>{
                                 this.props.navigation.navigate('Heatmap',
                                               {
-                                                  navigation: this.props.navigation
-                                                  //gardenId:this.props.data.gardenId
+                                                  navigation: this.props.navigation,
+                                                  gardenId:this.props.data.gardenId
                                               })
                             }}>
                                 Garden Heatmap
