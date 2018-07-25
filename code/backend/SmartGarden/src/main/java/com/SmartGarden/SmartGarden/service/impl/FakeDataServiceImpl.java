@@ -1,5 +1,6 @@
 package com.SmartGarden.SmartGarden.service.impl;
 
+import com.SmartGarden.SmartGarden.model.Garden;
 import com.SmartGarden.SmartGarden.model.HumiData;
 import com.SmartGarden.SmartGarden.model.Sensor;
 import com.SmartGarden.SmartGarden.model.TempData;
@@ -188,6 +189,49 @@ public class FakeDataServiceImpl implements FakeDataService {
             }
         }
 
+    }
+
+    @Override
+    public void generateDataWithGardenId(int gardenId) {
+        List<Sensor> gardenSensor=sensorService.getByGardenId(gardenId);
+        if(gardenSensor==null||gardenSensor.size()==0){
+            return;
+        }
+        List<TempData> tempDataList=tempService.getLastTempDataByGardenId(gardenId);
+        List<HumiData> humiDataList=humiService.getLastHumiDataByGardenId(gardenId);
+        if(tempDataList==null||tempDataList.size()==0){
+            //生成第一组温度数据
+            for (Sensor tmpSensor:gardenSensor
+                 ) {
+                if(tmpSensor.getSensorType()==2){
+                    Double temp=Math.random()*20+20;
+                    TempData tmpTempData=new TempData();
+                    tmpTempData.setSendTime(new Date());
+                    tmpTempData.setSensor(tmpSensor);
+                    tmpTempData.setTemperature(temp);
+                    tmpTempData.setPositionX(tmpSensor.getPositionX());
+                    tmpTempData.setPositionY(tmpSensor.getPositionY());
+                    tempService.addTempData(tmpTempData,tmpSensor.getSensorId());
+                }
+            }
+        }
+        else {
+            for (TempData tmpTemp:tempDataList
+                 ) {
+                Double deltaTemp=Math.random()*3;
+                if(Math.random()>0.5) deltaTemp=-deltaTemp;
+                TempData tmpTempData=new TempData();
+                tmpTempData.setSendTime(new Date());
+                tmpTempData.setSensor(tmpTemp.getSensor());
+                if(tmpTemp.getTemperature()+deltaTemp>45||tmpTemp.getTemperature()+deltaTemp<15){
+                    deltaTemp=-deltaTemp;
+                }
+                tmpTempData.setTemperature(tmpTemp.getTemperature()+deltaTemp);
+                tmpTempData.setPositionX(tmpTemp.getPositionX());
+                tmpTempData.setPositionY(tmpTemp.getPositionY());
+                tempService.addTempData(tmpTempData,tmpTemp.getSensor().getSensorId());
+            }
+        }
     }
 }
 

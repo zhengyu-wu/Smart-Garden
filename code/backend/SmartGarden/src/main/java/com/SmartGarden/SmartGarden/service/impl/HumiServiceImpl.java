@@ -67,6 +67,10 @@ public class HumiServiceImpl implements HumiService {
             return null;
         else {
             for(Sensor tmpSensor:tmpSensorList){
+                //忽略已经关闭的传感器的数据
+                if(tmpSensor.getSensorState()==0){
+                    continue;
+                }
                 HumiData tmpData=null;
                 tmpData=humiRepository.findTopBySensor_SensorIdOrderBySendTimeDesc(tmpSensor.getSensorId());
                 if(tmpData!=null)

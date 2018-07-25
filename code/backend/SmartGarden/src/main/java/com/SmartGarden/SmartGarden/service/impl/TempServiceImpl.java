@@ -68,6 +68,10 @@ public class TempServiceImpl implements TempService {
             //遍历list
             for(Sensor tmpSensor : tmpSensorList){
                 TempData tmpData=null;
+                //忽略已经关闭的传感器的数据
+                if(tmpSensor.getSensorState()==0){
+                    continue;
+                }
                 tmpData=tempRepository.findTopBySensor_SensorIdOrderBySendTimeDesc(tmpSensor.getSensorId());
                 if(tmpData!=null)
                     tmpList.add(tmpData);
