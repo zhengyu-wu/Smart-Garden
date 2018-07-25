@@ -1,0 +1,1 @@
+"userId=1&username=ch&password=123&phone=1111111111&email=ch%40ch.com&userType=0"

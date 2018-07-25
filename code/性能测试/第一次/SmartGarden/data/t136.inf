@@ -1,0 +1,11 @@
+[t136]
+FileName1=t136.html
+URL1=http://localhost:8080/nozzles/modifyStateByNozzleId
+Total=1
+RequestHeaderFile=t136_RequestHeader.txt
+RequestBodyFile=t136_RequestBody.txt
+ResponseHeaderFile=t136_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_136.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,16 @@
+[t4]
+SnapshotXmlFile=snapshot_4.xml
+ContentType=application/json
+StepName=Url: loginWithEmail
+Total=2
+FileName1=t4.json
+FileName2=t2_0_main.UNK
+RequestHeaderFile=t4_RequestHeader.txt
+SaveSnapshotResources=1
+ResponseHeaderFile=t4_ResponseHeader.txt
+RawStepEndTime=0
+RawStepName=loginWithEmail
+RequestBodyFile=t4_RequestBody.txt
+RawStepStartTime=1532485647766
+URL1=http://localhost:8080/users/loginWithEmail?email=ch@ch.com&password=123
+URL2=http://localhost:3000/main.js

@@ -1,0 +1,4 @@
+3a8
+[{"sensorId":5,"positionX":400.0,"positionY":400.0,"sensorType":1,"sensorState":1,"garden":{"gardenId":4,"gardenName":"xoxoxo","positionX":123.0,"positionY":123.0,"width":1200,"length":800,"user":{"userId":1,"username":"ch","password":"123","email":"ch@ch.com","phone":"1111111111","userType":0,"userState":1}}},{"sensorId":17,"positionX":555.0,"positionY":336.0,"sensorType":3,"sensorState":1,"garden":{"gardenId":4,"gardenName":"xoxoxo","positionX":123.0,"positionY":123.0,"width":1200,"length":800,"user":{"userId":1,"username":"ch","password":"123","email":"ch@ch.com","phone":"1111111111","userType":0,"userState":1}}},{"sensorId":12,"positionX":500.0,"positionY":500.0,"sensorType":2,"sensorState":1,"garden":{"gardenId":4,"gardenName":"xoxoxo","positionX":123.0,"positionY":123.0,"width":1200,"length":800,"user":{"userId":1,"username":"ch","password":"123","email":"ch@ch.com","phone":"1111111111","userType":0,"userState":1}}}]
+0
+

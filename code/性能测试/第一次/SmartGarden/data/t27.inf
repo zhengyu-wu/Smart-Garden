@@ -1,0 +1,11 @@
+[t27]
+FileName1=t27_factory.min.html
+URL1=http://www.cnmooc.org/js/factory.min.js?dcd1e635ed
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_27.xml
+RequestHeaderFile=t27_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t27_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

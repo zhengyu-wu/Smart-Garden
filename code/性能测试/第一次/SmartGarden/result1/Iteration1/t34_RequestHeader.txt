@@ -1,0 +1,10 @@
+GET /sensors/getSensorByGardenId?gardenId=21 HTTP/1.1
+Referer: http://localhost:3000/user
+Origin: http://localhost:3000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept: */*
+Connection: Keep-Alive
+Host: localhost:8080
+

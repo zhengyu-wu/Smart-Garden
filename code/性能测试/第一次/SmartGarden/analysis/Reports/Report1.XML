@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+<?atf version="1"?>
+<o n="ReportTemplate" t="Analysis.Reporting.ReportTemplate" a="Analysis.Reporting">
+  <p n="UseRawResultTimeZone" t="System.Boolean" a="mscorlib">0</p>
+  <p n="GlobalGranularity" t="System.Int32" a="mscorlib">1</p>
+  <o n="Items">
+    <i>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIGeneralDetails" a="Analysis.Reporting">
+        <o n="SelectedItems">
+          <p n="sort" t="System.Int32" a="mscorlib">1</p>
+          <i>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.76</p>
+              <p n="item" t="System.Int32" a="mscorlib">6</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">4</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">3</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">7</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">5</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.04</p>
+              <p n="item" t="System.Int32" a="mscorlib">2</p>
+            </o>
+          </i>
+        </o>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIExecutiveSummary" a="Analysis.Reporting">
+        <o n="Data" t="Analysis.Reporting.DataObjects.DOUserSection" a="Analysis.Reporting">
+          <p n="Title" t="System.String" a="mscorlib">Executive Summary</p>
+          <p n="Content" t="System.String" a="mscorlib">
+          </p>
+        </o>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIPlaceholderSection" a="Analysis.Reporting">
+        <o n="Data" t="Analysis.Reporting.DataObjects.DOUserSection" a="Analysis.Reporting">
+          <p n="Title" t="System.String" a="mscorlib">Conclusions</p>
+          <p n="Content" t="System.String" a="mscorlib">
+          </p>
+        </o>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIBusinessProcess" a="Analysis.Reporting">
+        <p n="EnabledDescriptionColumn" t="System.Boolean" a="mscorlib">0</p>
+        <p n="EnabledTransactionList" t="System.Boolean" a="mscorlib">1</p>
+        <o n="SelectedItems">
+          <p n="sort" t="System.Int32" a="mscorlib">2</p>
+          <i>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.06</p>
+              <p n="item" t="System.Int32" a="mscorlib">10</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.2</p>
+              <p n="item" t="System.Int32" a="mscorlib">2</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.2</p>
+              <p n="item" t="System.Int32" a="mscorlib">3</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.08</p>
+              <p n="item" t="System.Int32" a="mscorlib">4</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.08</p>
+              <p n="item" t="System.Int32" a="mscorlib">5</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.08</p>
+              <p n="item" t="System.Int32" a="mscorlib">6</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.07</p>
+              <p n="item" t="System.Int32" a="mscorlib">9</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.08</p>
+              <p n="item" t="System.Int32" a="mscorlib">7</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.07</p>
+              <p n="item" t="System.Int32" a="mscorlib">8</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.08</p>
+              <p n="item" t="System.Int32" a="mscorlib">12</p>
+            </o>
+          </i>
+        </o>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIWorkloadCharacteristics" a="Analysis.Reporting">
+        <o n="Filter">
+          <p n="ChartGroupName" t="System.String" a="mscorlib">Transactions</p>
+          <i>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+          </i>
+        </o>
+        <p n="IncludeWorkloadScheme" t="System.Boolean" a="mscorlib">1</p>
+        <o n="SelectedItems">
+          <p n="sort" t="System.Int32" a="mscorlib">1</p>
+          <i>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.76</p>
+              <p n="item" t="System.Int32" a="mscorlib">3</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">1</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">4</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">6</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">5</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.04</p>
+              <p n="item" t="System.Int32" a="mscorlib">8</p>
+            </o>
+          </i>
+        </o>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIPerformanceOverview" a="Analysis.Reporting">
+        <o n="Filter">
+          <p n="ChartGroupName" t="System.String" a="mscorlib">Transactions</p>
+          <i>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">DiscreteString</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">Think Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+          </i>
+        </o>
+        <o n="SelectedItems">
+          <p n="sort" t="System.Int32" a="mscorlib">0</p>
+          <i>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.0300000000000001</p>
+              <p n="item" t="System.Int32" a="mscorlib">7</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.72</p>
+              <p n="item" t="System.Int32" a="mscorlib">6</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">5</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">4</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">2</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">1</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.05</p>
+              <p n="item" t="System.Int32" a="mscorlib">3</p>
+            </o>
+          </i>
+        </o>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIHTTPResponsesSummary" a="Analysis.Reporting">
+        <o n="Filter">
+          <p n="ChartGroupName" t="System.String" a="mscorlib">Web Server Resources</p>
+          <i>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+          </i>
+        </o>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RITransactions" a="Analysis.Reporting">
+        <p n="Granularity" t="System.Int32" a="mscorlib">0</p>
+        <p n="SectionTitle" t="System.String" a="mscorlib">Transaction Summary</p>
+        <o n="Filter">
+          <p n="ChartGroupName" t="System.String" a="mscorlib">Transactions</p>
+          <i>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">DiscreteString</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">Think Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">DiscreteString</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">Event Name</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">DiscreteString</p>
+              <p n="Values" t="System.String" a="mscorlib">Pass</p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">Transaction End Status</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">DiscreteString</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">VuserID</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">RelatedContinuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">Value</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+          </i>
+        </o>
+        <o n="SelectedItems">
+          <p n="sort" t="System.Int32" a="mscorlib">8192</p>
+          <i>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.07</p>
+              <p n="item" t="System.Int32" a="mscorlib">65536</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.28</p>
+              <p n="item" t="System.Int32" a="mscorlib">8192</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.07</p>
+              <p n="item" t="System.Int32" a="mscorlib">32</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.07</p>
+              <p n="item" t="System.Int32" a="mscorlib">1</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.07</p>
+              <p n="item" t="System.Int32" a="mscorlib">8</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.09</p>
+              <p n="item" t="System.Int32" a="mscorlib">2048</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.09</p>
+              <p n="item" t="System.Int32" a="mscorlib">128</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.09</p>
+              <p n="item" t="System.Int32" a="mscorlib">64</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.09</p>
+              <p n="item" t="System.Int32" a="mscorlib">2</p>
+            </o>
+            <o n="SelectedItems" t="Analysis.Reporting.SelectableItems+SelectableItem" a="Analysis.Reporting">
+              <p n="width" t="System.Double" a="mscorlib">0.08</p>
+              <p n="item" t="System.Int32" a="mscorlib">4096</p>
+            </o>
+          </i>
+        </o>
+        <p n="Percentile1" t="System.Int32" a="mscorlib">90</p>
+        <p n="Percentile2" t="System.Int32" a="mscorlib">95</p>
+        <p n="Percentile3" t="System.Int32" a="mscorlib">75</p>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIWorstUrl" a="Analysis.Reporting">
+        <o n="Filter">
+          <p n="ChartGroupName" t="System.String" a="mscorlib">Web Page Breakdown</p>
+          <i>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+          </i>
+        </o>
+        <p n="BreakdownCount" t="System.Int32" a="mscorlib">10</p>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RIMostSrvResourcesConsuming" a="Analysis.Reporting">
+        <o n="Filter">
+          <p n="ChartGroupName" t="System.String" a="mscorlib">Web Page Breakdown</p>
+          <i>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+          </i>
+        </o>
+        <p n="BreakdownCount" t="System.Int32" a="mscorlib">10</p>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RILargestPages" a="Analysis.Reporting">
+        <o n="Filter">
+          <p n="ChartGroupName" t="System.String" a="mscorlib">Web Page Breakdown</p>
+          <i>
+            <o n="Filter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+              <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+              <p n="Values" t="System.String" a="mscorlib">
+              </p>
+              <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+              <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+              <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+            </o>
+          </i>
+        </o>
+        <p n="BreakdownCount" t="System.Int32" a="mscorlib">10</p>
+      </o>
+      <o n="Items" t="Analysis.Reporting.ReportItems.RISessionGraphs" a="Analysis.Reporting" />
+      <o n="Items" t="Analysis.Reporting.ReportItems.RITerminology" a="Analysis.Reporting" />
+    </i>
+  </o>
+  <p n="NumberPrecision" t="System.Int32" a="mscorlib">1</p>
+  <o n="GlobalFilter">
+    <p n="ChartGroupName" t="System.String" a="mscorlib">Transactions</p>
+    <i>
+      <o n="GlobalFilter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+        <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">Continuous</p>
+        <p n="Values" t="System.String" a="mscorlib">
+        </p>
+        <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+        <p n="DbName" t="System.String" a="mscorlib">End Time</p>
+        <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+      </o>
+      <o n="GlobalFilter" t="Analysis.Reporting.ReportTemplateFilterItem" a="Analysis.Reporting">
+        <p n="ValuesType" t="Analysis.ApiLib.Dimensions.FilterValuesSubType" a="Analysis.ApiLib">DiscreteString</p>
+        <p n="Values" t="System.String" a="mscorlib">
+        </p>
+        <p n="IsActive" t="System.Boolean" a="mscorlib">1</p>
+        <p n="DbName" t="System.String" a="mscorlib">Think Time</p>
+        <p n="ConditionalOperator" t="Analysis.ApiLib.FilterItem+FilterItemConditionalOperator" a="Analysis.ApiLib">Equal</p>
+      </o>
+    </i>
+  </o>
+  <p n="title" t="System.String" a="mscorlib">Customer facing (for cross session)</p>
+  <p n="name" t="System.String" a="mscorlib">ReportTemplate5</p>
+  <o n="Format" t="Analysis.Reporting.ReportTemplateFormat" a="Analysis.Reporting">
+    <o n="Tables" t="Analysis.Reporting.StyleTable" a="Analysis.Reporting">
+      <o n="RowEvenRow" t="Analysis.Reporting.StyleTableRow" a="Analysis.Reporting">
+        <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">Black</p>
+        <p n="BackgroundColor" t="System.Drawing.Color" a="System.Drawing">-1380365</p>
+        <p n="Align" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Left</p>
+        <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+          <p n="Size" t="System.Int32" a="mscorlib">8</p>
+          <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Regular</p>
+          <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+        </o>
+      </o>
+      <p n="NoFooter" t="System.Boolean" a="mscorlib">1</p>
+      <p n="NoHeader" t="System.Boolean" a="mscorlib">0</p>
+      <o n="HeaderRow" t="Analysis.Reporting.StyleTableRow" a="Analysis.Reporting">
+        <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">-16777216</p>
+        <p n="BackgroundColor" t="System.Drawing.Color" a="System.Drawing">-3550241</p>
+        <p n="Align" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Center</p>
+        <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+          <p n="Size" t="System.Int32" a="mscorlib">8</p>
+          <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Bold</p>
+          <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+        </o>
+      </o>
+      <o n="FooterRow" t="Analysis.Reporting.StyleTableRow" a="Analysis.Reporting">
+        <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">Black</p>
+        <p n="BackgroundColor" t="System.Drawing.Color" a="System.Drawing">-3550241</p>
+        <p n="Align" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Center</p>
+        <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+          <p n="Size" t="System.Int32" a="mscorlib">8</p>
+          <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Bold</p>
+          <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+        </o>
+      </o>
+      <o n="RowOddRow" t="Analysis.Reporting.StyleTableRow" a="Analysis.Reporting">
+        <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">Black</p>
+        <p n="BackgroundColor" t="System.Drawing.Color" a="System.Drawing">-460293</p>
+        <p n="Align" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Left</p>
+        <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+          <p n="Size" t="System.Int32" a="mscorlib">8</p>
+          <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Regular</p>
+          <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+        </o>
+      </o>
+    </o>
+    <o n="NormalFont" t="Analysis.Reporting.StyleText" a="Analysis.Reporting">
+      <p n="BackgroundColor" t="System.Drawing.Color" a="System.Drawing">-1</p>
+      <p n="Alignment" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Left</p>
+      <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">-16777216</p>
+      <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+        <p n="Size" t="System.Int32" a="mscorlib">8</p>
+        <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Regular</p>
+        <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+      </o>
+      <o n="Border" t="Analysis.Reporting.StyleBorder" a="Analysis.Reporting">
+        <p n="Width" t="System.Int32" a="mscorlib">1</p>
+        <o n="Bounds" t="Analysis.Reporting.StyleBorderBound" a="Analysis.Reporting">
+          <p n="Top" t="System.Boolean" a="mscorlib">0</p>
+          <p n="Bottom" t="System.Boolean" a="mscorlib">0</p>
+          <p n="Left" t="System.Boolean" a="mscorlib">0</p>
+          <p n="Right" t="System.Boolean" a="mscorlib">0</p>
+        </o>
+        <p n="Dash" t="System.Drawing.Drawing2D.DashStyle" a="System.Drawing">Solid</p>
+        <p n="Color" t="System.Drawing.Color" a="System.Drawing">-16777216</p>
+      </o>
+    </o>
+    <p n="TableOfContent" t="System.Boolean" a="mscorlib">0</p>
+    <o n="PageFooter" t="Analysis.Reporting.ReportTemplatePageHeaderFooter" a="Analysis.Reporting">
+      <o n="MiddleColumn" t="Analysis.Reporting.HeaderFooterColumn" a="Analysis.Reporting">
+        <p n="UseLogo" t="System.Boolean" a="mscorlib">0</p>
+        <p n="Text" t="System.String" a="mscorlib">
+        </p>
+      </o>
+      <o n="RightColumn" t="Analysis.Reporting.HeaderFooterColumn" a="Analysis.Reporting">
+        <p n="UseLogo" t="System.Boolean" a="mscorlib">0</p>
+        <p n="Text" t="System.String" a="mscorlib">Organization: [Organization]</p>
+      </o>
+      <o n="LeftColumn" t="Analysis.Reporting.HeaderFooterColumn" a="Analysis.Reporting">
+        <p n="UseLogo" t="System.Boolean" a="mscorlib">0</p>
+        <p n="Text" t="System.String" a="mscorlib">Page [Page Number] out of  [Total Page Count]</p>
+      </o>
+      <o n="Style" t="Analysis.Reporting.StylePageHeaderFooter" a="Analysis.Reporting">
+        <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">-16777216</p>
+        <p n="Alignment" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Left</p>
+        <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+          <p n="Size" t="System.Int32" a="mscorlib">8</p>
+          <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Bold</p>
+          <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+        </o>
+      </o>
+      <p n="IncludeInCoverPage" t="System.Boolean" a="mscorlib">0</p>
+    </o>
+    <o n="PageHeader" t="Analysis.Reporting.ReportTemplatePageHeaderFooter" a="Analysis.Reporting">
+      <o n="MiddleColumn" t="Analysis.Reporting.HeaderFooterColumn" a="Analysis.Reporting">
+        <p n="UseLogo" t="System.Boolean" a="mscorlib">0</p>
+        <p n="Text" t="System.String" a="mscorlib">Report Title: [Report Title]</p>
+      </o>
+      <o n="RightColumn" t="Analysis.Reporting.HeaderFooterColumn" a="Analysis.Reporting">
+        <p n="UseLogo" t="System.Boolean" a="mscorlib">0</p>
+        <p n="Text" t="System.String" a="mscorlib">Author: [First Name] [Surname]</p>
+      </o>
+      <o n="LeftColumn" t="Analysis.Reporting.HeaderFooterColumn" a="Analysis.Reporting">
+        <p n="UseLogo" t="System.Boolean" a="mscorlib">0</p>
+        <p n="Text" t="System.String" a="mscorlib">Date: [Date]</p>
+      </o>
+      <o n="Style" t="Analysis.Reporting.StylePageHeaderFooter" a="Analysis.Reporting">
+        <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">-16777216</p>
+        <p n="Alignment" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Left</p>
+        <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+          <p n="Size" t="System.Int32" a="mscorlib">8</p>
+          <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Bold</p>
+          <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+        </o>
+      </o>
+      <p n="IncludeInCoverPage" t="System.Boolean" a="mscorlib">0</p>
+    </o>
+    <o n="Logo" t="Analysis.Reporting.ReportCompanyLogo" a="Analysis.Reporting">
+      <p n="IsActive" t="System.Boolean" a="mscorlib">0</p>
+      <o n="Image" t="Analysis.Reporting.ReportImage" a="Analysis.Reporting">
+        <p n="ImageHeight" t="System.Int32" a="mscorlib">0</p>
+        <p n="ImageWidth" t="System.Int32" a="mscorlib">0</p>
+        <p n="ImageData" t="System.String" a="mscorlib">
+        </p>
+      </o>
+    </o>
+    <p n="IncludeCoverPage" t="System.Boolean" a="mscorlib">1</p>
+    <o n="Author" t="Analysis.Reporting.ReportAuthorInfo" a="Analysis.Reporting">
+      <p n="JobTitle" t="System.String" a="mscorlib">
+      </p>
+      <p n="Organization" t="System.String" a="mscorlib">
+      </p>
+      <p n="FirstName" t="System.String" a="mscorlib">
+      </p>
+      <p n="LastName" t="System.String" a="mscorlib">
+      </p>
+    </o>
+    <p n="InsertPageBreaks" t="System.Boolean" a="mscorlib">0</p>
+    <o n="Heading2" t="Analysis.Reporting.StyleText" a="Analysis.Reporting">
+      <p n="BackgroundColor" t="System.Drawing.Color" a="System.Drawing">-1</p>
+      <p n="Alignment" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Left</p>
+      <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">-16764058</p>
+      <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+        <p n="Size" t="System.Int32" a="mscorlib">12</p>
+        <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Bold</p>
+        <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+      </o>
+      <o n="Border" t="Analysis.Reporting.StyleBorder" a="Analysis.Reporting">
+        <p n="Width" t="System.Int32" a="mscorlib">2</p>
+        <o n="Bounds" t="Analysis.Reporting.StyleBorderBound" a="Analysis.Reporting">
+          <p n="Top" t="System.Boolean" a="mscorlib">0</p>
+          <p n="Bottom" t="System.Boolean" a="mscorlib">1</p>
+          <p n="Left" t="System.Boolean" a="mscorlib">0</p>
+          <p n="Right" t="System.Boolean" a="mscorlib">0</p>
+        </o>
+        <p n="Dash" t="System.Drawing.Drawing2D.DashStyle" a="System.Drawing">Solid</p>
+        <p n="Color" t="System.Drawing.Color" a="System.Drawing">-5592406</p>
+      </o>
+    </o>
+    <o n="Heading1" t="Analysis.Reporting.StyleText" a="Analysis.Reporting">
+      <p n="BackgroundColor" t="System.Drawing.Color" a="System.Drawing">-591622</p>
+      <p n="Alignment" t="Analysis.Reporting.StyleFontHorizAlignment" a="Analysis.Reporting">Left</p>
+      <p n="FontColor" t="System.Drawing.Color" a="System.Drawing">-16777216</p>
+      <o n="Font" t="Analysis.Reporting.StyleFont" a="Analysis.Reporting">
+        <p n="Size" t="System.Int32" a="mscorlib">14</p>
+        <p n="Style" t="System.Drawing.FontStyle" a="System.Drawing">Regular</p>
+        <p n="FontName" t="System.String" a="mscorlib">Arial</p>
+      </o>
+      <o n="Border" t="Analysis.Reporting.StyleBorder" a="Analysis.Reporting">
+        <p n="Width" t="System.Int32" a="mscorlib">3</p>
+        <o n="Bounds" t="Analysis.Reporting.StyleBorderBound" a="Analysis.Reporting">
+          <p n="Top" t="System.Boolean" a="mscorlib">0</p>
+          <p n="Bottom" t="System.Boolean" a="mscorlib">1</p>
+          <p n="Left" t="System.Boolean" a="mscorlib">0</p>
+          <p n="Right" t="System.Boolean" a="mscorlib">0</p>
+        </o>
+        <p n="Dash" t="System.Drawing.Drawing2D.DashStyle" a="System.Drawing">Solid</p>
+        <p n="Color" t="System.Drawing.Color" a="System.Drawing">-4536107</p>
+      </o>
+    </o>
+  </o>
+  <p n="description" t="System.String" a="mscorlib">By using this template you can easily generate a cross session customer facing report that includes a wide range of performance statistics. This template will automatically include any open graph you have in your analysis session as well as the following information:
+- General details
+- Executive summary
+- Business processes
+- Workload characteristics
+- Performance overview for high level aggregated metrics and transactions
+- Worst performing URLs based on Web Page Diagnostics data</p>
+</o>

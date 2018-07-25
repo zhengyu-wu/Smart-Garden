@@ -1,0 +1,11 @@
+[t130]
+FileName1=t130_getByUserId.html
+URL1=http://localhost:8080/garden/getByUserId?userId=1
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_130.xml
+RequestHeaderFile=t130_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t130_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

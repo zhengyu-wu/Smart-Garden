@@ -1,0 +1,11 @@
+﻿[SLASupervisor_BasicInfo]
+NumFilters=0
+
+[DimensionFunctions]
+DimeFuncCount=1
+DimeFuncType0=FuncFragment
+FunctionName_UI0=Think Time
+DimensionName_UI0=Transaction Response Time,Aminimum,Amaximum
+FunctionFragmentValues_UI0=-Include Think Time
+DimensionFragmentValues_UI0=!([Value]-[Think Time])!,!([Aminimum]-[Think Time])!,!([Amaximum]-[Think Time])!
+
