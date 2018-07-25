@@ -232,6 +232,39 @@ public class FakeDataServiceImpl implements FakeDataService {
                 tempService.addTempData(tmpTempData,tmpTemp.getSensor().getSensorId());
             }
         }
+
+        if(humiDataList==null||humiDataList.size()==0){
+            for (Sensor tmpSensor:gardenSensor
+                    ) {
+                if(tmpSensor.getSensorType()==1){
+                    Double temp=Math.random()*0.5+0.1;
+                    HumiData tmpHumiData=new HumiData();
+                    tmpHumiData.setSendTime(new Date());
+                    tmpHumiData.setSensor(tmpSensor);
+                    tmpHumiData.setHumidity(temp);
+                    tmpHumiData.setPositionX(tmpSensor.getPositionX());
+                    tmpHumiData.setPositionY(tmpSensor.getPositionY());
+                    humiService.addHumiData(tmpHumiData,tmpSensor.getSensorId());
+                }
+            }
+        }
+        else{
+            for(HumiData tmpHumi:humiDataList){
+                Double deltaHumi=Math.random()*0.05;
+                if(Math.random()>0.5)
+                    deltaHumi=-deltaHumi;
+                HumiData tmpHumiData=new HumiData();
+                tmpHumiData.setSendTime(new Date());
+                tmpHumiData.setSensor(tmpHumi.getSensor());
+                if(tmpHumi.getHumidity()+deltaHumi>0.9||tmpHumi.getHumidity()+deltaHumi<0.1){
+                    deltaHumi=-deltaHumi;
+                }
+                tmpHumiData.setHumidity(tmpHumi.getHumidity()+deltaHumi);
+                tmpHumiData.setPositionX(tmpHumi.getPositionX());
+                tmpHumiData.setPositionY(tmpHumi.getPositionY());
+                humiService.addHumiData(tmpHumiData,tmpHumi.getSensor().getSensorId());
+            }
+        }
     }
 }
 
