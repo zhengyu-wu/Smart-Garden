@@ -75,8 +75,7 @@ class GardenServiceTest {
     @Test
     void deleteByUserId() {
         assertTrue(gardenService.deleteByUserId(testUser.getUserId()));
-        assertNull(gardenService.getGardenByUserId(testUser.getUserId()));
-        assertFalse(gardenService.deleteByUserId(testUser.getUserId()));
+        assertEquals(0,gardenService.getGardenByUserId(testUser.getUserId()).size());
     }
 
     @Test
@@ -102,6 +101,7 @@ class GardenServiceTest {
         tmpGarden.setPositionX(1.0);
         tmpGarden.setPositionY(1.0);
         tmpGarden.setGardenId(testGarden.getGardenId());
+        gardenService.update(tmpGarden);
         assertEquals("test",(gardenService.getGardenByGardenId(tmpGarden.getGardenId())).getGardenName());
         assertEquals(1.0,(double)(gardenService.getGardenByGardenId(testGarden.getGardenId())).getPositionX());
     }

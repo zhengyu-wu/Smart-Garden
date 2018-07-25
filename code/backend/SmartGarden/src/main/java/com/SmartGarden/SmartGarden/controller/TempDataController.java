@@ -28,6 +28,12 @@ public class TempDataController {
     }
 
     @ResponseBody
+    @GetMapping("/getLast15TempDataBySensorId")
+        public List<TempData> getLast15TempDataBySensorId(int sensorId){
+        return tempService.getLast15DataBySensorId(sensorId);
+    }
+
+    @ResponseBody
     @GetMapping("/getLastTempDataByGardenId")
     public List<TempData> getLastTempDataByGardenId(int gardenId){
         return tempService.getLastTempDataByGardenId(gardenId);
