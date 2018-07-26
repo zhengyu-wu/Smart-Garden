@@ -13,7 +13,6 @@ import {LineChart, ScatterChart, Scatter, Line, XAxis, YAxis, ZAxis, CartesianGr
             console.log('current state current ID', this.props.gardenid);
 
             const sensors = this.props.currentSensor;
-            const curState = sensors.sensorState;
             var data11 = [];
             var data22 = [];
             var data33 = [];
@@ -35,7 +34,7 @@ import {LineChart, ScatterChart, Scatter, Line, XAxis, YAxis, ZAxis, CartesianGr
             // console.log('current garden length', this.state.currentGardenLength);
             // console.log('current garden width', this.state.currentGardenWidth);
         return (
-          <ScatterChart width={window.innerWidth/1.5} height={window.innerHeight} 
+          <ScatterChart width={window.innerWidth/1.75} height={window.innerHeight/1.5} 
             margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
             <CartesianGrid strokeDasharray="5 5" />
             <XAxis dataKey="positionX" name="positionX" unit="m" interval="preserveStartEnd"

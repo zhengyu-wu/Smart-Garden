@@ -11,6 +11,7 @@ import gardenIcon from '../img/gardenIcon.png';
 import humiditySensorIcon from '../img/humiditySensor.png';
 import temperatureSensorIcon from '../img/temperatureSensor.png';
 import monitorSensorIcon from '../img/monitorSensor.png';
+import NozzlesChartPage from '../SensorImg/NozzlesChartPage';
 import ScatterChartPage from '../SensorImg/ScatterChartPage';
 
 const ButtonGroup = Button.Group;
@@ -32,6 +33,29 @@ class UserNozzlePage extends Component{
             modalVisible: false,
             targetGardenId:-1,
         }
+        
+       
+    }
+
+    //添加喷头对话框控制函数
+    showAddModal = (gardenId) => {
+        this.setState({
+        modalVisible: true,
+        targetGardenId:gardenId,
+        });
+        console.log("targetGardenId:",gardenId);
+    }
+    handleOk = (e) => {
+        console.log(e);
+        this.setState({
+        modalVisible: false,
+        });
+    }
+    handleCancel = (e) => {
+        console.log(e);
+        this.setState({
+        modalVisible: false,
+        });
     }
 
     //根据登录的userId从后端取出对应的gardens进行初始化
@@ -46,9 +70,81 @@ class UserNozzlePage extends Component{
                 });
         })
     } 
+    //根据选择的garden显示其拥有的nozzle
+    handleNozzleByGarden = (gardenId) => {
+        var params= new URLSearchParams();
+        console.log("GardenId:",gardenId);
+        axios.get(`http://localhost:8080/nozzles/getNozzleByGardenId`,{params:{'gardenId':gardenId}})
+            .then(res => {
+                this.setState({
+                    currentGardenID: gardenId,
+                    nozzles: res.data,
+                });
+        })
+        axios.get(`http://localhost:8080/garden/getByGardenId`,{params:{'gardenId':gardenId}})
+            .then(res=>{
+                this.setState({
+                    currentGardenLength: res.data.length,
+                    currentGardenWidth: res.data.width
+                })
+            })
+    }
+    //根据选择的garden和nozzle信息添加nozzle
+    handleAddNozzle = (gardenId) => {
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                var params= new URLSearchParams();
+                params.append('positionX',values.positionX);
+                params.append('positionY',values.positionY);
+                params.append('nozzleState',values.nozzleState);
+                params.append('radius',values.radius);
+                params.append('gardenId',gardenId);
+                if((values.positionX!=null)&&(values.positionY!=null)&&(values.nozzleState!=null)&&(values.radius!=null))
+                {
+                  axios.post('http://localhost:8080/nozzles/addNozzleByGardenId',params).then((res)=>{
+                    console.log(res.data);
+                    axios.get(`http://localhost:8080/nozzles/getNozzleByGardenId`,{params:{'gardenId':gardenId}})
+                    .then(res => {
+                        this.setState({
+                            nozzles: res.data,
+                        });
+                    })
+                    alert('add nozzles successfully');
+                    //更新redux信息
+                  }).catch(err=>{
+                    alert("unexpected error in add nozzles ");
+                  });
+                }
+                else
+                {
+                  alert('add nozzles failed');
+                }
+    
+                
+            }
+        });
+    }
 
+    
     render(){
+        //form样式
+        const { getFieldDecorator } = this.props.form;
+
+        const formItemLayout = {
+            labelCol: {
+                xs: { span: 24 },
+                sm: { span: 8 },
+            },
+            wrapperCol: {
+                xs: { span: 24 },
+                sm: { span: 8 },
+            },
+        };
+        const state = this.state;
+
         return(
+            <div>
+            
             <Layout>
                 <Layout>
                     <Sider width={250} style={{ background: '#fff'}} height={window.innerHeight}>            
@@ -59,13 +155,118 @@ class UserNozzlePage extends Component{
                                 renderItem={item => (
                                 <List.Item key={item.gardenId} 
                                     actions={[<ButtonGroup>
-                                                <Button icon="caret-right" onClick={()=>this.handleSensorByGarden(item.gardenId)}/>,
+                                                <Button icon="plus" onClick={()=>this.showAddModal(item.gardenId)}/>,
+                                                <Button icon="caret-right" onClick={()=>this.handleNozzleByGarden(item.gardenId)}/>,
                                             </ButtonGroup>]}
                                 >
                                     <List.Item.Meta
                                     avatar={<Avatar src={gardenIcon} />}
                                     title={<a>{item.gardenName}</a>}
                                     description={"length:"+item.length+" width:"+item.width}
+                                    />
+                                </List.Item>
+                                )}
+                            >
+                                <Modal title="Add Nozzle" visible={this.state.modalVisible} onOk={this.handleOk} onCancel={this.handleCancel}>
+                                    <Form className="addNozzle-form" onSubmit={()=>this.handleAddNozzle(this.state.targetGardenId)}>
+                                        <FormItem
+                                            {...formItemLayout} 
+                                            label="PositionX"
+                                        >
+                                            {getFieldDecorator('positionX', {
+                                                    rules: [{ required: true, message: 'Please input positionX!', whitespace: true }],
+                                                })(
+                                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                                placeholder="PositionX"
+                                                type="positionX"
+                                                required
+                                                />
+                                            )}
+                                        </FormItem>
+                                        <FormItem
+                                            {...formItemLayout} 
+                                            label="PositionY"
+                                        >
+                                            {getFieldDecorator('positionY', {
+                                                    rules: [{ required: true, message: 'Please input positionY!', whitespace: true }],
+                                                })(
+                                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                                placeholder="PositionY"
+                                                type="positionY"
+                                                required
+                                                />
+                                            )}
+                                        </FormItem>
+                                        <FormItem
+                                            {...formItemLayout} 
+                                            label="NozzleState"
+                                        >
+                                            {getFieldDecorator('nozzleState', {
+                                                    rules: [{ required: true, message: 'Please input nozzleState!', whitespace: true }],
+                                                })(
+                                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                                placeholder="NozzleState"
+                                                type="nozzleState"
+                                                required
+                                                />
+                                            )}
+                                        </FormItem>
+                                        <FormItem
+                                            {...formItemLayout} 
+                                            label="Radius"
+                                        >
+                                            {getFieldDecorator('radius', {
+                                                    rules: [{ required: true, message: 'Please input radius!', whitespace: true }],
+                                                })(
+                                                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                                placeholder="Radius"
+                                                type="radius"
+                                                required
+                                                />
+                                            )}
+                                        </FormItem>
+                                        
+                                        <FormItem>
+                                            <Row>
+                                            <Col span="8"></Col>
+                                            <Col span="8">
+                                                <Input type="submit" value="Add"/>
+                                            </Col>
+                                            <Col span="8"></Col>
+                                            </Row>
+                                        </FormItem>
+                                    </Form>
+                                </Modal>
+                                
+                                {this.state.loading && this.state.hasMore && (
+                                <div className="demo-loading-container">
+                                    <Spin />
+                                </div>
+                                )}
+                            </List>
+                        </div>
+                    </Sider>
+                    <Content style={{ background: '#fff', padding: 0  }} >
+                        <NozzlesChartPage currentGardenLength = {this.state.currentGardenLength}
+                            gardenid = {this.state.currentGardenID}
+                         currentGardenWidth = {this.state.currentGardenWidth}
+                         nozzles = {this.state.nozzles} />
+                    </Content>
+                    <Sider width={250} style={{ background: '#fff'}} height={window.innerHeight}>
+                        <div className="nozzle-list">
+                            <List style={{textAlign:'center'}}
+                                header="Nozzle"
+                                dataSource={this.state.nozzles}
+                                renderItem={item => (
+                                <List.Item key={item.nozzleId} 
+                                    actions={[<ButtonGroup>
+                                                <Button icon="caret-right" />,
+                                            </ButtonGroup>]}
+                                >
+                                    <List.Item.Meta
+                                    avatar={<Avatar src={gardenIcon} />}
+                                    title={<a>{"Nozzle:"+item.nozzleId}</a>}
+                                    description={"positionX:"+item.positionX+" positionY:"+item.positionY}
                                     />
                                 </List.Item>
                                 )}
@@ -78,16 +279,10 @@ class UserNozzlePage extends Component{
                             </List>
                         </div>
                     </Sider>
-                    <Content style={{ background: '#fff', padding: 0  }} >
-                        {/*此处放喷头坐标图*/}
-                        
-                    </Content>
-                    <Sider width={250} style={{ background: '#fff'}} height={window.innerHeight}>
-                        
-                    </Sider>
                 </Layout>
                 <Footer style={{ textAlign: 'center' }}>Nozzle Management</Footer>
             </Layout>
+            </div>
         );
     }
 }

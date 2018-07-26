@@ -24,7 +24,7 @@ public class TempData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer tempDataId;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne()
     @JoinColumn(name = "Sensor")
     @NotFound(action = NotFoundAction.IGNORE)
     private Sensor sensor;

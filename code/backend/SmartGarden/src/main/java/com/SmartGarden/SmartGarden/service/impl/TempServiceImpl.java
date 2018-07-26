@@ -54,6 +54,11 @@ public class TempServiceImpl implements TempService {
     }
 
     @Override
+    public List<TempData> getLast15DataBySensorId(int sensorId) {
+        return tempRepository.findTop15BySensor_SensorIdOrderBySendTimeDesc(sensorId);
+    }
+
+    @Override
     public List<TempData> getLastTempDataByGardenId(int gardenId) {
         List<Sensor> tmpSensorList=sensorService.getByGardenId(gardenId);
         List<TempData> tmpList= new ArrayList<>();

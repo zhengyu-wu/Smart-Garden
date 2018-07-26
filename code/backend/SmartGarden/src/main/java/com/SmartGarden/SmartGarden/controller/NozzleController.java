@@ -32,7 +32,7 @@ public class NozzleController {
     }
 
     @ResponseBody
-    @PostMapping("/addNozzleWithGardenId")
+    @PostMapping("/addNozzleByGardenId")
     public Nozzle addNozzleWithGardenId(Nozzle nozzle,int gardenId){
         return nozzleService.addNozzleWithGardenId(nozzle,gardenId);
     }
@@ -53,6 +53,12 @@ public class NozzleController {
     @PostMapping("/modifyStateByNozzleId")
     public boolean modifyState(int nozzleId,int state){
         return nozzleService.modifyState(nozzleId,state);
+    }
+
+    @ResponseBody
+    @PostMapping("/modifyPositionByNozzleId")
+    public boolean modifyPosition(int nozzleId,Double positionX,Double positionY){
+        return nozzleService.modifyPosition(nozzleId,positionX,positionY);
     }
 
 }
