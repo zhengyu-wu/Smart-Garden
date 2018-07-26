@@ -1,0 +1,11 @@
+[t36]
+FileName1=t36_sprite.png
+URL1=http://static.cnmooc.org/theme/default/images/sprite.png?dcd1e635ed
+Total=1
+ContentType=image/png
+SnapshotXmlFile=snapshot_36.xml
+RequestHeaderFile=t36_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t36_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

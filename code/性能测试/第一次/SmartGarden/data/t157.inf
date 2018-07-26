@@ -1,0 +1,11 @@
+[t157]
+FileName1=t157_getByGardenId.html
+URL1=http://localhost:8080/garden/getByGardenId?gardenId=21
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_157.xml
+RequestHeaderFile=t157_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t157_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

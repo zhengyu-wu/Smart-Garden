@@ -115,8 +115,8 @@ class SensorItem extends React.Component{
                                 onClick={()=>{
                                 this.props.navigation.navigate('Linechart',
                                               {
-                                                  navigation: this.props.navigation
-                                                  //gardenId:this.props.data.gardenId
+                                                  navigation: this.props.navigation,
+                                                  sensorId:this.props.data.sensorId
                                               })
                             }}>
                                 实时折线图

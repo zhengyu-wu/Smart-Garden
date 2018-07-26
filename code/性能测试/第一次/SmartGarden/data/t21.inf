@@ -1,0 +1,11 @@
+[t21]
+FileName1=t21_6761935550764958a03315670ebd11a0.jpg
+URL1=http://static.cnmooc.org/repositry/coursepic/i/1703/8/6761935550764958a03315670ebd11a0.jpg
+Total=1
+ContentType=image/jpeg
+SnapshotXmlFile=snapshot_21.xml
+RequestHeaderFile=t21_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t21_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

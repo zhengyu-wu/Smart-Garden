@@ -1,0 +1,11 @@
+[t11]
+FileName1=t11_style.css
+URL1=http://static.cnmooc.org/theme/style.css
+Total=1
+ContentType=text/css
+SnapshotXmlFile=snapshot_11.xml
+RequestHeaderFile=t11_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t11_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

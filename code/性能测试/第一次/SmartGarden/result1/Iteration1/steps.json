@@ -1,0 +1,686 @@
+[
+    {
+        "stepId": "STEP1",
+        "stepName": "Url: localhost:3000",
+        "infFile": "t1.inf",
+        "time": 1532485634633
+    },
+    {
+        "stepId": "STEP2",
+        "stepName": "Url: loginWithEmail",
+        "infFile": "t4.inf",
+        "time": 1532485647815
+    },
+    {
+        "stepId": "STEP3",
+        "stepName": "Url: getByUserId",
+        "infFile": "t5.inf",
+        "time": 1532485647873
+    },
+    {
+        "stepId": "STEP4",
+        "stepName": "Url: getByUserId_2",
+        "infFile": "t6.inf",
+        "time": 1532485647913
+    },
+    {
+        "stepId": "STEP5",
+        "stepName": "Url: getByUserId_3",
+        "infFile": "t7.inf",
+        "time": 1532485647955
+    },
+    {
+        "stepId": "STEP6",
+        "stepName": "Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png",
+        "infFile": "t8.inf",
+        "time": 1532485647989
+    },
+    {
+        "stepId": "STEP7",
+        "stepName": "Url: getByGardenId",
+        "infFile": "t9.inf",
+        "time": 1532485648089
+    },
+    {
+        "stepId": "STEP8",
+        "stepName": "Url: getSensorByGardenId",
+        "infFile": "t10.inf",
+        "time": 1532485648135
+    },
+    {
+        "stepId": "STEP9",
+        "stepName": "Url: user",
+        "infFile": "t14.inf",
+        "time": 1532485648252
+    },
+    {
+        "stepId": "STEP10",
+        "stepName": "Url: main.js_2",
+        "infFile": "t15.inf",
+        "time": 1532485648297
+    },
+    {
+        "stepId": "STEP11",
+        "stepName": "Url: getByUserId_4",
+        "infFile": "t16.inf",
+        "time": 1532485648343
+    },
+    {
+        "stepId": "STEP12",
+        "stepName": "Url: getByUserId_5",
+        "infFile": "t17.inf",
+        "time": 1532485648387
+    },
+    {
+        "stepId": "STEP13",
+        "stepName": "Submit Data: addGardenWithUserId",
+        "infFile": "t18.inf",
+        "time": 1532485648443
+    },
+    {
+        "stepId": "STEP14",
+        "stepName": "Url: getByUserId_6",
+        "infFile": "t19.inf",
+        "time": 1532485648489
+    },
+    {
+        "stepId": "STEP15",
+        "stepName": "Submit Data: deleteByGardenId",
+        "infFile": "t20.inf",
+        "time": 1532485648539
+    },
+    {
+        "stepId": "STEP16",
+        "stepName": "Url: getByUserId_7",
+        "infFile": "t21.inf",
+        "time": 1532485648584
+    },
+    {
+        "stepId": "STEP17",
+        "stepName": "Url: getByUserId_8",
+        "infFile": "t22.inf",
+        "time": 1532485648627
+    },
+    {
+        "stepId": "STEP18",
+        "stepName": "Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_2",
+        "infFile": "t23.inf",
+        "time": 1532485648660
+    },
+    {
+        "stepId": "STEP19",
+        "stepName": "Url: getSensorByGardenId_2",
+        "infFile": "t24.inf",
+        "time": 1532485648702
+    },
+    {
+        "stepId": "STEP20",
+        "stepName": "Url: getByGardenId_2",
+        "infFile": "t25.inf",
+        "time": 1532485648746
+    },
+    {
+        "stepId": "STEP21",
+        "stepName": "Url: user_2",
+        "infFile": "t26.inf",
+        "time": 1532485648805
+    },
+    {
+        "stepId": "STEP22",
+        "stepName": "Submit Data: addSensorWithGardenId",
+        "infFile": "t27.inf",
+        "time": 1532485648861
+    },
+    {
+        "stepId": "STEP23",
+        "stepName": "Url: getSensorByGardenId_3",
+        "infFile": "t28.inf",
+        "time": 1532485648906
+    },
+    {
+        "stepId": "STEP24",
+        "stepName": "Url: main.js_3",
+        "infFile": "t29.inf",
+        "time": 1532485648950
+    },
+    {
+        "stepId": "STEP25",
+        "stepName": "Url: getByUserId_9",
+        "infFile": "t30.inf",
+        "time": 1532485648995
+    },
+    {
+        "stepId": "STEP26",
+        "stepName": "Url: getByUserId_10",
+        "infFile": "t31.inf",
+        "time": 1532485649042
+    },
+    {
+        "stepId": "STEP27",
+        "stepName": "Url: getByUserId_11",
+        "infFile": "t32.inf",
+        "time": 1532485649085
+    },
+    {
+        "stepId": "STEP28",
+        "stepName": "Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_3",
+        "infFile": "t33.inf",
+        "time": 1532485649123
+    },
+    {
+        "stepId": "STEP29",
+        "stepName": "Url: getSensorByGardenId_4",
+        "infFile": "t34.inf",
+        "time": 1532485649164
+    },
+    {
+        "stepId": "STEP30",
+        "stepName": "Url: getByGardenId_3",
+        "infFile": "t35.inf",
+        "time": 1532485649209
+    },
+    {
+        "stepId": "STEP31",
+        "stepName": "Url: humiditySensor.8ad937d1adc22cfd57131fb25a9ee3c8.png_2",
+        "infFile": "t36.inf",
+        "time": 1532485649241
+    },
+    {
+        "stepId": "STEP32",
+        "stepName": "Url: getSensorBySensorId",
+        "infFile": "t38.inf",
+        "time": 1532485649273
+    },
+    {
+        "stepId": "STEP33",
+        "stepName": "Submit Data: modifySensorState",
+        "infFile": "t39.inf",
+        "time": 1532485649321
+    },
+    {
+        "stepId": "STEP34",
+        "stepName": "Url: getSensorByGardenId_5",
+        "infFile": "t40.inf",
+        "time": 1532485649368
+    },
+    {
+        "stepId": "STEP35",
+        "stepName": "Submit Data: modifySensorState_2",
+        "infFile": "t41.inf",
+        "time": 1532485649414
+    },
+    {
+        "stepId": "STEP36",
+        "stepName": "Url: getSensorByGardenId_6",
+        "infFile": "t42.inf",
+        "time": 1532485649459
+    },
+    {
+        "stepId": "STEP37",
+        "stepName": "Submit Data: modifySensorState_3",
+        "infFile": "t43.inf",
+        "time": 1532485649502
+    },
+    {
+        "stepId": "STEP38",
+        "stepName": "Url: getSensorByGardenId_7",
+        "infFile": "t44.inf",
+        "time": 1532485649545
+    },
+    {
+        "stepId": "STEP39",
+        "stepName": "Submit Data: modifySensorState_4",
+        "infFile": "t45.inf",
+        "time": 1532485649592
+    },
+    {
+        "stepId": "STEP40",
+        "stepName": "Url: getSensorByGardenId_8",
+        "infFile": "t46.inf",
+        "time": 1532485649652
+    },
+    {
+        "stepId": "STEP41",
+        "stepName": "Submit Data: modifySensorState_5",
+        "infFile": "t48.inf",
+        "time": 1532485649703
+    },
+    {
+        "stepId": "STEP42",
+        "stepName": "Url: getSensorByGardenId_9",
+        "infFile": "t49.inf",
+        "time": 1532485649746
+    },
+    {
+        "stepId": "STEP43",
+        "stepName": "Url: firefox-56.0b3.complete.mar",
+        "infFile": "t50.inf",
+        "time": 1532485660915
+    },
+    {
+        "stepId": "STEP44",
+        "stepName": "Submit Data: addSensorWithGardenId_2",
+        "infFile": "t51.inf",
+        "time": 1532485661004
+    },
+    {
+        "stepId": "STEP45",
+        "stepName": "Url: user_3",
+        "infFile": "t52.inf",
+        "time": 1532485661085
+    },
+    {
+        "stepId": "STEP46",
+        "stepName": "Url: getSensorByGardenId_10",
+        "infFile": "t53.inf",
+        "time": 1532485661138
+    },
+    {
+        "stepId": "STEP47",
+        "stepName": "Url: main.js_4",
+        "infFile": "t54.inf",
+        "time": 1532485661182
+    },
+    {
+        "stepId": "STEP48",
+        "stepName": "Url: getByUserId_12",
+        "infFile": "t55.inf",
+        "time": 1532485661237
+    },
+    {
+        "stepId": "STEP49",
+        "stepName": "Url: getByUserId_13",
+        "infFile": "t56.inf",
+        "time": 1532485661291
+    },
+    {
+        "stepId": "STEP50",
+        "stepName": "Url: getByUserId_14",
+        "infFile": "t57.inf",
+        "time": 1532485661336
+    },
+    {
+        "stepId": "STEP51",
+        "stepName": "Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_4",
+        "infFile": "t58.inf",
+        "time": 1532485661373
+    },
+    {
+        "stepId": "STEP52",
+        "stepName": "Url: getByGardenId_4",
+        "infFile": "t59.inf",
+        "time": 1532485661427
+    },
+    {
+        "stepId": "STEP53",
+        "stepName": "Url: getSensorByGardenId_11",
+        "infFile": "t60.inf",
+        "time": 1532485661481
+    },
+    {
+        "stepId": "STEP54",
+        "stepName": "Url: getSensorBySensorId_6",
+        "infFile": "t63.inf",
+        "time": 1532485661584
+    },
+    {
+        "stepId": "STEP55",
+        "stepName": "Submit Data: modifySensorState_6",
+        "infFile": "t64.inf",
+        "time": 1532485661642
+    },
+    {
+        "stepId": "STEP56",
+        "stepName": "Url: getSensorByGardenId_12",
+        "infFile": "t65.inf",
+        "time": 1532485661693
+    },
+    {
+        "stepId": "STEP57",
+        "stepName": "Submit Data: addSensorWithGardenId_3",
+        "infFile": "t66.inf",
+        "time": 1532485661743
+    },
+    {
+        "stepId": "STEP58",
+        "stepName": "Url: user_4",
+        "infFile": "t67.inf",
+        "time": 1532485661796
+    },
+    {
+        "stepId": "STEP59",
+        "stepName": "Url: getSensorByGardenId_13",
+        "infFile": "t68.inf",
+        "time": 1532485661846
+    },
+    {
+        "stepId": "STEP60",
+        "stepName": "Url: main.js_5",
+        "infFile": "t69.inf",
+        "time": 1532485661888
+    },
+    {
+        "stepId": "STEP61",
+        "stepName": "Url: getByUserId_15",
+        "infFile": "t70.inf",
+        "time": 1532485661931
+    },
+    {
+        "stepId": "STEP62",
+        "stepName": "Url: getByUserId_16",
+        "infFile": "t71.inf",
+        "time": 1532485661976
+    },
+    {
+        "stepId": "STEP63",
+        "stepName": "Url: getByUserId_17",
+        "infFile": "t72.inf",
+        "time": 1532485662017
+    },
+    {
+        "stepId": "STEP64",
+        "stepName": "Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_5",
+        "infFile": "t73.inf",
+        "time": 1532485662053
+    },
+    {
+        "stepId": "STEP65",
+        "stepName": "Url: getByGardenId_5",
+        "infFile": "t74.inf",
+        "time": 1532485662096
+    },
+    {
+        "stepId": "STEP66",
+        "stepName": "Url: getSensorByGardenId_14",
+        "infFile": "t75.inf",
+        "time": 1532485662140
+    },
+    {
+        "stepId": "STEP67",
+        "stepName": "Url: getSensorBySensorId_7",
+        "infFile": "t79.inf",
+        "time": 1532485662240
+    },
+    {
+        "stepId": "STEP68",
+        "stepName": "Submit Data: modifySensorState_7",
+        "infFile": "t80.inf",
+        "time": 1532485662286
+    },
+    {
+        "stepId": "STEP69",
+        "stepName": "Url: getSensorByGardenId_15",
+        "infFile": "t81.inf",
+        "time": 1532485662327
+    },
+    {
+        "stepId": "STEP70",
+        "stepName": "Url: getByUserId_18",
+        "infFile": "t82.inf",
+        "time": 1532485662370
+    },
+    {
+        "stepId": "STEP71",
+        "stepName": "Url: getByGardenId_6",
+        "infFile": "t83.inf",
+        "time": 1532485662413
+    },
+    {
+        "stepId": "STEP72",
+        "stepName": "Url: getNozzleByGardenId",
+        "infFile": "t84.inf",
+        "time": 1532485662462
+    },
+    {
+        "stepId": "STEP73",
+        "stepName": "Submit Data: addNozzleByGardenId",
+        "infFile": "t85.inf",
+        "time": 1532485662517
+    },
+    {
+        "stepId": "STEP74",
+        "stepName": "Url: user_5",
+        "infFile": "t86.inf",
+        "time": 1532485662573
+    },
+    {
+        "stepId": "STEP75",
+        "stepName": "Url: getNozzleByGardenId_2",
+        "infFile": "t87.inf",
+        "time": 1532485662624
+    },
+    {
+        "stepId": "STEP76",
+        "stepName": "Url: main.js_6",
+        "infFile": "t88.inf",
+        "time": 1532485662668
+    },
+    {
+        "stepId": "STEP77",
+        "stepName": "Url: getByUserId_19",
+        "infFile": "t89.inf",
+        "time": 1532485662708
+    },
+    {
+        "stepId": "STEP78",
+        "stepName": "Url: getByUserId_20",
+        "infFile": "t90.inf",
+        "time": 1532485662747
+    },
+    {
+        "stepId": "STEP79",
+        "stepName": "Url: getByUserId_21",
+        "infFile": "t91.inf",
+        "time": 1532485662788
+    },
+    {
+        "stepId": "STEP80",
+        "stepName": "Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_6",
+        "infFile": "t92.inf",
+        "time": 1532485662821
+    },
+    {
+        "stepId": "STEP81",
+        "stepName": "Url: getNozzleByGardenId_3",
+        "infFile": "t93.inf",
+        "time": 1532485662981
+    },
+    {
+        "stepId": "STEP82",
+        "stepName": "Url: getByGardenId_7",
+        "infFile": "t94.inf",
+        "time": 1532485663071
+    },
+    {
+        "stepId": "STEP83",
+        "stepName": "Url: nozzle.8c1cd0b3b1967df77de0eb204452cdc6.png",
+        "infFile": "t95.inf",
+        "time": 1532485663120
+    },
+    {
+        "stepId": "STEP84",
+        "stepName": "Url: getNozzleByNozzleId",
+        "infFile": "t96.inf",
+        "time": 1532485663205
+    },
+    {
+        "stepId": "STEP85",
+        "stepName": "Submit Data: modifyStateByNozzleId",
+        "infFile": "t97.inf",
+        "time": 1532485663252
+    },
+    {
+        "stepId": "STEP86",
+        "stepName": "Url: getNozzleByGardenId_4",
+        "infFile": "t98.inf",
+        "time": 1532485663298
+    },
+    {
+        "stepId": "STEP87",
+        "stepName": "Url: getNozzleByNozzleId_2",
+        "infFile": "t99.inf",
+        "time": 1532485663341
+    },
+    {
+        "stepId": "STEP88",
+        "stepName": "Submit Data: modifyStateByNozzleId_2",
+        "infFile": "t100.inf",
+        "time": 1532485663386
+    },
+    {
+        "stepId": "STEP89",
+        "stepName": "Url: getNozzleByGardenId_5",
+        "infFile": "t101.inf",
+        "time": 1532485663430
+    },
+    {
+        "stepId": "STEP90",
+        "stepName": "Url: firefox-56.0b3.complete.mar_2",
+        "infFile": "t102.inf",
+        "time": 1532485663470
+    },
+    {
+        "stepId": "STEP91",
+        "stepName": "Submit Data: addNozzleByGardenId_2",
+        "infFile": "t103.inf",
+        "time": 1532485663528
+    },
+    {
+        "stepId": "STEP92",
+        "stepName": "Url: user_6",
+        "infFile": "t104.inf",
+        "time": 1532485663582
+    },
+    {
+        "stepId": "STEP93",
+        "stepName": "Url: getNozzleByGardenId_6",
+        "infFile": "t105.inf",
+        "time": 1532485663633
+    },
+    {
+        "stepId": "STEP94",
+        "stepName": "Url: main.js_7",
+        "infFile": "t106.inf",
+        "time": 1532485663679
+    },
+    {
+        "stepId": "STEP95",
+        "stepName": "Url: getByUserId_22",
+        "infFile": "t107.inf",
+        "time": 1532485663722
+    },
+    {
+        "stepId": "STEP96",
+        "stepName": "Url: getByUserId_23",
+        "infFile": "t108.inf",
+        "time": 1532485663765
+    },
+    {
+        "stepId": "STEP97",
+        "stepName": "Url: firefox-56.0b3.complete.mar_3",
+        "infFile": "t109.inf",
+        "time": 1532485663803
+    },
+    {
+        "stepId": "STEP98",
+        "stepName": "Url: user_7",
+        "infFile": "t110.inf",
+        "time": 1532485663858
+    },
+    {
+        "stepId": "STEP99",
+        "stepName": "Url: getByUserId_24",
+        "infFile": "t113.inf",
+        "time": 1532485663960
+    },
+    {
+        "stepId": "STEP100",
+        "stepName": "Url: getByUserId_25",
+        "infFile": "t114.inf",
+        "time": 1532485664003
+    },
+    {
+        "stepId": "STEP101",
+        "stepName": "Url: getByUserId_26",
+        "infFile": "t115.inf",
+        "time": 1532485664053
+    },
+    {
+        "stepId": "STEP102",
+        "stepName": "Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_7",
+        "infFile": "t116.inf",
+        "time": 1532485664092
+    },
+    {
+        "stepId": "STEP103",
+        "stepName": "Url: getSensorByGardenId_16",
+        "infFile": "t117.inf",
+        "time": 1532485664146
+    },
+    {
+        "stepId": "STEP104",
+        "stepName": "Url: getByGardenId_8",
+        "infFile": "t118.inf",
+        "time": 1532485664196
+    },
+    {
+        "stepId": "STEP105",
+        "stepName": "Url: getByUserId_27",
+        "infFile": "t122.inf",
+        "time": 1532485664301
+    },
+    {
+        "stepId": "STEP106",
+        "stepName": "Url: getNozzleByGardenId_7",
+        "infFile": "t123.inf",
+        "time": 1532485664343
+    },
+    {
+        "stepId": "STEP107",
+        "stepName": "Url: getByGardenId_9",
+        "infFile": "t124.inf",
+        "time": 1532485664388
+    },
+    {
+        "stepId": "STEP108",
+        "stepName": "Url: nozzle.8c1cd0b3b1967df77de0eb204452cdc6.png_2",
+        "infFile": "t125.inf",
+        "time": 1532485664422
+    },
+    {
+        "stepId": "STEP109",
+        "stepName": "Url: getByUserId_28",
+        "infFile": "t126.inf",
+        "time": 1532485664468
+    },
+    {
+        "stepId": "STEP110",
+        "stepName": "Url: getByUserId_29",
+        "infFile": "t127.inf",
+        "time": 1532485664511
+    },
+    {
+        "stepId": "STEP111",
+        "stepName": "Url: getByUserId_30",
+        "infFile": "t128.inf",
+        "time": 1532485664557
+    },
+    {
+        "stepId": "STEP112",
+        "stepName": "Url: getSensorByGardenId_17",
+        "infFile": "t129.inf",
+        "time": 1532485664602
+    },
+    {
+        "stepId": "STEP113",
+        "stepName": "Url: getByGardenId_10",
+        "infFile": "t130.inf",
+        "time": 1532485664647
+    },
+    {
+        "stepId": "STEP114",
+        "stepName": "Submit Data: updateUser",
+        "infFile": "t131.inf",
+        "time": 1532485664702
+    }
+]

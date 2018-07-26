@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-ID:\LRtest\SmartGarden
+-ID:\program_files\HPE LoadRunner 12.55 Community Edition\include
+-ed:\lrtest\smartgarden\\logfile.log
+d:\lrtest\smartgarden\\combined_SmartGarden.c
+d:\lrtest\smartgarden\\pre_cci.c

@@ -1,0 +1,9 @@
+[t125]
+FileName1=t125.html
+URL1=http://localhost:3000/user
+Total=1
+RequestHeaderFile=t125_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t125_ResponseHeader.txt
+ContentType=
+SnapshotXmlFile=snapshot_125.xml

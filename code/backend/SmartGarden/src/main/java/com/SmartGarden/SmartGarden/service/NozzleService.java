@@ -12,4 +12,5 @@ public interface NozzleService {
     boolean modifyState(int nozzleId,int state);
     boolean modifyPosition(int nozzleId,Double positionX,Double positionY);
     Nozzle getByNozzleId(int nozzleId);
+    List<Nozzle> getWorkingNozzleByGardenId(int gardenId);
 }

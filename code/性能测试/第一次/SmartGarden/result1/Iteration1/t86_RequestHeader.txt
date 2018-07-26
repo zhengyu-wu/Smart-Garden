@@ -1,0 +1,12 @@
+GET /user HTTP/1.1
+Referer: http://localhost:3000/user
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept: */*
+Connection: Keep-Alive
+Host: localhost:3000
+If-Modified-Since: Wed, 11 Jul 2018 03:38:48 GMT
+If-None-Match: W/"189-164876b8642"
+

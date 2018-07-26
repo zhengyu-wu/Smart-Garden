@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: BLB/
+Date: Tue, 24 Jul 2018 08:05:37 GMT
+Content-Type: application/javascript;charset=UTF-8
+Connection: keep-alive
+Set-Cookie: moocvk=e45ff287fa39471ebbfa7928ed82d378; Expires=Wed, 11-Jul-2068 08:05:41 GMT; Path=/; HttpOnly,BEC=f6c42c24d0c76e7acea242791ab87e34|1532419537|1532419536;Path=/
+Last-Modified: Tue,24 Jul 2018 08:05:41 GMT
+ETag: 1532419541811
+Cache-Control: max-age=0
+Pragma: Pragma
+Expires: Tue, 24 Jul 2018 08:05:41 GMT
+X-Frame-Options: SAMEORIGIN
+

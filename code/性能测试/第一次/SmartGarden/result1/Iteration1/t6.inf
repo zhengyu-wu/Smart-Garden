@@ -1,0 +1,16 @@
+[t6]
+SnapshotXmlFile=snapshot_6.xml
+ContentType=application/json
+StepName=Url: getByUserId_2
+Total=2
+FileName1=t6.json
+FileName2=t2_0_main.UNK
+RequestHeaderFile=t6_RequestHeader.txt
+SaveSnapshotResources=1
+ResponseHeaderFile=t6_ResponseHeader.txt
+RawStepEndTime=0
+RawStepName=getByUserId_2
+RequestBodyFile=t6_RequestBody.txt
+RawStepStartTime=1532485647875
+URL1=http://localhost:8080/garden/getByUserId?userId=-1
+URL2=http://localhost:3000/main.js

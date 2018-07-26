@@ -1,0 +1,1333 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="慕课,大学,MOOC,在线教育,慕课平台,互联网教育">
+    <meta name="Description" content="“好大学在线”（CNMOOC）是上海交通大学拥有的中国顶尖慕课平台。依托该平台，上海交通大学与百度及金智教育实施战略合作，致力于在互联网教育时代发展在线教育，让所有大学生有机会学习一流大学的课程并获得学分，让所有学习者能够享受优质教育资源，让“所有人都能上最好的大学”成为现实！">
+    <meta http-equiv="X-UA-Compatible" content='IE=edge,chrome=1'/>
+    <meta name="viewport" content="width=device-width" />
+
+    <!--[if lt IE 8]>
+    <meta http-equiv="Refresh" content="0;url=/upgrade/">
+
+    <![endif]-->
+    <title>
+        
+        
+        好大学在线CNMOOC_中国顶尖的慕课平台
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="PowerBy" content="江苏金智教育信息技术有限公司">
+    <link rel="stylesheet" href="http://static.cnmooc.org/theme/plugin.min.css?dcd1e635ed" type="text/css"/>
+    <link rel="stylesheet" href="http://static.cnmooc.org/theme/import.min.css?dcd1e635ed" type="text/css"/>
+    <link rel="stylesheet" href="http://static.cnmooc.org/theme/elements.min.css?dcd1e635ed" type="text/css"/>
+    <link rel="stylesheet" href="http://static.cnmooc.org/theme/view.min.css?dcd1e635ed" type="text/css"/>
+    <link rel="stylesheet" href="http://static.cnmooc.org/theme/d-view.min.css?dcd1e635ed" type="text/css"/>
+    
+    <script src="/js/base.min.js?dcd1e635ed" type="text/javascript"></script>
+    <script src="/js/plugins/d3.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+
+        CONTEXTPATH = '';
+    </script>
+    <script type="text/javascript"
+            src="/i18nBrowse.mooc?userLocale=zh_CN&r=dcd1e635ed"></script>
+    <script>
+        var host = document.location.host;
+        if (host.indexOf("cnmooc.org") > 0) {
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                if (host == "sjtu.cnmooc.org")
+                    hm.src = "//hm.baidu.com/hm.js?55e4a27691c87697faed90869c5d13c7";
+                else if (host == "hainu.cnmooc.org")
+                    hm.src = "//hm.baidu.com/hm.js?8225a9194a5d3424df73c9ae31e5e0ed";
+                else
+                    hm.src = "//hm.baidu.com/hm.js?ed399044071fc36c6b711fa9d81c2d1c";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        }
+                (function($){
+                    //常量
+                    $.G_LOGIN_COEUS_USER_ID = "-1";
+                    $.G_QQ_URL = "http://cnmooc.org/oauth/QQCallback.mooc";
+                    $.G_QQ_APP_ID = "101456445";
+                    $.G_SINA_URL = "";
+                    $.G_SINA_APP_ID = "";
+                    $.G_SINA_APP_KEY = "";
+                    $.G_SINA_ACCESS_TOKEN = "";
+                    $.G_WECHAT_URL = "http://cnmooc.org/oauth/WechatCallback.mooc";
+                    $.G_WECHAT_APP_ID = "wx128dc6858a42b687";
+                })(jQuery);
+    </script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" id="lang" value="zh_CN"/>
+
+
+<div id="header">
+    
+    
+    <div id="inner-header" class="clearfix">
+        
+
+        
+        
+            <a class="logo" href="/home/index.mooc"><img src="http://static.cnmooc.org/images/logo.png" /></a>
+            <div class="header-nav nav-center "   style="margin-left:18px;">
+                <a class="h-nav-item" content="index" href="/home/index.mooc"> 
+                 	<span class="h-nav-text">首页</span>
+	                <span class="h-sub-text">Home</span> 
+                </a>
+                <a class="h-nav-item" content="course" href="/portal/frontCourseIndex/course.mooc">
+                    <span class="h-nav-text">课程</span>
+                    <span class="h-sub-text">Courses</span>
+                </a>
+                <a class="h-nav-item" content="micro" href="/home/microspec/index.mooc">
+                    <span class="h-nav-text">微专业<img src="http://static.cnmooc.org/images/nav-new.gif"  class="new-nav"/></span>
+                    <span class="h-sub-text">Micro Spec</span>
+                </a>
+                <a class="h-nav-item" content="school" href="/school/signed.mooc" tab="school">
+                 	<span class="h-nav-text">院校</span>
+               		<span class="h-sub-text">Universities</span>
+                </a>
+            </div>
+        
+        <div class="header-info header-info-index">
+            <div class="user-info">
+                
+                    <div class="login-nav">
+                        
+                            <a href="/home/register.mooc" id="register">注册</a>/
+                        
+                        <a href="/home/login.mooc">登录</a>
+                    </div>
+                
+                
+            </div>
+            
+            <div class="user-info" style="display:none;">
+                <div class="login-nav">
+                    <a href="javascript:void(0)">注册</a>/<a href="javascript:void(0)">登录</a>
+                </div>
+            </div>
+
+            <!-- 移动端 -->
+            <div class="matrix-effect">
+                <a href="/home/app.mooc"
+                   class="icon-app "></a>
+
+                <div class="matrix-slide">
+                    <a href="/home/app.mooc">
+                    
+                        
+                        
+                            <img src="http://static.cnmooc.org/images/mobile_220.png" />
+                        
+                    
+                    </a>
+                    <a class="matrix-header" href="/home/app.mooc">
+                        <span class="matrix-title">好大学在线客户端下载</span>
+                        <span class="matrix-subtitle">扫描二维码或点击下载</span>
+                    </a>
+                </div>
+            </div>
+            <div class="header-search">
+                <i class="icon-search01"></i>
+                <div class="search">
+                 	<input type="text" placeholder="根据课程名称、学校、教师搜索" id="globalKeyword" class="input-search">
+                	<a href="javascript:void(0)" class="icon-search globalSearchCourse"><i class="i-search"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/app/home/index.js?dcd1e635ed" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        //头标签加当前选中css
+        function addCurrentToHeadLink() {
+            var content = $('#currentContent').val();
+            $('.header-nav a').each(function () {
+                var $this = $(this);
+                if ($this.attr("content") == content) {
+                    $this.addClass("current");
+                }
+                else {
+                    $this.removeClass("current");
+                }
+            })
+        }
+        addCurrentToHeadLink();
+
+
+        //ajax加载spoc学校定制的栏目
+        var schoolId = '';
+        if (schoolId!=null && schoolId!=""){
+            $.ajax({
+                type:'post',
+                data:{
+                    schoolId:schoolId
+                },
+                url:CONTEXTPATH+"/home/querySchoolColumn.mooc",
+                success:function(result){
+                    $("#schoolColumn").empty().html(result);
+                }
+            })
+        }
+    })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" id="currentContent" value="index"/>
+<input type="hidden" id="advertiseCount" value="11"/>
+
+<!---幻灯片 begin  -->
+<div class="content-slides content-index">
+    <div id="slides" class="slides-spoc">
+     	
+            <a class="slides-item" style="display:;background-image:url(http://static.cnmooc.org/repositry/post/i/1807/12/fe24db7d3a5a49e2a05d13c3449adcaa.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/home/microspec/index.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1804/11/40e7cb214b8946e19f88fedf9c8d7ec7.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/home/news/detail/108.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1805/14/9f864f11c85c4adf9581c10bd485a9ed.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/course/4414/9777.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1804/4/a9a88c8c140546d1a278582e9a24e368.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/course/4372/9676.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1708/29/94f3729f5a404630a36b1365aa4e9d99.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/course/3758/7472.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1802/4/89cf4c1f91694bbe88155cd81bf3bed0.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/course/2465/8363.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1802/4/0de3fb3b8a9c4b1c867d6205b88d6f7c.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/course/4259/9178.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1801/19/01ffa6b7d3514149948799ac0b064ea8.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/course/4020/8922.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1702/24/458571b23c6c4b3e83e673a187b16813.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/course/67/9079.mooc" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1712/23/dae3900428eb4138a3f5b8ceca23e7ff.jpg);cursor:pointer;"
+               href="http://www.cnmooc.org/portal/frontCourseIndex/course.mooc?k=&n=course&f=0&t=&m=&e=all&l=all&c=all&p=1&s=437" target="_blank"  ></a>
+        
+            <a class="slides-item" style="display:none;background-image:url(http://static.cnmooc.org/repositry/post/i/1711/30/60467ffa87be42b4aaee3b1754b9682c.jpg);cursor:pointer;"
+               href="http://cqu.cnmooc.org/portal/course/4133/8717.mooc" target="_blank"  ></a>
+        
+    </div>
+</div>
+<!--幻灯片 end-->
+
+<!--课程视频 start-->
+
+<div class="content-view content-index">
+	<div class="content">
+		<a class="to-down" href="javascript:void(0)"></a>
+		<div class="video-slides">
+			
+			<div class="slides-item" >
+				<div class="view view-index">
+					<div class="view-show" playerId="viedoPlayer_1" localImage="/repositry/coursepic/i/1609/19/26595916d3034507ab70732e1e3981ea.jpg"
+                         resourcePath="http://static.cnmooc.org" localPcVideo =""
+                         mediaHost="" inSchool="0">
+                         
+                            
+                            
+                                <div class="video-box">
+                                    
+                                    
+
+                                        <a href="http://www.cnmooc.org/portal/course/80/10038.mooc" target="_blank">  <img src="http://static.cnmooc.org/repositry/coursepic/i/1609/19/26595916d3034507ab70732e1e3981ea.jpg" /></a>
+                                    
+
+                                </div>
+                            
+                        
+					</div>
+					<div class="view-intro">
+                        
+                        
+                            <a class="view-title"  href="http://www.cnmooc.org/portal/course/80/10038.mooc" target="_blank">国际私法(2018夏)</a>
+                        
+
+	                    <h4 class="view-subtitle">上海交通大学</h4>
+	                    <p class="view-abstract">本课程介绍国际私法的基本原理、国际私法的基本制度、国际私法的立法发展、国际私法的理论学说、国际私法的法律选择方法、国际私法法律关系的主体、国际婚姻家庭关系的法律适用、国际财产关系的法律适用、国际知识产权的法律适用、国际侵权行为的法律适用、国际合同关系的法律适用、国际商事关系的法律适用、国际支付关系的法律适用、国际金融关系的法律适用、国际民商事司法管辖权概论、国际互联网纠纷的管辖权、外国法院民商事判决的承认与执行等知识内容</p>
+						
+							<div class="clearfix view-index-go">
+								<div class="link-group">
+									
+									 
+									 	<a class="link-action" href="http://www.cnmooc.org/portal/course/80/10038.mooc" target="_blank"><i class="icon-view02"></i>详情</a>
+									 
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="slides-item"  style="display:none" >
+				<div class="view view-index">
+					<div class="view-show" playerId="viedoPlayer_2" localImage="/repositry/coursepic/i/1703/8/6761935550764958a03315670ebd11a0.jpg"
+                         resourcePath="http://static.cnmooc.org" localPcVideo =""
+                         mediaHost="" inSchool="0">
+                         
+                            
+                            
+                                <div class="video-box">
+                                    
+                                    
+
+                                        <a href="http://www.cnmooc.org/portal/course/3276/10037.mooc" target="_blank">  <img src="http://static.cnmooc.org/repositry/coursepic/i/1703/8/6761935550764958a03315670ebd11a0.jpg" /></a>
+                                    
+
+                                </div>
+                            
+                        
+					</div>
+					<div class="view-intro">
+                        
+                        
+                            <a class="view-title"  href="http://www.cnmooc.org/portal/course/3276/10037.mooc" target="_blank">中医药与中华传统文化(2018夏)</a>
+                        
+
+	                    <h4 class="view-subtitle">上海交通大学</h4>
+	                    <p class="view-abstract">《中医药与中华传统文化》旨在介绍中国传统医药特色理论、思想及其产生、发展的自然和社会文化背景。
+
+ 该课程的主要任务是通过介绍中医药学发展过程中重要著作的学术思想、重要人物、方法及其当时自然和社会文化背景，重点剖析盖学科的文化根源、文化特色及对世界文化的贡献。 该课程将从中医药起源和发展的文化背景，中医药经典著作的学术思想、名医名家的求实精神和思想美德等角度介绍中医药学科的思想体系和思维方式。培养学生科学地认识中医药的历史地位、研究和利用价值；理解中医药的中华传统文化基础及其对中华文化，乃至世界文化的重要贡献；思考当今中西方文化碰撞、融合过程中如何继承和发展中医药等中华魂宝。提高学生的历史责任感、民族自豪感和主体意识感。学会多角度、辨证地观察和分析自然、社会科学问题的方法，从而提升综合分析、判断及学习的能力，并树立良好的生命道德观与和谐人生的健康观。</p>
+						
+							<div class="clearfix view-index-go">
+								<div class="link-group">
+									
+									 
+									 	<a class="link-action" href="http://www.cnmooc.org/portal/course/3276/10037.mooc" target="_blank"><i class="icon-view02"></i>详情</a>
+									 
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="slides-item"  style="display:none" >
+				<div class="view view-index">
+					<div class="view-show" playerId="viedoPlayer_3" localImage="/repositry/coursepic/i/1607/19/1f56f6c8fa78472aad88a9581335d130.jpg"
+                         resourcePath="http://static.cnmooc.org" localPcVideo ="http://s.cnmooc.org/video/c/aa/94/caa944b84d6b4c29a685e81468d52014.mp4"
+                         mediaHost="" inSchool="0">
+                         
+                            
+                            <div class="video-box" id="viedoPlayer_3" >
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1607/19/1f56f6c8fa78472aad88a9581335d130.jpg" />
+                                <div class="video-play-shadow viedoPlay"><i class="icon-player"></i></div>
+                            </div>
+                            
+                            
+                        
+					</div>
+					<div class="view-intro">
+                        
+                        
+                            <a class="view-title"  href="http://www.cnmooc.org/portal/course/216/10036.mooc" target="_blank">生产计划调度与控制(2018夏)</a>
+                        
+
+	                    <h4 class="view-subtitle">上海交通大学</h4>
+	                    <p class="view-abstract">生产计划调度与控制课程是在国家教育部精品课程、精品资源共享课程以及来华留学生精品课程基础上打造而成。本课程主要介绍生产系统基本概念、需求预测、库存管理、生产计划以及作业调度等生产运作管理核心内容，包括三大模块、八个章节、共65个单元，使用美国原版教材加之本人多年从事研究积累和经验，用最先进的理念、最专业的知识、最有效办法，让有志于从事企业生产与服务管理的学生，更容易理解、接受和应用。</p>
+						
+							<div class="clearfix view-index-go">
+								<div class="link-group">
+									
+									 
+									 	<a class="link-action" href="http://www.cnmooc.org/portal/course/216/10036.mooc" target="_blank"><i class="icon-view02"></i>详情</a>
+									 
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="slides-item"  style="display:none" >
+				<div class="view view-index">
+					<div class="view-show" playerId="viedoPlayer_4" localImage="/repositry/coursepic/i/1410/13/4eed85b2-8323-45e3-b07b-29d22c5fbaf0.jpg"
+                         resourcePath="http://static.cnmooc.org" localPcVideo ="http://s.cnmooc.org/ws.v.chuanke.com/vedio/a/90/b3/a90b320e02cd8ca1bbe25c1c0b18b8a7.mp4"
+                         mediaHost="" inSchool="0">
+                         
+                            
+                            <div class="video-box" id="viedoPlayer_4" >
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1410/13/4eed85b2-8323-45e3-b07b-29d22c5fbaf0.jpg" />
+                                <div class="video-play-shadow viedoPlay"><i class="icon-player"></i></div>
+                            </div>
+                            
+                            
+                        
+					</div>
+					<div class="view-intro">
+                        
+                        
+                            <a class="view-title"  href="http://www.cnmooc.org/portal/course/11/10035.mooc" target="_blank">唐诗宋词人文解读(2018夏)</a>
+                        
+
+	                    <h4 class="view-subtitle">上海交通大学</h4>
+	                    <p class="view-abstract">历史车轮从不倒退，人类文明踏步向前。但是，消费社会中的现代人，在享受丰裕的物质生活的同时，正在迷失精神家园，人类要诗意的栖居在大地上，需要寻找心灵的故乡。唐诗宋词作为一代之文学，是中国文化的精粹，是人类文明的华章。当人们为物欲而汲汲奔走时，诗词因其无用而成为生活的奢侈品，但我坚信每一个中国人生命的深处都蛰伏着诗意。人生一世，如果不只是为了生存，如果要过有品质的生活，需要将诗词作为生命中的必需品。
+
+
+《唐诗宋词人文解读》作为一门核心通识课程，秉承知人论世的文学评论原则，以诗论人，以人论诗，由史言诗，借诗读史，把历史的情怀与个人的际遇融会在诗词之中，讲述特定历史情境下的诗人，阐释独特诗人怀抱中的历史，将唤醒人们心中的诗意，激活诗词中属于中华民族的精神基因。</p>
+						
+							<div class="clearfix view-index-go">
+								<div class="link-group">
+									
+									 
+									 	<a class="link-action" href="http://www.cnmooc.org/portal/course/11/10035.mooc" target="_blank"><i class="icon-view02"></i>详情</a>
+									 
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="slides-item"  style="display:none" >
+				<div class="view view-index">
+					<div class="view-show" playerId="viedoPlayer_5" localImage="/repositry/coursepic/i/1510/29/7eff916010594ec380e44db8e40bbe03.jpg"
+                         resourcePath="http://static.cnmooc.org" localPcVideo ="http://s.cnmooc.org/video/5/c3/dd/5c3dddcd70464775948a460ff7d2c324.mp4"
+                         mediaHost="" inSchool="0">
+                         
+                            
+                            <div class="video-box" id="viedoPlayer_5" >
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1510/29/7eff916010594ec380e44db8e40bbe03.jpg" />
+                                <div class="video-play-shadow viedoPlay"><i class="icon-player"></i></div>
+                            </div>
+                            
+                            
+                        
+					</div>
+					<div class="view-intro">
+                        
+                        
+                            <a class="view-title"  href="http://www.cnmooc.org/portal/course/1270/10034.mooc" target="_blank">生命科学导论(2018夏)</a>
+                        
+
+	                    <h4 class="view-subtitle">上海交通大学</h4>
+	                    <p class="view-abstract">《生命科学导论》依据生命科学近几十年来迅猛发展的脉络，以生物化学和分子生物学为基础，以基因重组技术为核心，再加上对宏观自然环境的重视，把握了现代生命科学和生物技术发展的主流。教学内容涵盖生命学科的若干主要领域，信息量大，内容兼具基础性、前沿性和趣味性。</p>
+						
+							<div class="clearfix view-index-go">
+								<div class="link-group">
+									
+									 
+									 	<a class="link-action" href="http://www.cnmooc.org/portal/course/1270/10034.mooc" target="_blank"><i class="icon-view02"></i>详情</a>
+									 
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="slides-item"  style="display:none" >
+				<div class="view view-index">
+					<div class="view-show" playerId="viedoPlayer_6" localImage="/repositry/coursepic/i/1509/11/47fafad9b47f47c39bdf783341b687f0.jpg"
+                         resourcePath="http://static.cnmooc.org" localPcVideo ="http://s.cnmooc.org/ws.v.chuanke.com/vedio/6/39/90/63990992231a731280709f977d3734fc.mp4"
+                         mediaHost="" inSchool="0">
+                         
+                            
+                            <div class="video-box" id="viedoPlayer_6" >
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1509/11/47fafad9b47f47c39bdf783341b687f0.jpg" />
+                                <div class="video-play-shadow viedoPlay"><i class="icon-player"></i></div>
+                            </div>
+                            
+                            
+                        
+					</div>
+					<div class="view-intro">
+                        
+                        
+                            <a class="view-title"  href="http://www.cnmooc.org/portal/course/1075/10120.mooc" target="_blank">遗传学与社会(2018夏)</a>
+                        
+
+	                    <h4 class="view-subtitle">上海交通大学</h4>
+	                    <p class="view-abstract">本课程为上海市精品课程，主要面向非生物类专业的学生。课程主要介绍遗传学的一些基本概念，从遗传学与农业生产，遗传学与人类健康，遗传学与环境保护等方面具体阐明遗传学与社会的关系，同时围绕遗传学涉及的目前社会上的一些热点问题进行介绍和讨论。课程内容主要包括：遗传学的发生发展、性别与繁殖、基因的表达及调控、遗传疾病、基因工程、DNA检测的应用、人类基因组计划以及遗传学的未来等。通过本课程的学习和研讨，使学生了解遗传学的发展过程以及相关科学技术的发展趋势；领会相关研究领域提出的一些新观点；深刻认识遗传学在“安居乐业”中的地位和作用；使学生开阔眼界、充实内在文化科技素质，增强建设社会主义中国的使命感和责任感。</p>
+						
+							<div class="clearfix view-index-go">
+								<div class="link-group">
+									
+									 
+									 	<a class="link-action" href="http://www.cnmooc.org/portal/course/1075/10120.mooc" target="_blank"><i class="icon-view02"></i>详情</a>
+									 
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<!--课程视频 end-->
+
+<!--最新课程 start-->
+
+<div class="content-newest content-index">
+    <div class="content">
+        <h2 class="content-header clearfix">
+	        
+	        
+	        CNMOOC的最新课程
+        </h2>
+        <ul class="newest-list clearfix">
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1611/10/8772f23abdff415e862da85a226602dd.jpg" />
+                                <a class="view-shadow" href="/portal/course/2935/10033.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/02
+                                                    - 2018/09/30
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i>13周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i>3小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	创新创业基础课程
+			                
+			                
+                            <span class="cview-time">2018夏</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1611/10/67b43130b5b64ce9b168bd1803be496b/30.png"  class="user-min"/>万学教育
+                                </div>
+                                <div class="show-school substr">万学教育</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1609/19/26595916d3034507ab70732e1e3981ea.jpg" />
+                                <a class="view-shadow" href="/portal/course/80/10038.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/02
+                                                    - 2018/08/26
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i>8周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i> 小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	国际私法
+			                
+			                
+                            <span class="cview-time">2018夏</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1609/14/339ec0eb287348e08babbadb2dc22af4/30.png"  class="user-min"/>徐冬根
+                                </div>
+                                <div class="show-school substr">上海交通大学</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1410/13/4eed85b2-8323-45e3-b07b-29d22c5fbaf0.jpg" />
+                                <a class="view-shadow" href="/portal/course/11/10035.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/02
+                                                    - 2018/09/02
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i>9周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i>3小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	唐诗宋词人文解读
+			                
+			                
+                            <span class="cview-time">2018夏</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1410/16/53eb0441-18cf-4e0f-a182-0a1070eebb98/30.png"  class="user-min"/>李康化
+                                </div>
+                                <div class="show-school substr">上海交通大学</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1508/15/822c7d1132c5449aa70eff321c78d561.jpg" />
+                                <a class="view-shadow" href="/portal/course/971/10030.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/02
+                                                    - 2018/08/26
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i>8周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i> 小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	从大学生到经理人的36项修炼(原名：管理的技术)
+			                
+			                
+                            <span class="cview-time">2018夏</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1510/20/27aedcb68446424db223303f695ad301/30.png"  class="user-min"/>李泽尧
+                                </div>
+                                <div class="show-school substr">西南交通大学</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1510/29/7eff916010594ec380e44db8e40bbe03.jpg" />
+                                <a class="view-shadow" href="/portal/course/1270/10034.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/02
+                                                    - 2018/09/30
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i>13周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i>3小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	生命科学导论
+			                
+			                
+                            <span class="cview-time">2018夏</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1511/4/53f90ab500644f5381f00fee6df97b19/30.png"  class="user-min"/>林志新
+                                </div>
+                                <div class="show-school substr">上海交通大学</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1607/19/1f56f6c8fa78472aad88a9581335d130.jpg" />
+                                <a class="view-shadow" href="/portal/course/216/10036.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/02
+                                                    - 2018/09/30
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i>13周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i>4小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	生产计划调度与控制
+			                
+			                
+                            <span class="cview-time">2018夏</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1410/19/8f482aef2f744dd9a0e5d47da414276b/30.png"  class="user-min"/>江志斌
+                                </div>
+                                <div class="show-school substr">上海交通大学</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1505/20/44db28c1e94b44b0b552aeae10b203d8.jpg" />
+                                <a class="view-shadow" href="/portal/course/301/10031.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/02
+                                                    - 2018/09/30
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i>13周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i>3小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	风险与社会保障
+			                
+			                
+                            <span class="cview-time">2018夏</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1506/26/35f4ae9a28074271846ebb7499733ae4/30.png"  class="user-min"/>张录法
+                                </div>
+                                <div class="show-school substr">上海交通大学</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="newest-item">
+                    <div class="view view-course">
+                        <div class="view-show">
+                        	
+                            <div class="view-img">
+                                <img src="http://static.cnmooc.org/repositry/coursepic/i/1807/17/c2ebce1481c24461a5b4482c053d77f3.jpg" />
+                                <a class="view-shadow" href="/portal/course/4541/10348.mooc">
+                                    <div class="view-tips">
+                                        
+                                            
+                                                <p class="view-tip"><i class="icon-date"></i>
+                                                    2018/07/12
+                                                    - 
+                                                </p>
+                                                <p class="view-tip"><i class="icon-clock"></i> 周</p>
+                                                <p class="view-tip"><i class="icon-cycle"></i> 小时/周</p>
+                                            
+                                            
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="view-title substr">
+                            
+			                 	初见python
+			                
+			                
+                            <span class="cview-time">201807</span></h3>
+                            <div class="show-intro">
+                                <div class="show-tname substr">
+                                    <img src="http://static.cnmooc.org/repositry/usrimg/1807/10/8ce20cb605304a009a0e0b2235651425/30.png"  class="user-min"/>徐逸卿
+                                </div>
+                                <div class="show-school substr">知途学院</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+        </ul>
+        <div class="newest-more">
+            <a class="btn-icon btn-course" href="/portal/frontCourseIndex/course.mooc"><i class="icon-btn"><i class="i-view"></i></i>探寻更多课程</a>
+        </div>
+    </div>
+</div>
+
+<!--最新课程 end-->
+<!--运行机制 start-->
+
+<div class="content-operation content-index">
+    <div class="content">
+        <a class="to-down" href="javascript:void(0)"></a>
+        <h2 class="content-header">
+	        <i class="header-line line-left"></i>
+	        
+	         
+	        CNMOOC的运作机制
+	        <i class="header-line line-right"></i>
+        </h2>
+        <h2 class="content-header"></h2>
+        <div class="mooc-model">
+            <div class="mooc-item">
+                <div class="mooc-image">
+                    <i class="icon-mooc m-nav"></i>
+                </div>
+                <h3 class="mooc-title">知识导航</h3>
+            </div>
+            <div class="mooc-item">
+             <a href="/home/helpCenter/3/02.mooc" target="_blank">
+                <div class="mooc-image"><i class="icon-mooc m-homework"></i></div>
+                <h3 class="mooc-title">作业互评</h3>
+             </a>
+            </div>
+            <div class="mooc-item">
+             <a href="/home/helpCenter/3/03.mooc" target="_blank">
+                <div class="mooc-image"><i class="icon-mooc m-course"></i></div>
+                <h3 class="mooc-title">翻转课堂</h3>
+              </a>
+            </div>
+            <div class="mooc-item">
+            <a href="/home/helpCenter/3/04.mooc" target="_blank">
+                <div class="mooc-image"><i class="icon-mooc m-score"></i></div>
+                <h3 class="mooc-title">学分互认</h3>
+             </a>
+            </div>
+            <div class="mooc-item mooc-last">
+            <a href="/home/helpCenter/3/01.mooc" target="_blank">
+            	<div class="mooc-image" ><i class="icon-mooc m-certificate"></i></div>
+	            <h3 class="mooc-title">证书认证</h3>
+	        </a>
+        	</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- spoc学校 显示本校教师 -->
+
+<div class="fix-contact-us">
+    <div class="view-left">联系客服</div>
+    <div class="view-right">
+        <ul class="contact-list">
+            <li>
+						<span class="cl-img">
+							<img src="../images/float/tel.png" alt="">
+						</span>
+                <dl class="cl-txt">
+                    <dt>客服电话：</dt>
+                    <dd class="phone-number">4008296199</dd>
+                    <dd><i>周一到周五9:00至17:00</i></dd>
+                </dl>
+            </li>
+            <li>
+						<span class="cl-img">
+							<img src="../images/float/floatqq.png" alt="">
+						</span>
+                <dl class="cl-txt">
+                    <dt>在线客服：</dt>
+                    <dd><a href="tencent://message?v=3&uin=2782661530&site=www.cnmooc.org&menu=yes" class="link-action">2782661530
+                    </a></dd>
+                </dl>
+            </li>
+            <li>
+						<span class="cl-img">
+							<img src="../images/float/weixin.png" alt="">
+						</span>
+                <dl class="cl-txt">
+                    <dt>官方微信：</dt>
+                    <dd class="wx-qcode"><img src="../images/7.jpg" alt=""></dd>
+                </dl>
+            </li>
+            <li>
+						<span class="cl-img">
+							<img src="../images/zhitu/icon-sub01.png" alt="">
+						</span>
+                <dl class="cl-txt">
+                    <dt>查看手册：</dt>
+                    <dd><a href="/home/helpCenter/1/defaultmenu.mooc" class="link-action">学习手册</a></dd>
+                </dl>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<script src="/js/jwplayer6/jwplayer.js?2657" type="text/javascript"></script>
+<script src="/js/jwplayer6/player.js?1" type="text/javascript"></script>
+
+<link rel="stylesheet" href="http://static.cnmooc.org/theme/style.css" type="text/css"/>
+
+<script type="text/javascript">
+$(".to-down").click(function(){
+    var $target=$(this).parent();
+    $("html,body").animate({
+        scrollTop:$target.offset().top
+    },500);
+});
+
+$(function() {
+
+
+	//海报效果
+	var advertiseCount = $("#advertiseCount").val();
+	if (advertiseCount>1){
+		$('#slides').slidesjs({
+			 navigation: false,
+			 height:460,
+			 pagination: {
+				  active: true,
+				  effect: "fade"
+			},
+			effect:{
+				fade:{
+					speed: 1000
+				} 
+			},
+			play: {
+				  active: true,
+				  effect: "fade",
+				  interval: 10000,
+				  auto: true,	
+				  swap: true,	
+				  pauseOnHover: true,
+				  restartDelay: 10000
+			}
+		});
+	}
+	
+	var coursePageCount = '6';
+	if (coursePageCount>1){
+		$('.video-slides').slidesjs({
+			navigation:{
+				active:true
+			},
+			pagination:{
+				active:false
+			},
+			effect:{
+				slide:{
+					speed: 1500
+				}
+			},
+			play: {
+				 active:true,
+				 effect: "slide",
+				 interval: 10000,
+				 auto: true,
+				 swap: true,
+				 pauseOnHover: true,
+				 restartDelay: 10000
+			}
+		});
+	}
+	//左右滚动按钮触发的事件
+	$(".slidesjs-next,.slidesjs-previous").click(function(){
+		//启动自动滚动
+		$(".video-slides .slides-item").each(function() {
+				var parent = $(this).find(".view-show");
+				if (parent.attr("current") == "true") {
+					var playerId = parent.attr("playerId");
+					var localImage = parent.attr("localImage");
+					try {
+						//jwplayer(playerId).pause();
+						jwplayer(playerId).destroy(); //销毁播放器
+					}catch(e) {}
+
+					var html = '<div class="video-box" id="'+playerId+'" ><img src="'+CONTEXTPATH+localImage+'"><div class="video-play-shadow viedoPlay"><i class="icon-player"></i></div></div>';
+					parent.html(html);
+					$(".viedoPlay").click(videoPlay);
+					parent.attr("current","false");
+                    $(".slidesjs-play").click();
+				}
+		});
+	});
+
+	var videoPlay = function(){
+		var $this = $(this).parents(".view-show");
+		$this.attr("current", "true");
+		var playerId = $this.attr("playerId");
+		var localImage = $this.attr("localImage");
+		var resourcePath = $this.attr("resourcePath");
+        var localPcVideo = $this.attr("localPcVideo");
+        var mediaHost = $this.attr("mediaHost");
+        var inSchool = $this.attr("inSchool");
+        initPreviewPlay(playerId, localImage, localPcVideo, 320, 180, resourcePath, true, mediaHost, inSchool);
+      //幻灯片停止自动滚动
+		$(".slidesjs-stop").click();
+	}
+	//点击播放
+	$(".viedoPlay").click(videoPlay);
+
+	//更多教师加载
+	$(".moreTeacher").click(function(){
+		var totalCount = parseInt($(this).attr("totalCount"));
+		var currentNum = parseInt($(this).attr("currentNum"));
+		$.ajax({
+			type:'post',
+			data:{
+				beginIndex:currentNum
+			},
+			url:CONTEXTPATH+"/home/getMoreTeacher.mooc",
+			success:function(result){
+				$(".st-item:last").parent().append(result);
+				var total = parseInt($("#currentNum").val());
+				$(".moreTeacher").attr("currentNum",total);
+				$("#currentNum").remove();
+				if (totalCount<=total){
+					$(".newest-more").addClass("publicTip");
+				}
+			}
+		})
+	})
+})
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="footer">
+<!-- 好大学平台 -->
+
+    <div id="inner-footer" class="clearfix">
+        <div class="copyright clearfix">
+				<div class="cr-lang">
+					
+	                    
+	                                                             中国高水平大学慕课联盟官方网站
+	                    
+	                    
+	                
+					<div class="lang-info" lang="zh_CN">
+		                <div class="my-select dk-select lang-select">
+		                    <div class="dk-selected" tabindex="0">
+		                        
+		                            <span class="substr" lang="zh_CN">简体中文</span>
+		                        
+		                        
+		                    </div>
+		                    <ul class="dk-select-options">
+		                        <li class="dk-option lang_option"  lang="zh_CN">
+		                            <span class="substr">简体中文</span>
+		                        </li>
+		                        <li class="dk-option lang_option"  lang="en_US">
+		                            <span class="substr">English</span>
+		                        </li>
+		                    </ul>
+		                </div>
+		            </div>
+				 </div>
+				<p>&copy; 版权所有 2015 上海交通大学慕课研究院</p>
+				<p class="parnter-para">战略合作：
+                    <a href="http://www.baidu.com/" target="_blank" class="partner-link baidu"></a>
+                    
+                    <a href="http://www.chinamoocs.com" target="_blank" class="partner-link zhitu"></a>
+                </p>
+                <p>沪ICP备06018291号</p>
+		</div>
+
+		<div class="contact-box">
+			<div class="input-group">
+				客服电话：4008296199<br>（周一到周五9:00至17:00）
+			</div>
+		    <div class="input-group">
+				QQ 客服：<a class="btn-icon btn-contact" title="在线咨询" href="tencent://message?v=3&uin=2782661530&site=www.cnmooc.org&menu=yes"><i class="icon-wechat icon-btn"></i>2782661530</a>
+			</div>
+			<div class="input-group input-wechat">
+				关注微信：<a href="javascript:void(0)" class="btn-icon btn-contact"><img src="http://static.cnmooc.org/images/7.jpg"  class="wechat-img"/><i class="icon-qq icon-btn"></i>sjtucnmooc</a>
+			</div>
+		</div>
+
+        <div class="links">
+	            <dl class="links-list">
+	                <dt>
+	                    <span>联盟</span>
+	                </dt>
+	                <dd class="links-item">
+	                    <a class="links-text" href="/home/moocService.mooc">服务条款</a>
+	                </dd>
+	                <dd class="links-item">
+	                    <a class="links-text" href="/home/about.mooc">关于我们</a>
+	                </dd>
+	                <dd class="links-item">
+	                    <a class="links-text" href="/home/contact.mooc">联系我们</a>
+	                </dd>
+	            </dl>
+            <dl class="links-list">
+                <dt>
+                    <span>帮助</span>
+                </dt>
+                 <dd class="links-item">
+                    <a class="links-text" href="/home/helpCenter/0/defaultmenu.mooc">常见问题</a>
+                </dd>
+                <dd class="links-item">
+                    <a class="links-text" href="/home/helpCenter/1/defaultmenu.mooc">学生手册</a>
+                </dd>
+                <!-- 证书查询(好大学) -->
+					<dd class="links-item">
+						<a href="/portal/cert/searchCert.mooc" class="links-text">证书查询</a>
+					</dd>
+            </dl>
+            <dl class="links-list">
+                <dt>
+                    <span>更多</span>
+                </dt>
+                <!-- 通知通告 -->
+                <dd class="links-item">
+                 	<a class="links-text" href="/home/sysBulletin/show-1.mooc">通知通告</a>
+                </dd>
+                <!-- 新闻动态 -->
+                <dd class="links-item">
+                    <a class="links-text" href="/home/news/show-1.mooc">新闻动态</a>
+                </dd>
+                <!-- 媒体报道 -->
+              	<dd class="links-item">
+                    <a class="links-text" href="/home/media-1.mooc">媒体报道</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+<!-- 联盟 -->
+
+<!-- spoc -->
+
+</div>
+<input type="hidden" id="isGuest" value="true"/>
+<input type="hidden" id="loginAccountFlag" value=""/>
+<input type="hidden" id="passwordType" value=""/>
+
+<div id="checkUserPassword"></div>
+<!-- 弹出重新登陆框 -->
+<div id="reLoginDialog"></div>
+
+<script src="/js/app/share/cookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+function importIntroJs(cookieName){
+
+}
+$(function () {
+    if (false){
+        var iknown = false;
+        
+        if (iknown||(getCookie("SJFXS_LIVE")&&getCookie("SJFXS_LIVE")=='1')){
+
+        } else {
+            var dialog=$.dialog({
+                skin:'dialog-simple',
+                title:"提示",
+                lock:true,
+                content:$(".dialog-countdown")[0]
+            })
+
+            $(".has-show .input-cr").on("click",function(){
+                $(this).find(".input-c").toggleClass("selected")
+            })
+            $(".i-know").on("click",function(){
+                dialog.close();
+                var showAgain = 1;
+                if ($(".not-show-again i.selected").length>0){
+                    setCookie("SJFXS_LIVE", "1");
+                    showAgain = 0;
+                }
+                $.ajax({
+                    type:"post",
+                    url:CONTEXTPATH+"/home/ikown.mooc",
+                    data:{
+                        showAgain:showAgain
+                    },
+                    dataType:"json",
+                    success:function(result){
+
+                    }
+                });
+            })
+        }
+    }
+
+     var isGuest = $("#isGuest").val();
+     var loginAccountFlag = $("#loginAccountFlag").val();
+     var passwordType=$("#passwordType").val();
+     if ((passwordType==null ||(passwordType!=null && passwordType!=1))&&isGuest == 'false' && loginAccountFlag == '1') { //登录并设置了下次提醒。
+         $("#checkUserPassword").load(CONTEXTPATH + "/home/noneUserPassword.mooc", {"setLoginFlag": 1}, function () {
+             $.dialog({
+                 title: Msg.get("mooc.dialog.tip"),
+                 content: $("#checkUserPassword .dialog")[0],
+                 width: "600px",
+                 lock: true
+             });
+         });
+     }
+
+     //获取语言
+     $(".lang_option").click(function(){
+        var lang = $(this).attr("lang");
+        if (!lang) return;
+        var currLang = $(".lang-info").attr("lang");
+        if (currLang == lang) return;
+        $.ajax({
+            type:'post',
+            data:{
+                lang:lang
+            },
+            url:CONTEXTPATH+"/home/setLanguage.mooc",
+            success:function(result){
+                if (result.returnCode=="success"){
+                    location.reload();
+                }
+            }
+        })
+    })
+
+})
+</script>
+
+<script src="/js/plugins.min.js?dcd1e635ed" type="text/javascript"></script>
+<script src="/js/plugins/jquery.slides.min.js" type="text/javascript"></script>
+<!--[if lt IE 10]>
+<script src="/js/plugins/PIE.js" type="text/javascript"></script>
+<![endif]-->
+
+<!--[if !IE 9]>
+<style>
+    .view-shadow {
+        filter: alpha(opacity=50);
+        background-color: #000;
+    }
+
+    .mooc-item:hover {
+        filter: alpha(opacity=80);
+        background-color: #f2f6f6;
+    }
+
+    .search-nav {
+        background-color: #b2b2b2;
+        filter: alpha(opacity=80);
+    }
+</style>
+<![endif]-->
+<script src="/js/core.min.js?dcd1e635ed" type="text/javascript"></script>
+<script src="/js/uploader/uploader.min.js?dcd1e635ed" type="text/javascript"></script>
+<script src="/js/plugins2.min.js?dcd1e635ed" type="text/javascript"></script>
+<script src="/js/umeditor/editor.min.js?dcd1e635ed" type="text/javascript"></script>
+
+    
+        <script src="/js/umeditor/lang/zh-cn/zh-cn.js" type="text/javascript"></script>
+    
+    
+
+<div id="dialog_home" style="display: none"></div>
+<script src="/js/factory.min.js?dcd1e635ed" type="text/javascript"></script>
+
+
+<script type="text/x-mathjax-config">
+        try {
+            MathJax.Hub.Config({
+                showMathMenu:false,
+                tex2jax: {inlineMath: [["$MathJax","$MathJax"]], displayMath: [["&&MathJax","&&MathJax"]]}
+            });
+        } catch (e) {
+            console.info(e);
+        }
+</script>
+<script src="/js/MathJax-2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+</body>
+</html>
