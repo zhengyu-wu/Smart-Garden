@@ -86,6 +86,10 @@ public class WateringServiceImpl implements WateringService {
                         targetNozzle=tmpNozzle;
                     }
                 }
+                System.out.println("for target temp: heat: "+tmpTemp.getTemperature()+" pos:"
+                        +"("+tmpTemp.getPositionX()+","+tmpTemp.getPositionY()+")");
+                System.out.println("choose a nozzle: "+targetNozzle.getNozzleId()+" pos: ("+targetNozzle.getPositionX()
+                +","+targetNozzle.getPositionY()+")");
                 todoNozzleList.add(targetNozzle);
             }
 
@@ -103,6 +107,10 @@ public class WateringServiceImpl implements WateringService {
                         targetNozzle=tmpNozzle;
                     }
                 }
+                System.out.println("for target humi: humidity: "+tmpHumi.getHumidity()+" pos:"
+                        +"("+tmpHumi.getPositionX()+","+tmpHumi.getPositionY()+")");
+                System.out.println("choose a nozzle: "+targetNozzle.getNozzleId()+" pos: ("+targetNozzle.getPositionX()
+                        +","+targetNozzle.getPositionY()+")");
                 todoNozzleList.add(targetNozzle);
             }
 
@@ -116,9 +124,13 @@ public class WateringServiceImpl implements WateringService {
 
             for (Nozzle tmpNozzle:todoNozzleList
                  ) {
+                System.out.println("turn on nozzle: "+tmpNozzle.getNozzleId()+" position: ("+tmpNozzle.getPositionX()+","
+                +tmpNozzle.getPositionY()+")");
                 nozzleService.modifyState(tmpNozzle.getNozzleId(),1);
             }
             for(Nozzle tmpNozzle:toTurnOffList){
+                System.out.println("turn off nozzle: "+tmpNozzle.getNozzleId()+" position: ("+tmpNozzle.getPositionX()+","
+                        +tmpNozzle.getPositionY()+")");
                 nozzleService.modifyState(tmpNozzle.getNozzleId(),0);
             }
 
