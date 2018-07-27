@@ -1,0 +1,18 @@
+[t26]
+FileName2=t10_1_gardenIcon.png
+RawStepEndTime=1532655915075
+RequestBodyFile=t26_RequestBody.txt
+RawStepName=gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_3
+ContentType=application/json
+URL1=http://localhost:8080/garden/getByUserId?userId=1
+URL2=http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png
+URL3=http://localhost:3000/main.js
+ResponseHeaderFile=t26_ResponseHeader.txt
+SnapshotXmlFile=snapshot_26.xml
+RequestHeaderFile=t26_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1532655915062
+Total=3
+StepName=Url: gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png_3
+FileName1=t25.json
+FileName3=t2_0_main.UNK

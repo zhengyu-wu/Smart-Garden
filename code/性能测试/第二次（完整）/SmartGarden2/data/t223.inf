@@ -1,0 +1,11 @@
+[t223]
+FileName1=t223.html
+URL1=http://localhost:8080/nozzles/modifyStateByNozzleId
+Total=1
+RequestHeaderFile=t223_RequestHeader.txt
+RequestBodyFile=t223_RequestBody.txt
+ResponseHeaderFile=t223_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_223.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

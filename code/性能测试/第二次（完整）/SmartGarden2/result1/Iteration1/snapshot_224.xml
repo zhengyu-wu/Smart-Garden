@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HTTPSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="224">
+  <HTTPTask id="252" url="http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233" origin="Primary" startDateTime="2018-07-27T09:45:45.319+08:00" startTime="70379">
+    <HTTPRequest method="GET" />
+  </HTTPTask>
+</HTTPSnapshot>

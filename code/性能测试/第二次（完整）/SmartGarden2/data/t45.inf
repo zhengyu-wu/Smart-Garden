@@ -1,0 +1,11 @@
+[t45]
+FileName1=t45_getSensorBySensorId.html
+URL1=http://localhost:8080/sensors/getSensorBySensorId?sensorId=234
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_45.xml
+RequestHeaderFile=t45_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t45_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

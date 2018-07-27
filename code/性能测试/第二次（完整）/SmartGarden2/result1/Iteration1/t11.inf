@@ -1,0 +1,18 @@
+[t11]
+FileName2=t10_1_gardenIcon.png
+RawStepEndTime=0
+RequestBodyFile=t11_RequestBody.txt
+RawStepName=user
+ContentType=text/html
+URL1=http://localhost:3000/user
+URL2=http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png
+URL3=http://localhost:3000/main.js
+ResponseHeaderFile=t11_ResponseHeader.txt
+SnapshotXmlFile=snapshot_11.xml
+RequestHeaderFile=t11_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1532655903249
+Total=3
+StepName=Url: user
+FileName1=t11.html
+FileName3=t2_0_main.UNK

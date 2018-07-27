@@ -1,0 +1,11 @@
+[t108]
+FileName1=t108.html
+URL1=http://localhost:8080/nozzles/addNozzleByGardenId
+Total=1
+RequestHeaderFile=t108_RequestHeader.txt
+RequestBodyFile=t108_RequestBody.txt
+ResponseHeaderFile=t108_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_108.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

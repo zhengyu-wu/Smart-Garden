@@ -1,0 +1,11 @@
+[t265]
+FileName1=t265.html
+URL1=http://localhost:8080/waterConfig/runAutoWatering
+Total=1
+RequestHeaderFile=t265_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t265_ResponseHeader.txt
+ContentType=
+SnapshotXmlFile=snapshot_265.xml
+[ProtocolInfo]
+ProtocolId=QTWeb
