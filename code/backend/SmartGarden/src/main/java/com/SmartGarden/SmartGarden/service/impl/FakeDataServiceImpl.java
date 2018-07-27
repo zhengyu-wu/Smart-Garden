@@ -322,7 +322,6 @@ public class FakeDataServiceImpl implements FakeDataService {
             generateDataWithGardenId(testGarden.getGardenId());
             Thread.currentThread().sleep(1000);
         }
-
     }
 
 }

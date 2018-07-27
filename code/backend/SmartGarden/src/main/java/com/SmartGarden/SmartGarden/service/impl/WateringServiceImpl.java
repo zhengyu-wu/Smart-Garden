@@ -30,8 +30,6 @@ public class WateringServiceImpl implements WateringService {
     private GardenService gardenService;
 
 
-
-    //todo 未经过测试
     @Override
     public void autoWatering() {
 
