@@ -1,3 +1,5 @@
 
 code/backend/SmartGarden/src/main/resources/application.yml
 *.log
+*.yml
+code/backend/SmartGarden/src/main/resources/application.yml

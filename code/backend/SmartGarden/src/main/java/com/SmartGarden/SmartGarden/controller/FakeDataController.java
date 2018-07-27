@@ -41,4 +41,15 @@ public class FakeDataController {
     public void generateDataWithGardenId(int gardenId){
         fakeDataService.generateDataWithGardenId(gardenId);
     }
+
+
+    /*
+    *生成一个新的花园和用户，生成50个温度传感器，湿度传感器和nozzle，生成一次数据
+    * 注意此接口被重复调用没有效果，因为重复的user email会阻止加入新的用户导致失败
+     */
+    @ResponseBody
+    @GetMapping("/generateAll")
+    public void generateAll() throws InterruptedException {
+        fakeDataService.generateAll();
+    }
 }

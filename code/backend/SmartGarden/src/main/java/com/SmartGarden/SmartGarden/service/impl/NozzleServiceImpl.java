@@ -74,12 +74,9 @@ public class NozzleServiceImpl implements NozzleService {
                 return false;
             if(state==1)
                 tmpNozzle.setNozzleState(tmpNozzle.getNozzleState()+1);
-            else if(state==0&&tmpNozzle.getNozzleState()!=0)
+            else if(state==0)
             {
-                tmpNozzle.setNozzleState(tmpNozzle.getNozzleState()-1);
-            }
-            else if(state==0&&tmpNozzle.getNozzleState()==0){
-                return true;
+                tmpNozzle.setNozzleState(0);
             }
             else return false;
             nozzleRepository.save(tmpNozzle);
