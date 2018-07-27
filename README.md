@@ -21,3 +21,4 @@ A repo for Smart Garden project
 
 ### 其他
 - 移动端UI的设计 
+- 集成测试 系统测试 测试报告
