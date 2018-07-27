@@ -1,0 +1,11 @@
+[t253]
+FileName1=t253_getNozzleByGardenId.html
+URL1=http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_253.xml
+RequestHeaderFile=t253_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t253_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,1 @@
+"positionX=125&positionY=452&nozzleState=0&radius=50&gardenId=232"

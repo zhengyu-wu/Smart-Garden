@@ -1,0 +1,11 @@
+[t324]
+FileName1=t324_getLast15HumiDataBySensorId.html
+URL1=http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_324.xml
+RequestHeaderFile=t324_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t324_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

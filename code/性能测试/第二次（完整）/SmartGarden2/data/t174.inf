@@ -1,0 +1,11 @@
+[t174]
+FileName1=t174_getNozzleByNozzleId.html
+URL1=http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=238
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_174.xml
+RequestHeaderFile=t174_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t174_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

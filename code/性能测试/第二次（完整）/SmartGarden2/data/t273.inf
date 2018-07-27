@@ -1,0 +1,11 @@
+[t273]
+FileName1=t273_getLastTempDataByGardenId.html
+URL1=http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_273.xml
+RequestHeaderFile=t273_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t273_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,11 @@
+[t264]
+FileName1=t264_generateDataWithSensorId.html
+URL1=http://localhost:8080/fakeData/generateDataWithSensorId?sensorId=235
+Total=1
+ContentType=
+SnapshotXmlFile=snapshot_264.xml
+RequestHeaderFile=t264_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t264_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

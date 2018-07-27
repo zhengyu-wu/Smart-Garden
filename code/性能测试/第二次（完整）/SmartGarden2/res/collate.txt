@@ -1,0 +1,5 @@
+[Diagnostics]
+Status=-1
+[Collate Recovery]
+Scenario=D:\LRtest\SmartGarden2\Scenario1.lrs
+Completed=0

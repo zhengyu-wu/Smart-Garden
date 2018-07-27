@@ -1,0 +1,11 @@
+[t211]
+FileName1=t211_getLastTempDataByGardenId.html
+URL1=http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_211.xml
+RequestHeaderFile=t211_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t211_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
