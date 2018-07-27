@@ -62,6 +62,36 @@ class GardenItem extends React.Component{
                             }}>
                                 Sensors
                             </Item>
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('Nozzle',
+                                              {
+                                                  navigation: this.props.navigation,
+                                                  gardenId:this.props.data.gardenId
+                                              })
+                            }}>
+                                Nozzle
+                            </Item>
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('GardenDiagram',
+                                              {
+                                                  navigation: this.props.navigation,
+                                                  gardenId:this.props.data.gardenId
+                                              })
+                            }}>
+                                Garden Diagram
+                            </Item>
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('Heatmap',
+                                              {
+                                                  navigation: this.props.navigation,
+                                                  gardenId:this.props.data.gardenId
+                                              })
+                            }}>
+                                Garden Heatmap
+                            </Item>
                         </List>
                         <Button type={'warning'} onClick={()=>
                         {

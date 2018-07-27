@@ -6,6 +6,9 @@ import {
   View
 } from 'react-native';
 import Echarts from 'native-echarts';
+import axios from 'axios';
+import qs from 'qs';
+import { Button, Drawer, List, WhiteSpace, Popover, Toast } from 'antd-mobile-rn';
 
 
 var noise = getNoiseHelper();
@@ -29,7 +32,7 @@ function generateData(theta, min, max) {
     return data;
 }
 var data = generateData(2, -5, 5);
-
+/*
 option = {
     tooltip: {},
     grid:{
@@ -69,7 +72,7 @@ option = {
         },
         animation: false
     }]
-};
+};*/
 
 function getNoiseHelper(global) {
 
@@ -370,7 +373,92 @@ function getNoiseHelper(global) {
 }
 
 export default class Heatmap extends Component {
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      gardenId:this.props.navigation.state.params.gardenId,
+      x_data: [],
+      y_data: [],
+      data: []
+    };
+  }
+
+  componentWillMount(){
+        axios.get("http://192.168.1.147:8080/temperature/getLastTempDataByGardenId",{params:{gardenId:this.state.gardenId}})
+            .then((res)=>{
+                let tmp_xdata=[];
+                let tmp_ydata = [];
+                let tmp_data =[];
+                //alert(JSON.stringify(res.data));
+
+                for(let i=0;i<res.data.length;i++){
+
+                    tmp_xdata.push(res.data[i].positionX);
+                    tmp_ydata.push(res.data[i].positionY);
+
+                    tmp_data.push([
+                        res.data[i].positionX,
+                        res.data[i].positionY,
+                        noise.perlin2(res.data[i].positionX / 40, res.data[i].positionY / 20)//res.data[i].temperature
+                    ]);
+                }
+                this.setState({
+                    data:tmp_data,
+                    x_data:tmp_xdata,
+                    y_data:tmp_ydata
+                });
+
+            })
+            .catch(err=>{
+                Toast.info('Something wrong!');
+                console.log('error');
+                console.log(err);
+            }) 
+    }
+
   render() {
+
+    option = {
+    tooltip: {},
+    grid:{
+                    x:55,
+                    y:0,
+                    x2:25,
+                    y2:20,
+                    borderWidth:1
+                },
+    xAxis: {
+        type: 'category',
+        data: this.state.x_data
+    },
+    yAxis: {
+        type: 'category',
+        data: this.state.y_data
+    },
+    
+    visualMap: {
+        min: 0,
+        max: 1,
+        //calculable: true,
+        realtime: false,
+        inRange: {
+            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+        }
+    },
+    series: [{
+        name: 'Gaussian',
+        type: 'heatmap',
+        data: this.state.data,
+        itemStyle: {
+            emphasis: {
+                borderColor: '#333',
+                borderWidth: 1
+            }
+        },
+        animation: false
+    }]
+};
     
     return (
     <View style={{position:'relative',top:100}}>

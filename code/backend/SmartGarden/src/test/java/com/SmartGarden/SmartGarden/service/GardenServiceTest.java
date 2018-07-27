@@ -39,17 +39,16 @@ class GardenServiceTest {
         testUser.setUserType(0);
         testUser.setUserId((userService.insert(testUser)).getUserId());
         testGarden=new Garden();
-        testGarden.setUser(testUser);
+        testGarden.setUser(null);
         testGarden.setGardenName("test");
         testGarden.setLength(100);
         testGarden.setWidth(100);
         testGarden.setPositionX(0.0);
         testGarden.setPositionY(0.0);
-        assertTrue(gardenService.addGardenWithUser(testGarden,1));
-        Garden tmpGarden=(gardenService.getGardenByUserId(1)).get(0);
+        gardenService.addGardenWithUser(testGarden,testUser.getUserId());
+        Garden tmpGarden=(gardenService.getGardenByUserId(testUser.getUserId())).get(0);
         assertNotNull(tmpGarden);
         testGarden.setGardenId(tmpGarden.getGardenId());
-        //todo bug记录 疯狂报null pointer的错误 可能因为spring jpa的延迟刷新造成，正在考虑解决方案
     }
 
     @org.junit.jupiter.api.AfterEach
@@ -76,8 +75,7 @@ class GardenServiceTest {
     @Test
     void deleteByUserId() {
         assertTrue(gardenService.deleteByUserId(testUser.getUserId()));
-        assertNull(gardenService.getGardenByUserId(testUser.getUserId()));
-        assertFalse(gardenService.deleteByUserId(testUser.getUserId()));
+        assertEquals(0,gardenService.getGardenByUserId(testUser.getUserId()).size());
     }
 
     @Test
@@ -103,6 +101,7 @@ class GardenServiceTest {
         tmpGarden.setPositionX(1.0);
         tmpGarden.setPositionY(1.0);
         tmpGarden.setGardenId(testGarden.getGardenId());
+        gardenService.update(tmpGarden);
         assertEquals("test",(gardenService.getGardenByGardenId(tmpGarden.getGardenId())).getGardenName());
         assertEquals(1.0,(double)(gardenService.getGardenByGardenId(testGarden.getGardenId())).getPositionX());
     }

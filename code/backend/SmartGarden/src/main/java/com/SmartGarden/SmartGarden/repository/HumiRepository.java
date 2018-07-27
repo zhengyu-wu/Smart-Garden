@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface HumiRepository extends JpaRepository<HumiData,Integer> {
     List<HumiData> findTop20BySensor_SensorIdOrderBySendTimeDesc(int sensorId);
+    List<HumiData> findTop15BySensor_SensorIdOrderBySendTimeDesc(int sensorId);
     HumiData findTopBySensor_SensorIdOrderBySendTimeDesc(int sensorId);
 }

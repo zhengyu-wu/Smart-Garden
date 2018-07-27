@@ -8,6 +8,7 @@ import com.SmartGarden.SmartGarden.service.NozzleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -71,7 +72,29 @@ public class NozzleServiceImpl implements NozzleService {
             Nozzle tmpNozzle=nozzleRepository.findByNozzleId(nozzleId);
             if(tmpNozzle==null)
                 return false;
-            tmpNozzle.setNozzleState(state);
+            if(state==1)
+                tmpNozzle.setNozzleState(tmpNozzle.getNozzleState()+1);
+            else if(state==0)
+            {
+                tmpNozzle.setNozzleState(0);
+            }
+            else return false;
+            nozzleRepository.save(tmpNozzle);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
+    public boolean modifyPosition(int nozzleId, Double positionX,Double positionY) {
+        try {
+            Nozzle tmpNozzle=nozzleRepository.findByNozzleId(nozzleId);
+            if(tmpNozzle==null)
+                return false;
+            tmpNozzle.setPositionX(positionX);
+            tmpNozzle.setPositionY(positionY);
             nozzleRepository.save(tmpNozzle);
             return true;
         }
@@ -83,5 +106,19 @@ public class NozzleServiceImpl implements NozzleService {
     @Override
     public Nozzle getByNozzleId(int nozzleId) {
         return nozzleRepository.findByNozzleId(nozzleId);
+    }
+
+    @Override
+    public List<Nozzle> getWorkingNozzleByGardenId(int gardenId) {
+        List<Nozzle> tmpList=nozzleRepository.getByGarden_GardenId(gardenId);
+        if(tmpList.size()==0) return null;
+        List<Nozzle> resList=new ArrayList<>();
+        for (Nozzle tmpNozzle:tmpList
+             ) {
+            if(tmpNozzle.getNozzleState()!=0){
+                resList.add(tmpNozzle);
+            }
+        }
+        return resList;
     }
 }

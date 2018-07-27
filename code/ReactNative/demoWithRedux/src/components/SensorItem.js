@@ -88,70 +88,7 @@ class SensorItem extends React.Component{
     };
 
     render(){
-        if(this.props.isLast===true){
-            console.log('hit');
-            return(
-                <WingBlank size="lg">
-                    <Card>
-                        <Card.Body>
-                            <List>
-                                <Item extra={this.props.data.sensorId} arrow={'empty'}>
-                                    sensor id
-                                </Item>
-                                <Item extra={this.props.data.sensorType} arrow={'empty'}>
-                                    sensor type
-                                </Item>
-                                <Item extra={'('+this.state.positionX+','+this.state.positionY+')'}
-                                      arrow={'horizontal'}
-                                      onClick={()=>{
-                                          this.props.navigation.navigate('ModifySensorPosition',
-                                              {
-                                                  navigation: this.props.navigation,
-                                                  positionX:this.props.data.positionX,
-                                                  positionY:this.props.data.positionY,
-                                                  sensorId:this.state.sensorId,
-                                                  onModifyPosition:this.onModifyPosition.bind(this)
-                                              })
-                                      }}>
-                                    position
-                                </Item>
-                                <Item arrow={'horizontal'} onClick={()=>{
-                                    //todo 此处应该是跳转到每个传感器的实时数据界面
-                                }}>
-                                    view data
-                                </Item>
-                                <Item extra={
-                                    <Switch
-                                        checked ={this.state.checked}
-                                        onChange={this.onSwitchChanged}
-                                    />
-                                }
-                                >
-                                    On/Off
-                                </Item>
-                            </List>
-                            <Button type={'warning'} onClick={()=>
-                                {
-                                    this.setState({ visible: true });
-                                    this.onButtonClick();
-                                }
-                            }>Delete this sensor</Button>
-                            <WhiteSpace size={'lg'}/>
-                            <WhiteSpace size={'lg'}/>
-                            <WhiteSpace size={'lg'}/>
-                            <WhiteSpace size={'lg'}/>
-                            <WhiteSpace size={'lg'}/>
-                            <WhiteSpace size={'lg'}/>
-                            <WhiteSpace size={'lg'}/>
-                            <WhiteSpace size={'lg'}/>
-                        </Card.Body>
-                    </Card>
-                </WingBlank>
-            )
-        }
-        else return(
-            <WingBlank size="lg">
-                <Card>
+        return  <Card>
                     <Card.Body>
                         <List>
                             <Item extra={this.props.data.sensorId} arrow={'empty'}>
@@ -174,10 +111,15 @@ class SensorItem extends React.Component{
                             }}>
                                 position
                             </Item>
-                            <Item arrow={'horizontal'} onClick={()=>{
-                                //todo 此处应该是跳转到每个传感器的实时数据界面
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('Linechart',
+                                              {
+                                                  navigation: this.props.navigation,
+                                                  sensorId:this.props.data.sensorId
+                                              })
                             }}>
-                                view data
+                                实时折线图
                             </Item>
                             <Item extra={
                                 <Switch
@@ -197,8 +139,7 @@ class SensorItem extends React.Component{
                         }>Delete this sensor</Button>
                     </Card.Body>
                 </Card>
-            </WingBlank>
-        )
+
     }
 }
 

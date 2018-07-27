@@ -55,6 +55,11 @@ public class HumiServiceImpl implements HumiService {
     }
 
     @Override
+    public List<HumiData> getLast15DataBySensorId(int sensorId) {
+        return humiRepository.findTop15BySensor_SensorIdOrderBySendTimeDesc(sensorId);
+    }
+
+    @Override
     public List<HumiData> getLastHumiDataByGardenId(int gardenId) {
         List<Sensor> tmpSensorList=sensorService.getByGardenId(gardenId);
         List<HumiData> tmpList=new ArrayList<>();
@@ -62,6 +67,10 @@ public class HumiServiceImpl implements HumiService {
             return null;
         else {
             for(Sensor tmpSensor:tmpSensorList){
+                //忽略已经关闭的传感器的数据
+                if(tmpSensor.getSensorState()==0){
+                    continue;
+                }
                 HumiData tmpData=null;
                 tmpData=humiRepository.findTopBySensor_SensorIdOrderBySendTimeDesc(tmpSensor.getSensorId());
                 if(tmpData!=null)

@@ -28,6 +28,12 @@ public class HumiDataController {
     }
 
     @ResponseBody
+    @GetMapping("/getLast15HumiDataBySensorId")
+    public List<HumiData> getLast15HumiDataBySensorId(int sensorId){
+        return humiService.getLast15DataBySensorId(sensorId);
+    }
+
+    @ResponseBody
     @GetMapping("/getLastHumiDataByGardenId")
     public List<HumiData> getLastHumiDataByGardenId(int gardenId){
         return humiService.getLastHumiDataByGardenId(gardenId);
