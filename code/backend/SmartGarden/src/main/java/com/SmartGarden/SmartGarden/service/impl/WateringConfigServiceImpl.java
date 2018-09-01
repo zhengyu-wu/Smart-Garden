@@ -78,6 +78,25 @@ public class WateringConfigServiceImpl implements WateringConfigService {
     }
 
     @Override
+    public boolean changeConfigState(int configId) {
+        WateringConfig tmpConfig=wateringConfigRepository.findByConfigId(configId);
+        if(tmpConfig==null)
+            return false;
+        try {
+            if(tmpConfig.getConfigState()==1){
+                tmpConfig.setConfigState(0);
+            }
+            else {
+                tmpConfig.setConfigState(1);
+            }
+            wateringConfigRepository.save(tmpConfig);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
     public List<WateringConfig> getAllConfig() {
         return wateringConfigRepository.findAll();
     }
