@@ -47,6 +47,12 @@ public class WaterConfigController {
     }
 
     @ResponseBody
+    @PostMapping("/changeConfigState")
+    public boolean changeConfigState(int configId){
+        return wateringConfigService.changeConfigState(configId);
+    }
+
+    @ResponseBody
     @PostMapping("/deleteByGardenId")
     public boolean deleteByGardenId(int gardenId){
         return wateringConfigService.deleteByGardenId(gardenId);

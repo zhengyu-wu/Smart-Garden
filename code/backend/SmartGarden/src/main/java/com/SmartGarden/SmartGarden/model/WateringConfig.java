@@ -30,6 +30,17 @@ public class WateringConfig {
     @Column
     private Double bestHumiMax;
 
+    @Column
+    private Integer configState=1;
+
+    public Integer getConfigState() {
+        return configState;
+    }
+
+    public void setConfigState(Integer configState) {
+        this.configState = configState;
+    }
+
     public Double getBestHumiMin() {
         return bestHumiMin;
     }
