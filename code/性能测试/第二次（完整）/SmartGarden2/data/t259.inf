@@ -1,0 +1,11 @@
+[t259]
+FileName1=t259_getNozzleByGardenId.html
+URL1=http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_259.xml
+RequestHeaderFile=t259_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t259_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

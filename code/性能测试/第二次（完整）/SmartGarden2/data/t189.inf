@@ -1,0 +1,11 @@
+[t189]
+FileName1=t189_getConfigByGardenId.html
+URL1=http://localhost:8080/waterConfig/getConfigByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_189.xml
+RequestHeaderFile=t189_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t189_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

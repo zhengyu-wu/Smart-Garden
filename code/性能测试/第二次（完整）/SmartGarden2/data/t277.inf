@@ -1,0 +1,11 @@
+[t277]
+FileName1=t277.html
+URL1=http://localhost:8080/waterConfig/runAutoWatering
+Total=1
+RequestHeaderFile=t277_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t277_ResponseHeader.txt
+ContentType=
+SnapshotXmlFile=snapshot_277.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

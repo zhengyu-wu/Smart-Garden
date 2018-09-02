@@ -1,0 +1,11 @@
+[t309]
+FileName1=t309_getLast15TempDataBySensorId.html
+URL1=http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_309.xml
+RequestHeaderFile=t309_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t309_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

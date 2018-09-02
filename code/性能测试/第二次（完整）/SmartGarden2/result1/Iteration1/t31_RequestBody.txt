@@ -1,0 +1,1 @@
+"positionX=585&positionY=423&sensorType=3&gardenId=232"

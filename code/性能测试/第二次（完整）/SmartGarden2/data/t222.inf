@@ -1,0 +1,11 @@
+[t222]
+FileName1=t222_getNozzleByNozzleId.html
+URL1=http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=238
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_222.xml
+RequestHeaderFile=t222_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t222_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
