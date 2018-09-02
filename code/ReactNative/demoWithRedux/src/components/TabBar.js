@@ -7,6 +7,8 @@ import Garden from './Garden';
 import SensorPage from './Garden';
 import AdminUserControl from './Admin/AdminUserControl';
 import Nozzle from './Nozzle';
+import VideoDisplay from './VideoDisplay';
+import CameraExample from './Camera';
 
 
 class TabBars extends React.Component<any, any> {
@@ -47,7 +49,7 @@ class TabBars extends React.Component<any, any> {
                     selected={this.state.selectedTab === 'blueTab'}
                     onPress={() => this.onChangeTab('blueTab')}
                 >
-                    <Text>{"test only"}</Text>
+                    <CameraExample/>
                 </TabBar.Item>
                 <TabBar.Item
                     icon={require('../assets/koubei.png')}

@@ -4,6 +4,7 @@ import { Button, InputItem, List,WhiteSpace,Toast} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from "qs";
 import {connect} from "react-redux";
+import {HOST_NAME} from "../../constants";
 
 
 class AddGarden extends React.Component{
@@ -93,7 +94,7 @@ class AddGarden extends React.Component{
                                     length:this.state.length,
                                     userId:this.props.user.user.userId
                                 }
-                                axios.post('http://192.168.56.1:8080/garden/addGardenWithUserId',qs.stringify(params))
+                                axios.post(HOST_NAME+'/garden/addGardenWithUserId',qs.stringify(params))
                                     .then(()=>{
                                         //todo  此处应当调用父组件的接口 修改父组件的state
                                     })

@@ -10,7 +10,6 @@ const Brief = Item.Brief;
 class UserCard extends React.Component<any, any> {
     render() {
         const {log_out}=this.props;
-        //todo 绑定几个item onClick的路由
         return (
             <View style={{ paddingTop: 30 }}>
                 <WingBlank size="lg">

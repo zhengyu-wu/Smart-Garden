@@ -4,6 +4,7 @@ import { ScrollView, Text ,View} from 'react-native';
 import { Button, InputItem, List,WhiteSpace,Toast,Picker,Switch} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from "qs";
+import {HOST_NAME} from "../../constants";
 
 class AddSensor extends React.Component{
     constructor(props:any){
@@ -111,7 +112,7 @@ class AddSensor extends React.Component{
                                 console.log('params');
                                 console.log(params);
                                 console.log(this.state.pickerValue);
-                                axios.post('http://192.168.56.1:8080/sensors/addSensorWithGardenId',qs.stringify(params))
+                                axios.post(HOST_NAME+'/sensors/addSensorWithGardenId',qs.stringify(params))
                                     .then(()=>{
                                         //todo  此处应当调用父组件的接口 修改父组件的state
                                         this.props.navigation.state.params.onAddSensor();

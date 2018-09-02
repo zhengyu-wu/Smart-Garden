@@ -3,9 +3,7 @@ import Login from './Login';
 import { View,StyleSheet,Text} from 'react-native';
 import {connect} from 'react-redux';
 import UserPage from "./UserPage";
-import RootUserPage from './RootUserPage';
-import {WhiteSpace} from 'antd-mobile-rn';
-import Heatmap from './Heatmap';
+import {WhiteSpace} from 'antd-mobile-rn'
 
 const styles = StyleSheet.create({
     container: {
@@ -18,16 +16,9 @@ const styles = StyleSheet.create({
 class Root extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
-        //alert(this.props.user.userType);
-
-        if(this.props.user.hasLogin===true && this.props.user.user.userType===0){
+        if(this.props.user.hasLogin===true){
             return(
                 <UserPage navigation={this.props.navigation}/>
-            );
-        }
-        else if(this.props.user.hasLogin===true && this.props.user.user.userType===1){
-            return(
-                <RootUserPage navigation={this.props.navigation}/>
             );
         }
         else{

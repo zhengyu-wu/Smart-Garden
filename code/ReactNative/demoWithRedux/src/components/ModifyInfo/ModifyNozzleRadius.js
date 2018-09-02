@@ -4,6 +4,7 @@ import { ScrollView, Text ,View} from 'react-native';
 import { Button, InputItem, List,WhiteSpace,Toast} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from "qs";
+import {HOST_NAME} from "../../constants";
 
 
 
@@ -46,7 +47,7 @@ class ModifyNozzleRadius extends React.Component{
                         nozzleId:this.state.nozzleId,
                         radius:this.state.newRadius
                     }
-                    axios.post('http://192.168.56.1:8080/nozzles/modifyRadiusByNozzleId',qs.stringify(params))
+                    axios.post(HOST_NAME+'/nozzles/modifyRadiusByNozzleId',qs.stringify(params))
                         .then(()=>{
                             Toast.success('modify position success');
                             this.props.navigation.state.params.onModifyRadius(this.state.newRadius);
