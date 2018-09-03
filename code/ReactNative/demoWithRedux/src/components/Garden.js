@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import GardenItem from './GardenItem';
 import qs from "qs";
+import {HOST_NAME} from "../constants";
 
 const Item = Popover.Item;
 
@@ -23,7 +24,7 @@ class Garden extends React.Component<any, any> {
   }
 
   componentWillMount(){
-        axios.get("http://192.168.56.1:8080/garden/getByUserId",{params:{userId:this.state.userId}})
+        axios.get(HOST_NAME+"/garden/getByUserId",{params:{userId:this.state.userId}})
             .then((res)=>{
                 let gardenData=[];
                 let tmp_overlay = [];
@@ -73,7 +74,7 @@ class Garden extends React.Component<any, any> {
         const params={
             gardenId:gardenId
         };
-        axios.post('http://192.168.56.1:8080/garden/deleteByGardenId',qs.stringify(params))
+        axios.post(HOST_NAME+'/garden/deleteByGardenId',qs.stringify(params))
             .then(()=>{
                 Toast.info('successfully delete');
                 this.setState({

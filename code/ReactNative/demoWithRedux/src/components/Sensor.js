@@ -6,6 +6,7 @@ import axios from 'axios';
 import SensorItem from './SensorItem';
 import qs from "qs";
 import _ from 'lodash';
+import {HOST_NAME} from "../constants";
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -24,7 +25,7 @@ class Sensor extends React.Component{
 
     //因为这个组件的data这个state并不会在很多组件之间传递，所以不需要采用redux保存状态
     componentWillMount(){
-        axios.get("http://192.168.56.1:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get(HOST_NAME+"/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
                 let tmpData=[];
                 for(let i=0;i<res.data.length;i++){
@@ -119,7 +120,7 @@ class Sensor extends React.Component{
                     refreshing={this.state.refreshing}
                     onRefresh={()=>{
                         this.setState({refreshing:true});
-                        axios.get("http://192.168.56.1:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
+                        axios.get(HOST_NAME+"/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
                             .then((res)=>{
                                 let tmpData=[];
                                 for(let i=0;i<res.data.length;i++){
