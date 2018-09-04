@@ -28,7 +28,10 @@ class GardenItem extends React.Component{
     onButtonClick = () => {
         Modal.alert('Delete this garden?', 'the operation cannot be recovered', [
             { text: 'Cancel', onPress: () => console.log('cancel'), style: 'cancel' },
-            { text: 'OK', onPress: () => this.props.onDeleteGarden(this.props.navigation.state.params.data.gardenId) },
+            { text: 'OK', onPress: () => {
+                    this.props.navigation.state.params.onDeleteGarden(this.props.navigation.state.params.data.gardenId)
+                    this.props.navigation.goBack()
+                } },
         ]);
     };
 

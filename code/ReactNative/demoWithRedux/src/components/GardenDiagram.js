@@ -9,6 +9,7 @@ import Echarts from 'native-echarts';
 import axios from 'axios';
 import qs from 'qs';
 import { Button, Drawer, List, WhiteSpace, Popover, Toast } from 'antd-mobile-rn';
+import {HOST_NAME} from "../constants";
 
 /*
 var data = [
@@ -28,7 +29,7 @@ export default class Linechart extends Component {
     } 
 
     componentWillMount(){
-        axios.get("http://192.168.1.108:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get(HOST_NAME+"/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
                 let tmp_sensor_data=[];
                 //alert(JSON.stringify(res.data));
@@ -57,7 +58,7 @@ export default class Linechart extends Component {
                 console.log(err);
             })
 
-        axios.get("http://192.168.1.108:8080/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get(HOST_NAME+"/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
                 let tmp_nozzle_data = [];
                 //alert(JSON.stringify(res.data));

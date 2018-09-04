@@ -114,7 +114,6 @@ class AddSensor extends React.Component{
                                 console.log(this.state.pickerValue);
                                 axios.post(HOST_NAME+'/sensors/addSensorWithGardenId',qs.stringify(params))
                                     .then(()=>{
-                                        //todo  此处应当调用父组件的接口 修改父组件的state
                                         this.props.navigation.state.params.onAddSensor();
                                         Toast.success('add successfully');
                                         this.props.navigation.goBack();

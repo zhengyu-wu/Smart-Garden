@@ -4,3 +4,4 @@ code/backend/SmartGarden/src/main/resources/application.yml
 *.yml
 code/backend/SmartGarden/src/main/resources/application.yml
 *.gz
+*.zip
