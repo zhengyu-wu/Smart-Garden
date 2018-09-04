@@ -4,7 +4,7 @@ A repo for Smart Garden project
 ## todo list
 
 ### 移动端 
-- 页面逻辑的整理
+- ~~页面逻辑的整理~~
 - logo的调整
 - 自动浇灌温度的配置页面 
 - 自动喷水对应的显示特效  
