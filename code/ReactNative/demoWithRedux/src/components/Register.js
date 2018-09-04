@@ -40,7 +40,7 @@ class Register extends React.Component{
         const {register}=this.props;
         const { navigate } = this.props.navigation;
             return(
-                <View>
+                <View style={{ paddingTop: 120 }}>
                     <ScrollView
                         automaticallyAdjustContentInsets={false}
                         showsHorizontalScrollIndicator={false}

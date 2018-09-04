@@ -29,10 +29,10 @@ class ModifyUserPassword extends React.Component{
         const {modifyUser}=this.props;
 
         return(
-            <View>
+            <View style={{ paddingTop: 120 }}>
                 <WhiteSpace size={'lg'}/>
                 <List>
-                <InputItem
+                <InputItem 
                     clear
                     type="password"
                     value={this.state.oldPassword}
@@ -50,7 +50,7 @@ class ModifyUserPassword extends React.Component{
                     }
                     placeholder={'input your old password'}
                 />
-                <InputItem
+                <InputItem 
                     clear
                     type="password"
                     value={this.state.password}
@@ -61,7 +61,7 @@ class ModifyUserPassword extends React.Component{
                     }
                     placeholder={'input your new password'}
                 />
-                <InputItem
+                <InputItem 
                     clear
                     type="password"
                     value={this.state.confirmPassword}
@@ -82,7 +82,7 @@ class ModifyUserPassword extends React.Component{
                 />
                 </List>
                 <WhiteSpace size={'s'}/>
-                <Button type={'primary'} onClick={()=>{
+                <Button style={{top: 50}} type={'primary'} onClick={()=>{
                     modifyUser(
                         this.props.user.user.userId,
                         this.props.user.user.userType,
@@ -101,7 +101,7 @@ class ModifyUserPassword extends React.Component{
                     Submit
                 </Button>
                 <WhiteSpace size={'lg'}/>
-                <Button type={'primary'} onClick={()=>{
+                <Button style={{top: 50}} type={'primary'} onClick={()=>{
                     this.props.navigation.goBack();
                 }}>
                     Cancel

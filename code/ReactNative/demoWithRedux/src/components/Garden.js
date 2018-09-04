@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, Drawer, List, WhiteSpace, Popover, Toast } from 'antd-mobile-rn';
+import { Button, Drawer, List, WhiteSpace, Popover, Toast,Grid } from 'antd-mobile-rn';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import GardenItem from './GardenItem';
@@ -54,12 +54,6 @@ class Garden extends React.Component<any, any> {
                 console.log(err);
             })
     }
-  
-  onSelect = (value: any) => {
-    this.setState({
-      selected: value,
-    });
-  }
 
   onDeleteGarden=(gardenId)=>{
         let tmpState=this.state.gardenData;
@@ -87,63 +81,32 @@ class Garden extends React.Component<any, any> {
   
   render() {
 
-    overlay = this.state.overlay.map((i, index) => (
-      <Item key={index} value={i}>
-        <Text>Garden {i}</Text>
-      </Item>
-    ));
 
-    let rowData = [this.state.gardenData[0]];
-
-    for(let i=0;i<this.state.gardenData.length;i++){
-
-        if (this.state.gardenData[i].gardenId == this.state.selected)
-        {
-            rowData = this.state.gardenData[i];
-
-        }
-                    
-    }
+    data = this.state.overlay.map((i, index) => ({
+      icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+      text: `Garden ${i}`,
+    }));
 
     return (
-      <View>
+      <View style={{ paddingTop: 100 }}>
         
-        <View style={styles.menuContainer}>
-          <Popover
-            name="m"
-            style={{ backgroundColor: '#FFFFFF' }}
-            overlay={overlay}
-            contextStyle={styles.contextStyle}
-            onSelect={this.onSelect}
-          >
-            <Text >选择花园</Text>
-          </Popover>
-        </View>
-        <View>
-          <GardenItem 
-            navigation={this.props.navigation} 
-            data={rowData}
-            onDeleteGarden={this.onDeleteGarden.bind(this)}
-          />
-        </View>
+        <Grid
+          data={data}
+          columnNum={3}
+          isCarousel
+          
+          onClick={(_el: any, index: any)=>{
+            this.props.navigation.navigate('GardenItem',
+                          {
+                              navigation: this.props.navigation,
+                              data: this.state.gardenData[index]
+                          })
+          }} 
+        />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  contextStyle: {  // “选择花园”的位置
-    margin: 50,
-    flex: 1,
-  },
-  menuContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    height: 200,
-    paddingHorizontal: 5,
-    paddingVertical: 10,
-  } ,
-});
 
 const mapStateToProps = (state) => {
     return {

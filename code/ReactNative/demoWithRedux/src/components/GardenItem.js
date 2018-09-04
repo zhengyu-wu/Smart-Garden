@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import qs from 'qs';
 import Sensor from './Sensor';
+import CameraExample from './Camera';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -27,29 +28,29 @@ class GardenItem extends React.Component{
     onButtonClick = () => {
         Modal.alert('Delete this garden?', 'the operation cannot be recovered', [
             { text: 'Cancel', onPress: () => console.log('cancel'), style: 'cancel' },
-            { text: 'OK', onPress: () => this.props.onDeleteGarden(this.props.data.gardenId) },
+            { text: 'OK', onPress: () => this.props.onDeleteGarden(this.props.navigation.state.params.data.gardenId) },
         ]);
     };
 
     render(){
         return(
-            <WingBlank size="lg">
+            <WingBlank style={{ paddingTop: 100 }} size="lg">
                 <Card>
                     <Card.Body>
                         <List>
-                            <Item extra={this.props.data.gardenId} arrow={'empty'}>
+                            <Item extra={this.props.navigation.state.params.data.gardenId} arrow={'empty'}>
                                 Garden Id
                             </Item>
-                            <Item extra={this.props.data.gardenName} arrow={'empty'}>
+                            <Item extra={this.props.navigation.state.params.data.gardenName} arrow={'empty'}>
                                 Garden Name
                             </Item>
-                            <Item extra={'('+this.props.data.positionX+','+this.props.data.positionY+')'} arrow={'empty'}>
+                            <Item extra={'('+this.props.navigation.state.params.data.positionX+','+this.props.navigation.state.params.data.positionY+')'} arrow={'empty'}>
                                 Position
                             </Item>
-                            <Item extra={this.props.data.length} arrow={'empty'} >
+                            <Item extra={this.props.navigation.state.params.data.length} arrow={'empty'} >
                                 Length
                             </Item>
-                            <Item  extra={this.props.data.width} arrow={'empty'} >
+                            <Item  extra={this.props.navigation.state.params.data.width} arrow={'empty'} >
                                 Width
                             </Item>
                             <Item arrow={'horizontal'} 
@@ -57,7 +58,7 @@ class GardenItem extends React.Component{
                                 this.props.navigation.navigate('Sensor',
                                               {
                                                   navigation: this.props.navigation,
-                                                  gardenId:this.props.data.gardenId
+                                                  gardenId:this.props.navigation.state.params.data.gardenId
                                               })
                             }}>
                                 Sensors
@@ -67,10 +68,19 @@ class GardenItem extends React.Component{
                                       this.props.navigation.navigate('Nozzle',
                                           {
                                               navigation: this.props.navigation,
-                                              gardenId:this.props.data.gardenId
+                                              gardenId:this.props.navigation.state.params.data.gardenId
                                           })
                                   }}>
                                Nozzles
+                            </Item>
+                            <Item arrow={'horizontal'}
+                                  onClick={()=>{
+                                      this.props.navigation.navigate('CameraExample',
+                                          {
+                                              navigation: this.props.navigation
+                                          })
+                                  }}>
+                               Camera
                             </Item>
                         </List>
                         <Button type={'warning'} onClick={()=>

@@ -42,15 +42,16 @@ class TabBars extends React.Component<any, any> {
                 barTintColor="#ccc"
                 tabBarPosition={'bottom'}
             >
+                {/*
                 <TabBar.Item
                     title="Life"
                     icon={require('../assets/alipay.png')}
                     selectedIcon={require('../assets/alipay_sel.png')}
                     selected={this.state.selectedTab === 'blueTab'}
                     onPress={() => this.onChangeTab('blueTab')}
-                >
+                > 
                     <CameraExample/>
-                </TabBar.Item>
+                </TabBar.Item> */}
                 <TabBar.Item
                     icon={require('../assets/koubei.png')}
                     selectedIcon={require('../assets/koubei_sel.png')}
