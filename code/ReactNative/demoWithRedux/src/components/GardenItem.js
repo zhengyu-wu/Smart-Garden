@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import qs from 'qs';
 import Sensor from './Sensor';
+import CameraExample from './Camera';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -71,6 +72,15 @@ class GardenItem extends React.Component{
                                           })
                                   }}>
                                Nozzles
+                            </Item>
+                            <Item arrow={'horizontal'}
+                                  onClick={()=>{
+                                      this.props.navigation.navigate('CameraExample',
+                                          {
+                                              navigation: this.props.navigation
+                                          })
+                                  }}>
+                               Camera
                             </Item>
                         </List>
                         <Button type={'warning'} onClick={()=>

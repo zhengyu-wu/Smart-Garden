@@ -20,6 +20,7 @@ import Nozzle from "./Nozzle";
 import AddNozzle from "./ModifyInfo/AddNozzle";
 import ModifyNozzlePosition from "./ModifyInfo/ModifyNozzlePosition";
 import ModifyNozzleRadius from "./ModifyInfo/ModifyNozzleRadius";
+import CameraExample from './Camera';
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -40,6 +41,7 @@ const RootStack = createStackNavigator({
     AddNozzle:AddNozzle,
     Sensor:Sensor,
     Nozzle:Nozzle,
+    CameraExample:CameraExample,
     ModifyEmailAdmin:ModifyEmailAdmin,
     ModifyUserNameAdmin:ModifyUserNameAdmin,
     ModifyUserPhoneAdmin:ModifyUserPhoneAdmin
