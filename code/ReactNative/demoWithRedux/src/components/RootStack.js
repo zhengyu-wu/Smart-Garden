@@ -22,6 +22,8 @@ import ModifyNozzlePosition from "./ModifyInfo/ModifyNozzlePosition";
 import ModifyNozzleRadius from "./ModifyInfo/ModifyNozzleRadius";
 import CameraExample from './Camera';
 import GardenItem from './GardenItem';
+import SensorItem from './SensorItem';
+import NozzleItem from './NozzleItem';
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -46,7 +48,9 @@ const RootStack = createStackNavigator({
     ModifyEmailAdmin:ModifyEmailAdmin,
     ModifyUserNameAdmin:ModifyUserNameAdmin,
     ModifyUserPhoneAdmin:ModifyUserPhoneAdmin,
-    GardenItem:GardenItem
+    GardenItem:GardenItem,
+    SensorItem:SensorItem,
+    NozzleItem:NozzleItem
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);

@@ -100,4 +100,3 @@ class GardenItem extends React.Component{
 }
 
 export default GardenItem;
-
