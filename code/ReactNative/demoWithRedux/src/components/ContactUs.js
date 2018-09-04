@@ -6,7 +6,7 @@ class ContactUs extends React.Component{
     {
         return(
             <View>
-                <Text> this is contact us page todo</Text>
+                <Text> This is contact us page todo</Text>
             </View>)
     }
 }
