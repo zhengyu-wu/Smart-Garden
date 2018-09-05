@@ -85,6 +85,16 @@ class GardenItem extends React.Component{
                                   }}>
                                Camera
                             </Item>
+                            <Item arrow={'horizontal'}
+                                  onClick={()=>{
+                                      this.props.navigation.navigate('WaterConfig',
+                                          {
+                                              navigation: this.props.navigation,
+                                              gardenId:this.props.navigation.state.params.data.gardenId
+                                          })
+                                  }}>
+                                Auto watering
+                            </Item>
                         </List>
                         <Button type={'warning'} onClick={()=>
                         {

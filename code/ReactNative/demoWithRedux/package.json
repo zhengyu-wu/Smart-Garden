@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@expo/vector-icons": "^6.2.1",
+    "@ptomasroos/react-native-multi-slider": "^1.0.0",
     "antd-mobile-rn": "^2.2.0",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.8.0",
