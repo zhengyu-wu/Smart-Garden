@@ -15,9 +15,9 @@ class SensorItem extends React.Component{
         super(props);
         this.state={
             checked:false,
-            positionX:this.props.data.positionX,
-            positionY:this.props.data.positionY,
-            sensorId:this.props.data.sensorId,
+            positionX:this.props.navigation.state.params.data.positionX,
+            positionY:this.props.navigation.state.params.data.positionY,
+            sensorId:this.props.navigation.state.params.data.sensorId,
             visible:false
         };
     }
@@ -29,11 +29,11 @@ class SensorItem extends React.Component{
     };
 
     componentDidMount(){
-        if(this.props.data.sensorState===1)
+        if(this.props.navigation.state.params.data.sensorState===1)
             this.setState({checked:true});
-        this.setState({positionX:this.props.data.positionX,
-            positionY:this.props.data.positionY,
-            sensorId:this.props.data.sensorId,});
+        this.setState({positionX:this.props.navigation.state.params.data.positionX,
+            positionY:this.props.navigation.state.params.data.positionY,
+            sensorId:this.props.navigation.state.params.data.sensorId,});
     }
 
     componentWillReceiveProps(nextProps){
@@ -89,13 +89,13 @@ class SensorItem extends React.Component{
     };
 
     render(){
-        return  <Card>
+        return  <Card style={{ paddingTop: 100 }}>
                     <Card.Body>
                         <List>
-                            <Item extra={this.props.data.sensorId} arrow={'empty'}>
+                            <Item extra={this.props.navigation.state.params.data.sensorId} arrow={'empty'}>
                                 sensor id
                             </Item>
-                            <Item extra={this.props.data.sensorType} arrow={'empty'}>
+                            <Item extra={this.props.navigation.state.params.data.sensorType} arrow={'empty'}>
                                 sensor type
                             </Item>
                             <Item extra={'('+this.state.positionX+','+this.state.positionY+')'}

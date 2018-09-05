@@ -22,7 +22,12 @@ import ModifyNozzlePosition from "./ModifyInfo/ModifyNozzlePosition";
 import ModifyNozzleRadius from "./ModifyInfo/ModifyNozzleRadius";
 import CameraExample from './Camera';
 import GardenItem from './GardenItem';
+<<<<<<< HEAD
 import WaterConfig from "./WaterConfig";
+=======
+import SensorItem from './SensorItem';
+import NozzleItem from './NozzleItem';
+>>>>>>> 8ad3494a2466c7c5a6c1d67c6cd03e9603919a7a
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -48,7 +53,12 @@ const RootStack = createStackNavigator({
     ModifyUserNameAdmin:ModifyUserNameAdmin,
     ModifyUserPhoneAdmin:ModifyUserPhoneAdmin,
     GardenItem:GardenItem,
+<<<<<<< HEAD
     WaterConfig:WaterConfig
+=======
+    SensorItem:SensorItem,
+    NozzleItem:NozzleItem
+>>>>>>> 8ad3494a2466c7c5a6c1d67c6cd03e9603919a7a
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);

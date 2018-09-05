@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View,FlatList } from 'react-native';
-import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast} from 'antd-mobile-rn';
+import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast,Grid} from 'antd-mobile-rn';
 import axios from 'axios';
 import NozzleItem from './NozzleItem';
 import qs from "qs";
@@ -16,8 +16,8 @@ class Nozzle extends React.Component{
         super(props);
         this.state={
             gardenId:this.props.navigation.state.params.gardenId,
-            data:[],//data应该是从后端拿到的数据
-            refreshing:false
+            overlay: [],
+            nozzleData:[]
         }
     }
 
@@ -25,21 +25,24 @@ class Nozzle extends React.Component{
     componentWillMount(){
         axios.get(HOST_NAME+"/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
-                let tmpData=[];
+                let nozzleData=[];
+                let tmp_overlay = [];
                 for(let i=0;i<res.data.length;i++){
-                    tmpData.push({
-                        key:i.toString(),
-                        nozzle:{
+
+                    tmp_overlay.push(res.data[i].nozzleId);
+
+                    nozzleData.push({                       
                             nozzleId:res.data[i].nozzleId,
                             positionX:res.data[i].positionX,
                             positionY:res.data[i].positionY,
                             nozzleState:res.data[i].nozzleState,
                             radius:res.data[i].radius
-                        }
+                        
                     });
                 }
                 this.setState({
-                    data:tmpData,
+                    overlay: tmp_overlay,
+                    nozzleData: nozzleData
                 });
             })
             .catch(err=>{
@@ -58,7 +61,7 @@ class Nozzle extends React.Component{
     };
 
 
-
+/*
     _renderItem=(item)=>{
         return <NozzleItem
             data={item.item.nozzle}
@@ -88,54 +91,29 @@ class Nozzle extends React.Component{
 
     _separator = () => {
         return <View style={{height:2}}/>;
-    }
+    }*/
 
     render(){
+
+        data = this.state.overlay.map((i, index) => ({
+            icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+            text: `Nozzle ${i}`,
+        }));
+
         return(
-            <View style={{flex:1}}>
-                <FlatList
-                    ref={(flatList)=>this._flatList=flatList}
-                    ListHeaderComponent={this._header}
-                    ListFooterComponent={this._footer}
-                    ItemSeparatorComponent={this._separator}
-                    renderItem={this._renderItem}
-                    onEndReachedThreshold={0}
-                    numColumns={1}
-                    data={this.state.data}
-                    extraData={this.state.data}
-                    refreshing={this.state.refreshing}
-                    onRefresh={()=>{
-                        this.setState({refreshing:true});
-                        axios.get(HOST_NAME+"/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
-                            .then((res)=>{
-                                let tmpData=[];
-                                for(let i=0;i<res.data.length;i++){
-                                    tmpData.push({
-                                        key:i.toString(),
-                                        nozzle:{
-                                            nozzleId:res.data[i].nozzleId,
-                                            positionX:res.data[i].positionX,
-                                            positionY:res.data[i].positionY,
-                                            nozzleState:res.data[i].nozzleState,
-                                            radius:res.data[i].radius
-                                        }
-                                    });
-                                }
-                                this.setState({
-                                    data:tmpData,
-                                    refreshing:false
-                                });
-                            })
-                            .catch(err=>{
-                                Toast.info('Something wrong!');
-                                console.log('error');
-                                console.log(err);
-                                this.setState({
-                                    refreshing:false
-                                })
-                                //todo 这里应该做出错的处理 页面跳转？
-                            })
-                    }}
+            <View style={{ paddingTop: 100 }}>
+                <Grid
+                data={data}
+                columnNum={3}
+                carouselMaxRow={3}
+                isCarousel          
+                onClick={(_el: any, index: any)=>{
+                    this.props.navigation.navigate('NozzleItem',
+                          {
+                              navigation: this.props.navigation,
+                              data: this.state.nozzleData[index]
+                          })
+                }} 
                 />
             </View>
         )

@@ -14,11 +14,11 @@ class NozzleItem extends React.Component{
     constructor(props:any){
         super(props);
         this.state={
-            checked:this.props.data.nozzleState===1,
-            positionX:this.props.data.positionX,
-            positionY:this.props.data.positionY,
-            nozzleId:this.props.data.nozzleId,
-            radius:this.props.data.radius,
+            checked:this.props.navigation.state.params.data.nozzleState===1,
+            positionX:this.props.navigation.state.params.data.positionX,
+            positionY:this.props.navigation.state.params.data.positionY,
+            nozzleId:this.props.navigation.state.params.data.nozzleId,
+            radius:this.props.navigation.state.params.data.radius,
             visible:false
         };
     }
@@ -93,7 +93,7 @@ class NozzleItem extends React.Component{
     };
 
     render(){
-        return  <Card>
+        return  <Card style={{ paddingTop: 100 }}>
             <Card.Body>
                 <List>
                     <Item extra={this.state.nozzleId} arrow={'empty'}>
