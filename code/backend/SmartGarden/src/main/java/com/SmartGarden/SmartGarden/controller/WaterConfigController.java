@@ -66,6 +66,18 @@ public class WaterConfigController {
     }
 
     @ResponseBody
+    @PostMapping("/changeTempConfig")
+    public boolean changeTempConfig(int configId,Double bestTempMin,Double bestTempMax){
+        return wateringConfigService.changeTempConfig(configId,bestTempMin,bestTempMax);
+    }
+
+    @ResponseBody
+    @PostMapping("/changeHumiConfig")
+    public boolean changeHumiConfig(int configId,Double bestHumiMin,Double bestHumiMax){
+        return wateringConfigService.changeHumiConfig(configId,bestHumiMin,bestHumiMax);
+    }
+
+    @ResponseBody
     @PostMapping("/runAutoWatering")
     public void runAutoWatering(){
         wateringService.autoWatering();

@@ -24,6 +24,7 @@ import CameraExample from './Camera';
 import GardenItem from './GardenItem';
 import SensorItem from './SensorItem';
 import NozzleItem from './NozzleItem';
+import WaterConfig from "./WaterConfig";
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -51,6 +52,7 @@ const RootStack = createStackNavigator({
     GardenItem:GardenItem,
     SensorItem:SensorItem,
     NozzleItem:NozzleItem
+    WaterConfig:WaterConfig
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);

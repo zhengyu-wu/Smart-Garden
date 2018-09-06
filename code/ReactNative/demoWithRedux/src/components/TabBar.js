@@ -9,6 +9,7 @@ import AdminUserControl from './Admin/AdminUserControl';
 import Nozzle from './Nozzle';
 import VideoDisplay from './VideoDisplay';
 import CameraExample from './Camera';
+import WaterConfig from "./WaterConfig";
 
 
 class TabBars extends React.Component<any, any> {
