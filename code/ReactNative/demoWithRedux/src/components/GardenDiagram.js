@@ -16,7 +16,7 @@ var data = [
     [[44056,81.8,27662440,'Australia',2015],[44056,81.7,27662440,'Canada',2015]]
 ];*/
 
-export default class Linechart extends Component {
+export default class GardenDiagram extends Component {
 
     constructor(props: any) {
         super(props);
@@ -28,7 +28,7 @@ export default class Linechart extends Component {
     } 
 
     componentWillMount(){
-        axios.get("http://192.168.1.108:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get("http://192.168.1.109:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
                 let tmp_sensor_data=[];
                 //alert(JSON.stringify(res.data));
@@ -57,7 +57,7 @@ export default class Linechart extends Component {
                 console.log(err);
             })
 
-        axios.get("http://192.168.1.108:8080/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get("http://192.168.1.109:8080/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
                 let tmp_nozzle_data = [];
                 //alert(JSON.stringify(res.data));

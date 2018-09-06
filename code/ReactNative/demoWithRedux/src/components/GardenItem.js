@@ -6,7 +6,7 @@ import axios from 'axios';
 import qs from 'qs';
 import Sensor from './Sensor';
 import CameraExample from './Camera';
-
+import GardenDiagram from './GardenDiagram';
 const Item = List.Item;
 const Brief = Item.Brief;
 
@@ -75,6 +75,16 @@ class GardenItem extends React.Component{
                                           })
                                   }}>
                                Nozzles
+                            </Item>
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('GardenDiagram',
+                                              {
+                                                  navigation: this.props.navigation,
+                                                  gardenId:this.props.navigation.state.params.data.gardenId
+                                              })
+                            }}>
+                                Garden Diagram
                             </Item>
                             <Item arrow={'horizontal'}
                                   onClick={()=>{
