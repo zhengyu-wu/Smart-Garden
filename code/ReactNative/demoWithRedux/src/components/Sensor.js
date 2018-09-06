@@ -1,14 +1,12 @@
 import React from 'react';
 import { Text, View,FlatList } from 'react-native';
-import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast} from 'antd-mobile-rn';
+import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast,Grid} from 'antd-mobile-rn';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import SensorItem from './SensorItem';
 import qs from "qs";
 import _ from 'lodash';
-
-const Item = List.Item;
-const Brief = Item.Brief;
+import {HOST_NAME} from "../constants";
 
 
 class Sensor extends React.Component{
@@ -16,31 +14,33 @@ class Sensor extends React.Component{
         super(props);
         this.state={
             gardenId:this.props.navigation.state.params.gardenId,
-            data:[],//data应该是从后端拿到的数据
-            refreshing:false,
-            dataLength:0
+            //data:[],//data应该是从后端拿到的数据
+            overlay: [],
+            sensorData:[]
         }
     }
 
     //因为这个组件的data这个state并不会在很多组件之间传递，所以不需要采用redux保存状态
     componentWillMount(){
-        axios.get("http://192.168.56.1:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get(HOST_NAME+"/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
-                let tmpData=[];
+                let sensorData=[];
+                let tmp_overlay = [];
+                //alert(JSON.stringify(res.data));
                 for(let i=0;i<res.data.length;i++){
-                    tmpData.push({
-                        key:i.toString(),
-                        sensor:{
-                            sensorId:res.data[i].sensorId,
-                            positionX:res.data[i].positionX,
-                            positionY:res.data[i].positionY,
-                            sensorState:res.data[i].sensorState,
-                            sensorType:res.data[i].sensorType
-                        }
+                    tmp_overlay.push(res.data[i].sensorId);
+
+                    sensorData.push({          
+                        sensorId:res.data[i].sensorId,
+                        positionX:res.data[i].positionX,
+                        positionY:res.data[i].positionY,
+                        sensorState:res.data[i].sensorState,
+                        sensorType:res.data[i].sensorType           
                     });
                 }
                 this.setState({
-                    data:tmpData,
+                    overlay: tmp_overlay,
+                    sensorData: sensorData
                 });
             })
             .catch(err=>{
@@ -59,25 +59,16 @@ class Sensor extends React.Component{
         this.componentWillMount();
     };
 
-    ListViewItemSeparator = () => {
-        return (
-            <View
-                style={{
-                    height: .5,
-                    width: "100%",
-                    backgroundColor: "#000",
-
-                }}
-            />
-        );
-    }
-
+    
     _renderItem=(item)=>{
+        /*
         return <SensorItem
         data={item.item.sensor}
         navigation={this.props.navigation}
         onDeleteSensor={this.onDeleteSensor.bind(this)}
-        />
+        />*/
+
+        
     }
 
     _header = () => {
@@ -95,58 +86,28 @@ class Sensor extends React.Component{
         </Button>;
     }
 
-    _footer = () => {
-        return <Text>这是尾部</Text>;
-    }
-
-    _separator = () => {
-        return <View style={{height:2}}/>;
-    }
 
     render(){
+
+        data = this.state.overlay.map((i, index) => ({
+            icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+            text: `Sensor ${i}`,
+        }));
+
         return(
-            <View style={{flex:1}}>
-                <FlatList
-                    ref={(flatList)=>this._flatList=flatList}
-                    ListHeaderComponent={this._header}
-                    ListFooterComponent={this._footer}
-                    ItemSeparatorComponent={this._separator}
-                    renderItem={this._renderItem}
-                    onEndReachedThreshold={0}
-                    numColumns={1}
-                    data={this.state.data}
-                    extraData={this.state.data}
-                    refreshing={this.state.refreshing}
-                    onRefresh={()=>{
-                        this.setState({refreshing:true});
-                        axios.get("http://192.168.56.1:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
-                            .then((res)=>{
-                                let tmpData=[];
-                                for(let i=0;i<res.data.length;i++){
-                                    tmpData.push({
-                                        key:i.toString(),
-                                        sensor:{
-                                            sensorId:res.data[i].sensorId,
-                                            positionX:res.data[i].positionX,
-                                            positionY:res.data[i].positionY,
-                                            sensorState:res.data[i].sensorState,
-                                            sensorType:res.data[i].sensorType
-                                        }
-                                    });
-                                }
-                                this.setState({
-                                    data:tmpData,
-                                    refreshing:false
-                                });
-                            })
-                            .catch(err=>{
-                                Toast.info('Something wrong!');
-                                console.log('error');
-                                console.log(err);
-                                this.setState({refreshing:false})
-                                //todo 这里应该做出错的处理 页面跳转？
-                            })
-                    }}
+            <View style={{ paddingTop: 100 }}>
+                <Grid
+                data={data}
+                columnNum={3}
+                carouselMaxRow={3}
+                isCarousel          
+                onClick={(_el: any, index: any)=>{
+                    this.props.navigation.navigate('SensorItem',
+                          {
+                              navigation: this.props.navigation,
+                              data: this.state.sensorData[index]
+                          })
+                }} 
                 />
             </View>
         )

@@ -1,0 +1,10 @@
+HTTP/1.1 200 
+Access-Control-Allow-Origin: http://localhost:3000
+Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE, HEAD
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Authorization, X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept
+Access-Control-Max-Age: 1728000
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 27 Jul 2018 01:40:41 GMT
+

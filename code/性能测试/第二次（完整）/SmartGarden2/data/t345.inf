@@ -1,0 +1,11 @@
+[t345]
+FileName1=t345_getLastTempDataByGardenId.html
+URL1=http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_345.xml
+RequestHeaderFile=t345_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t345_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

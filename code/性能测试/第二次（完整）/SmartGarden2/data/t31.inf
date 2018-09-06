@@ -1,0 +1,11 @@
+[t31]
+FileName1=t31.html
+URL1=http://localhost:8080/sensors/addSensorWithGardenId
+Total=1
+RequestHeaderFile=t31_RequestHeader.txt
+RequestBodyFile=t31_RequestBody.txt
+ResponseHeaderFile=t31_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_31.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -3,6 +3,7 @@ import { Text, View,ListView } from 'react-native';
 import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast,Modal} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from 'qs';
+import {HOST_NAME} from "../constants";
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -13,11 +14,11 @@ class NozzleItem extends React.Component{
     constructor(props:any){
         super(props);
         this.state={
-            checked:this.props.data.nozzleState===1,
-            positionX:this.props.data.positionX,
-            positionY:this.props.data.positionY,
-            nozzleId:this.props.data.nozzleId,
-            radius:this.props.data.radius,
+            checked:this.props.navigation.state.params.data.nozzleState===1,
+            positionX:this.props.navigation.state.params.data.positionX,
+            positionY:this.props.navigation.state.params.data.positionY,
+            nozzleId:this.props.navigation.state.params.data.nozzleId,
+            radius:this.props.navigation.state.params.data.radius,
             visible:false
         };
     }
@@ -57,7 +58,7 @@ class NozzleItem extends React.Component{
             nozzleId: this.state.nozzleId,
             state: tmpState
         };
-        axios.post('http://192.168.56.1:8080/nozzles/modifyStateByNozzleId', qs.stringify(params))
+        axios.post(HOST_NAME+'/nozzles/modifyStateByNozzleId', qs.stringify(params))
             .catch(()=>
             {
                 Toast.fail("unable to change the state");
@@ -80,7 +81,7 @@ class NozzleItem extends React.Component{
                     const params = {
                         nozzleId: this.state.nozzleId
                     };
-                    axios.post('http://192.168.56.1:8080/nozzles/deleteNozzleByNozzleId', qs.stringify(params))
+                    axios.post(HOST_NAME+'/nozzles/deleteNozzleByNozzleId', qs.stringify(params))
                         .then(() => {
                             Toast.info('successfully delete');
                             this.props.onDeleteNozzle();
@@ -92,7 +93,7 @@ class NozzleItem extends React.Component{
     };
 
     render(){
-        return  <Card>
+        return  <Card style={{ paddingTop: 100 }}>
             <Card.Body>
                 <List>
                     <Item extra={this.state.nozzleId} arrow={'empty'}>
@@ -126,11 +127,6 @@ class NozzleItem extends React.Component{
                                   })
                           }}>
                         position
-                    </Item>
-                    <Item arrow={'horizontal'} onClick={()=>{
-                        //todo 此处应该是跳转到每个传感器的实时数据界面
-                    }}>
-                        view data
                     </Item>
                     <Item extra={
                         <Switch

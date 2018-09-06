@@ -1,0 +1,11 @@
+[t336]
+FileName1=t336_generateDataWithSensorId.html
+URL1=http://localhost:8080/fakeData/generateDataWithSensorId?sensorId=233
+Total=1
+ContentType=
+SnapshotXmlFile=snapshot_336.xml
+RequestHeaderFile=t336_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t336_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

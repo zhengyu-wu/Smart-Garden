@@ -1,0 +1,11 @@
+[t275]
+FileName1=t275_getSensorByGardenId.html
+URL1=http://localhost:8080/sensors/getSensorByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_275.xml
+RequestHeaderFile=t275_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t275_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

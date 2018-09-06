@@ -10,5 +10,8 @@ public interface WateringConfigService {
     boolean deleteByGardenId(int gardenId);
     List<WateringConfig> getConfigByGardenId(int gardenId);
     boolean updateConfig(WateringConfig wateringConfig);
+    boolean changeConfigState(int configId);
+    boolean changeTempConfig(int configId,Double bestTempMin,Double bestTempMax);
+    boolean changeHumiConfig(int configId,Double bestHumiMin,Double bestHumiMax);
     List<WateringConfig> getAllConfig();
 }

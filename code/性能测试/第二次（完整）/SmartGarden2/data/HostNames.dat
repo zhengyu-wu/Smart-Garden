@@ -1,0 +1,4 @@
+[hosts]
+localhost=
+download.mozilla.org=
+download.cdn.mozilla.net=

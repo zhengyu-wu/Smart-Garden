@@ -16,7 +16,7 @@ const user = (state = initialState, action={}) => {
         case LOAD_USER_FULFILLED:
             if(typeof (action.payload.data.userId)==="undefined")
             {
-                Toast.fail("login fails",1);
+                Toast.fail("login failed",1);
                 return{
                     isFetching: false,
                     error: "email and password don't match",
@@ -41,7 +41,7 @@ const user = (state = initialState, action={}) => {
                 user: {}
             };
         case LOAD_USER_REJECTED:
-            Toast.fail("Login fails",1);
+            Toast.fail("login failed",1);
             return {
                 isFetching: false,
                 error: action.payload.response.data,
@@ -69,7 +69,7 @@ const user = (state = initialState, action={}) => {
                 hasRegister:false
             };
         case REGISTER_REJECTED:
-            Toast.info("register fails",1);
+            Toast.info("register failed",1);
             return {
                 ...state,
                 hasRegister:false

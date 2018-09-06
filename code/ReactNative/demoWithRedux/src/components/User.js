@@ -10,9 +10,8 @@ const Brief = Item.Brief;
 class UserCard extends React.Component<any, any> {
     render() {
         const {log_out}=this.props;
-        //todo 绑定几个item onClick的路由
         return (
-            <View style={{ paddingTop: 30 }}>
+            <View style={{ paddingTop: 110 }}>
                 <WingBlank size="lg">
                     <Card>
                         <Card.Header
@@ -57,8 +56,8 @@ class UserCard extends React.Component<any, any> {
                             </Button>
                         </Card.Body>
                         <Card.Footer
-                            content={this.props.user.user.email}
-                            extra="footer extra content"
+                            //content={this.props.user.user.email}
+                            //extra="footer extra content"
                         />
                     </Card>
                 </WingBlank>

@@ -3,6 +3,7 @@ import { Text, View,ListView } from 'react-native';
 import { Card, WhiteSpace, WingBlank,Button,List,Switch,Toast,Modal} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from 'qs';
+import {HOST_NAME} from "../constants";
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -14,9 +15,9 @@ class SensorItem extends React.Component{
         super(props);
         this.state={
             checked:false,
-            positionX:this.props.data.positionX,
-            positionY:this.props.data.positionY,
-            sensorId:this.props.data.sensorId,
+            positionX:this.props.navigation.state.params.data.positionX,
+            positionY:this.props.navigation.state.params.data.positionY,
+            sensorId:this.props.navigation.state.params.data.sensorId,
             visible:false
         };
     }
@@ -28,11 +29,11 @@ class SensorItem extends React.Component{
     };
 
     componentDidMount(){
-        if(this.props.data.sensorState===1)
+        if(this.props.navigation.state.params.data.sensorState===1)
             this.setState({checked:true});
-        this.setState({positionX:this.props.data.positionX,
-            positionY:this.props.data.positionY,
-            sensorId:this.props.data.sensorId,});
+        this.setState({positionX:this.props.navigation.state.params.data.positionX,
+            positionY:this.props.navigation.state.params.data.positionY,
+            sensorId:this.props.navigation.state.params.data.sensorId,});
     }
 
     componentWillReceiveProps(nextProps){
@@ -56,7 +57,7 @@ class SensorItem extends React.Component{
             sensorId: this.state.sensorId,
             sensorState: tmpState
         };
-        axios.post('http://192.168.56.1:8080/sensors/modifySensorState', qs.stringify(params))
+        axios.post(HOST_NAME+'/sensors/modifySensorState', qs.stringify(params))
             .catch(()=>
             {
                 Toast.fail("unable to change the state");
@@ -76,7 +77,7 @@ class SensorItem extends React.Component{
                     const params = {
                         sensorId: this.state.sensorId
                     };
-                    axios.post('http://192.168.56.1:8080/sensors/deleteSensorBySensorId', qs.stringify(params))
+                    axios.post(HOST_NAME+'/sensors/deleteSensorBySensorId', qs.stringify(params))
                         .then(() => {
                             Toast.info('successfully delete');
                             this.props.onDeleteSensor();
@@ -88,13 +89,13 @@ class SensorItem extends React.Component{
     };
 
     render(){
-        return  <Card>
+        return  <Card style={{ paddingTop: 100 }}>
                     <Card.Body>
                         <List>
-                            <Item extra={this.props.data.sensorId} arrow={'empty'}>
+                            <Item extra={this.props.navigation.state.params.data.sensorId} arrow={'empty'}>
                                 sensor id
                             </Item>
-                            <Item extra={this.props.data.sensorType} arrow={'empty'}>
+                            <Item extra={this.props.navigation.state.params.data.sensorType} arrow={'empty'}>
                                 sensor type
                             </Item>
                             <Item extra={'('+this.state.positionX+','+this.state.positionY+')'}
@@ -116,10 +117,10 @@ class SensorItem extends React.Component{
                                 this.props.navigation.navigate('Linechart',
                                               {
                                                   navigation: this.props.navigation,
-                                                  sensorId:this.props.data.sensorId
+                                                  sensorId:this.state.sensorId
                                               })
                             }}>
-                                实时折线图
+                                view data
                             </Item>
                             <Item extra={
                                 <Switch

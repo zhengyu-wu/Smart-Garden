@@ -1,0 +1,17 @@
+[DATA_POINT]
+1="HTTP_302"
+2="tcp_connect"
+3="tcp_connection_count"
+4="mic_recv"
+5="HTTP_200"
+6="tcp_shutdown"
+[END_TRANSACTION]
+1="vuser_init_Transaction"
+2="http://localhost:3000/"
+3="localhost_3000_Action_9"
+4="http://localhost:3000/main.js"
+5="http://download.mozilla.org/?product=firefox-56.0b3-complete&os=win64&lang=zh-CN"
+6="http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+7="web_concurrent_end_Action_35"
+8="Action_Transaction"
+9="vuser_end_Transaction"

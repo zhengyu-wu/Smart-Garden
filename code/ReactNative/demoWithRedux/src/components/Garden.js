@@ -1,10 +1,11 @@
 import React from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, Drawer, List, WhiteSpace, Popover, Toast } from 'antd-mobile-rn';
+import { Button, Drawer, List, WhiteSpace, Popover, Toast,Grid } from 'antd-mobile-rn';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import GardenItem from './GardenItem';
 import qs from "qs";
+import {HOST_NAME} from "../constants";
 
 const Item = Popover.Item;
 
@@ -15,7 +16,7 @@ class Garden extends React.Component<any, any> {
     this.state = {
       // visible: false,
       selected: '',
-      userId: 1,
+      userId: this.props.user.user.userId,
       data:{},   
       overlay: [],
       gardenData:[]
@@ -23,7 +24,7 @@ class Garden extends React.Component<any, any> {
   }
 
   componentWillMount(){
-        axios.get("http://192.168.56.1:8080/garden/getByUserId",{params:{userId:this.state.userId}})
+        axios.get(HOST_NAME+"/garden/getByUserId",{params:{userId:this.state.userId}})
             .then((res)=>{
                 let gardenData=[];
                 let tmp_overlay = [];
@@ -53,12 +54,6 @@ class Garden extends React.Component<any, any> {
                 console.log(err);
             })
     }
-  
-  onSelect = (value: any) => {
-    this.setState({
-      selected: value,
-    });
-  }
 
   onDeleteGarden=(gardenId)=>{
         let tmpState=this.state.gardenData;
@@ -73,76 +68,48 @@ class Garden extends React.Component<any, any> {
         const params={
             gardenId:gardenId
         };
-        axios.post('http://192.168.56.1:8080/garden/deleteByGardenId',qs.stringify(params))
+        axios.post(HOST_NAME+'/garden/deleteByGardenId',qs.stringify(params))
             .then(()=>{
                 Toast.info('successfully delete');
-                this.setState({
-                    gardenData:tmpData,
-                    overlay:tmpOverlay
-
-                })
+                this.componentWillMount();
             })
     }
   
   render() {
 
-    overlay = this.state.overlay.map((i, index) => (
-      <Item key={index} value={i}>
-        <Text>Garden {i}</Text>
-      </Item>
-    ));
-
-    let rowData = [this.state.gardenData[0]];
-
-    for(let i=0;i<this.state.gardenData.length;i++){
-
-        if (this.state.gardenData[i].gardenId == this.state.selected)
-        {
-            rowData = this.state.gardenData[i];
-
-        }
-                    
-    }
+    data = this.state.overlay.map((i, index) => ({
+      icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+      text: `Garden ${i}`,
+    }));
 
     return (
-      <View>
-        
-        <View style={styles.menuContainer}>
-          <Popover
-            name="m"
-            style={{ backgroundColor: '#FFFFFF' }}
-            overlay={overlay}
-            contextStyle={styles.contextStyle}
-            onSelect={this.onSelect}
-          >
-            <Text >选择花园</Text>
-          </Popover>
-        </View>
-        <View>
-          <GardenItem 
-            navigation={this.props.navigation} 
-            data={rowData}
-            onDeleteGarden={this.onDeleteGarden.bind(this)}
-          />
-        </View>
+      <View style={{ paddingTop: 100 }}>
+        <Grid
+          data={data}
+          columnNum={3}
+          isCarousel
+          
+          onClick={(_el: any, index: any)=>{
+            this.props.navigation.navigate('GardenItem',
+                          {
+                              navigation: this.props.navigation,
+                              data: this.state.gardenData[index],
+                              onDeleteGarden:this.onDeleteGarden.bind(this)
+                          })
+          }} 
+        />
+          <Button onClick={()=>{
+              this.props.navigation.navigate('AddGarden',{
+                  update:this.componentWillMount.bind(this)
+              })
+          }
+          }>
+              Add a garden
+          </Button>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  contextStyle: {  // “选择花园”的位置
-    margin: 50,
-    flex: 1,
-  },
-  menuContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    height: 200,
-    paddingHorizontal: 5,
-    paddingVertical: 10,
-  } ,
-});
 
 const mapStateToProps = (state) => {
     return {

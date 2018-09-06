@@ -4,6 +4,7 @@ import {Card,List,Accordion,Switch,Button,Toast} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from "qs";
 import {Modal} from "antd-mobile-rn/lib/index.native";
+import {HOST_NAME} from "../../constants";
 
 class AdminUserControl extends Component{
     constructor(props){
@@ -16,7 +17,7 @@ class AdminUserControl extends Component{
         this.onButtonClick=this.onButtonClick.bind(this);
     }
     componentDidMount(){
-        axios.get("http://192.168.56.1:8080/users/getAllUser")
+        axios.get(HOST_NAME+"/users/getAllUser")
             .then((res)=>{
                 let tmpData=[];
                 for(let i=0;i<res.data.length;i++){
@@ -57,7 +58,7 @@ class AdminUserControl extends Component{
             username:username,
             userState:userState
         };
-        axios.post("http://192.168.56.1:8080/users/updateUser",qs.stringify(params))
+        axios.post(HOST_NAME+"/users/updateUser",qs.stringify(params))
             .then(()=>{
                 this.setState({users:newData});
                 console.log("in update User params: ");
@@ -82,7 +83,7 @@ class AdminUserControl extends Component{
                         userId: userId
                     };
                     this.setState({users:newData});
-                    axios.post('http://192.168.56.1:8080/users/deleteByUserId', qs.stringify(params))
+                    axios.post(HOST_NAME+'/users/deleteByUserId', qs.stringify(params))
                         .then(() => {
                             Toast.info('successfully delete');
                             console.log("state after update");
@@ -214,7 +215,7 @@ class AdminUserControl extends Component{
                     refreshing={this.state.refreshing}
                     onRefresh={()=>{
                         this.setState({refreshing:true});
-                        axios.get("http://192.168.56.1:8080/users/getAllUser")
+                        axios.get(HOST_NAME+"/users/getAllUser")
                             .then((res)=>{
                                 let tmpData=[];
                                 for(let i=0;i<res.data.length;i++){

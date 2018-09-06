@@ -1,9 +1,6 @@
 package com.SmartGarden.SmartGarden.service.impl;
 
-import com.SmartGarden.SmartGarden.model.Garden;
-import com.SmartGarden.SmartGarden.model.HumiData;
-import com.SmartGarden.SmartGarden.model.Sensor;
-import com.SmartGarden.SmartGarden.model.TempData;
+import com.SmartGarden.SmartGarden.model.*;
 import com.SmartGarden.SmartGarden.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -40,6 +37,12 @@ public class FakeDataServiceImpl implements FakeDataService {
 
     @Autowired
     SensorService sensorService;
+
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    NozzleService nozzleService;
 
     private static final int GARDEN_ID = 6;
     private static final long SECOND=1*1000;
@@ -203,7 +206,9 @@ public class FakeDataServiceImpl implements FakeDataService {
             //生成第一组温度数据
             for (Sensor tmpSensor:gardenSensor
                  ) {
+                System.out.println("gardenSensor: "+tmpSensor.getSensorId()+" sensorType: "+tmpSensor.getSensorType());
                 if(tmpSensor.getSensorType()==2){
+                    System.out.println("target sensor: "+tmpSensor.getSensorId());
                     Double temp=Math.random()*20+20;
                     TempData tmpTempData=new TempData();
                     tmpTempData.setSendTime(new Date());
@@ -232,6 +237,92 @@ public class FakeDataServiceImpl implements FakeDataService {
                 tempService.addTempData(tmpTempData,tmpTemp.getSensor().getSensorId());
             }
         }
+
+        if(humiDataList==null||humiDataList.size()==0){
+            for (Sensor tmpSensor:gardenSensor
+                    ) {
+                if(tmpSensor.getSensorType()==1){
+                    Double temp=Math.random()*0.5+0.1;
+                    HumiData tmpHumiData=new HumiData();
+                    tmpHumiData.setSendTime(new Date());
+                    tmpHumiData.setSensor(tmpSensor);
+                    tmpHumiData.setHumidity(temp);
+                    tmpHumiData.setPositionX(tmpSensor.getPositionX());
+                    tmpHumiData.setPositionY(tmpSensor.getPositionY());
+                    humiService.addHumiData(tmpHumiData,tmpSensor.getSensorId());
+                }
+            }
+        }
+        else{
+            for(HumiData tmpHumi:humiDataList){
+                Double deltaHumi=Math.random()*0.05;
+                if(Math.random()>0.5)
+                    deltaHumi=-deltaHumi;
+                HumiData tmpHumiData=new HumiData();
+                tmpHumiData.setSendTime(new Date());
+                tmpHumiData.setSensor(tmpHumi.getSensor());
+                if(tmpHumi.getHumidity()+deltaHumi>0.9||tmpHumi.getHumidity()+deltaHumi<0.1){
+                    deltaHumi=-deltaHumi;
+                }
+                tmpHumiData.setHumidity(tmpHumi.getHumidity()+deltaHumi);
+                tmpHumiData.setPositionX(tmpHumi.getPositionX());
+                tmpHumiData.setPositionY(tmpHumi.getPositionY());
+                humiService.addHumiData(tmpHumiData,tmpHumi.getSensor().getSensorId());
+            }
+        }
     }
+
+    @Override
+    public void generateAll() throws InterruptedException {
+        User testUser = new User();
+        testUser.setUserState(0);
+        testUser.setPassword("123");
+        testUser.setEmail("qwq@s.com");
+        testUser.setPhone("18322232423");
+        testUser.setUsername("unitTest");
+        testUser.setUserType(0);
+        testUser.setUserId((userService.insert(testUser)).getUserId());
+        if(testUser.getUserId()==null)
+            return;
+        Garden testGarden=new Garden();
+        testGarden.setUser(null);
+        testGarden.setGardenName("test");
+        testGarden.setLength(100);
+        testGarden.setWidth(100);
+        testGarden.setPositionX(0.0);
+        testGarden.setPositionY(0.0);
+        gardenService.addGardenWithUser(testGarden,testUser.getUserId());
+        Garden tmpGarden=(gardenService.getGardenByUserId(testUser.getUserId())).get(0);
+        testGarden.setGardenId(tmpGarden.getGardenId());
+        for(int i=0;i<50;i++){
+            Sensor tempSensor=new Sensor();
+            Sensor humiSensor=new Sensor();
+            Nozzle nozzle=new Nozzle();
+            tempSensor.setPositionY(Math.random()*100);
+            tempSensor.setPositionX(Math.random()*100);
+            tempSensor.setSensorState(1);
+            tempSensor.setGarden(testGarden);
+            tempSensor.setSensorType(2);
+            humiSensor.setPositionY(Math.random()*100);
+            humiSensor.setPositionX(Math.random()*100);
+            humiSensor.setGarden(testGarden);
+            humiSensor.setSensorType(1);
+            humiSensor.setSensorState(1);
+            nozzle.setPositionX(Math.random()*100);
+            nozzle.setPositionY(Math.random()*100);
+            nozzle.setNozzleState(Math.random()>0.5?0:1);
+            nozzle.setGarden(testGarden);
+            nozzle.setRadius(Math.random()*5+1);
+            nozzleService.addNozzleWithGardenId(nozzle,testGarden.getGardenId());
+            sensorService.addSensorWithGardenId(tempSensor,testGarden.getGardenId());
+            sensorService.addSensorWithGardenId(humiSensor,testGarden.getGardenId());
+        }
+
+        for(int i=0;i<50;i++){
+            generateDataWithGardenId(testGarden.getGardenId());
+            Thread.currentThread().sleep(1000);
+        }
+    }
+
 }
 
