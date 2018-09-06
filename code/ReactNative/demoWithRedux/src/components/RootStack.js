@@ -12,12 +12,15 @@ import ModifyUserPhone from './ModifyInfo/ModifyUserPhone';
 import ModifySensorPosition from './ModifyInfo/ModifySensorPosition';
 import AddGarden from "./ModifyInfo/AddGarden";
 import AddSensor from "./ModifyInfo/AddSensor";
+import AddNozzle from "./ModifyInfo/AddNozzle";
 import Sensor from './Sensor';
+import Nozzle from './Nozzle';
 import ModifyEmailAdmin from "./ModifyInfo/ModifyEmailAdmin";
 import ModifyUserNameAdmin from "./ModifyInfo/ModifyUserNameAdmin";
 import ModifyUserPhoneAdmin from "./ModifyInfo/ModifyUserPhoneAdmin";
 import Heatmap from './Heatmap';
 import Linechart from './Linechart';
+import GardenDiagram from './GardenDiagram';
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -33,12 +36,15 @@ const RootStack = createStackNavigator({
     ModifySensorPosition:ModifySensorPosition,
     AddGarden:AddGarden,
     AddSensor:AddSensor,
+    AddNozzle:AddNozzle,
     Sensor:Sensor,
+    Nozzle:Nozzle,
     ModifyEmailAdmin:ModifyEmailAdmin,
     ModifyUserNameAdmin:ModifyUserNameAdmin,
     ModifyUserPhoneAdmin:ModifyUserPhoneAdmin,
     Heatmap: Heatmap,
-    Linechart:Linechart
+    Linechart:Linechart,
+    GardenDiagram:GardenDiagram
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);
