@@ -25,6 +25,9 @@ import GardenItem from './GardenItem';
 import SensorItem from './SensorItem';
 import NozzleItem from './NozzleItem';
 import WaterConfig from "./WaterConfig";
+import GardenDiagram from './GardenDiagram';
+import Linechart from './Linechart';
+
 
 const RootStack = createStackNavigator({
     Home: Root,
@@ -51,8 +54,10 @@ const RootStack = createStackNavigator({
     ModifyUserPhoneAdmin:ModifyUserPhoneAdmin,
     GardenItem:GardenItem,
     SensorItem:SensorItem,
-    NozzleItem:NozzleItem
-    WaterConfig:WaterConfig
+    NozzleItem:NozzleItem,
+    WaterConfig:WaterConfig,
+    Linechart:Linechart,
+    GardenDiagram:GardenDiagram
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);

@@ -23,7 +23,7 @@ class ModifySensorPosition extends React.Component{
 
     render(){
         return(
-            <View>
+            <View style={{ paddingTop: 120 }}>
                 <WhiteSpace size={'lg'}/>
                 <List>
                 <InputItem

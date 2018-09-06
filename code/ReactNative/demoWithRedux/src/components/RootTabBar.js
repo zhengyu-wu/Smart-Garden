@@ -3,20 +3,17 @@ import {Text,View} from 'react-native';
 import {TabBar,SearchBar,WhiteSpace} from 'antd-mobile-rn';
 import UserCard from './User';
 import Sensor from './Sensor';
-import Garden from './Garden';
-import SensorPage from './Garden';
+//import Garden from './Garden';
+//import SensorPage from './Garden';
 import AdminUserControl from './Admin/AdminUserControl';
-
-
-class RootTabBars extends React.Component<any, any> {
+ class RootTabBars extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
             selectedTab: 'redTab',
         };
     }
-
-    renderContent(pageText: any) {
+     renderContent(pageText: any) {
         return (
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
                 <SearchBar placeholder="Search" showCancelButton />
@@ -24,14 +21,12 @@ class RootTabBars extends React.Component<any, any> {
             </View>
         );
     }
-
-    onChangeTab(tabName: any) {
+     onChangeTab(tabName: any) {
         this.setState({
             selectedTab: tabName,
         });
     }
-
-    render() {
+     render() {
         return (
             <TabBar
                 unselectedTintColor="#949494"
@@ -61,5 +56,4 @@ class RootTabBars extends React.Component<any, any> {
         );
     }
 }
-
-export default RootTabBars;
+ export default RootTabBars;
