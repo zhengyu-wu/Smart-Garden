@@ -4,6 +4,7 @@ import { Button, InputItem, List,WhiteSpace,Toast} from 'antd-mobile-rn';
 import axios from 'axios';
 import qs from "qs";
 import {connect} from "react-redux";
+import {HOST_NAME} from "../../constants";
 
 
 class AddGarden extends React.Component{
@@ -14,7 +15,12 @@ class AddGarden extends React.Component{
             width:0,
             length:0,
             positionX:-1,
-            positionY:-1
+            positionY:-1,
+            gardenNameError:false,
+            posXError:false,
+            posYError:false,
+            widthError:false,
+            lengthError:false
         }
     }
 
@@ -29,57 +35,85 @@ class AddGarden extends React.Component{
                 <List renderHeader={() => 'Add a garden'}>
                     <InputItem
                         clear
-                        error
-                        onErrorPress={() =>{}}
+                        error={this.state.gardenNameError}
+                        onErrorPress={() =>{
+                            if(this.state.gardenNameError)
+                            Toast.info('Please enter a valid name',1);
+                        }}
                         value={this.state.gardenName}
                         onChange={(value: any) => {
                             this.setState({
-                                gardenName:value
+                                gardenName:value,
+                                gardenNameError: value.toString().length<=0
                             });
                         }}
-                        placeholder=""
+                        placeholder="the name of garden"
                     >
-                        Garden Name
+                        name
                     </InputItem>
                     <InputItem
                         clear
+                        error={this.state.posXError}
                         value={this.state.positionX}
+                        onErrorPress={() =>{
+                            if(this.state.posXError)
+                                Toast.info('Please enter a position larger than 0',1);
+                        }}
                         onChange={(value: any) => {
                             this.setState({
                                 positionX: value,
+                                posXError:value<=0
                             });
                         }}
-                        placeholder=""
-                    >position X</InputItem>
+                        placeholder="the position of garden"
+                    >pos X</InputItem>
                     <InputItem
                         clear
                         value={this.state.positionY}
+                        error={this.state.posYError}
+                        onErrorPress={() =>{
+                            if(this.state.posYError)
+                                Toast.info('Please enter a position larger than 0',1);
+                        }}
                         onChange={(value: any) => {
                             this.setState({
                                 positionY: value,
+                                posYError:value<=0
                             });
                         }}
-                        placeholder=""
-                    >position Y</InputItem>
+                        placeholder="the position of garden"
+                    >pos Y</InputItem>
                     <InputItem
                         clear
                         value={this.state.width}
+                        error={this.state.widthError}
+                        onErrorPress={() =>{
+                            if(this.state.widthError)
+                                Toast.info('Please enter a width larger than 0',1);
+                        }}
                         onChange={(value: any) => {
                             this.setState({
                                 width: value,
+                                widthError:value.toString().length<=0
                             });
                         }}
-                        placeholder=""
+                        placeholder="the width of garden"
                     >width</InputItem>
                     <InputItem
                         clear
                         value={this.state.length}
+                        error={this.state.lengthError}
+                        onErrorPress={() =>{
+                            if(this.state.lengthError)
+                                Toast.info('Please enter a length larger than 0',1);
+                        }}
                         onChange={(value: any) => {
                             this.setState({
                                 length: value,
+                                lengthError:value<=0
                             });
                         }}
-                        placeholder=""
+                        placeholder="the length of garden"
                     >length</InputItem>
                     <List.Item>
                         <Button
@@ -92,16 +126,23 @@ class AddGarden extends React.Component{
                                     width:this.state.width,
                                     length:this.state.length,
                                     userId:this.props.user.user.userId
-                                }
-                                axios.post('http://192.168.56.1:8080/garden/addGardenWithUserId',qs.stringify(params))
+                                };
+                                console.log("in add garden params: "+params);
+                                axios.post(HOST_NAME+'/garden/addGardenWithUserId',qs.stringify(params))
                                     .then(()=>{
                                         //todo  此处应当调用父组件的接口 修改父组件的state
+                                        console.log(this.props.navigation.state.params);
+                                        this.props.navigation.state.params.update();
+                                        Toast.success('add successfully');
+                                        this.props.navigation.goBack();
                                     })
                             }}
                             type="primary"
-                            disabled={this.state.gardenName===""||this.state.length===0
-                            ||this.state.positionX===-1||this.state.positionY===-1
-                            ||this.state.width===0}
+                            disabled={this.state.gardenNameError||this.state.lengthError
+                            ||this.state.posXError||this.state.posYError
+                            ||this.state.widthError||this.state.length===0
+                            ||this.state.width===0||this.state.positionX===0
+                            ||this.state.positionY===0}
                         >
                             submit
                         </Button>

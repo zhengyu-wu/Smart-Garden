@@ -5,8 +5,8 @@ import {
     REGISTER_REJECTED,
     USER_LOG_OUT,
     CLEAR_REGISTER,
-    MODIFY_USER,
-    } from '../constants';
+    MODIFY_USER, HOST_NAME,
+} from '../constants';
 
 import qs from 'qs';
 
@@ -14,7 +14,7 @@ export const get_user = (email,password) => {
     return {
         type: LOAD_USER,
         payload: {
-            promise: axios.get("http://192.168.56.1:8080/users/loginWithEmail",{params:{email:email,password:password}})
+            promise: axios.get(HOST_NAME+"/users/loginWithEmail",{params:{email:email,password:password}})
         }
     };
 };
@@ -40,7 +40,7 @@ export const register = (username,phone,email,password) => {
         return {
             type: REGISTER,
             payload: {
-                promise: axios.post("http://192.168.56.1:8080/users/addUser",qs.stringify(params))
+                promise: axios.post(HOST_NAME+"/users/addUser",qs.stringify(params))
             }
         };
     }
@@ -59,7 +59,7 @@ export const modifyUser = (userId,userType,username,phone,email,password) =>{
     return{
         type:MODIFY_USER,
         payload:{
-            promise: axios.post("http://192.168.56.1:8080/users/updateUser",qs.stringify(params))
+            promise: axios.post(HOST_NAME+"/users/updateUser",qs.stringify(params))
         },
         meta:{
             userId:userId,

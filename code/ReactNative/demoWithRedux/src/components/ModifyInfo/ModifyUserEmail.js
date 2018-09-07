@@ -22,7 +22,7 @@ class ModifyUserEmail extends React.Component{
         const {modifyUser}=this.props;
 
         return(
-            <View>
+            <View style={{ paddingTop: 120 }}>
                 <WhiteSpace size={'lg'}/>
                 <List>
                 <InputItem
@@ -48,7 +48,7 @@ class ModifyUserEmail extends React.Component{
                 />
                 </List>
                 <WhiteSpace size={'lg'}/>
-                <Button type={'primary'} onClick={()=>{
+                <Button style={{top: 50}} type={'primary'} onClick={()=>{
                     modifyUser(
                         this.props.user.user.userId,
                         this.props.user.user.userType,
@@ -62,7 +62,7 @@ class ModifyUserEmail extends React.Component{
                     Submit
                 </Button>
                 <WhiteSpace size={'lg'}/>
-                <Button type={'primary'} onClick={()=>{
+                <Button style={{top: 50}} type={'primary'} onClick={()=>{
                     this.props.navigation.goBack();
                 }}>
                     Cancel

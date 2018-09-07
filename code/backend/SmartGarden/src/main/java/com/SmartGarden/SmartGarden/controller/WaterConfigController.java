@@ -47,6 +47,12 @@ public class WaterConfigController {
     }
 
     @ResponseBody
+    @PostMapping("/changeConfigState")
+    public boolean changeConfigState(int configId){
+        return wateringConfigService.changeConfigState(configId);
+    }
+
+    @ResponseBody
     @PostMapping("/deleteByGardenId")
     public boolean deleteByGardenId(int gardenId){
         return wateringConfigService.deleteByGardenId(gardenId);
@@ -57,6 +63,18 @@ public class WaterConfigController {
     public boolean updateConfig(WateringConfig wateringConfig)
     {
         return wateringConfigService.updateConfig(wateringConfig);
+    }
+
+    @ResponseBody
+    @PostMapping("/changeTempConfig")
+    public boolean changeTempConfig(int configId,Double bestTempMin,Double bestTempMax){
+        return wateringConfigService.changeTempConfig(configId,bestTempMin,bestTempMax);
+    }
+
+    @ResponseBody
+    @PostMapping("/changeHumiConfig")
+    public boolean changeHumiConfig(int configId,Double bestHumiMin,Double bestHumiMax){
+        return wateringConfigService.changeHumiConfig(configId,bestHumiMin,bestHumiMax);
     }
 
     @ResponseBody

@@ -78,6 +78,55 @@ public class WateringConfigServiceImpl implements WateringConfigService {
     }
 
     @Override
+    public boolean changeConfigState(int configId) {
+        WateringConfig tmpConfig=wateringConfigRepository.findByConfigId(configId);
+        if(tmpConfig==null)
+            return false;
+        try {
+            if(tmpConfig.getConfigState()==1){
+                tmpConfig.setConfigState(0);
+            }
+            else {
+                tmpConfig.setConfigState(1);
+            }
+            wateringConfigRepository.save(tmpConfig);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
+    public boolean changeTempConfig(int configId, Double bestTempMin, Double bestTempMax) {
+        WateringConfig tmpConfig=wateringConfigRepository.findByConfigId(configId);
+        if(tmpConfig==null)
+            return false;
+        try {
+            tmpConfig.setBestTempMin(bestTempMin);
+            tmpConfig.setBestTempMax(bestTempMax);
+            wateringConfigRepository.save(tmpConfig);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
+    public boolean changeHumiConfig(int configId, Double bestHumiMin, Double bestHumiMax) {
+        WateringConfig tmpConfig=wateringConfigRepository.findByConfigId(configId);
+        if(tmpConfig==null)
+            return false;
+        try {
+            tmpConfig.setBestHumiMin(bestHumiMin);
+            tmpConfig.setBestHumiMax(bestHumiMax);
+            wateringConfigRepository.save(tmpConfig);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
     public List<WateringConfig> getAllConfig() {
         return wateringConfigRepository.findAll();
     }

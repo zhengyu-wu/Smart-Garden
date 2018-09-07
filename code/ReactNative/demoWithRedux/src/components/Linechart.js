@@ -107,7 +107,7 @@ export default class Linechart extends Component {
     this.timer =setInterval(
                 () => {
 
-        axios.get("http://192.168.1.147:8080/temperature/getLast20TempDataBySensorId",{params:{sensorId:this.state.sensorId}})
+        axios.get("http://192.168.1.109:8080/temperature/getLast20TempDataBySensorId",{params:{sensorId:this.state.sensorId}})
             .then((res)=>{
                 let tmp_data =[];
                 let tmp_x_data =[];
