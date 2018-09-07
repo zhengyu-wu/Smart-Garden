@@ -18,7 +18,6 @@ class UserCard extends React.Component<any, any> {
                             title={this.props.user.user.username}
                             thumbStyle={{ width: 30, height: 30 }}
                             thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
-                            extra="Welcome"
                         />
                         <Card.Body>
                             <List>
@@ -46,9 +45,6 @@ class UserCard extends React.Component<any, any> {
                                     this.props.navigation.navigate('ModifyUserPassword',{navigation: this.props.navigation})
                                 }}>
                                     change password
-                                </Item>
-                                <Item arrow={"horizontal"} onClick={()=>{}}>
-                                    statistics
                                 </Item>
                             </List>
                             <Button type={'primary'}  onClick={()=>{log_out()}}>
