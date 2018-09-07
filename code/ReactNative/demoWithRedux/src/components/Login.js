@@ -30,9 +30,7 @@ class Login extends React.Component{
                             this.setState({email:value})}
                         }
                         placeholder={"Email"}
-                    >
-                        邮箱
-                    </InputItem>
+                    />
                     <InputItem
                         clear
                         type={"password"}
@@ -41,9 +39,7 @@ class Login extends React.Component{
                             (value)=>{
                                 this.setState({password:value})}
                         }
-                        placeholder={"password"}>
-                        密码
-                    </InputItem>
+                        placeholder={"password"}/>
                 </List>
                 <Button
                     type={'primary'}

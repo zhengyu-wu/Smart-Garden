@@ -37,7 +37,7 @@ class GardenItem extends React.Component{
 
     render(){
         return(
-            <WingBlank style={{ paddingTop: 100 }} size="lg">
+            <WingBlank style={{ paddingTop:20 }} size="lg">
                 <Card>
                     <Card.Body>
                         <List>
