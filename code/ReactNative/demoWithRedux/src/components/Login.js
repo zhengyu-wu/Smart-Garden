@@ -23,7 +23,7 @@ class Login extends React.Component{
                     style={{left:70,bottom:40,width: 220, height: 220, alignItems:'center',justifyContent: 'center'}}
                 />
                 <List>
-                    <InputItem
+                    <InputItem 
                         clear
                         value={this.state.email}
                         onChange={(value)=>{
@@ -31,9 +31,9 @@ class Login extends React.Component{
                         }
                         placeholder={"Email"}
                     >
-                        邮箱
+                        
                     </InputItem>
-                    <InputItem
+                    <InputItem 
                         clear
                         type={"password"}
                         value={this.state.password}
@@ -41,8 +41,8 @@ class Login extends React.Component{
                             (value)=>{
                                 this.setState({password:value})}
                         }
-                        placeholder={"password"}>
-                        密码
+                        placeholder={"Password"}>
+                        
                     </InputItem>
                 </List>
                 <Button

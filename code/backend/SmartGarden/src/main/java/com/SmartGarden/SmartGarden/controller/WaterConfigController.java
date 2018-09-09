@@ -29,6 +29,13 @@ public class WaterConfigController {
     }
 
     @ResponseBody
+    @GetMapping("/hasActiveConfig")
+    public boolean hasActiveConfig(int gardenId)
+    {
+        return wateringConfigService.hasActiveConfig(gardenId);
+    }
+
+    @ResponseBody
     @GetMapping("/getAllConfig")
     public List<WateringConfig> getAllConfig(){
         return wateringConfigService.getAllConfig();

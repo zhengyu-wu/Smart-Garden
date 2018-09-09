@@ -55,7 +55,7 @@ class Register extends React.Component{
                                         username: value,
                                     });
                                 }}
-                                placeholder="username"
+                                placeholder="Username"
                             >
                             </InputItem>
                             <InputItem
@@ -77,7 +77,7 @@ class Register extends React.Component{
                                         });
                                     }
                                 }}
-                                placeholder="phone"
+                                placeholder="Phone"
                             >
                             </InputItem>
                             <InputItem
@@ -100,7 +100,7 @@ class Register extends React.Component{
                                         })
                                     }
                                 }}
-                                placeholder={'email'}
+                                placeholder={'Email'}
                             >
 
                             </InputItem>
@@ -113,7 +113,7 @@ class Register extends React.Component{
                                         password: value,
                                     });
                                 }}
-                                placeholder="password"
+                                placeholder="Password"
                             >
                             </InputItem>
                             <InputItem
@@ -136,7 +136,7 @@ class Register extends React.Component{
                                         });
                                     }
                                 }}
-                                placeholder="confirm password"
+                                placeholder="Confirm password"
                             >
                             </InputItem>
                         </List>

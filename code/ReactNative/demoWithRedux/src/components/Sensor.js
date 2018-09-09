@@ -35,7 +35,8 @@ class Sensor extends React.Component{
                         positionX:res.data[i].positionX,
                         positionY:res.data[i].positionY,
                         sensorState:res.data[i].sensorState,
-                        sensorType:res.data[i].sensorType           
+                        sensorType:res.data[i].sensorType,
+                        gardenId:this.state.gardenId           
                     });
                 }
                 this.setState({
@@ -51,10 +52,17 @@ class Sensor extends React.Component{
             })
     }
 
-    onDeleteSensor=()=>{
-
-        this.componentWillMount();
+    onDeleteSensor=(sensorId)=>{
+        const params = {
+            sensorId: sensorId
+        };
+        axios.post(HOST_NAME+'/sensors/deleteSensorBySensorId', qs.stringify(params))
+            .then(() => {
+                Toast.info('Delete successfully!');
+                this.componentWillMount();
+            });
     };
+
     onAddSensor=()=>{
         this.componentWillMount();
     };
@@ -90,7 +98,7 @@ class Sensor extends React.Component{
     render(){
 
         data = this.state.overlay.map((i, index) => ({
-            icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+            icon: '/Users/wuzhengyu/Desktop/demoWithRedux/src/assets/sensor.png',
             text: `Sensor ${i}`,
         }));
 
@@ -105,10 +113,21 @@ class Sensor extends React.Component{
                     this.props.navigation.navigate('SensorItem',
                           {
                               navigation: this.props.navigation,
-                              data: this.state.sensorData[index]
+                              data: this.state.sensorData[index],
+                              onDeleteSensor:this.onDeleteSensor.bind(this)
                           })
                 }} 
                 />
+                <Button style={{ top: 40 }} type={'primary'} onClick={()=>{
+                    this.props.navigation.navigate('AddSensor',
+                        {
+                            update:this.componentWillMount.bind(this),
+                            data: this.state.gardenId
+                        })
+                    }
+                }>
+                Add a sensor
+                </Button>
             </View>
         )
     }

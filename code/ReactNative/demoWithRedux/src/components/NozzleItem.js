@@ -83,21 +83,21 @@ class NozzleItem extends React.Component{
                     };
                     axios.post(HOST_NAME+'/nozzles/deleteNozzleByNozzleId', qs.stringify(params))
                         .then(() => {
-                            Toast.info('successfully delete');
-                            this.props.onDeleteNozzle();
+                            Toast.info('Deleted successfully!');
+                            this.props.navigation.state.params.onDeleteNozzle();
                         });
+                    this.props.navigation.goBack();
                 }
             }
-
         ]);
     };
 
     render(){
-        return  <Card style={{ paddingTop: 100 }}>
+        return  <Card style={{ paddingTop: 160 }}>
             <Card.Body>
                 <List>
                     <Item extra={this.state.nozzleId} arrow={'empty'}>
-                        nozzle id
+                        Nozzle ID
                     </Item>
                     <Item extra={this.state.radius}
                           arrow={'horizontal'}
@@ -112,7 +112,7 @@ class NozzleItem extends React.Component{
                                   })
                           }}
                         >
-                        radius
+                        Radius
                     </Item>
                     <Item extra={'('+this.state.positionX+','+this.state.positionY+')'}
                           arrow={'horizontal'}
@@ -126,7 +126,7 @@ class NozzleItem extends React.Component{
                                       onModifyPosition:this.onModifyPosition.bind(this)
                                   })
                           }}>
-                        position
+                        Position
                     </Item>
                     <Item extra={
                         <Switch

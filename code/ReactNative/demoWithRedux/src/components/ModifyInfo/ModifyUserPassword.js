@@ -48,7 +48,7 @@ class ModifyUserPassword extends React.Component{
                             }
                         }
                     }
-                    placeholder={'input your old password'}
+                    placeholder={'Enter your old password'}
                 />
                 <InputItem 
                     clear
@@ -59,7 +59,7 @@ class ModifyUserPassword extends React.Component{
                             this.setState({password:value})
                         }
                     }
-                    placeholder={'input your new password'}
+                    placeholder={'Enter your new password'}
                 />
                 <InputItem 
                     clear
@@ -78,7 +78,7 @@ class ModifyUserPassword extends React.Component{
                             }
                         }
                     }
-                    placeholder={'confirm your new password'}
+                    placeholder={'Confirm your new password'}
                 />
                 </List>
                 <WhiteSpace size={'s'}/>

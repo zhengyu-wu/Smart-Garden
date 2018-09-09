@@ -34,6 +34,7 @@ public class SensorServiceImpl implements SensorService {
 
     @Override
     public boolean addSensorWithGardenId(Sensor sensor, int gardenId) {
+        //先判断输入gardenId的有效性
         Garden tmpGarden=gardenService.getGardenByGardenId(gardenId);
         if (tmpGarden==null)
             return false;
@@ -77,7 +78,7 @@ public class SensorServiceImpl implements SensorService {
 
     @Override
     public boolean changeSensorState(int sensorId, int sensorState) {
-        //todo 2018.7.16 测试这个函数
+
         try{
             Sensor tmpSensor=getSensorBySensorId(sensorId);
             if(tmpSensor==null)

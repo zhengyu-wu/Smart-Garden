@@ -32,9 +32,13 @@ var data = generateData(2, -5, 5);
 
 option = {
     tooltip: {},
+    title: {
+      text: 'The heatmap of your garden',
+      top: 'top'
+    },
     grid:{
                     x:55,
-                    y:0,
+                    y:80,
                     x2:25,
                     y2:20,
                     borderWidth:1

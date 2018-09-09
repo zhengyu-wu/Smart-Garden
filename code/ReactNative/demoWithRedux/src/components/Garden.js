@@ -55,7 +55,7 @@ class Garden extends React.Component<any, any> {
             })
     }
 
-  onDeleteGarden=(gardenId)=>{
+    onDeleteGarden=(gardenId)=>{
         let tmpState=this.state.gardenData;
         let tmpData=[];
         let tmpOverlay=[];
@@ -70,7 +70,7 @@ class Garden extends React.Component<any, any> {
         };
         axios.post(HOST_NAME+'/garden/deleteByGardenId',qs.stringify(params))
             .then(()=>{
-                Toast.info('successfully delete');
+                Toast.info('Deleted successfully!');
                 this.componentWillMount();
             })
     }
@@ -78,7 +78,7 @@ class Garden extends React.Component<any, any> {
   render() {
 
     data = this.state.overlay.map((i, index) => ({
-      icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+      icon: '/Users/wuzhengyu/Desktop/demoWithRedux/src/assets/garden.png',
       text: `Garden ${i}`,
     }));
 
@@ -98,7 +98,7 @@ class Garden extends React.Component<any, any> {
                           })
           }} 
         />
-          <Button onClick={()=>{
+          <Button style={{ top: 40 }} type={'primary'} onClick={()=>{
               this.props.navigation.navigate('AddGarden',{
                   update:this.componentWillMount.bind(this)
               })

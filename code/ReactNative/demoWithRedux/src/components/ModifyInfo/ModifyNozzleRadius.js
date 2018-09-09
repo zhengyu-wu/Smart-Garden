@@ -25,8 +25,8 @@ class ModifyNozzleRadius extends React.Component{
         return(
             <View>
                 <WhiteSpace size={'lg'}/>
-                <List>
-                    <Text>{"Change the nozzle radius\n (hint: 0<Radius<10, the old radius is "+this.state.oldRadius+")"}</Text>
+                <List style={{ paddingTop: 120 }}>
+                    
                     <InputItem
                         clear
                         type="number"

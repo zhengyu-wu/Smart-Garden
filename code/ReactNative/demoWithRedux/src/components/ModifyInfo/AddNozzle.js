@@ -35,7 +35,7 @@ class AddNozzle extends React.Component{
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
             >
-                <List renderHeader={() => 'Add a nozzle'}>
+                <List style={{ paddingTop: 120 }}>>
                     <InputItem
                         clear
                         value={this.state.radius.toString()}
@@ -85,15 +85,15 @@ class AddNozzle extends React.Component{
                                     positionX:this.state.positionX,
                                     positionY:this.state.positionY,
                                     radius:this.state.radius,
-                                    gardenId:this.props.navigation.state.params.gardenId
+                                    gardenId:this.props.navigation.state.params.data
                                 };
                                 console.log('params');
                                 console.log(params);
                                 axios.post(HOST_NAME+'/nozzles/addNozzleByGardenId',qs.stringify(params))
                                     .then(()=>{
                                         //todo  此处应当调用父组件的接口 修改父组件的state
-                                        this.props.navigation.state.params.onAddNozzle();
-                                        Toast.success('add successfully');
+                                        this.props.navigation.state.params.update();
+                                        Toast.success('Add successfully');
                                         this.props.navigation.goBack();
                                     })
                                     .catch((err)=>{
@@ -107,7 +107,7 @@ class AddNozzle extends React.Component{
                             ||this.state.positionX===""||this.state.positionY===""
                             }
                         >
-                            submit
+                            Submit
                         </Button>
                     </List.Item>
                     <List.Item>
@@ -118,7 +118,7 @@ class AddNozzle extends React.Component{
                             }}
                             type="primary"
                         >
-                            cancel
+                            Cancel
                         </Button>
                     </List.Item>
                 </List>

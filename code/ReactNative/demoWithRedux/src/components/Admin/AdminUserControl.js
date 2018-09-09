@@ -105,7 +105,7 @@ class AdminUserControl extends Component{
                         extra={item.item.user.userId}
                         arrow={'empty'}
                     >
-                        userId
+                        User Id
                     </List.Item>
                     <List.Item
                         extra={item.item.user.username}
@@ -118,7 +118,7 @@ class AdminUserControl extends Component{
                                 })
                         }}
                     >
-                        username
+                        Username
                     </List.Item>
                     <Accordion onChange={this.onChange} defaultActiveKey="2">
                         <Accordion.Panel header="Other Info">
@@ -134,7 +134,7 @@ class AdminUserControl extends Component{
                                             })
                                     }}
                                 >
-                                    email
+                                    Email
                                 </List.Item>
                                 <List.Item
                                     extra={item.item.user.phone}
@@ -147,18 +147,18 @@ class AdminUserControl extends Component{
                                             })
                                     }}
                                 >
-                                    phone
+                                    Phone
                                 </List.Item>
                                 <List.Item
                                     extra={item.item.user.userType===1?'Admin':'Normal'}
                                 >
-                                    userType
+                                    User Type
                                 </List.Item>
                                 <List.Item extra={
                                     item.item.user.userState===1?'Activated':'Not verified'
                                 }
                                 >
-                                    activation
+                                    Activation
                                 </List.Item>
                                 <Button type={'warning'} onClick={()=>
                                 {
@@ -205,7 +205,7 @@ class AdminUserControl extends Component{
                 <FlatList
                     ref={(flatList)=>this._flatList=flatList}
                     ListHeaderComponent={this._header}
-                    ListFooterComponent={this._footer}
+                    //ListFooterComponent={this._footer}
                     ItemSeparatorComponent={this._separator}
                     renderItem={this._renderItem}
                     onEndReachedThreshold={0}

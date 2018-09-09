@@ -96,7 +96,7 @@ class Nozzle extends React.Component{
     render(){
 
         data = this.state.overlay.map((i, index) => ({
-            icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+            icon: '/Users/wuzhengyu/Desktop/demoWithRedux/src/assets/nozzle.png',
             text: `Nozzle ${i}`,
         }));
 
@@ -111,10 +111,21 @@ class Nozzle extends React.Component{
                     this.props.navigation.navigate('NozzleItem',
                           {
                               navigation: this.props.navigation,
-                              data: this.state.nozzleData[index]
+                              data: this.state.nozzleData[index],
+                              onDeleteNozzle:this.onDeleteNozzle.bind(this)
                           })
                 }} 
                 />
+                <Button style={{ top: 80 }} type={'primary'} onClick={()=>{
+                    this.props.navigation.navigate('AddNozzle',
+                    {
+                        update:this.componentWillMount.bind(this),
+                        data: this.state.gardenId
+                    })
+                    }
+                }>
+                Add a nozzle
+                </Button>
             </View>
         )
     }

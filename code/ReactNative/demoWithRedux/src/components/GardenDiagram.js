@@ -28,7 +28,7 @@ export default class GardenDiagram extends Component {
     } 
 
     componentWillMount(){
-        axios.get("http://192.168.1.109:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get("http://10.162.16.207:8080/sensors/getSensorByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
                 let tmp_sensor_data=[];
                 //alert(JSON.stringify(res.data));
@@ -57,7 +57,7 @@ export default class GardenDiagram extends Component {
                 console.log(err);
             })
 
-        axios.get("http://192.168.1.109:8080/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
+        axios.get("http://10.162.16.207:8080/nozzles/getNozzleByGardenId",{params:{gardenId:this.state.gardenId}})
             .then((res)=>{
                 let tmp_nozzle_data = [];
                 //alert(JSON.stringify(res.data));

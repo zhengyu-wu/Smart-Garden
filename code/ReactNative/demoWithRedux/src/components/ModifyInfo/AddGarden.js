@@ -26,13 +26,13 @@ class AddGarden extends React.Component{
 
     render() {
         return (
-            <ScrollView
+            <ScrollView 
                 style={{ flex: 1 }}
                 automaticallyAdjustContentInsets={false}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
             >
-                <List renderHeader={() => 'Add a garden'}>
+                <List style={{ paddingTop: 120 }}>
                     <InputItem
                         clear
                         error={this.state.gardenNameError}
@@ -47,9 +47,9 @@ class AddGarden extends React.Component{
                                 gardenNameError: value.toString().length<=0
                             });
                         }}
-                        placeholder="the name of garden"
+                        placeholder="The name of garden"
                     >
-                        name
+                        Name
                     </InputItem>
                     <InputItem
                         clear
@@ -66,7 +66,7 @@ class AddGarden extends React.Component{
                             });
                         }}
                         placeholder="the position of garden"
-                    >pos X</InputItem>
+                    >Pos X</InputItem>
                     <InputItem
                         clear
                         value={this.state.positionY}
@@ -82,7 +82,7 @@ class AddGarden extends React.Component{
                             });
                         }}
                         placeholder="the position of garden"
-                    >pos Y</InputItem>
+                    >Pos Y</InputItem>
                     <InputItem
                         clear
                         value={this.state.width}
@@ -98,7 +98,7 @@ class AddGarden extends React.Component{
                             });
                         }}
                         placeholder="the width of garden"
-                    >width</InputItem>
+                    >Width</InputItem>
                     <InputItem
                         clear
                         value={this.state.length}
@@ -114,7 +114,7 @@ class AddGarden extends React.Component{
                             });
                         }}
                         placeholder="the length of garden"
-                    >length</InputItem>
+                    >Length</InputItem>
                     <List.Item>
                         <Button
                             onClick={() => {
@@ -133,7 +133,7 @@ class AddGarden extends React.Component{
                                         //todo  此处应当调用父组件的接口 修改父组件的state
                                         console.log(this.props.navigation.state.params);
                                         this.props.navigation.state.params.update();
-                                        Toast.success('add successfully');
+                                        Toast.success('Add the garden successfully!');
                                         this.props.navigation.goBack();
                                     })
                             }}
@@ -144,7 +144,7 @@ class AddGarden extends React.Component{
                             ||this.state.width===0||this.state.positionX===0
                             ||this.state.positionY===0}
                         >
-                            submit
+                            Submit
                         </Button>
                     </List.Item>
                     <List.Item>
@@ -155,7 +155,7 @@ class AddGarden extends React.Component{
                             }}
                             type="primary"
                         >
-                            cancel
+                            Cancel
                         </Button>
                     </List.Item>
                 </List>

@@ -57,25 +57,17 @@ class TabBars extends React.Component<any, any> {
                     icon={require('../assets/koubei.png')}
                     selectedIcon={require('../assets/koubei_sel.png')}
                     title="Garden"
-                    badge={2}
+                    //badge={2}
                     selected={this.state.selectedTab === 'redTab'}
                     onPress={() => this.onChangeTab('redTab')}
                 >
                     <Garden navigation={this.props.navigation}/>
                 </TabBar.Item>
+                
                 <TabBar.Item
                     icon={require('../assets/friend.png')}
                     selectedIcon={require('../assets/friend_sel.png')}
-                    title="Sensor"
-                    selected={this.state.selectedTab === 'greenTab'}
-                    onPress={() => this.onChangeTab('greenTab')}
-                >
-                    <AdminUserControl navigation={this.props.navigation}/>
-                </TabBar.Item>
-                <TabBar.Item
-                    icon={require('../assets/busi.png')}
-                    selectedIcon={require('../assets/busi_sel.png')}
-                    title="My"
+                    title="My Account"
                     selected={this.state.selectedTab === 'yellowTab'}
                     onPress={() => this.onChangeTab('yellowTab')}
                 >
