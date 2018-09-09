@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: BLB/
+Date: Tue, 24 Jul 2018 08:05:36 GMT
+Content-Type: text/html;charset=UTF-8
+Connection: keep-alive
+Vary: Accept-Encoding
+Set-Cookie: moocvk=468017def662451099439be5ed93ac1e; Expires=Wed, 11-Jul-2068 08:05:40 GMT; Path=/; HttpOnly,JSESSIONID=F7363CAFD1B73905B01B58EBBF9DDF5F.tomcat-host1-2; Path=/; HttpOnly,BEC=f6c42c24d0c76e7acea242791ab87e34|1532419536|1532419536;Path=/
+Content-Language: zh-CN
+Expires: Tue, 24 Jul 2018 08:05:41 GMT
+Cache-Control: max-age=0
+X-Frame-Options: SAMEORIGIN
+Content-Encoding: gzip
+

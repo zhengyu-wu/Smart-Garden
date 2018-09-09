@@ -1,0 +1,71 @@
+﻿[Workspace]
+SessionStartTime=0
+SessionEndTime=498
+VerNo=13
+IsSummaryData=0
+TimeFormat=3
+SesLang=CHS
+ABuild=0
+DataBaseName=resl625802335DB
+DBType=1
+CurrServer=DESKTOP-QTTRESF
+CurrUser=sa
+CurrPswd===
+StorageLoc=\\DESKTOP-QTTRESF\Data\
+PhStorageLoc=C:\MSSQL7\Data
+LocStorageLoc=
+LocPhStorageLoc=
+WinIntSec=0
+UseNetworkMode=0
+UseParallel=1
+UseManagedIndexes=1
+UseSpecMSSQLParams=1
+NumResults=1
+
+[Data Config]
+CollectionMode=2
+IngnoreFlds=Vuser ID
+IngnoreUIFlds=VuserID
+AggSecGran=1
+TransAgg=1
+DataPointAgg=1
+WebAgg=1
+MonAgg=0
+ErrAgg=0
+FilterEdge=0
+FSartTime=0
+FEndTime=0
+
+[Result0]
+LRRID=
+ResultPath=D:\LRtest\SmartGarden\res\res.lrr
+ResultTDPath=
+NumFilters=0
+ScenarioTimeZone=-28800
+DaylightSavingSecsAddition=0
+ScenarioStartTime=1532486169
+ScenarioEndTime=1532486667
+ResInSD=0
+WebGran=5
+FilterEdge=0
+FSartTime=0
+FEndTime=0
+TDTestID=-1
+TDRunID=-1
+IsProTuneResult=0
+GraphScale=0
+Scenario Type=Manual
+Schedule Name=Schedule 1
+Mode=Scenario Scheduling
+Load Behavior=Initialize each Vuser just before it runs
+Scenario Duration=Start 95 Vusers: 40 every 00:00:15 (HH:MM:SS); Run for 00:05:00 (HH:MM:SS); Stop all Vusers: 24 every 00:00:30 (HH:MM:SS)
+NumGraphs=7
+
+[DimensionFunctions]
+DimeFuncCount=1
+DimeFuncType0=FuncFragment
+FunctionName_UI0=Think Time
+DimensionName_UI0=Transaction Response Time,Aminimum,Amaximum
+FunctionFragmentValues_UI0=-Include Think Time
+DimensionFragmentValues_UI0=!([Value]-[Think Time])!
+

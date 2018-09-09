@@ -1,0 +1,11 @@
+[t57]
+FileName1=t57.html
+URL1=http://localhost:8080/garden/deleteByGardenId
+Total=1
+RequestHeaderFile=t57_RequestHeader.txt
+RequestBodyFile=t57_RequestBody.txt
+ResponseHeaderFile=t57_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_57.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,11 @@
+[t16]
+FileName1=t16_jquery.slides.min.html
+URL1=http://www.cnmooc.org/js/plugins/jquery.slides.min.js
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_16.xml
+RequestHeaderFile=t16_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t16_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

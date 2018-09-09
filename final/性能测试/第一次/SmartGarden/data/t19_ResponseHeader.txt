@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Server: BLB/
+Date: Tue, 24 Jul 2018 08:05:39 GMT
+Content-Type: application/javascript
+Content-Length: 291748
+Connection: keep-alive
+Last-Modified: Mon, 23 Jul 2018 10:47:44 GMT
+ETag: "5b55b250-473a4"
+Expires: Thu, 23 Aug 2018 08:05:43 GMT
+Cache-Control: max-age=2592000
+X-Frame-Options: SAMEORIGIN
+Accept-Ranges: bytes
+Set-Cookie: BEC=f6c42c24d0c76e7acea242791ab87e34|1532419539|1532419536;Path=/
+

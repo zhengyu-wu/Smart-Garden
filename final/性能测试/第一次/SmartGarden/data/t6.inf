@@ -1,0 +1,11 @@
+[t6]
+FileName1=t6_d-view.min.css
+URL1=http://static.cnmooc.org/theme/d-view.min.css?dcd1e635ed
+Total=1
+ContentType=text/css
+SnapshotXmlFile=snapshot_6.xml
+RequestHeaderFile=t6_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t6_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

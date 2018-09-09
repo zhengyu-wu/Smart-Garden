@@ -1,0 +1,6 @@
+[t32]
+FileName1=t32_user.html
+URL1=http://localhost:3000/user
+Total=1
+ContentType=
+SnapshotXmlFile=snapshot_32.xml

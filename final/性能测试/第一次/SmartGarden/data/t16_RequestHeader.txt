@@ -1,0 +1,9 @@
+GET http://www.cnmooc.org/js/plugins/jquery.slides.min.js HTTP/1.1
+Accept: application/javascript, */*;q=0.8
+Referer: http://www.cnmooc.org/home/index.mooc
+Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393
+Accept-Encoding: gzip, deflate
+Cookie: 11-Jul-2068 08:05:40 GMT; JSESSIONID=F7363CAFD1B73905B01B58EBBF9DDF5F.tomcat-host1-2; BEC=f6c42c24d0c76e7acea242791ab87e34|1532419536|1532419536
+Host: www.cnmooc.org
+

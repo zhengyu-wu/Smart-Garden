@@ -1,0 +1,24 @@
+[t63]
+FileName2=t43_4_monitorSensor.png
+RawStepEndTime=0
+FileName5=t10_1_gardenIcon.png
+FileName4=t30_2_humiditySensor.png
+FileName6=t2_0_main.UNK
+RequestBodyFile=t63_RequestBody.txt
+RawStepName=getNozzleByGardenId_2
+ContentType=application/json
+URL1=http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1
+URL2=http://localhost:3000/assets/images/monitorSensor.ba6ff3cbe4ccaf9ca24936b1f595c1a1.png
+URL3=http://localhost:3000/assets/images/temperatureSensor.0643342a962291348f79c7a482d84180.png
+ResponseHeaderFile=t63_ResponseHeader.txt
+URL4=http://localhost:3000/assets/images/humiditySensor.8ad937d1adc22cfd57131fb25a9ee3c8.png
+URL5=http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png
+URL6=http://localhost:3000/main.js
+SnapshotXmlFile=snapshot_63.xml
+RequestHeaderFile=t63_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1532655916661
+Total=6
+StepName=Url: getNozzleByGardenId_2
+FileName1=t63.json
+FileName3=t29_3_temperatureSensor.png

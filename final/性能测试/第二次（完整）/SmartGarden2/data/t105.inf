@@ -1,0 +1,11 @@
+[t105]
+FileName1=t105_getNozzleByGardenId.html
+URL1=http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_105.xml
+RequestHeaderFile=t105_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t105_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

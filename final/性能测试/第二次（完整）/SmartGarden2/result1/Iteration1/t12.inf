@@ -1,0 +1,18 @@
+[t12]
+FileName2=t10_1_gardenIcon.png
+RawStepEndTime=0
+RequestBodyFile=t12_RequestBody.txt
+RawStepName=addSensorWithGardenId
+ContentType=application/json
+URL1=http://localhost:8080/sensors/addSensorWithGardenId
+URL2=http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png
+URL3=http://localhost:3000/main.js
+ResponseHeaderFile=t12_ResponseHeader.txt
+SnapshotXmlFile=snapshot_12.xml
+RequestHeaderFile=t12_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1532655903298
+Total=3
+StepName=Submit Data: addSensorWithGardenId
+FileName1=t12.json
+FileName3=t2_0_main.UNK

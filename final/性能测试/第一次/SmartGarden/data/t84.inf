@@ -1,0 +1,11 @@
+[t84]
+FileName1=t84.html
+URL1=http://localhost:8080/sensors/modifySensorState
+Total=1
+RequestHeaderFile=t84_RequestHeader.txt
+RequestBodyFile=t84_RequestBody.txt
+ResponseHeaderFile=t84_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_84.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

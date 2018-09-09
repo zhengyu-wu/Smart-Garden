@@ -1,0 +1,11 @@
+[t288]
+FileName1=t288_getLast15TempDataBySensorId.html
+URL1=http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_288.xml
+RequestHeaderFile=t288_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t288_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

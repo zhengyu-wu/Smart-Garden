@@ -1,0 +1,11 @@
+[t32]
+FileName1=t32_30.png
+URL1=http://static.cnmooc.org/repositry/usrimg/1611/10/67b43130b5b64ce9b168bd1803be496b/30.png
+Total=1
+ContentType=image/png
+SnapshotXmlFile=snapshot_32.xml
+RequestHeaderFile=t32_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t32_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

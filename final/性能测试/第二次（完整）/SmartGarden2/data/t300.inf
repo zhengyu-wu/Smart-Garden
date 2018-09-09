@@ -1,0 +1,11 @@
+[t300]
+FileName1=t300_generateDataWithSensorId.html
+URL1=http://localhost:8080/fakeData/generateDataWithSensorId?sensorId=234
+Total=1
+ContentType=
+SnapshotXmlFile=snapshot_300.xml
+RequestHeaderFile=t300_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t300_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
