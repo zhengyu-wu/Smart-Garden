@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+//采用SpringData JPA的命名方法自动生成函数实现
 @Repository
 public interface UserRepository extends JpaRepository<User,Integer> {
 

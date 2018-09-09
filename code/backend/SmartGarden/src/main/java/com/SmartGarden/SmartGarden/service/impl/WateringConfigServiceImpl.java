@@ -21,6 +21,7 @@ public class WateringConfigServiceImpl implements WateringConfigService {
 
     @Override
     public WateringConfig addConfig(WateringConfig wateringConfig, int gardenId) {
+        //先判断输入gardenId的有效性
         Garden tmpGarden=gardenService.getGardenByGardenId(gardenId);
         if(tmpGarden==null)
             return null;
@@ -122,6 +123,21 @@ public class WateringConfigServiceImpl implements WateringConfigService {
             wateringConfigRepository.save(tmpConfig);
             return true;
         }catch (Exception e){
+            return false;
+        }
+    }
+
+    @Override
+    public boolean hasActiveConfig(int gardenId) {
+        try{
+            List<WateringConfig> tmpList=wateringConfigRepository.findByGarden_GardenId(gardenId);
+            if(tmpList==null)
+                return false;
+            if(tmpList.get(0).getConfigState()==0)
+                return false;
+            return true;
+        }
+        catch (Exception e){
             return false;
         }
     }
