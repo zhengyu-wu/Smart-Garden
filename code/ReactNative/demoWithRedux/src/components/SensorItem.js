@@ -82,14 +82,14 @@ class SensorItem extends React.Component{
     };
 
     render(){
-        return  <Card style={{ paddingTop: 100 }}>
+        return  <Card style={{ paddingTop: 160 }}>
                     <Card.Body>
                         <List>
                             <Item extra={this.props.navigation.state.params.data.sensorId} arrow={'empty'}>
-                                sensor id
+                                Sensor ID
                             </Item>
                             <Item extra={this.props.navigation.state.params.data.sensorType} arrow={'empty'}>
-                                sensor type
+                                Sensor type
                             </Item>
                             <Item extra={'('+this.state.positionX+','+this.state.positionY+')'}
                                   arrow={'horizontal'}
