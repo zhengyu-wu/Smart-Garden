@@ -25,6 +25,7 @@ public class TempServiceImpl implements TempService {
     @Override
     public boolean addTempData(TempData tempData,int sensorId) {
         try {
+            //先查看是否有对应的sensor
             Sensor tmpSensor=sensorService.getSensorBySensorId(sensorId);
             if(tmpSensor==null)
                 return false;

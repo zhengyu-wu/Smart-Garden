@@ -68,7 +68,7 @@ public class WateringServiceImpl implements WateringService {
                     todoHumiList.add(tmpHumi);
                 }
             }
-            //todo 查找算法先采用简单遍历
+            //查找算法先采用简单遍历
             for (TempData tmpTemp:todoTempList
                  ) {
                 Nozzle targetNozzle=null;

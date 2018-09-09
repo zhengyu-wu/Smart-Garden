@@ -22,6 +22,7 @@ public class NozzleServiceImpl implements NozzleService {
 
     @Override
     public Nozzle addNozzleWithGardenId(Nozzle nozzle, int gardenId) {
+        //先判断输入gardenId的有效性
         Garden tmpGarden=gardenService.getGardenByGardenId(gardenId);
         if(tmpGarden==null)
             return null;

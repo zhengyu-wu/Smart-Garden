@@ -50,6 +50,7 @@ public class GardenServiceImpl implements GardenService {
 
     @Override
     public boolean addGardenWithUser(Garden garden, int userId) {
+        //先判断输入userId的有效性
         User tmpUser= userService.selectById(userId);
         if(tmpUser==null)
             return false;
@@ -75,7 +76,7 @@ public class GardenServiceImpl implements GardenService {
         }
     }
 
-    //todo 未经测试 2018/7/16
+
     @Override
     public boolean update(Garden garden) {
         try {
