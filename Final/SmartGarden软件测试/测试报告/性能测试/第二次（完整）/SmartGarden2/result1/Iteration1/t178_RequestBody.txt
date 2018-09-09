@@ -1,0 +1,1 @@
+"bestTempMin=30&bestTempMax=35&bestHumiMin=0.4&bestHumiMax=0.6&gardenId=232"

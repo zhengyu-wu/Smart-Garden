@@ -1,0 +1,11 @@
+[t26]
+FileName1=t26_player.html
+URL1=http://www.cnmooc.org/js/jwplayer6/player.js?1
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_26.xml
+RequestHeaderFile=t26_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t26_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,11 @@
+[t276]
+FileName1=t276_getByGardenId.html
+URL1=http://localhost:8080/garden/getByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_276.xml
+RequestHeaderFile=t276_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t276_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

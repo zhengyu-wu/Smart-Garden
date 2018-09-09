@@ -1,0 +1,11 @@
+[t34]
+FileName1=t34_8772f23abdff415e862da85a226602dd.jpg
+URL1=http://static.cnmooc.org/repositry/coursepic/i/1611/10/8772f23abdff415e862da85a226602dd.jpg
+Total=1
+ContentType=image/jpeg
+SnapshotXmlFile=snapshot_34.xml
+RequestHeaderFile=t34_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t34_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Content-Type: image/png; charset=UTF-8
+Content-Length: 14015
+ETag: W/"36bf-yKcUVOSOFmuTAxQx/Jua1Mx3bdo"
+Date: Wed, 25 Jul 2018 02:10:51 GMT
+Connection: keep-alive
+

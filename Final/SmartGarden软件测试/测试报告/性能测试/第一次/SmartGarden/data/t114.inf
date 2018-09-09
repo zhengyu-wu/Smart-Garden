@@ -1,0 +1,11 @@
+[t114]
+FileName1=t114_getSensorByGardenId.html
+URL1=http://localhost:8080/sensors/getSensorByGardenId?gardenId=21
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_114.xml
+RequestHeaderFile=t114_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t114_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

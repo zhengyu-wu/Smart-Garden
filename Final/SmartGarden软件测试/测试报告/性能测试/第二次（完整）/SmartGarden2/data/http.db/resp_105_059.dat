@@ -1,0 +1,4 @@
+37c
+[{"tempDataId":336,"sensor":{"sensorId":235,"positionX":585.0,"positionY":423.0,"sensorType":3,"sensorState":1,"garden":{"gardenId":232,"gardenName":"1","positionX":1.0,"positionY":1.0,"width":1000,"length":1000,"user":{"userId":1,"username":"ch","password":"123","email":"ch@ch.com","phone":"1111111111","userType":0,"userState":0}}},"positionX":585.0,"positionY":423.0,"temperature":29.07134480957452,"sendTime":"2018-07-27T01:42:17.000+0000"},{"tempDataId":339,"sensor":{"sensorId":234,"positionX":654.0,"positionY":666.0,"sensorType":2,"sensorState":1,"garden":{"gardenId":232,"gardenName":"1","positionX":1.0,"positionY":1.0,"width":1000,"length":1000,"user":{"userId":1,"username":"ch","password":"123","email":"ch@ch.com","phone":"1111111111","userType":0,"userState":0}}},"positionX":654.0,"positionY":666.0,"temperature":24.838958584099483,"sendTime":"2018-07-27T01:42:17.000+0000"}]
+0
+

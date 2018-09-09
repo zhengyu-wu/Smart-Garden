@@ -1,0 +1,11 @@
+[t18]
+FileName1=t18_uploader.min.html
+URL1=http://www.cnmooc.org/js/uploader/uploader.min.js?dcd1e635ed
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_18.xml
+RequestHeaderFile=t18_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t18_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

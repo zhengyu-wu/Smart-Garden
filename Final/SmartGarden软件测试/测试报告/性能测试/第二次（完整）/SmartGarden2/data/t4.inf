@@ -1,0 +1,11 @@
+[t4]
+FileName1=t4_loginWithEmail.html
+URL1=http://localhost:8080/users/loginWithEmail?email=ch@ch.com&password=123
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_4.xml
+RequestHeaderFile=t4_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t4_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

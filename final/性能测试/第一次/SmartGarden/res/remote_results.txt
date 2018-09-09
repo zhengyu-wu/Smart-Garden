@@ -1,2 +1,0 @@
-[Hosts]
-localhost=D:\LRtest\SmartGarden\res\localhost_1.eve

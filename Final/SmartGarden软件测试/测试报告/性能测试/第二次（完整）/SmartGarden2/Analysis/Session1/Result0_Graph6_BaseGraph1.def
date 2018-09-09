@@ -1,0 +1,97 @@
+﻿[BasicInfo]
+Title=Average Transaction Response Time
+TemplateName=ResponseTime
+ChartGroup=Transactions
+PerformanceClass=General
+
+[Graph Definitions]
+MainFactTableName=Event_meter
+DefaultDisplayType=Line
+UserGranularity=1
+RoundBarValues=0
+GraphDataCol1=
+TableName=T955943950T
+BasicTableName=
+AbsoluteTime=0
+DisableFilter=0
+SetPieToPercent=0
+DescFromFID=0
+NumSelectStrings=1
+ProduceRealStatis=1
+CompleteMissingValuesWithZeroes=0
+CompleteMissingValues=0
+ForceCompleteValsOnArea=1
+IdsToStrs=1
+StdMonitor=0
+HiddenFunctions=
+NumBasicFilters=1
+NumAdditionalFilters=1
+NumRawDataFilters=0
+HiddenDimensions=
+BasicGroupBy=Transaction Name
+AdditionalGroupBy=
+HasGranularity=1
+YLeftAxisTitle=Average Response Time (seconds)
+YRightAxisTitle=
+TimeBasedXAxis=1
+XBottomAxisTitle=Elapsed scenario time mm:ss
+XTopAxisTitle=
+DisplayAsStairs=0
+RawDataDimension=Scenario Elapsed Time
+Scaling=0
+ZeroValue=0
+CompleteValFromLast=0
+Stacked=0
+BreakdownTree=0
+TransactionBreakdownGraph=1
+
+[SelectString0]
+Dimension=!([Value]-[Think Time])!
+CountField=![Acount]!
+AggregateFunction=Avg
+ResultSetAggregateFunction=Y Value
+Title=Response_Time
+ActiveState=1
+
+[BasicFilter0]
+DimensionType=Discrete
+InternalDimName=
+Dimension=Event Type
+EqualFlag=1
+DimensionTableName=Event_Map
+NumValues=1
+UseEscapeSequence=1
+DimCount=1
+Dim_0=Transaction
+LikeMode=0
+
+[AdditionalFilter0]
+DimensionType=Discrete
+InternalDimName=
+Dimension=Transaction End Status
+EqualFlag=1
+DimensionTableName=TransactionEndStatus
+NumValues=1
+UseEscapeSequence=1
+DimCount=1
+Dim_0=Pass
+LikeMode=0
+
+[DimensionFunctions]
+DimeFuncCount=1
+DimeFuncType0=FuncFragment
+FunctionName_UI0=Think Time
+DimensionName_UI0=Transaction Response Time,Aminimum,Amaximum
+FunctionFragmentValues_UI0=-Include Think Time
+DimensionFragmentValues_UI0=
+
+[Granularity]
+Dimension=Scenario Elapsed Time
+TimeScaleType=2
+Granularity=16
+BaseGranularityUIName=
+MinimumDefaultGranularity=1
+
+[Alerts]
+Number Of Alerts=0
+

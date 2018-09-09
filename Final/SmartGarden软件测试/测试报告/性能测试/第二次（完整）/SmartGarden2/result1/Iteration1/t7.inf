@@ -1,0 +1,16 @@
+[t7]
+SnapshotXmlFile=snapshot_7.xml
+ContentType=application/json
+StepName=Submit Data: addGardenWithUserId
+Total=2
+FileName1=t7.json
+FileName2=t2_0_main.UNK
+RequestHeaderFile=t7_RequestHeader.txt
+SaveSnapshotResources=1
+ResponseHeaderFile=t7_ResponseHeader.txt
+RawStepEndTime=0
+RawStepName=addGardenWithUserId
+RequestBodyFile=t7_RequestBody.txt
+RawStepStartTime=1532655903052
+URL1=http://localhost:8080/garden/addGardenWithUserId
+URL2=http://localhost:3000/main.js

@@ -1,0 +1,11 @@
+[t90]
+FileName1=t90_getNozzleByGardenId.html
+URL1=http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_90.xml
+RequestHeaderFile=t90_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t90_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

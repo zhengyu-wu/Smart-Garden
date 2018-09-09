@@ -1,0 +1,11 @@
+[t55]
+FileName1=t55.html
+URL1=http://localhost:8080/garden/addGardenWithUserId
+Total=1
+RequestHeaderFile=t55_RequestHeader.txt
+RequestBodyFile=t55_RequestBody.txt
+ResponseHeaderFile=t55_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_55.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

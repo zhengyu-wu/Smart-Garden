@@ -1,0 +1,92 @@
+﻿[BasicInfo]
+Title=Running Vusers
+TemplateName=VuserStateGraph
+ChartGroup=Vusers
+PerformanceClass=General
+
+[Graph Definitions]
+MainFactTableName=VuserEvent_meter
+DefaultDisplayType=Line
+UserGranularity=1
+RoundBarValues=0
+GraphDataCol1=
+TableName=T955943944T
+BasicTableName=
+AbsoluteTime=0
+DisableFilter=0
+SetPieToPercent=0
+DescFromFID=0
+NumSelectStrings=1
+ProduceRealStatis=0
+CompleteMissingValuesWithZeroes=0
+CompleteMissingValues=0
+ForceCompleteValsOnArea=1
+IdsToStrs=1
+StdMonitor=0
+HiddenFunctions=
+NumBasicFilters=0
+NumAdditionalFilters=1
+NumRawDataFilters=1
+HiddenDimensions=
+BasicGroupBy=Vuser Status
+AdditionalGroupBy=
+HasGranularity=1
+YLeftAxisTitle=Number of Vusers
+YRightAxisTitle=
+TimeBasedXAxis=1
+XBottomAxisTitle=Elapsed scenario time mm:ss
+XTopAxisTitle=
+DisplayAsStairs=1
+RawDataDimension=Scenario Elapsed Time
+Scaling=0
+ZeroValue=1
+CompleteValFromLast=1
+Stacked=0
+BreakdownTree=0
+TransactionBreakdownGraph=0
+
+[SelectString0]
+Dimension=InOut Flag
+CountField=
+AggregateFunction=Sum
+ResultSetAggregateFunction=AggSum
+Title=
+ActiveState=1
+
+[AdditionalFilter0]
+DimensionType=Discrete
+InternalDimName=
+Dimension=Vuser Status
+EqualFlag=1
+DimensionTableName=VuserStatus
+NumValues=1
+UseEscapeSequence=1
+DimCount=1
+Dim_0=Run
+LikeMode=0
+
+[DimensionFunctions]
+DimeFuncCount=0
+
+[RawDataFilter0]
+DimensionType=DiscreteNumber
+InternalDimName=
+Dimension=InOut Flag
+EqualFlag=1
+DimensionTableName=VuserEvent_Meter
+NumValues=1
+UseEscapeSequence=1
+DimCount=1
+Dim_0=1
+LikeMode=0
+
+[Granularity]
+Dimension=Scenario Elapsed Time
+TimeScaleType=2
+Granularity=16
+BaseGranularityUIName=
+MinimumDefaultGranularity=1
+
+[Alerts]
+Number Of Alerts=0
+

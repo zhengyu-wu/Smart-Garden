@@ -1,0 +1,11 @@
+[t169]
+FileName1=t169_generateDataWithGardenId.html
+URL1=http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232
+Total=1
+ContentType=
+SnapshotXmlFile=snapshot_169.xml
+RequestHeaderFile=t169_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t169_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
