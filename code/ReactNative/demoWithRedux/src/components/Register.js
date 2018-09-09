@@ -4,8 +4,6 @@ import { Button, InputItem, List,WhiteSpace,Toast} from 'antd-mobile-rn';
 import {register} from "../actions";
 import { connect } from 'react-redux';
 import Login from './Login';
-import axios from "axios/index";
-import {HOST_NAME} from "../constants";
 
 class Register extends React.Component{
     constructor(props: any) {
@@ -19,9 +17,6 @@ class Register extends React.Component{
             phoneError:false,
             passwordError:false,
             emailError:false,
-            checkCode:0,
-            confirmCheckCode:0,
-            checkError:true
         };
         this.onPhoneErrorClick=this.onPhoneErrorClick.bind(this);
         this.onPasswordErrorClick=this.onPasswordErrorClick.bind(this);
@@ -40,23 +35,6 @@ class Register extends React.Component{
         if(this.state.emailError)
             Toast.info('Please enter a valid email',1);
     };
-    onCheckErrorClick=()=>{
-        if(this.state.checkError)
-            Toast.info('Please check the code again')
-    }
-    onSendCheckCode=()=>{
-        if(this.state.email.toString().length>0){
-            axios.get(HOST_NAME+"/email/sendEmail",{params:{recv:this.state.email}})
-                .then((res)=>{
-                    if(res.data!==-1){
-                        this.setState({checkCode:res.data})
-                    }
-                    else{
-                        Toast.info('There is an issue with email service, please try it again later');
-                    }
-                })
-        }
-    }
 
     render(){
         const {register}=this.props;
@@ -77,7 +55,7 @@ class Register extends React.Component{
                                         username: value,
                                     });
                                 }}
-                                placeholder="username"
+                                placeholder="Username"
                             >
                             </InputItem>
                             <InputItem
@@ -99,7 +77,7 @@ class Register extends React.Component{
                                         });
                                     }
                                 }}
-                                placeholder="phone"
+                                placeholder="Phone"
                             >
                             </InputItem>
                             <InputItem
@@ -122,7 +100,7 @@ class Register extends React.Component{
                                         })
                                     }
                                 }}
-                                placeholder={'email'}
+                                placeholder={'Email'}
                             >
 
                             </InputItem>
@@ -135,7 +113,7 @@ class Register extends React.Component{
                                         password: value,
                                     });
                                 }}
-                                placeholder="password"
+                                placeholder="Password"
                             >
                             </InputItem>
                             <InputItem
@@ -158,33 +136,9 @@ class Register extends React.Component{
                                         });
                                     }
                                 }}
-                                placeholder="confirm password"
+                                placeholder="Confirm password"
                             >
                             </InputItem>
-                            <List.Item>{
-                                <Button
-                                    onClick={
-                                        ()=>{this.onSendCheckCode()}
-                                    }
-                                    disabled={this.state.emailError||this.state.email===""}
-                                >
-                                    Send verification code to email
-                                </Button>}
-                                </List.Item>
-                            <InputItem
-                                clear
-                                type={"text"}
-                                value={this.state.checkCode}
-                                error={this.state.checkError}
-                                onErrorClick={this.onCheckErrorClick}
-                                onChange={(value: any) => {
-                                    this.setState({
-                                        checkCode: value,
-                                        checkError:value!==this.state.checkCode
-                                    });
-                                }}
-                                placeholder="the code you got"
-                            />
                         </List>
                     </ScrollView>
                     <WhiteSpace size="lg" />
@@ -201,9 +155,6 @@ class Register extends React.Component{
                                     this.props.navigation.goBack();
                                 }
                             }
-                            disabled={this.state.emailError||this.state.passwordError||this.state.phoneError
-                            ||this.state.checkError||this.state.email===""||this.state.password===""
-                            ||this.state.phone===""}
                     >
                         Register
                     </Button>

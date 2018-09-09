@@ -17,34 +17,35 @@ class UserCard extends React.Component<any, any> {
                         <Card.Header
                             title={this.props.user.user.username}
                             thumbStyle={{ width: 30, height: 30 }}
-                            thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+                            thumb="/Users/wuzhengyu/Desktop/demoWithRedux/src/assets/set.png"
+                            extra="Welcome"
                         />
                         <Card.Body>
                             <List>
                                 <Item extra={this.props.user.user.userId} arrow={'empty'}>
-                                    user id
+                                    User ID
                                 </Item>
                                 <Item extra={this.props.user.user.username} arrow={'horizontal'}
                                       onClick={()=>{
                                         this.props.navigation.navigate('ModifyUserName',{navigation: this.props.navigation})
                                       }
                                       }>
-                                    name
+                                    Name
                                 </Item>
                                 <Item extra={this.props.user.user.email} arrow={'horizontal'} onClick={()=>{
                                     this.props.navigation.navigate('ModifyUserEmail',{navigation: this.props.navigation})
                                 }}>
-                                    email
+                                    Email
                                 </Item>
                                 <Item extra={this.props.user.user.phone} arrow={'horizontal'} onClick={()=>{
                                     this.props.navigation.navigate('ModifyUserPhone',{navigation: this.props.navigation})
                                 }}>
-                                    phone
+                                    Phone
                                 </Item>
                                 <Item arrow={'horizontal'} onClick={()=>{
                                     this.props.navigation.navigate('ModifyUserPassword',{navigation: this.props.navigation})
                                 }}>
-                                    change password
+                                    Change password
                                 </Item>
                             </List>
                             <Button type={'primary'}  onClick={()=>{log_out()}}>

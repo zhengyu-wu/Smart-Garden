@@ -83,12 +83,12 @@ class NozzleItem extends React.Component{
                     };
                     axios.post(HOST_NAME+'/nozzles/deleteNozzleByNozzleId', qs.stringify(params))
                         .then(() => {
-                            Toast.info('successfully delete');
-                            this.props.onDeleteNozzle();
+                            Toast.info('Deleted successfully!');
+                            this.props.navigation.state.params.onDeleteNozzle();
                         });
+                    this.props.navigation.goBack();
                 }
             }
-
         ]);
     };
 

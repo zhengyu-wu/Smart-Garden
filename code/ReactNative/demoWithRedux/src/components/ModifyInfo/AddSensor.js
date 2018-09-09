@@ -45,10 +45,10 @@ class AddSensor extends React.Component{
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
             >
-                <List renderHeader={() => 'Add a sensor'}>
+                <List style={{ paddingTop: 120 }}>>
                     <List.Item>
                         <Picker
-                            title="choose a type"
+                            title="Choose a type"
                             data={SENSOR_TYPE}
                             cols={1}
                             value={this.state.pickerValue}
@@ -63,7 +63,7 @@ class AddSensor extends React.Component{
                             }}
                         >
                             <List.Item arrow="horizontal" last onClick={this.onClick}>
-                                type
+                                Type
                             </List.Item>
                         </Picker>
                     </List.Item>
@@ -84,7 +84,7 @@ class AddSensor extends React.Component{
                                 positionX: value,
                             });
                         }}
-                        placeholder="the x position of the sensor"
+                        placeholder="The x position of the sensor"
                     >X</InputItem>
                     <InputItem
                         clear
@@ -94,7 +94,7 @@ class AddSensor extends React.Component{
                                 positionY: value,
                             });
                         }}
-                        placeholder="the y position of the sensor"
+                        placeholder="The y position of the sensor"
                     >Y</InputItem>
                     <List.Item>
                         <Button
@@ -107,20 +107,20 @@ class AddSensor extends React.Component{
                                     positionX:this.state.positionX,
                                     positionY:this.state.positionY,
                                     sensorType:tmpType,
-                                    gardenId:this.props.navigation.state.params.gardenId
+                                    gardenId:this.props.navigation.state.params.data
                                 };
                                 console.log('params');
-                                console.log(params);
+                                //alert(JSON.stringify(params));
                                 console.log(this.state.pickerValue);
                                 axios.post(HOST_NAME+'/sensors/addSensorWithGardenId',qs.stringify(params))
                                     .then(()=>{
                                         //todo  此处应当调用父组件的接口 修改父组件的state
-                                        this.props.navigation.state.params.onAddSensor();
-                                        Toast.success('add successfully');
+                                        this.props.navigation.state.params.update();
+                                        Toast.success('Add successfully!');
                                         this.props.navigation.goBack();
                                     })
                                     .catch((err)=>{
-                                        Toast.fail('something wrong');
+                                        Toast.fail('Something wrong!');
                                         console.log('in err adda sensor');
                                         console.log(err);
                                     })
@@ -130,7 +130,7 @@ class AddSensor extends React.Component{
                             ||this.state.positionX===-1||!this.state.positionY===-1
                             ||this.state.width===0}
                         >
-                            submit
+                            Submit
                         </Button>
                     </List.Item>
                     <List.Item>
@@ -141,7 +141,7 @@ class AddSensor extends React.Component{
                             }}
                             type="primary"
                         >
-                            cancel
+                            Cancel
                         </Button>
                     </List.Item>
                 </List>

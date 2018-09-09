@@ -73,17 +73,10 @@ class SensorItem extends React.Component{
             { text: 'Cancel', onPress: () => console.log('cancel'), style: 'cancel' },
             {
                 text: 'OK', onPress: () => {
-                    console.log(this.state.sensorId);
-                    const params = {
-                        sensorId: this.state.sensorId
-                    };
-                    axios.post(HOST_NAME+'/sensors/deleteSensorBySensorId', qs.stringify(params))
-                        .then(() => {
-                            Toast.info('successfully delete');
-                            this.props.onDeleteSensor();
-                        });
+                    this.props.navigation.state.params.onDeleteSensor(this.props.navigation.state.params.data.sensorId)
+                    this.props.navigation.goBack()
                 }
-            }
+            },
 
         ]);
     };
@@ -110,7 +103,7 @@ class SensorItem extends React.Component{
                                               onModifyPosition:this.onModifyPosition.bind(this)
                                           })
                             }}>
-                                position
+                                Position
                             </Item>
                             <Item arrow={'horizontal'} 
                                 onClick={()=>{
@@ -120,7 +113,7 @@ class SensorItem extends React.Component{
                                                   sensorId:this.state.sensorId
                                               })
                             }}>
-                                view data
+                                View data
                             </Item>
                             <Item extra={
                                 <Switch

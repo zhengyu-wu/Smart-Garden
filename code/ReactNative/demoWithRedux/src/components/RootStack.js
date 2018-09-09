@@ -27,6 +27,7 @@ import NozzleItem from './NozzleItem';
 import WaterConfig from "./WaterConfig";
 import GardenDiagram from './GardenDiagram';
 import Linechart from './Linechart';
+import Heatmap from './Heatmap';
 
 
 const RootStack = createStackNavigator({
@@ -57,7 +58,8 @@ const RootStack = createStackNavigator({
     NozzleItem:NozzleItem,
     WaterConfig:WaterConfig,
     Linechart:Linechart,
-    GardenDiagram:GardenDiagram
+    GardenDiagram:GardenDiagram,
+    Heatmap:Heatmap
 },{headerMode: 'none'},{
     initialRouteName:'Home'
 },);

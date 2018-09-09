@@ -7,6 +7,7 @@ import qs from 'qs';
 import Sensor from './Sensor';
 import CameraExample from './Camera';
 import GardenDiagram from './GardenDiagram';
+import Heatmap from './Heatmap';
 const Item = List.Item;
 const Brief = Item.Brief;
 
@@ -37,7 +38,7 @@ class GardenItem extends React.Component{
 
     render(){
         return(
-            <WingBlank style={{ paddingTop:20 }} size="lg">
+            <WingBlank style={{ paddingTop: 100 }} size="lg">
                 <Card>
                     <Card.Body>
                         <List>
@@ -85,6 +86,16 @@ class GardenItem extends React.Component{
                                               })
                             }}>
                                 Garden Diagram
+                            </Item>
+                            <Item arrow={'horizontal'} 
+                                onClick={()=>{
+                                this.props.navigation.navigate('Heatmap',
+                                              {
+                                                  navigation: this.props.navigation,
+                                                  gardenId:this.props.navigation.state.params.data.gardenId
+                                              })
+                            }}>
+                                Garden Heatmap
                             </Item>
                             <Item arrow={'horizontal'}
                                   onClick={()=>{

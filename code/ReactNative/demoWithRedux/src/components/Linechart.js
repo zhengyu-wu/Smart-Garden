@@ -98,7 +98,8 @@ export default class Linechart extends Component {
     this.state = {
       sensorId:this.props.navigation.state.params.sensorId,
       data: [],
-      x_data:[]
+      x_data:[],
+      option:[]
     };
   } 
 
@@ -107,7 +108,7 @@ export default class Linechart extends Component {
     this.timer =setInterval(
                 () => {
 
-        axios.get("http://192.168.1.109:8080/temperature/getLast20TempDataBySensorId",{params:{sensorId:this.state.sensorId}})
+        axios.get("http://10.162.16.207:8080/temperature/getLast20TempDataBySensorId",{params:{sensorId:this.state.sensorId}})
             .then((res)=>{
                 let tmp_data =[];
                 let tmp_x_data =[];
@@ -131,10 +132,40 @@ export default class Linechart extends Component {
                     );
                 }
                 //alert(JSON.stringify(tmp_data));
+                let option_lc = {
+                    title: {
+                        text: 'Real-time temperature of your garden',
+                        top: 'top'
+                      },
+
+                    xAxis: {
+                        type: 'category',
+                        /*
+                        splitLine: {
+                            show: false
+                        },*/
+                        data:tmp_x_data
+                    },
+                    yAxis: {
+                        type: 'value',
+                        boundaryGap: [0, '100%'],
+                        splitLine: {
+                            show: false
+                        }
+                    },
+                    series: [{
+                        name: 'Simulated data',
+                        type: 'line',
+                        showSymbol: false,
+                        hoverAnimation: false,
+                        data: tmp_data
+                    }]
+                };
 
                 this.setState({
                     data:tmp_data,
-                    x_data:tmp_x_data
+                    x_data:tmp_x_data,
+                    option:option_lc
                 });
                 //alert(JSON.stringify(this.state.data));
 
@@ -153,36 +184,12 @@ export default class Linechart extends Component {
 
   render() {
 
-    option_lc = {
-    
-    xAxis: {
-        type: 'category',
-        /*
-        splitLine: {
-            show: false
-        },*/
-        data:this.state.x_data
-    },
-    yAxis: {
-        type: 'value',
-        boundaryGap: [0, '100%'],
-        splitLine: {
-            show: false
-        }
-    },
-    series: [{
-        name: '模拟数据',
-        type: 'line',
-        showSymbol: false,
-        hoverAnimation: false,
-        data: this.state.data
-    }]
-};
+
     
 
     return (
     <View style={{position:'relative',top:100}}>
-      <Echarts  option={option_lc}  height={300}  />
+      <Echarts  option={this.state.option}  height={300}  />
    </View>
     );
   }

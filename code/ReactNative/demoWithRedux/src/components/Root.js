@@ -42,12 +42,12 @@ class Root extends React.Component {
                         justifyContent:'center',
                         alignItems:'center'
                     }}>
-                    <Text onPress={()=>
+                    <Text style={ {width:100}} onPress={()=>
                         navigate('Register',{
                             navigation: this.props.navigation
                     })}>Register</Text>
                     <Text>  </Text>
-                    <Text onPress={()=>navigate('Help')}>Help </Text>
+                    <Text style={ {width:70}} onPress={()=>navigate('Help')}>Help </Text>
                     <Text>  </Text>
                     <Text onPress={()=>navigate('ContactUs')}>Contact us </Text>
                     </View>

@@ -1,6 +1,7 @@
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import React from 'react';
 import qs from "qs";
+
 import {
     StyleSheet,
     View,
@@ -12,7 +13,7 @@ import {
 import axios from "axios/index";
 import {Toast} from "antd-mobile-rn/lib/index.native";
 import {HOST_NAME} from "../constants";
-import {Switch,Button,List} from 'antd-mobile-rn';
+import {Switch} from 'antd-mobile-rn';
 
 class WaterConfig extends React.Component{
     constructor(props:any){
@@ -48,6 +49,7 @@ class WaterConfig extends React.Component{
                 console.log(err);
             })
     }
+
     multiTempValuesChange = (values) => {
 
         if(values.length<2)
@@ -119,6 +121,7 @@ class WaterConfig extends React.Component{
             bestHumiMin:values[0],
             bestHumiMax:values[1]
         }
+
         axios.post(HOST_NAME+"/waterConfig/changeHumiConfig",qs.stringify(params))
             .then((res)=>{
                 this.setState({
@@ -131,6 +134,7 @@ class WaterConfig extends React.Component{
                 console.log(err);
             })
     }
+
     onSwitchChange=()=>{
         const params={
             configId:this.state.configId
@@ -151,9 +155,6 @@ class WaterConfig extends React.Component{
         return (
             <View style={styles.container}>
                 <View style={styles.sliders}>
-                    <View>
-                        <Text style={styles.title}>Set watering config</Text>
-                    </View>
                     <View style={styles.sliderOne}>
                         <Text style={styles.text}>Temperature range(℃)</Text>
                         <Text style={styles.text}>{this.state.multiTempValue[0]} </Text>
@@ -184,28 +185,15 @@ class WaterConfig extends React.Component{
                         allowOverlap
                         snapped
                     />
-
                     <View>
-                        <List>
-                            <List.Item extra={
-                                <Switch
-                                checked={this.state.configState===1||this.state.configState===true}
-                                onChange={this.onSwitchChange}
-                                disabled={this.state.configId===0}
-                                />
-                            }>Auto Watering:{this.state.configState===1||this.state.configState===true?'On':'Off'}</List.Item>
-                            <List.Item>{
-                                <Button
-                                onClick={() => {
-                                    //返回前一个页面
-                                    this.props.navigation.goBack()
-                                }}
-                                type="primary"
-                            >
-                                Go back
-                            </Button>}
-                            </List.Item>
-                        </List>
+                        <Text style={styles.text}>Auto Watering</Text>
+                    </View>
+                    <View>
+                        <Switch
+                            checked={this.state.configState===1||this.state.configState===true}
+                            onChange={this.onSwitchChange}
+                            disabled={this.state.configId===0}
+                        />
                     </View>
                 </View>
             </View>
