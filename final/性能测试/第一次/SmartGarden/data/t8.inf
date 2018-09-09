@@ -1,0 +1,11 @@
+[t8]
+FileName1=t8_mobile_220.png
+URL1=http://static.cnmooc.org/images/mobile_220.png
+Total=1
+ContentType=image/png
+SnapshotXmlFile=snapshot_8.xml
+RequestHeaderFile=t8_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t8_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

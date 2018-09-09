@@ -1,0 +1,11 @@
+[t137]
+FileName1=t137_getNozzleByGardenId.html
+URL1=http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=21
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_137.xml
+RequestHeaderFile=t137_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t137_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

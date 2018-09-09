@@ -1,0 +1,11 @@
+[t213]
+FileName1=t213_getNozzleByNozzleId.html
+URL1=http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=240
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_213.xml
+RequestHeaderFile=t213_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t213_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

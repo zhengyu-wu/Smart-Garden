@@ -1,0 +1,11 @@
+[t17]
+FileName1=t17_core.min.html
+URL1=http://www.cnmooc.org/js/core.min.js?dcd1e635ed
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_17.xml
+RequestHeaderFile=t17_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t17_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

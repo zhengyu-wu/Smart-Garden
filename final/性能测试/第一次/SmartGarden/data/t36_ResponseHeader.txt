@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 24 Jul 2018 08:05:42 GMT
+Content-Type: image/png
+Content-Length: 132629
+Last-Modified: Wed, 18 Jul 2018 10:34:04 GMT
+Connection: keep-alive
+ETag: "5b4f179c-20615"
+Expires: Thu, 23 Aug 2018 08:05:42 GMT
+Cache-Control: max-age=2592000
+Accept-Ranges: bytes
+

@@ -1,0 +1,11 @@
+[t4]
+FileName1=t4_plugin.min.css
+URL1=http://static.cnmooc.org/theme/plugin.min.css?dcd1e635ed
+Total=1
+ContentType=text/css
+SnapshotXmlFile=snapshot_4.xml
+RequestHeaderFile=t4_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t4_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,11 @@
+[t184]
+FileName1=t184_getNozzleByNozzleId.html
+URL1=http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=236
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_184.xml
+RequestHeaderFile=t184_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t184_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

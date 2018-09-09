@@ -1,0 +1,18 @@
+[t10]
+FileName2=t8_1_gardenIcon.png
+RawStepEndTime=0
+RequestBodyFile=t10_RequestBody.txt
+RawStepName=getSensorByGardenId
+ContentType=application/json
+URL1=http://localhost:8080/sensors/getSensorByGardenId?gardenId=4
+URL2=http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png
+URL3=http://localhost:3000/main.js
+ResponseHeaderFile=t10_ResponseHeader.txt
+SnapshotXmlFile=snapshot_10.xml
+RequestHeaderFile=t10_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1532485648091
+Total=3
+StepName=Url: getSensorByGardenId
+FileName1=t10.json
+FileName3=t2_0_main.UNK

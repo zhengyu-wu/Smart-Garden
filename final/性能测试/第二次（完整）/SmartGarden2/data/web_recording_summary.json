@@ -1,0 +1,3305 @@
+{
+  "FilterHeaders": [
+    {
+      "Header": "user-agent",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "upgrade-insecure-requests",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "range",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "origin",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "if-range",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "if-none-match",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "if-modified-since",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "cache-control",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "accept-language",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "accept-encoding",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "accept",
+      "IncludeInScript": false
+    }
+  ],
+  "FilterResources": [
+    {
+      "IsNonResource": true,
+      "type": "text/html"
+    },
+    {
+      "IsNonResource": false,
+      "type": "application/octet-stream"
+    },
+    {
+      "IsNonResource": true,
+      "type": "application/json"
+    },
+    {
+      "IsNonResource": false,
+      "type": "application/javascript"
+    }
+  ],
+  "GeneralInfo": {
+    "BrowserVersion": "",
+    "MaxUsedConnections": 47,
+    "RecordedBrowser": "Firefox",
+    "RecordingDate": "7��-27-2018",
+    "RecordingDuration": 527109,
+    "RecordingTimeStamp": 1532655227,
+    "TotalBytesReceived": 11849342,
+    "TotalBytesSent": 142391,
+    "TotalRequests": 351
+  },
+  "HostInfo": [
+    {
+      "DomainName": "mozilla.org",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "34.212.44.210",
+          "IncludeInScript": true,
+          "Name": "download.mozilla.org",
+          "Port": 80,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 406,
+              "EventId": 196,
+              "HttpStatus": 302,
+              "Size": 129,
+              "URL": "http://download.mozilla.org/?product=firefox-56.0b3-complete&os=win64&lang=zh-CN"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "mozilla.net",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "13.35.4.60",
+          "IncludeInScript": true,
+          "Name": "download.cdn.mozilla.net",
+          "Port": 80,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 125,
+              "EventId": 3531,
+              "HttpStatus": 206,
+              "Size": 300000,
+              "URL": "http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 172,
+              "EventId": 3058,
+              "HttpStatus": 206,
+              "Size": 300000,
+              "URL": "http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 109,
+              "EventId": 2492,
+              "HttpStatus": 206,
+              "Size": 300000,
+              "URL": "http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 140,
+              "EventId": 2218,
+              "HttpStatus": 206,
+              "Size": 300000,
+              "URL": "http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 234,
+              "EventId": 1712,
+              "HttpStatus": 206,
+              "Size": 300000,
+              "URL": "http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 265,
+              "EventId": 1187,
+              "HttpStatus": 206,
+              "Size": 300000,
+              "URL": "http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 172,
+              "EventId": 505,
+              "HttpStatus": 206,
+              "Size": 300000,
+              "URL": "http://download.cdn.mozilla.net/pub/firefox/releases/56.0b3/update/win64/zh-CN/firefox-56.0b3.complete.mar"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "localhost",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "[::1]",
+          "IncludeInScript": true,
+          "Name": "localhost",
+          "Port": 8080,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3800,
+              "HttpStatus": 200,
+              "Size": 6653,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3797,
+              "HttpStatus": 200,
+              "Size": 6653,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 3795,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 3793,
+              "HttpStatus": 200,
+              "Size": 893,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3789,
+              "HttpStatus": 200,
+              "Size": 6654,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3786,
+              "HttpStatus": 200,
+              "Size": 6654,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 3783,
+              "HttpStatus": 200,
+              "Size": 1533,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 3781,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3770,
+              "HttpStatus": 200,
+              "Size": 6654,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3768,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3766,
+              "HttpStatus": 200,
+              "Size": 893,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3763,
+              "HttpStatus": 200,
+              "Size": 6655,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 10063,
+              "EventId": 3761,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithSensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3758,
+              "HttpStatus": 200,
+              "Size": 6655,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 3756,
+              "HttpStatus": 200,
+              "Size": 1533,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3753,
+              "HttpStatus": 200,
+              "Size": 6656,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3747,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 3743,
+              "HttpStatus": 200,
+              "Size": 893,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3741,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3739,
+              "HttpStatus": 200,
+              "Size": 6656,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3652,
+              "HttpStatus": 200,
+              "Size": 6655,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3649,
+              "HttpStatus": 200,
+              "Size": 6656,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 94,
+              "EventId": 3647,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3644,
+              "HttpStatus": 200,
+              "Size": 892,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3641,
+              "HttpStatus": 200,
+              "Size": 6656,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3638,
+              "HttpStatus": 200,
+              "Size": 6655,
+              "URL": "http://localhost:8080/humidity/getLast15HumiDataBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3635,
+              "HttpStatus": 200,
+              "Size": 6683,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3620,
+              "HttpStatus": 200,
+              "Size": 6683,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3608,
+              "HttpStatus": 200,
+              "Size": 1533,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3606,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 3590,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3586,
+              "HttpStatus": 200,
+              "Size": 892,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 94,
+              "EventId": 3568,
+              "HttpStatus": 200,
+              "Size": 6682,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3528,
+              "HttpStatus": 200,
+              "Size": 6682,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3525,
+              "HttpStatus": 200,
+              "Size": 6682,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 79,
+              "EventId": 3523,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3521,
+              "HttpStatus": 200,
+              "Size": 892,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3518,
+              "HttpStatus": 200,
+              "Size": 6683,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3515,
+              "HttpStatus": 200,
+              "Size": 6683,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3512,
+              "HttpStatus": 200,
+              "Size": 1533,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 3510,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3499,
+              "HttpStatus": 200,
+              "Size": 6683,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3497,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3494,
+              "HttpStatus": 200,
+              "Size": 892,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3491,
+              "HttpStatus": 200,
+              "Size": 6682,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 62,
+              "EventId": 3487,
+              "HttpStatus": 200,
+              "Size": 6682,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3484,
+              "HttpStatus": 200,
+              "Size": 6682,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 10047,
+              "EventId": 3482,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithSensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 3480,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3478,
+              "HttpStatus": 200,
+              "Size": 891,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3475,
+              "HttpStatus": 200,
+              "Size": 6682,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3472,
+              "HttpStatus": 200,
+              "Size": 1533,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3470,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3459,
+              "HttpStatus": 200,
+              "Size": 6684,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3456,
+              "HttpStatus": 200,
+              "Size": 6685,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 3454,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3451,
+              "HttpStatus": 200,
+              "Size": 892,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3448,
+              "HttpStatus": 200,
+              "Size": 6685,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 32,
+              "EventId": 3419,
+              "HttpStatus": 200,
+              "Size": 6686,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3416,
+              "HttpStatus": 200,
+              "Size": 6686,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3413,
+              "HttpStatus": 200,
+              "Size": 1533,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 32,
+              "EventId": 3411,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3401,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3398,
+              "HttpStatus": 200,
+              "Size": 893,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3395,
+              "HttpStatus": 200,
+              "Size": 6685,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3392,
+              "HttpStatus": 200,
+              "Size": 6685,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3389,
+              "HttpStatus": 200,
+              "Size": 6684,
+              "URL": "http://localhost:8080/temperature/getLast15TempDataBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 3387,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3384,
+              "HttpStatus": 200,
+              "Size": 891,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3381,
+              "HttpStatus": 200,
+              "Size": 1533,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 3379,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3369,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3367,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3365,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 62,
+              "EventId": 3362,
+              "HttpStatus": 200,
+              "Size": 893,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 3360,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3358,
+              "HttpStatus": 200,
+              "Size": 892,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3355,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 3353,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 79,
+              "EventId": 3343,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 3341,
+              "HttpStatus": 200,
+              "Size": 879,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3338,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 3336,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 10094,
+              "EventId": 3326,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithSensorId?sensorId=235"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 32,
+              "EventId": 3324,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 3322,
+              "HttpStatus": 200,
+              "Size": 878,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3302,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3299,
+              "HttpStatus": 200,
+              "Size": 879,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3296,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 3294,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 32,
+              "EventId": 3284,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3282,
+              "HttpStatus": 200,
+              "Size": 879,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 79,
+              "EventId": 3278,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3276,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3273,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3271,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3261,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3259,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3256,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3254,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3244,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 3242,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3240,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3238,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3235,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3233,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3231,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3228,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 3226,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3216,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3213,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3211,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3209,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3206,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 3204,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3194,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3192,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3189,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3187,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3177,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3175,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3089,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3086,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3081,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3078,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3067,
+              "HttpStatus": 200,
+              "Size": 305,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=238"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3055,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3052,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3041,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=239"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3038,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 32,
+              "EventId": 3036,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3025,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 3022,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3011,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=240"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 3009,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 3006,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 3004,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 3002,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 3000,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2998,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2988,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2986,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2983,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2981,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 79,
+              "EventId": 2971,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2968,
+              "HttpStatus": 200,
+              "Size": 445,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2966,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2964,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2961,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 2959,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 94,
+              "EventId": 2949,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2947,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2945,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2942,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2939,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 32,
+              "EventId": 2937,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2926,
+              "HttpStatus": 200,
+              "Size": 313,
+              "URL": "http://localhost:8080/waterConfig/addConfigByGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2915,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/waterConfig/getConfigByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 2912,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2909,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2905,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2902,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2891,
+              "HttpStatus": 200,
+              "Size": 304,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=236"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2888,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2883,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2875,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2872,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2861,
+              "HttpStatus": 200,
+              "Size": 305,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=237"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 47,
+              "EventId": 2859,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2856,
+              "HttpStatus": 200,
+              "Size": 447,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2853,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2846,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2839,
+              "HttpStatus": 200,
+              "Size": 305,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=238"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2836,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2833,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2822,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=239"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2817,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 79,
+              "EventId": 2815,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2812,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2809,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/nozzles/modifyStateByNozzleId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2798,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/nozzles/getNozzleByNozzleId?nozzleId=240"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2795,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2790,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2783,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2781,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 2779,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 2777,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2774,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2768,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2761,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2759,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2756,
+              "HttpStatus": 200,
+              "Size": 446,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 47,
+              "EventId": 2754,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2751,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2747,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 2739,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 2736,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2733,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/temperature/getLastTempDataByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2729,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2726,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2721,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2701,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2699,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2696,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2674,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2670,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2612,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2606,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 2598,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2427,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2425,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2423,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2403,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2400,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 2398,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 94,
+              "EventId": 2391,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 2389,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2384,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 2216,
+              "HttpStatus": 200,
+              "Size": 1532,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2213,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 2211,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 2209,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 2207,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 62,
+              "EventId": 2205,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 62,
+              "EventId": 2183,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/nozzles/addNozzleByGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2181,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2179,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 2177,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/nozzles/addNozzleByGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2175,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2173,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1942,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1937,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1928,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1922,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1906,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1901,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1899,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1889,
+              "HttpStatus": 200,
+              "Size": 918,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 1877,
+              "HttpStatus": 200,
+              "Size": 305,
+              "URL": "http://localhost:8080/nozzles/addNozzleByGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1837,
+              "HttpStatus": 200,
+              "Size": 612,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1832,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1709,
+              "HttpStatus": 200,
+              "Size": 612,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1703,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1695,
+              "HttpStatus": 200,
+              "Size": 612,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1689,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1636,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1634,
+              "HttpStatus": 200,
+              "Size": 612,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1627,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1621,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1619,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1609,
+              "HttpStatus": 200,
+              "Size": 612,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1597,
+              "HttpStatus": 200,
+              "Size": 305,
+              "URL": "http://localhost:8080/nozzles/addNozzleByGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1585,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1579,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1571,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1565,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1546,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1541,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1539,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1532,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1520,
+              "HttpStatus": 200,
+              "Size": 304,
+              "URL": "http://localhost:8080/nozzles/addNozzleByGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1504,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1498,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1488,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/nozzles/getNozzleByGardenId?gardenId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 1486,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://localhost:8080/waterConfig/runAutoWatering"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1449,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1444,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1437,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/modifySensorState"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1430,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/sensors/getSensorBySensorId?sensorId=235"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1424,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1417,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/modifySensorState"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1410,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/sensors/getSensorBySensorId?sensorId=235"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1405,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1403,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1401,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1399,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/modifySensorState"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1391,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/modifySensorState"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1385,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/modifySensorState"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1375,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/sensors/getSensorBySensorId?sensorId=233"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 1369,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/sensors/getSensorBySensorId?sensorId=234"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1367,
+              "HttpStatus": 200,
+              "Size": 306,
+              "URL": "http://localhost:8080/sensors/getSensorBySensorId?sensorId=235"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1357,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1355,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1347,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1345,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1343,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1333,
+              "HttpStatus": 200,
+              "Size": 922,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1319,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/addSensorWithGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1214,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/getByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1211,
+              "HttpStatus": 200,
+              "Size": 615,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1192,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1183,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1181,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1166,
+              "HttpStatus": 200,
+              "Size": 615,
+              "URL": "http://localhost:8080/sensors/getSensorByGardenId?gardenId=232"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1161,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/addSensorWithGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1139,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1136,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1134,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 15,
+              "EventId": 1125,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "http://localhost:8080/sensors/addSensorWithGardenId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1102,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 1088,
+              "HttpStatus": 200,
+              "Size": 215,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 1075,
+              "HttpStatus": 200,
+              "Size": 213,
+              "URL": "http://localhost:8080/garden/addGardenWithUserId"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 968,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=-1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 16,
+              "EventId": 965,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://localhost:8080/garden/getByUserId?userId=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 0,
+              "EventId": 960,
+              "HttpStatus": 200,
+              "Size": 113,
+              "URL": "http://localhost:8080/users/loginWithEmail?email=ch@ch.com&password=123"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "[::1]",
+          "IncludeInScript": true,
+          "Name": "localhost",
+          "Port": 3000,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2707,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/nozzle.8c1cd0b3b1967df77de0eb204452cdc6.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2690,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/humiditySensor.8ad937d1adc22cfd57131fb25a9ee3c8.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2688,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/temperatureSensor.0643342a962291348f79c7a482d84180.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2680,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/monitorSensor.ba6ff3cbe4ccaf9ca24936b1f595c1a1.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2619,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2586,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 2569,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 2220,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 2185,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1909,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1893,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1886,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1640,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/nozzle.8c1cd0b3b1967df77de0eb204452cdc6.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1632,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 1612,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1606,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1549,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1537,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1529,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1363,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/monitorSensor.ba6ff3cbe4ccaf9ca24936b1f595c1a1.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1361,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/humiditySensor.8ad937d1adc22cfd57131fb25a9ee3c8.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1359,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/temperatureSensor.0643342a962291348f79c7a482d84180.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1350,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 1337,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1331,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1219,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/humiditySensor.8ad937d1adc22cfd57131fb25a9ee3c8.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1217,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/temperatureSensor.0643342a962291348f79c7a482d84180.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1195,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1170,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1164,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 16,
+              "EventId": 1142,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1129,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 1123,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/user"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 0,
+              "EventId": 1107,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 16,
+              "EventId": 888,
+              "HttpStatus": 404,
+              "Size": 150,
+              "URL": "http://localhost:3000/favicon.ico"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 16,
+              "EventId": 883,
+              "HttpStatus": 404,
+              "Size": 150,
+              "URL": "http://localhost:3000/favicon.ico"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 31,
+              "EventId": 224,
+              "HttpStatus": 200,
+              "Size": 9421211,
+              "URL": "http://localhost:3000/main.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 15,
+              "EventId": 162,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://localhost:3000/"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        }
+      ],
+      "IncludeInScript": true
+    }
+  ],
+  "WebSocket": {
+    "IncludeInScript": false,
+    "IsScriptIncludeWebSocket": false
+  },
+  "NumberOfCorrelations": 0
+}

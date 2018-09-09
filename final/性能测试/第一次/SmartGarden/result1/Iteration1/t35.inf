@@ -1,0 +1,24 @@
+[t35]
+FileName2=t12_4_monitorSensor.png
+RawStepEndTime=0
+FileName5=t8_1_gardenIcon.png
+FileName4=t13_2_temperatureSensor.png
+FileName6=t2_0_main.UNK
+RequestBodyFile=t35_RequestBody.txt
+RawStepName=getByGardenId_3
+ContentType=application/json
+URL1=http://localhost:8080/garden/getByGardenId?gardenId=21
+URL2=http://localhost:3000/assets/images/monitorSensor.ba6ff3cbe4ccaf9ca24936b1f595c1a1.png
+URL3=http://localhost:3000/assets/images/humiditySensor.8ad937d1adc22cfd57131fb25a9ee3c8.png
+ResponseHeaderFile=t35_ResponseHeader.txt
+URL4=http://localhost:3000/assets/images/temperatureSensor.0643342a962291348f79c7a482d84180.png
+URL5=http://localhost:3000/assets/images/gardenIcon.ef74e10d61fabc1628e7074a7b09dc01.png
+URL6=http://localhost:3000/main.js
+SnapshotXmlFile=snapshot_35.xml
+RequestHeaderFile=t35_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1532485649166
+Total=6
+StepName=Url: getByGardenId_3
+FileName1=t35.json
+FileName3=t11_3_humiditySensor.png

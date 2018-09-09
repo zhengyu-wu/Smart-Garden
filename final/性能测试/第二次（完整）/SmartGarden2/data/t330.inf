@@ -1,0 +1,11 @@
+[t330]
+FileName1=t330.html
+URL1=http://localhost:8080/waterConfig/runAutoWatering
+Total=1
+RequestHeaderFile=t330_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t330_ResponseHeader.txt
+ContentType=
+SnapshotXmlFile=snapshot_330.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

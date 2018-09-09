@@ -1,0 +1,11 @@
+[t64]
+FileName1=t64.html
+URL1=http://localhost:8080/nozzles/addNozzleByGardenId
+Total=1
+RequestHeaderFile=t64_RequestHeader.txt
+RequestBodyFile=t64_RequestBody.txt
+ResponseHeaderFile=t64_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_64.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

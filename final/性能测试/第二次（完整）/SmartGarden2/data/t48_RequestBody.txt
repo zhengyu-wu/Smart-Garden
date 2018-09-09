@@ -1,0 +1,1 @@
+"sensorId=235&sensorState=1"

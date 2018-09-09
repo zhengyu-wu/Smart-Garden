@@ -1,0 +1,32 @@
+[Scenario]
+Product=HPE LoadRunner Controller
+Version=12.55.0.0
+Path=Scenario1
+Subject=
+Result_file=D:\LRtest\SmartGarden\res\res.lrr
+Description=
+ResultName=res
+Time_Zone=-28800
+Start_time=1532486169
+Daylight_Bias=0
+Stop_time=1532486666
+[Configuration]
+Public_local=1
+Is_mix=1
+Is_runner_file=0
+Runner_file=
+[Running_mode]
+Start_reason=By command
+Stop_reason=By a user
+[Data Collection]
+FullData=1
+[Scenario_summary]
+Scenario Type=Manual Scenario
+Goal Profile Name=Schedule 1
+Mode=Scenario Scheduling
+Scenario Duration=Start 95 Vusers: 40 every 00:00:15 (HH:MM:SS); Run for 00:05:00 (HH:MM:SS); Stop all Vusers: 24 every 00:00:30 (HH:MM:SS)
+Load Behavior=Initialize each Vuser just before it runs
+[Scripts]
+SmartGarden=D:\LRtest\SmartGarden\SmartGarden.usr
+[Scripts_types]
+SmartGarden=Multi+QTWeb

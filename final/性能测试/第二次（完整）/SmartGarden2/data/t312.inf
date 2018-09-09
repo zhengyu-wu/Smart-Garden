@@ -1,0 +1,11 @@
+[t312]
+FileName1=t312_generateDataWithGardenId.html
+URL1=http://localhost:8080/fakeData/generateDataWithGardenId?gardenId=232
+Total=1
+ContentType=
+SnapshotXmlFile=snapshot_312.xml
+RequestHeaderFile=t312_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t312_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

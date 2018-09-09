@@ -1,0 +1,11 @@
+[t12]
+FileName1=t12_i18nBrowse.html
+URL1=http://www.cnmooc.org/i18nBrowse.mooc?userLocale=zh_CN&r=dcd1e635ed
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_12.xml
+RequestHeaderFile=t12_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t12_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,11 @@
+[t20]
+FileName1=t20_zh-cn.html
+URL1=http://www.cnmooc.org/js/umeditor/lang/zh-cn/zh-cn.js
+Total=1
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_20.xml
+RequestHeaderFile=t20_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t20_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
