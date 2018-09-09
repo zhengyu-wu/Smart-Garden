@@ -27,6 +27,7 @@ public class HumiServiceImpl implements HumiService {
     public boolean addHumiData(HumiData humiData,int sensorId) {
         try{
             Sensor tmpSensor=null;
+            //先判断输入sensorId的有效性
             tmpSensor=sensorService.getSensorBySensorId(sensorId);
             if(tmpSensor==null)
                 return false;

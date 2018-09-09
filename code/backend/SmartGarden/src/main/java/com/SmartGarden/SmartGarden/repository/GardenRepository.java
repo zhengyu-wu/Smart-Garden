@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
 import java.util.List;
 
+//采用SpringData JPA的命名方法自动生成函数实现
 @Repository
 public interface GardenRepository extends JpaRepository<Garden,Integer> {
     List<Garden> findByUser_UserId(int userId);
