@@ -1,5 +1,8 @@
 # Smart-Garden
 
+<div align="center"><img src="./pic.png" width="50%"/></div>
+
+
 ### Features 🤩
 
 - Website by React
