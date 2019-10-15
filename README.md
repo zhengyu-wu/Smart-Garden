@@ -11,6 +11,6 @@
 - Heatmap and real-time curve
 - Incorporated video monitoring 
 
-### Demo video
+### Demo video 📹
 
 [https://www.youtube.com/watch?v=_AG5Cldd5Fc&t=59s](https://www.youtube.com/watch?v=_AG5Cldd5Fc&t=59s)
