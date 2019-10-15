@@ -1,6 +1,6 @@
 # Smart-Garden
 
-<div align="center"><img src="./pic.png" width="20%"/></div>
+<div><img src="./pic.png" width="10%"/></div>
 
 
 ### Features 🤩
