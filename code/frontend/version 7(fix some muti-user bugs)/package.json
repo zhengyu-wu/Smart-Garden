@@ -13,7 +13,7 @@
     "css-loader": "^0.23.1",
     "json-loader": "^0.5.7",
     "react-router": "^2.8.1",
-    "react-scripts": "0.4.0",
+    "react-scripts": "5.0.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
